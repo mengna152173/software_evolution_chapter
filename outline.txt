@@ -1,17 +1,23 @@
 Software Evolution (Outline) 
 --- making changes / inspecting changes / assessing changes 
  
-I. Making Changes (Na is in charge) 
+abstract & Intro (page estimate: 2)
+
+Concepts and Principles (page estimate: 4)
+Content??
+
+An Organised Tour (page estimate: 25)
+I. Making Changes (Na is in charge) (page estimate: 8 1/3)
 	1. automated program transformation: refactoring is a subset of automated program transformation (source transformation languages and tools)
 	2. refactoring is a special category of automated transformation: refactoring practices (kim et al., emerson murphy hill, ralph johnson) 
 	3. systematic editing is another special category of automated transformation. 
-II. Inspecting Changes (Miryung with some help from Tianyi) 
+II. Inspecting Changes (Miryung with some help from Tianyi) (page estimate: 8 1/3)
 	3. code reviews practices, since code reviews is a common context where change inspection happens (
 peter rigby)  code flow, collaborators in industry. generally starting from code review practices, but 	
 4. program differencing (going to back history of differencing, diff, AST diff, CFG diff, PDG diff.--- mention its symmetric problem of clone detection)
         5. go deeper for a few techniques that help with change comprehension: kim et al. critics, chris bird at MS
 
-III. Assessing Changes (Miryung => Na)  
+III. Assessing Changes (Miryung => Na) (page estimate: 8 1/3) 
 	5. debugging and testing with focus on changes: delta debugging 
 	6. regression test selection / change impact analysis 
 (I haven't really followed up recent work on this.) 
@@ -19,9 +25,12 @@ III. Assessing Changes (Miryung => Na)  
 Miryung will add: delta debugging Mary Jean Harrold + Alex Orso, Fault Tracer, 
 Na will supplement later work on change impact analysis regression testing.  
 
-IV. Future Directions & Open Problems. 
-----I am not personally sure whether IV is needed or how much space we will have. 
+IV. Future Directions & Open Problems. (page estimate: 4)
 
+
+Conclusion (page estimate: 1/2)
+
+----I am not personally sure whether IV is needed or how much space we will have. 
 IV. A case of software evolution with focus on duplication.  
 	1. "Making changes" to code clones. e.g. LASE 
 	2. "Inspecting changes" to clones e.g., CRITICS 
