@@ -1,0 +1,78 @@
+% =============================================
+% !TEX root = ./critics.tex
+% =============================================
+\begin{figure*}[!t]
+%\begin{minipage}[t]{0.5\linewidth}
+\begin{lstlisting}[style=MyJavaSmallStyle]
+int keyDownEvent (int wParam, int lParam) {
+*'\delCode{-}'* *'\delCode{ExpandItem item = items [focusIndex];}'*
+  switch (wParam) {
+    case OS.VK_RETURN:
+      Event event = new Event ();
+*'\delCode{-}'*     *'\delCode{event.item = item;}'*
+*'\delCode{-}'*     *'\delCode{sendEvent(true, event);}'*
+*'\addCode{+}'*     *'\addCode{event.item = focusItem;}'*
+*'\addCode{+}'*     *'\addCode{sendEvent(focusItem.expanded ?~COLLAPSE:EXPAND, event);}'*
+*'\addCode{+}'*     *'\addCode{refreshItem(focusItem);}'*
+    ...
+\end{lstlisting}
+\vspace{-0.4cm}
+\begin{center}\begin{scriptsize}(a) A changed region selected by {\sf Barry}\end{scriptsize}\end{center}
+\vspace{-0.4cm}
+%\end{minipage}
+%
+%\begin{minipage}[t]{0.5\linewidth}
+\begin{lstlisting}[style=MyJavaSmallStyle]
+int keyPressedEvent (int wParam, int lParam) {
+  ExpandItem item = items [focusIndex];
+  switch (wParam) {
+    case OS.VK_RETURN:
+      Event event = new Event ();
+      event.item = item;
+      sendEvent(true, event);
+    ...
+\end{lstlisting}
+\vspace{-0.7cm}
+\begin{center}\begin{scriptsize}(b) Code location with exactly the same context but missing the update\end{scriptsize}\end{center}
+\vspace{-0.4cm}
+%\end{minipage}
+%\begin{minipage}[t]{0.5\linewidth}
+%
+\begin{lstlisting}[style=MyJavaSmallStyle]
+int keyReleaseEvent (int wParam, int lParam) {
+*'\delCode{-}'* *'\delCode{ExpandItem item = items [focusIndex];}'*
+  switch (wParam) {
+    case OS.GDK_SPACE:
+      Event ev = new Event ();
+*'\delCode{-}'*     *'\delCode{ev.item = item;}'*
+*'\delCode{-}'*     *'\delCode{sendEvent(true, ev);}'*
+*'\addCode{+}'*     *'\addCode{ev.item = focusItem;}'*
+*'\addCode{+}'*     *'\addCode{sendEvent(focusItem.expanded ?~COLLAPSE:EXPAND, ev);}'*
+*'\addCode{+}'*     *'\addCode{refreshItem(focusItem);}'*
+   ...
+\end{lstlisting}
+\vspace{-0.7cm}
+\begin{center}\begin{scriptsize}(c) A similar but not identical change using a different variable name, \texttt{ev}, instead of {\tt event}\end{scriptsize}\end{center}
+\vspace{-0.4cm}
+%\end{minipage}
+%
+%\begin{minipage}[t]{0.5\linewidth}
+\begin{lstlisting}[style=MyJavaSmallStyle]
+int buttonUpEvent (int wParam, int lParam) {
+*'\delCode{-}'* *'\delCode{ExpandItem item = items [focusIndex];}'*
+  if (lParam == HOVER) {
+    Event bEvent = new Event ();
+*'\delCode{-}'*   *'\delCode{bEvent.item = item;}'*
+*'\delCode{-}'*   *'\delCode{sendEvent(true, bEvent);}'*
+*'\addCode{+}'*   *'\addCode{bEvent.item = focusItem;}'*
+*'\addCode{+}'*   *'\addCode{sendEvent(focusItem.expanded ?~EXPAND:COLLAPSE, bEvent);}'*
+*'\addCode{+}'*   *'\addCode{refreshItem(focusItem);}'*
+    ...
+\end{lstlisting}
+\vspace{-0.7cm}
+\begin{center}\begin{scriptsize}(d) Inconsistent change by mistakenly swapping two expressions, {\tt EXPAND} and {\tt COLLAPSE}\end{scriptsize}\end{center}
+\vspace{-0.4cm}
+%\end{minipage}
+\caption{Real-world examples of similar and consistent changes, inconsistent changes, and missing updates, adapted from the revision 13516 in the Eclipse Standard Widget Toolkit (SWT) project. Code deletions are marked with `-' and additions are marked with `+'.}
+\label{fig:critics-example}
+\end{figure*}
