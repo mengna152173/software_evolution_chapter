@@ -1,0 +1,332 @@
+\begin{thebibliography}{10}
+
+\bibitem{cobol2java}
+{COBOL Migration to Java or .NET}.
+\newblock
+  \url{http://www.semdesigns.com/Products/Services/COBOLMigration.html?Home=LegacyMigration}.
+
+\bibitem{html5}
+{HTML5}.
+\newblock \url{https://www.w3.org/TR/html5/}.
+
+\bibitem{jovial2c}
+{JOVIAL2C Translator}.
+\newblock
+  \url{http://www.semdesigns.com/Products/MigrationTools/JOVIAL2C.html}.
+
+\bibitem{phonegap}
+{PhoneGap}.
+\newblock \url{https://build.phonegap.com}.
+
+\bibitem{1999:RID}
+{\em Refactoring: Improving the Design of Existing Code}.
+\newblock Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA, 1999.
+
+\bibitem{Balazinska1999}
+M.~Balazinska, E.~Merlo, M.~Dagenais, B.~Lague, and K.~Kontogiannis.
+\newblock Partial redesign of java software systems based on clone analysis.
+\newblock In {\em WCRE}, page 326, 1999.
+
+\bibitem{Batory:2003}
+D.~Batory, J.~N. Sarvela, and A.~Rauschmayer.
+\newblock Scaling step-wise refinement.
+\newblock In {\em Proceedings of the 25th International Conference on Software
+  Engineering}, ICSE '03, pages 187--197, Washington, DC, USA, 2003. IEEE
+  Computer Society.
+
+\bibitem{Chen:2013}
+N.~Chen and R.~E. Johnson.
+\newblock Jflow: Practical refactorings for flow-based parallelism.
+\newblock In {\em 2013 28th IEEE/ACM International Conference on Automated
+  Software Engineering (ASE)}, pages 202--212, Nov 2013.
+
+\bibitem{Chu:08}
+J.~Chu and T.~Dean.
+\newblock Automated migration of list based jsp web pages to ajax.
+\newblock In {\em 2008 Eighth IEEE International Working Conference on Source
+  Code Analysis and Manipulation}, pages 217--226, Sept 2008.
+
+\bibitem{Cordy2006}
+J.~R. Cordy.
+\newblock The {TXL} source transformation language.
+\newblock {\em Science of Computer Programming}, 61(3):190--210, 2006.
+
+\bibitem{Dig:2009}
+D.~Dig, M.~Tarce, C.~Radoi, M.~Minea, and R.~Johnson.
+\newblock Relooper: Refactoring for loop parallelism in java.
+\newblock In {\em Proceedings of the 24th ACM SIGPLAN Conference Companion on
+  Object Oriented Programming Systems Languages and Applications}, OOPSLA '09,
+  pages 793--794, New York, NY, USA, 2009. ACM.
+
+\bibitem{DuR2007}
+E.~Duala-Ekoko and M.~P. Robillard.
+\newblock Tracking code clones in evolving software.
+\newblock In {\em ICSE '07: Proceedings of the 29th International Conference on
+  Software Engineering}, pages 158--167, Washington, DC, USA, 2007. IEEE
+  Computer Society.
+
+\bibitem{El-Ramly:2006}
+M.~El-Ramly, R.~Eltayeb, and H.~A. Alla.
+\newblock An experiment in automatic conversion of legacy {J}ava programs to
+  {C}\#.
+\newblock In {\em Proceedings of the IEEE International Conference on Computer
+  Systems and Applications}, 2006.
+
+\bibitem{Feser:2015}
+J.~K. Feser, S.~Chaudhuri, and I.~Dillig.
+\newblock Synthesizing data structure transformations from input-output
+  examples.
+\newblock {\em SIGPLAN Not.}, 50(6):229--239, June 2015.
+
+\bibitem{FWP2007}
+B.~Fluri, M.~W\"ursch, M.~Pinzger, and H.~C. Gall.
+\newblock Change distilling---tree differencing for fine-grained source code
+  change extraction.
+\newblock {\em IEEE Transactions on Software Engineering}, 33(11):18, November
+  2007.
+
+\bibitem{Ge:2012}
+X.~Ge, Q.~L. DuBose, and E.~Murphy-Hill.
+\newblock Reconciling manual and automatic refactoring.
+\newblock In {\em Proceedings of the 34th International Conference on Software
+  Engineering}, ICSE '12, pages 211--221, Piscataway, NJ, USA, 2012. IEEE
+  Press.
+
+\bibitem{Griswold:1992}
+W.~G. Griswold.
+\newblock {\em Program Restructuring As an Aid to Software Maintenance}.
+\newblock PhD thesis, Seattle, WA, USA, 1992.
+\newblock UMI Order No. GAX92-03258.
+
+\bibitem{Gul2010}
+S.~Gulwani.
+\newblock Dimensions in program synthesis.
+\newblock In {\em Proceedings of the 12th international ACM SIGPLAN symposium
+  on Principles and practice of declarative programming}, PPDP '10, pages
+  13--24, New York, NY, USA, 2010. ACM.
+
+\bibitem{Gul2011}
+S.~Gulwani.
+\newblock Automating string processing in spreadsheets using input-output
+  examples.
+\newblock In {\em Proceedings of the 38th annual ACM SIGPLAN-SIGACT symposium
+  on Principles of programming languages}, POPL '11, pages 317--330, New York,
+  NY, USA, 2011. ACM.
+
+\bibitem{GKT2011}
+S.~Gulwani, V.~A. Korthikanti, and A.~Tiwari.
+\newblock Synthesizing geometry constructions.
+\newblock In {\em Proceedings of the 32nd ACM SIGPLAN conference on Programming
+  language design and implementation}, PLDI '11, pages 50--61, New York, NY,
+  USA, 2011. ACM.
+
+\bibitem{HaG2011}
+W.~R. Harris and S.~Gulwani.
+\newblock Spreadsheet table transformations from examples.
+\newblock In {\em Proceedings of the 32nd ACM SIGPLAN conference on Programming
+  language design and implementation}, PLDI '11, pages 317--328, New York, NY,
+  USA, 2011. ACM.
+
+\bibitem{Hassan:2005}
+A.~E. Hassan and R.~C. Holt.
+\newblock A lightweight approach for migrating web frameworks.
+\newblock {\em Inf. Softw. Technol.}, 2005.
+
+\bibitem{Kim:2016}
+J.~Kim, D.~Batory, D.~Dig, and M.~Azanza.
+\newblock Improving refactoring speed by 10x.
+\newblock In {\em Proceedings of the 38th International Conference on Software
+  Engineering}, ICSE '16, pages 1145--1156, New York, NY, USA, 2016. ACM.
+
+\bibitem{Kim:2009}
+M.~Kim and D.~Notkin.
+\newblock Discovering and representing systematic code changes.
+\newblock In {\em Proceedings of the 31st International Conference on Software
+  Engineering}, ICSE '09, pages 309--319, Washington, DC, USA, 2009. IEEE
+  Computer Society.
+
+\bibitem{Kim:2005}
+M.~Kim, V.~Sazawal, D.~Notkin, and G.~Murphy.
+\newblock An empirical study of code clone genealogies.
+\newblock {\em SIGSOFT Softw. Eng. Notes}, 30(5):187--196, Sept. 2005.
+
+\bibitem{Tsantalis2013:icsm}
+G.~P. Krishnan and N.~Tsantalis.
+\newblock Refactoring clones: An optimization problem.
+\newblock {\em ICSM}, 0:360--363, 2013.
+
+\bibitem{LaH1995}
+J.~Landauer and M.~Hirakawa.
+\newblock Visual awk: a model for text processing by demonstration.
+\newblock In {\em Proceedings of the 11th International IEEE Symposium on
+  Visual Languages}, VL '95, pages 267--, Washington, DC, USA, 1995. IEEE
+  Computer Society.
+
+\bibitem{LWD2001}
+T.~Lau, S.~A. Wolfman, P.~Domingos, and D.~S. Weld.
+\newblock {\em Learning repetitive text-editing procedures with SMARTedit},
+  pages 209--226.
+\newblock Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 2001.
+
+\bibitem{Lee:2013}
+Y.~Y. Lee, N.~Chen, and R.~E. Johnson.
+\newblock Drag-and-drop refactoring: Intuitive and efficient program
+  transformation.
+\newblock In {\em Proceedings of the 2013 International Conference on Software
+  Engineering}, ICSE '13, pages 23--32, Piscataway, NJ, USA, 2013. IEEE Press.
+
+\bibitem{Lie2001}
+H.~Lieberman, editor.
+\newblock {\em Your Wish is My Command: Programming by Example}.
+\newblock Morgan Kaufmann Publishers, 2001.
+
+\bibitem{Mealy:2007}
+E.~Mealy, D.~Carrington, P.~Strooper, and P.~Wyeth.
+\newblock Improving usability of software refactoring tools.
+\newblock In {\em Software Engineering Conference, 2007. ASWEC 2007. 18th
+  Australian}, pages 307--318, April 2007.
+
+\bibitem{Meng:2015}
+N.~Meng, L.~Hua, M.~Kim, and K.~S. McKinley.
+\newblock Does automated refactoring obviate systematic editing?
+\newblock In {\em Proceedings of the 37th International Conference on Software
+  Engineering - Volume 1}, ICSE '15, pages 392--402, Piscataway, NJ, USA, 2015.
+  IEEE Press.
+
+\bibitem{MKM2013}
+N.~Meng, M.~Kim, and K.~McKinley.
+\newblock Lase: Locating and applying systematic edits by learning from
+  examples.
+\newblock In {\em ICSE '13: Proceedings of 35th IEEE/ACM International
+  Conference on Software Engineering (Accepted)}, page 10 pages. IEEE Society,
+  2013.
+
+\bibitem{MKM2011}
+N.~Meng, M.~Kim, and K.~S. McKinley.
+\newblock Systematic editing: generating program transformations from an
+  example.
+\newblock In {\em Proceedings of the 32nd ACM SIGPLAN conference on Programming
+  language design and implementation}, PLDI '11, pages 329--342, New York, NY,
+  USA, 2011. ACM.
+
+\bibitem{MiM2001}
+R.~C. Miller and B.~A. Myers.
+\newblock Interactive simultaneous editing of multiple text regions.
+\newblock In {\em Proceedings of the General Track: 2002 USENIX Annual
+  Technical Conference}, pages 161--174, Berkeley, CA, USA, 2001. USENIX
+  Association.
+
+\bibitem{Mossienko:03}
+M.~Mossienko.
+\newblock {Automated Cobol to Java recycling}.
+\newblock In {\em Seventh European Conference onSoftware Maintenance and
+  Reengineering, 2003. Proceedings.}, 2003.
+
+\bibitem{Murphy-Hill:2011}
+E.~Murphy-Hill, M.~Ayazifar, and A.~P. Black.
+\newblock Restructuring software with gestures.
+\newblock In {\em 2011 IEEE Symposium on Visual Languages and Human-Centric
+  Computing (VL/HCC)}, pages 165--172, Sept 2011.
+
+\bibitem{Murphy-Hill:2008}
+E.~Murphy-Hill and A.~P. Black.
+\newblock Breaking the barriers to successful refactoring: Observations and
+  tools for extract method.
+\newblock In {\em Proceedings of the 30th International Conference on Software
+  Engineering}, ICSE '08, pages 421--430, New York, NY, USA, 2008. ACM.
+
+\bibitem{Nguyen:15}
+A.~T. Nguyen, T.~T. Nguyen, and T.~N. Nguyen.
+\newblock Divide-and-conquer approach for multi-phase statistical migration for
+  source code (t).
+\newblock In {\em 2015 30th IEEE/ACM International Conference on Automated
+  Software Engineering (ASE)}, 2015.
+
+\bibitem{Nguyen:2010}
+T.~T. Nguyen, H.~A. Nguyen, N.~H. Pham, J.~Al-Kofahi, and T.~N. Nguyen.
+\newblock Recurring bug fixes in object-oriented programs.
+\newblock In {\em Proceedings of the 32Nd ACM/IEEE International Conference on
+  Software Engineering - Volume 1}, ICSE '10, pages 315--324, New York, NY,
+  USA, 2010. ACM.
+
+\bibitem{NNP2009}
+T.~T. Nguyen, H.~A. Nguyen, N.~H. Pham, J.~M. Al-Kofahi, and T.~N. Nguyen.
+\newblock Clone-aware configuration management.
+\newblock In {\em ASE '09: Proceedings of the 2009 IEEE/ACM International
+  Conference on Automated Software Engineering}, pages 123--134, Washington,
+  DC, USA, 2009. IEEE Computer Society.
+
+\bibitem{Nix1984}
+R.~Nix.
+\newblock Editing by example.
+\newblock In {\em Proceedings of the 11th ACM SIGACT-SIGPLAN symposium on
+  Principles of programming languages}, POPL '84, pages 186--195, New York, NY,
+  USA, 1984. ACM.
+
+\bibitem{OConnor:2005}
+A.~O'Connor, M.~Shonle, and W.~Griswold.
+\newblock Star diagram with automated refactorings for eclipse.
+\newblock In {\em Proceedings of the 2005 OOPSLA Workshop on Eclipse Technology
+  eXchange}, eclipse '05, pages 16--20, New York, NY, USA, 2005. ACM.
+
+\bibitem{Parnin:2008}
+C.~Parnin, C.~G\"{o}rg, and O.~Nnadi.
+\newblock A catalogue of lightweight visualizations to support code smell
+  inspection.
+\newblock In {\em Proceedings of the 4th ACM Symposium on Software
+  Visualization}, SoftVis '08, pages 77--86, New York, NY, USA, 2008. ACM.
+
+\bibitem{Rolim:2017}
+R.~Rolim, G.~Soares, L.~D'Antoni, O.~Polozov, S.~Gulwani, R.~Gheyi, R.~Suzuki,
+  and B.~Hartmann.
+\newblock Learning syntactic program transformations from examples.
+\newblock In {\em Proceedings of the 39th International Conference on Software
+  Engineering}, ICSE '17, pages 404--415, Piscataway, NJ, USA, 2017. IEEE
+  Press.
+
+\bibitem{Sneed:2010}
+H.~M. Sneed.
+\newblock {Migrating from COBOL to Java}.
+\newblock In {\em Proceedings of the 2010 IEEE International Conference on
+  Software Maintenance}, 2010.
+
+\bibitem{Tonella:04}
+P.~Tonella and M.~Ceccato.
+\newblock Migrating interface implementations to aspects.
+\newblock In {\em 20th IEEE International Conference on Software Maintenance,
+  2004. Proceedings.}, pages 220--229, Sept 2004.
+
+\bibitem{TBG2004}
+M.~Toomim, A.~Begel, and S.~L. Graham.
+\newblock Managing duplicated code with linked editing.
+\newblock In {\em VLHCC '04: Proceedings of the 2004 IEEE Symposium on Visual
+  Languages - Human Centric Computing}, pages 173--180, Washington, DC, USA,
+  2004. IEEE Computer Society.
+
+\bibitem{Vakilian:2012}
+M.~Vakilian, N.~Chen, S.~Negara, B.~A. Rajkumar, B.~P. Bailey, and R.~E.
+  Johnson.
+\newblock Use, disuse, and misuse of automated refactorings.
+\newblock In {\em 2012 34th International Conference on Software Engineering
+  (ICSE)}, pages 233--243, June 2012.
+
+\bibitem{WiM1993}
+I.~H. Witten and D.~Mo.
+\newblock {\em TELS: learning text editing tasks from examples}, pages
+  183--203.
+\newblock MIT Press, Cambridge, MA, USA, 1993.
+
+\bibitem{Yaghmazadeh:2016}
+N.~Yaghmazadeh, C.~Klinger, I.~Dillig, and S.~Chaudhuri.
+\newblock Synthesizing transformations on hierarchically structured data.
+\newblock In {\em Proceedings of the 37th ACM SIGPLAN Conference on Programming
+  Language Design and Implementation}, PLDI '16, pages 508--521, New York, NY,
+  USA, 2016. ACM.
+
+\bibitem{Yasumatsu:95}
+K.~Yasumatsu and N.~Doi.
+\newblock {SPiCE}: a system for translating {S}malltalk programs into a {C}
+  environment.
+\newblock {\em IEEE Transactions on Software Engineering}, 1995.
+
+\end{thebibliography}
