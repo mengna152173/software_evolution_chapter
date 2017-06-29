@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: chapter_making_changes.aux
+The style file: abbrv.bst
+Database file #1: reference.bib
+Warning--to sort, need author or key in jovial2c
+Warning--to sort, need author or key in cobol2java
+Warning--to sort, need author or key in html5
+Warning--to sort, need author or key in phonegap
+Warning--empty author and editor in 1999:RID
+Warning--empty school in Griswold:1992
+You've used 52 entries,
+            2118 wiz_defined-function locations,
+            849 strings with 13665 characters,
+and the built_in function-call counts, 21146 in all, are:
+= -- 2212
+> -- 814
+< -- 34
++ -- 327
+- -- 270
+* -- 1318
+:= -- 3138
+add.period$ -- 177
+call.type$ -- 52
+change.case$ -- 287
+chr.to.int$ -- 0
+cite$ -- 58
+duplicate$ -- 972
+empty$ -- 1741
+format.name$ -- 270
+if$ -- 4811
+int.to.chr$ -- 0
+int.to.str$ -- 52
+missing$ -- 49
+newline$ -- 259
+num.names$ -- 95
+pop$ -- 363
+preamble$ -- 1
+purify$ -- 240
+quote$ -- 0
+skip$ -- 780
+stack$ -- 0
+substring$ -- 1348
+swap$ -- 368
+text.length$ -- 34
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 200
+warning$ -- 6
+while$ -- 194
+width$ -- 54
+write$ -- 622
+(There were 6 warnings)
