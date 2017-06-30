@@ -1,0 +1,34 @@
+Title: Software Evolution 
+Authors: Na Meng, Tianyi Zhang, Miryung Kim 
+ 
+1. Introduction 
+- explain the definition of software evolution (cite: belady and lehman, etc)
+- describe why this chapter focus on code changes, rather than other types of artefacts such as requirements, specifications, design documents, etc. 
+- argue why software evolution is important (cite: code decay, eick et al.) 
+
+2. Concepts and Principles  
+- explain a broad category of changes: corrective, adaptive, and perfective changes (cite kemerer and slaugher)  
+- include a diagram about the process of software evolution with focus on changes: (A) applying program changes (B) inspecting program changes, and (C) debugging and testing program changes to overview the rest of sections.  
+- introduce topics under each of the three perspectives on program changes. 
+
+3. An Organized Tour of Seminal Papers from Three Perspectives  
+3.1. Applying Program Changes 
+	* Perfective Changes - refactoring is a special category of automated transformation: refactoring practices (kim et al., emerson murphy hill, ralph johnson) 
+	* Corrective Changes - discuss literature on bug fixes  
+	* Additive Changes - discuss literature on adding features, (systematic editing is a specialized technique for automated feature addition) source to source transformation 
+	* Porting to different languages, etc. 
+ 
+3.2. Inspecting Program Changes
+	* code reviews practices, since code reviews is a common context where change inspection happens (
+peter rigby)  code flow, collaborators in industry. generally starting from code review practices, but 	
+	* program differencing (going to back history of differencing, diff, AST diff, CFG diff, PDG diff.--- mention its symmetric problem of clone detection)
+ 	* go deeper for a few techniques that help with change comprehension: kim et al. critics, chris bird at MS
+
+3.3. Debugging and Testing Program Changes 
+	* debugging and testing with focus on changes: delta debugging 
+	* regression test selection / change impact analysis 
+
+4. Future Directions and Open Problems 
+
+ 
+
