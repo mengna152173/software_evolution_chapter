@@ -1,0 +1,55 @@
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[listings]{tcolorbox}
+\usepackage{amssymb}
+\usepackage{pifont}
+
+\newcommand{\critics}{{\small{\sc{Critics}}}}
+\newcommand{\phabricator}{{\small{\sc{Phabricator}}}}
+\newcommand{\gerrit}{{\small{\sc{Gerrit}}}}
+\newcommand{\codeflow}{{\small{\sc{CodeFlow}}}}
+\newcommand{\collaborator}{{\small{\sc{Collaborator}}}}
+\newcommand{\clusterchanges}{{\small{\sc{ClusterChanges}}}}
+\newcommand{\delCode}{\textcolor{black}}
+\newcommand{\addCode}{\textcolor{black}}
+\newcommand{\ttt}[1]{\tt\small{#1}}
+\newcommand{\todo}[1]{\textcolor{blue}{#1}}
+
+
+% -----------------------------------------------------------------
+% color
+% -----------------------------------------------------------------
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+% ===============================================
+% MyJavaSmallStyle
+% ===============================================
+\lstdefinestyle{MyJavaSmallStyle} {
+  language=Java,
+  frame=none,
+  xleftmargin=15pt, 
+  stepnumber=1, 
+  numbers=left, 
+  numbersep=5pt,
+  numberstyle=\tiny\color[gray]{0.777}, 
+  belowcaptionskip=\bigskipamount,
+  captionpos=b, 
+  escapeinside={*'}{'*},
+  tabsize=5,
+  emphstyle={\bf},
+  basicstyle=\scriptsize\ttfamily,
+  keywordstyle=\color{javapurple}\bfseries,
+  stringstyle=\color{javared},
+  commentstyle=\color{javagreen},
+  morecomment=[s][\color{javadocblue}]{/**}{*/},
+  showspaces=false,
+  columns=flexible,
+  showstringspaces=false,
+  morecomment=[l]{//},
+  tabsize=2,
+  morekeywords={, Package,Invariant,Class,Method,Field,Where,in,Assert,ToLc,Split,Msg,Immutable,<<<,eq,neq,not,has,Assert,AssertExists,Attribute,Uc,Lc,},
+  breaklines=true
+}
