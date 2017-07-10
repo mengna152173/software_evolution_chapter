@@ -160,7 +160,9 @@ Many systems guarantee that each transformed program is semantically equivalent 
 \todo{Start from Bill Griswold and Okdype, Ralph Johnson} 
 
 \todo{page length: 1.5 page, overview from Okdype thesis. add an example refactoring}. 
-% http://www.laputan.org/pub/papers/opdyke-thesis.pdf
+% http://www.laputan.org/pub/papers/opdyke-thesis.pdf 
+% formalization of 4 refactorings in terms of pre-condition, post-condition and transformation 
+% include one example, rename refactoring. 
 @phdthesis{Opdyke:1992:ROF:169783,
  author = {Opdyke, William F.},
  title = {Refactoring Object-oriented Frameworks},
@@ -170,7 +172,7 @@ Many systems guarantee that each transformed program is semantically equivalent 
  address = {Champaign, IL, USA},
 } 
 \todo{page length: 0.5 page, discuss the work by Griswold:1992}
-
+% an earliest form of IDE-like automated refactoring. Talk about how the formalization of refactoring transforamtions work led to automatedrefactoring. 
 @article{Griswold1993:AutomatedRefactoring,
  author = {Griswold, William G. and Notkin, David},
  title = {Automated Assistance for Program Restructuring},
@@ -191,23 +193,104 @@ Many systems guarantee that each transformed program is semantically equivalent 
  keywords = {CASE, flow analysis, meaning-preserving transformations, software engineering, software evolution, software maintenance, software restructuring, source-level restructuring},
 } 
 
-\todo{Miryung: Write the following paragraph more broadly. refactoring is a special category of automated transformation: refactoring practices (kim et al., emerson murphy hill, ralph johnson) } 
+% a survey of software refactoring - Tom Mens
+\todo{Miryugn to Na: we should discuss a survey of refactoring papers by Mens} 
+@article{Mens2004,
+ author = {Mens, Tom and Tourw{\'e}, Tom},
+ title = {A Survey of Software Refactoring},
+ journal = {IEEE Trans. Softw. Eng.},
+ issue_date = {February 2004},
+ volume = {30},
+ number = {2},
+ month = feb,
+ year = {2004},
+ issn = {0098-5589},
+ pages = {126--139},
+ numpages = {14},
+ url = {http://dx.doi.org/10.1109/TSE.2004.1265817},
+ doi = {10.1109/TSE.2004.1265817},
+ acmid = {972286},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+ keywords = {Coding tools and techniques, programming environments/construction tools, restructuring, reverse engineering, and reengineering.},
+} 
+
+\paragraph{Refactoring Practices} 
+\todo{1 page: Write the following paragraph more broadly. refactoring is a special category of automated transformation: refactoring practices (kim et al., emerson murphy hill, ralph johnson) } 
+
+@inproceedings{Kim2012:FieldStudy, 
+ author = {Kim, Miryung and Zimmermann, Thomas and Nagappan, Nachiappan},
+ title = {A Field Study of Refactoring Challenges and Benefits},
+ booktitle = {Proceedings of the ACM SIGSOFT 20th International Symposium on the Foundations of Software Engineering},
+ series = {FSE '12},
+ year = {2012},
+ isbn = {978-1-4503-1614-9},
+ location = {Cary, North Carolina},
+ pages = {50:1--50:11},
+ articleno = {50},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/2393596.2393655},
+ doi = {10.1145/2393596.2393655},
+ acmid = {2393655},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {churn, component dependencies, defects, empirical study, refactoring, software evolution},
+}
+
+@article{Kim2014:EmpiricalStudy, 
+ author = {Kim, Miryung and Zimmermann, Thomas and Nagappan, Nachiappan},
+ title = {An Empirical Study of RefactoringChallenges and Benefits at Microsoft},
+ journal = {IEEE Trans. Softw. Eng.},
+ issue_date = {July 2014},
+ volume = {40},
+ number = {7},
+ month = jul,
+ year = {2014},
+ issn = {0098-5589},
+ pages = {633--649},
+ numpages = {17},
+ url = {http://dx.doi.org/10.1109/TSE.2014.2318734},
+ doi = {10.1109/TSE.2014.2318734},
+ acmid = {2693292},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+} 
 
 
+%http://ieeexplore.ieee.org/abstract/document/6112738/
 
+@ARTICLE{Murphy-Hill2012:refactor, 
+author={E. Murphy-Hill and C. Parnin and A. P. Black}, 
+journal={IEEE Transactions on Software Engineering}, 
+title={How We Refactor, and How We Know It}, 
+year={2012}, 
+volume={38}, 
+number={1}, 
+pages={5-18}, 
+keywords={software maintenance;software tools;Eclipse developers;Mylyn developers;randomly sampled code;refactoring tools;research and development;Java;Refactoring;Software tools;Refactoring;floss refactoring;refactoring tools;root-canal refactoring.}, 
+doi={10.1109/TSE.2011.41}, 
+ISSN={0098-5589}, 
+month={Jan},}
 
+@INPROCEEDINGS{Vailian2012:misuse, 
+author={M. Vakilian and N. Chen and S. Negara and B. A. Rajkumar and B. P. Bailey and R. E. Johnson}, 
+booktitle={2012 34th International Conference on Software Engineering (ICSE)}, 
+title={Use, disuse, and misuse of automated refactorings}, 
+year={2012}, 
+pages={233-243}, 
+keywords={software maintenance;software tools;awareness;behavioral data;interaction data;invocation method;lightweight methods;naming;predictability;predictable automated refactorings;refactoring tools;trust;Context;Educational institutions;Interviews;Programming;Reliability;Software;User interfaces;Human computer interaction;Human factors;Programming environments;Software engineering;Software maintenance;User interfaces}, 
+doi={10.1109/ICSE.2012.6227190}, 
+ISSN={0270-5257}, 
+month={June},}
 
 Code refactoring is the process of restructuring source code without changing its external behaviors. It is usually applied to improve code readability or extensibility, or to reduce code complexity. 
 Fowler et al.~defined a catalog of refactorings that developers can apply to improve their codebase in different ways~\cite{1999:RID}, although developers can also define and manually apply their own refactorings. Eclipse IDE also provides tool support to automate some of the refactorings mentioned in Fowler's catalog, such as \emph{Extract Method}, \emph{Pull up Method}, and \emph{Move Field}. Researchers proposed various approaches to automate refactoring or to complete the refactoring tasks initiated by developers~\cite{Griswold:1992,Balazinska1999,Dig:2009,Ge:2012,Chen:2013,Lee:2013,Tsantalis2013:icsm,Meng:2015,Kim:2016}.
 
 
-
-
 To ensure the semantic equivalence between programs that are before and after a predefined refactoring program transformation, automated tools always check some pre-conditions before applying the transformation, and may check some post-conditions after the transformation.
 In this section, we will explain two refactoring tools with more details: Drag-and-Drop Refactoring (DNDRefactoring)~\cite{Lee:2013} and R3~\cite{Kim:2016}.
 
-\todo{Miryugn to Na: we should discuss a survey of refactoring papers by Mens} 
-\todo{Miryung to Na: DND refactoring does not seem like a seminal paper. Reduce the space allocation of this example section to a half page as a recent technique after discussing some seminal papers first.} 
+\todo{Miryung to Na: DND refactoring does not seem like a seminal paper. Reduce the space allocation of this example section to 1 paragraph after discussing some seminal papers first.} 
 \paragraph{Drag-and-Drop Refactoring.} Prior research identified at least three dominant usability problems when using automated refactoring tools~\cite{OConnor:2005,Mealy:2007,Parnin:2008,Murphy-Hill:2008,Murphy-Hill:2011,Vakilian:2012}. First, programmers have trouble identifying opportunities for using the tools. Second, programmers have difficulty invoking the right refactoring from a lengthy menu of available refactorings. Third, programmers find it complicated to properly configure refactoring dialogs. DNDRefactoring was proposed to facilitate automated refactoring by allowing programmers to apply refactorings through direct manipulation on program elements, including variables, expressions, statements, and methods, in the IDE. In this way, developers do not need menus or dialogs to specify what refactoring to apply or how to apply those refactorings. Instead, DNDRefactoring can automatically infer such information by monitoring the selection and drag-and-drop operations of developers.
 
 Figure~\ref{fig:dnd} presents two scenarios where DNDRefactoring automates refactorings based on the gestures of developers in Eclipse IDE. As shown in Figure~\ref{fig:dnd} (a), when developers select a code snippet in an existing method \codefont{bar(...)}, and then drag-and-drop the snippet to a location outside \codefont{bar(...)}, DNDRefactoring automates the \emph{Extract Method} refactoring by creating a new method \codefont{extracted(...)}, which takes in one parameter: \codefont{name}. In this process, no menu or configuration dialog is needed, because the tool can infer developers' refactoring intent, and decide all detailed information required for the refactoring, such as the method name, the method body, and the code location where to place the new method. Figure~\ref{fig:dnd} (b) shows another scenario. When developers manually select the \codefont{InnerClass}, a class declared inside another class \codefont{OuterClass}, and then drag-and-drop the class to a package \codefont{pkg}, DNDRefactoring infers that developers want to extract the type and create a new Java file. Therefore, it generates a Java file InnerClass.java to hold all implementation of \codefont{InnerClass}.
@@ -219,11 +302,38 @@ Figure~\ref{fig:dnd} presents two scenarios where DNDRefactoring automates refac
 \label{fig:dnd}
 \end{figure}
 
+@inproceedings{Lee013:DNDRefactoring, 
+ author = {Lee, Yun Young and Chen, Nicholas and Johnson, Ralph E.},
+ title = {Drag-and-drop Refactoring: Intuitive and Efficient Program Transformation},
+ booktitle = {Proceedings of the 2013 International Conference on Software Engineering},
+ series = {ICSE '13},
+ year = {2013},
+ isbn = {978-1-4673-3076-3},
+ location = {San Francisco, CA, USA},
+ pages = {23--32},
+ numpages = {10},
+ url = {http://dl.acm.org/citation.cfm?id=2486788.2486792},
+ acmid = {2486792},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+} 
+
 Although DNDRefactoring demonstrated effectiveness in simplifying the application of automated refactorings, it still suffers from several limitations. First, not every refactoring can be conducted in a drag-and-drop manner. DNDRefactoring effectively supports move- and extract-based refactorings, but does not support \emph{Rename} refactoring. If developers want to rename a variable or a class, they cannot express that intent via selecting some text and moving it around with the cursor. Second, even for move- or extract- based refactorings, DNDRefactoring mainly works when the drag source and drop target elements are shown in the same screen. It does not work when these elements are located too far away to be presented in the same visual editor simultaneously. Third, DNDRefactoring does not allow users to freely configure refactoring details. For example, when users want to specify a meaningful name of an extracted method, with DNDRefactoring, they have no way to customize the information.
 
-\todo{Miryung to Na. R3 does not seem like a seminal paper. Similarly, I will reduce the space to a half page} 
+\todo{Miryung to Na. R3 does not seem like a seminal paper. Similarly, you should reduce the space allocation to 1 paragraph} 
+@INPROCEEDINGS{Kim2016:R3, 
+author={J. Kim and D. Batory and D. Dig and M. Azanza}, 
+booktitle={2016 IEEE/ACM 38th International Conference on Software Engineering (ICSE)}, 
+title={Improving Refactoring Speed by 10X}, 
+year={2016}, 
+pages={1145-1156}, 
+keywords={Java;software maintenance;AST;Eclipse Java development tools;Gang-of-Four text;IDE;JDT;Java entity declarations;Java refactoring engine;abstract syntax trees;integrated development environment;refactoring script;refactoring sequence;refactoring speed;retrofitting design patterns;Computer bugs;Databases;Engines;Graphical user interfaces;Graphics;Java;Maintenance engineering}, 
+doi={10.1145/2884781.2884802}, 
+month={May},}
 \paragraph{R3.} Compared with DNDRefactoring which improves the usability of Eclipse Refactoring with better UIs, R3 presents an alternative refactoring engine that works 10 times faster than Eclipse Refactoring. Specifically, R3 provides refactoring scripts as short Java methods, which enables users to easily define new refactorings. 
 To speed up the application of refactorings, R3 first parses Java sources files, and builds a main-memory, non-persistent database to encode Java entity declarations (e.g., packages, class, methods), their containment relationships, and language features such inheritance and modifiers. By converting program Abstract Syntax Tree (AST) transformations to database queries and manipulations, R3 significantly reduces the runtime overhead of automating refactorings.
+
+
 
 
 \begin{figure}
@@ -242,6 +352,7 @@ In addition to converting expensive AST manipulations to cheap database updates,
 
 \subsection{Corrective Changes} 
 	- discuss literature on bug fixes  
+
 	\todo{more empirical studies by S. Kim et al and T. Nguyen et al} 
 	\todo{specialize bug fix techniques by Y.Y Zhou, S. Lu} 
 
