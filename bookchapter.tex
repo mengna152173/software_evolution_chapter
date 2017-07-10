@@ -391,6 +391,47 @@ Finding bugs is easy (898) ?
  address = {New York, NY, USA},
 } 
 
+
+A static analyzer for finding dynamic programming errors 656 (PREfix)
+@article{Bush:2000:SAF:348422.348428,
+ author = {Bush, William R. and Pincus, Jonathan D. and Sielaff, David J.},
+ title = {A Static Analyzer for Finding Dynamic Programming Errors},
+ journal = {Softw. Pract. Exper.},
+ issue_date = {June 2000},
+ volume = {30},
+ number = {7},
+ month = jun,
+ year = {2000},
+ issn = {0038-0644},
+ pages = {775--802},
+ numpages = {28},
+ url = {http://dx.doi.org/10.1002/(SICI)1097-024X(200006)30:7<775::AID-SPE309>3.0.CO;2-H},
+ doi = {10.1002/(SICI)1097-024X(200006)30:7<775::AID-SPE309>3.0.CO;2-H},
+ acmid = {348428},
+ publisher = {John Wiley \& Sons, Inc.},
+ address = {New York, NY, USA},
+ keywords = {program analysis, program error checking},
+
+% mention the characteristics of special category of bugs:e.g., concurrency bugs 
+Learning from mistakes: a comprehensive study on real world concurrency bug characteristics  694
+@inproceedings{Lu:2008:LMC:1346281.1346323,
+ author = {Lu, Shan and Park, Soyeon and Seo, Eunsoo and Zhou, Yuanyuan},
+ title = {Learning from Mistakes: A Comprehensive Study on Real World Concurrency Bug Characteristics},
+ booktitle = {Proceedings of the 13th International Conference on Architectural Support for Programming Languages and Operating Systems},
+ series = {ASPLOS XIII},
+ year = {2008},
+ isbn = {978-1-59593-958-6},
+ location = {Seattle, WA, USA},
+ pages = {329--339},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/1346281.1346323},
+ doi = {10.1145/1346281.1346323},
+ acmid = {1346323},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {bug characteristics, concurrency bug, concurrent program},
+}
+
 	\todo{discuss 0.5 page about the characteristics of recurring bug fixes: 1 paragraph for S. Kim et al and 1 sentence for CPMiner, 2 sentences for T. Nguyen et al} 
 Predicting faults from cached history
 as recent work
@@ -434,66 +475,8 @@ Automatically finding patches using genetic programming 388
 } 
 
 
-\todo{recent work: describe 1 page on some specialized automated bug fixing techniques by Y.Y Zhou and S. Lu} 
-
-Effective, Static Detection of Race Conditions and Deadlocks 737
-@inproceedings{Engler:2003:RES:945445.945468,
- author = {Engler, Dawson and Ashcraft, Ken},
- title = {RacerX: Effective, Static Detection of Race Conditions and Deadlocks},
- booktitle = {Proceedings of the Nineteenth ACM Symposium on Operating Systems Principles},
- series = {SOSP '03},
- year = {2003},
- isbn = {1-58113-757-5},
- location = {Bolton Landing, NY, USA},
- pages = {237--252},
- numpages = {16},
- url = {http://doi.acm.org/10.1145/945445.945468},
- doi = {10.1145/945445.945468},
- acmid = {945468},
- publisher = {ACM},
- address = {New York, NY, USA},
- keywords = {deadlock detection, program checking, race detection},
-} 
-
-Learning from mistakes: a comprehensive study on real world concurrency bug characteristics  694
-@inproceedings{Lu:2008:LMC:1346281.1346323,
- author = {Lu, Shan and Park, Soyeon and Seo, Eunsoo and Zhou, Yuanyuan},
- title = {Learning from Mistakes: A Comprehensive Study on Real World Concurrency Bug Characteristics},
- booktitle = {Proceedings of the 13th International Conference on Architectural Support for Programming Languages and Operating Systems},
- series = {ASPLOS XIII},
- year = {2008},
- isbn = {978-1-59593-958-6},
- location = {Seattle, WA, USA},
- pages = {329--339},
- numpages = {11},
- url = {http://doi.acm.org/10.1145/1346281.1346323},
- doi = {10.1145/1346281.1346323},
- acmid = {1346323},
- publisher = {ACM},
- address = {New York, NY, USA},
- keywords = {bug characteristics, concurrency bug, concurrent program},
-}
-
-A static analyzer for finding dynamic programming errors 656 (PREfix)
-@article{Bush:2000:SAF:348422.348428,
- author = {Bush, William R. and Pincus, Jonathan D. and Sielaff, David J.},
- title = {A Static Analyzer for Finding Dynamic Programming Errors},
- journal = {Softw. Pract. Exper.},
- issue_date = {June 2000},
- volume = {30},
- number = {7},
- month = jun,
- year = {2000},
- issn = {0038-0644},
- pages = {775--802},
- numpages = {28},
- url = {http://dx.doi.org/10.1002/(SICI)1097-024X(200006)30:7<775::AID-SPE309>3.0.CO;2-H},
- doi = {10.1002/(SICI)1097-024X(200006)30:7<775::AID-SPE309>3.0.CO;2-H},
- acmid = {348428},
- publisher = {John Wiley \& Sons, Inc.},
- address = {New York, NY, USA},
- keywords = {program analysis, program error checking},
-} 
+\todo{recent work: describe 1 page on some specialized bug fixing techniques by Y.Y Zhou and S. Lu}
+% start from bug detection papers and end with citations to bug fixing papers. give one example such as data race bug detection and fix. 
 
 Tracking down software bugs using automatic anomaly detection 681 (DIDUCE)
 @inproceedings{Hangal:2002:TDS:581339.581377,
@@ -802,6 +785,14 @@ Given these relations, {\clusterchanges} creates a partition over the set of pro
 \todo{Expand the following technique a little bit more. Give similar weights to ClusterChange.}
 Independently from {\clusterchanges}, Tao et al.~present a similar change decomposition technique that leverages more sophisticated heuristics, other than the def-use analysis only~\cite{tao2015partitioning}. Tao et al.~cluster changes based on the following heuristics.
 
+\subsubsection{Refactoring Aware Code Review} 
+
+% RefFinder  - extracting refactoring and showing them 
+%Template-based Reconstruction of Complex Refactorings, Kyle Prete, Napol Rachatasumrit, Nikita Sudan, and Miryung Kim, ICSM '10: Proceedings of the 26th IEEE International Conference on Software Maintenance, Pages 1-10,  Publisher: IEEE DOI, presentation (local pdf) 
+
+%Ref-Finder: a Refactoring Reconstruction Tool based on Logic Query Templates, Miryung Kim, Matthew Gee, Alex Loh, and Napol Rachatasumrit, FSE' 10: Proceedings of the 18th ACM SIGSOFT Symposium on the Foundations of Software Engineering, Pages 371-372, Publisher: ACM DOI, Formal Research Demonstration (local pdf)  
+
+% Refactoring Inspection Support for Manual Refactoring Edits, Everton L.G. Alves, Myoungkyu Song, Tiao Massoni, Patricia D. L. Machado, Miryung Kim, TSE: IEEE Transactions on Software Engineering, 20 pages (Accepted, March 2017) (link) 
 
 \subsection{Program Differencing} 
 program differencing (going to back history of differencing, diff, AST diff, CFG diff, PDG diff.--- mention its symmetric problem of clone detection)
