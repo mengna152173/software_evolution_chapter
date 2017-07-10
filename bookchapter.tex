@@ -296,6 +296,32 @@ since code reviews is a common context where change inspection happens ( peter r
 \todo{Miryung to Tianyi: make the introduciton a little bit broad} 
 Peer code review is a quality assurance mechanism that requires software developers to manually inspect each other's source code to find programming mistakes overlooked in the initial development phase. In 1976, Fagan formalized code review as a highly structured inspection process with multiple stages (e.g., {\em overview}, {\em preparation}, {\em inspection}, {\em rework}, {\em follow-up}) and multiple participants (e.g., {\em moderator}, {\em designer}, {\em implementor}, and {\em tester})~\cite{fagan2001design}. This inspection process is performed at the end of each software development phase (e.g., design, implementing, testing), in which software developers attend a series of group meetings and review design documentations and source code line by line. Such careful and thorough inspection process has been proven effective in terms of finding bugs, but the cumbersome and time-consuming nature of this process hinders its universal adoption in practice. 
 
+cite this paper that discusses the inefficiency of formal code inspection.
+
+@article{johnson1998reengineering,
+  title={Reengineering inspection},
+  author={Johnson, Philip M},
+  journal={Communications of the ACM},
+  volume={41},
+  number={2},
+  pages={49--52},
+  year={1998},
+  publisher={ACM}
+}
+
+The following work gives a good summary about code review concepts and practices but it is a little old. 
+
+@article{meyer2008design,
+  title={Design and code reviews in the age of the internet},
+  author={Meyer, Bertrand},
+  journal={Communications of the ACM},
+  volume={51},
+  number={9},
+  pages={66--71},
+  year={2008},
+  publisher={ACM}
+}
+
 
 \begin{figure}[ht]
  \centering
@@ -304,17 +330,152 @@ Peer code review is a quality assurance mechanism that requires software develop
  \label{fig:review-process}
 \end{figure}
 
-Nowadays many organizations adopt lightweight code review processes with less overhead than formal code inspections. In contrast to formal code review, modern code review occurs more regularly (often on a daily basis) and does not require a dedicated code review team with particular members. In particular, there is a clear trend towards utilizing code review tools to support code review tasks, instead of organizing and attending group meetings. Figure~\ref{fig:review-process} shows the overall process of a code review task. The {\em author} first submits the {\em original source code} for review. The {\em reviewers} then decide whether the submitted code meets the project's quality acceptance criteria. If not, reviewers can add review comments to the source code and send the {\em reviewed source code} back to the author. The author then revises the source code to address reviewers' comments and then send it back for further review. This process continues till all reviewers accept the revised source code. Modern code review is widely practiced both in open-source and industrial contexts and is recognized as a valuable tool to remove common vulnerabilities, performance bugs, and style issues. 
-
+Nowadays many organizations adopt lightweight code review processes with less overhead than formal code inspections. In contrast to formal code review, modern code review occurs more regularly (often on a daily basis) and does not require a dedicated code review team with particular members. In particular, there is a clear trend towards utilizing code review tools to support code review tasks, instead of organizing and attending group meetings. Figure~\ref{fig:review-process} shows the overall process of a code review task. The {\em author} first submits the {\em original source code} for review. The {\em reviewers} then decide whether the submitted code meets the project's quality acceptance criteria. If not, reviewers can add review comments to the source code and send the {\em reviewed source code} back to the author. The author then revises the source code to address reviewers' comments and then send it back for further review. This process continues till all reviewers accept the revised source code. Modern code review is widely practiced both in open-source and industrial contexts and is recognized as a valuable tool to remove common vulnerabilities, performance bugs, and style issues.
 
 \todo{Tianyi: Could you please expand upon the following a little more. I would like this to be about 2 pages in total with some references to recent work such as a short 4 page paper by MSR on code reviews in ICSE 2016.}  
 Recent studies have investigated the common practices and challenges in modern code review. Rigby et al.~conduct a case study in an open-source software project, Apache HTTP server, using archived code review records in email discussions and version control repositories~\cite{rigby2008open}. They find that, in contrast to traditional software inspection (Fagan style), modern code review in open-source projects often involves frequent review tasks of small yet complete program contributions, conducted asynchronously by a small group of self-selected experts. Rigby and Bird conduct a similar investigation on a more diverse set of software projects, including two two Google-led projects, Android and Chromium OS, three Microsoft projects, Bing, Office, and MS SQL, and internal projects at Advanced Micro Devices (AMD)~\cite{rigby2013convergent}. They find several convergent code review practices that may indicate general principles of modern code review. For example, modern code review often involves two reviewers and is performed regularly and quickly. They also observe the benefits of sharing knowledge across the development team via peer code review. In order to understand the expectations, outcomes, and challenges of modern code review, Bacchelli and Bird observe, interview, and survey software developers at Microsoft and manually classify hundreds of review comments across several Microsoft teams~\cite{bacchelli2013expectations}. They find that, although the top motivation of code review is finding defects, the actual outcomes are less about finding defects than expected: only a small portion of review comments are related to software defects, which mainly cover small, low-level logical issues. A key challenge reported by reviewers is the lack of tool support for code change comprehension during peer code review. Tao et al.~also study the challenges that developers face when they comprehend code changes and find that modern code review tools must support the capability to divide a large chunk of code changes into small, cohesive groups and to filter non-essential changes~\cite{tao2012software}. 
+
+
+This work seems to be the first to measure the factors that may influence the effectiveness of code review. 
+
+@article{porter1998understanding,
+  title={Understanding the sources of variation in software inspections},
+  author={Porter, Adam and Siy, Harvey and Mockus, Audris and Votta, Lawrence},
+  journal={ACM Transactions on Software Engineering and Methodology (TOSEM)},
+  volume={7},
+  number={1},
+  pages={41--79},
+  year={1998},
+  publisher={ACM}
+}
+
+Mockus et al.~studied the defects in Apache bug database and found the Apache project has a defect density comparable to proprietary software. They found that this was accomplished without a policy requiring substantial code reviews before a release. They comment that this result ``may indicate that fewer defects are injected into the code, or that other defect-finding activities such as inspections are conducted more frequently or more effectively''.
+
+@inproceedings{mockus2000case,
+  title={A case study of open source software development: the Apache server},
+  author={Mockus, Audris and Fielding, Roy T and Herbsleb, James},
+  booktitle={Software Engineering, 2000. Proceedings of the 2000 International Conference on},
+  pages={263--272},
+  year={2000},
+  organization={IEEE}
+}
+
+@inproceedings{mockus2002expertise,
+  title={Expertise browser: a quantitative approach to identifying expertise},
+  author={Mockus, Audris and Herbsleb, James D},
+  booktitle={Proceedings of the 24th international conference on software engineering},
+  pages={503--512},
+  year={2002},
+  organization={ACM}
+}
+
+The seminal paper in code review practices (already cited)
+
+@inproceedings{rigby2008open,
+  title={Open source software peer review practices: a case study of the apache server},
+  author={Rigby, Peter C and German, Daniel M and Storey, Margaret-Anne},
+  booktitle={Proceedings of the 30th international conference on Software engineering},
+  pages={541--550},
+  year={2008},
+  organization={ACM}
+}
+
+
+Additional code review practice papers. 
+
+@inproceedings{rigby2011understanding,
+  title={Understanding broadcast based peer review on open source software projects},
+  author={Rigby, Peter C and Storey, Margaret-Anne},
+  booktitle={Proceedings of the 33rd International Conference on Software Engineering},
+  pages={541--550},
+  year={2011},
+  organization={ACM}
+}
+
+@article{rigby2012contemporary,
+  title={Contemporary peer review in action: Lessons from open source development},
+  author={Rigby, Peter and Cleary, Brendan and Painchaud, Frederic and Storey, Margaret-Anne and German, Daniel},
+  journal={IEEE software},
+  volume={29},
+  number={6},
+  pages={56--61},
+  year={2012},
+  publisher={IEEE}
+}
+
+@article{mcintosh2016empirical,
+  title={An empirical study of the impact of modern code review practices on software quality},
+  author={McIntosh, Shane and Kamei, Yasutaka and Adams, Bram and Hassan, Ahmed E},
+  journal={Empirical Software Engineering},
+  volume={21},
+  number={5},
+  pages={2146--2189},
+  year={2016},
+  publisher={Springer}
+}
 
 \todo{The following text should be placed under code review practices}. 
 
 Prior work also observes that developers often submit program changes from multiple programming tasks (e.g., bug fixing, refactorings, feature additions) to a single code review. Reviewers sometimes use ``chunky changes'' or ``code bombs'' to describe such large, unrelated changes that are bundled in a single review. Such changes often lead to difficulty in change comprehension, since reviewers have to mentally ``untangle'' them to figure out which subset of changes addresses which issue first~\cite{kawrykow2011non, murphy2012we, herzig2013impact}. Reviewers have indicated that they can better understand small, cohesive changes rather than large, tangled ones~\cite{rigby2008open}. For example, a code reviewer commented on Gson revision 1154 saying ``I would have preferred to have two different commits: one for adding the new {\ttt getFieldNamingPolicy} method, and another for allowing overriding of primitives.''\footnote{\url{https://code.google.com/p/google-gson/source/detail?r=1154}} This motivates the need of decoupling composite changes in a large code review. 
 
-\todo{Talk about the code review practices and challenges in pull-based integration (Gousious et al., Work practices and challenges in pull-based development: the integrator's perspective, ICSE 15)}
+\todo{Talk about the practice of code reviewer recommendation}
+
+Prior studies also show that a developer’s expertise on a certain part of the source code is an important factor for the effectiveness of code review tasks. However, it is not easy to determine who has the most expertise given a particular code change to review. In other words, who should review the change?
+
+Balachandran termed the task of identifying the most appropriate reviewers for a change as {\em Reviewer Recommendation}.
+
+@inproceedings{balachandran2013reducing,
+  title={Reducing human effort and improving quality in peer code reviews using automatic static analysis and reviewer recommendation},
+  author={Balachandran, Vipin},
+  booktitle={Software Engineering (ICSE), 2013 35th International Conference on},
+  pages={931--940},
+  year={2013},
+  organization={IEEE}
+}
+
+reviewer recommendation techniques 
+
+@article{zanjani2016automatically,
+  title={Automatically recommending peer reviewers in modern code review},
+  author={Zanjani, Motahareh Bahrami and Kagdi, Huzefa and Bird, Christian},
+  journal={IEEE Transactions on Software Engineering},
+  volume={42},
+  number={6},
+  pages={530--543},
+  year={2016},
+  publisher={IEEE}
+}
+
+
+other expertise recommendation techniques 
+
+@inproceedings{anvik2006should,
+  title={Who should fix this bug?},
+  author={Anvik, John and Hiew, Lyndon and Murphy, Gail C},
+  booktitle={Proceedings of the 28th international conference on Software engineering},
+  pages={361--370},
+  year={2006},
+  organization={ACM}
+}
+
+
+
+\todo{Talk more about the outcomes of code
+
+\todo{Talk about the code review practices and challenges in pull-based integration}
+@inproceedings{gousios2015work,
+  title={Work practices and challenges in pull-based development: the integrator's perspective},
+  author={Gousios, Georgios and Zaidman, Andy and Storey, Margaret-Anne and Van Deursen, Arie},
+  booktitle={Proceedings of the 37th International Conference on Software Engineering-Volume 1},
+  pages={358--368},
+  year={2015},
+  organization={IEEE Press}
+}
+
+expertise assignment
+Audris Mockus
+
+
 
 
 \subsection{Techniques for Code Change Comprehension} 
