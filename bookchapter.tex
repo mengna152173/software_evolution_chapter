@@ -157,11 +157,51 @@ Various automatic systems have been built to transform programs in a mechanic wa
 Many systems guarantee that each transformed program is semantically equivalent to the original program, while other systems do not preserve such semantic equivalence while transforming code. In this section, we will first overview various methods, techniques, and tools to automate source-to-source program transformation (Section~\ref{sec:automated}), and then especially discuss refactoring---one kind of semantic-preserving transformation (Section~\ref{sec:refactoring}), and systematic editing---one kind of transformation that does not preserve semantics (Section~\ref{sec:sysedit}).
 
 \subsection{Perfective Changes} 
+\todo{Start from Bill Griswold and Okdype, Ralph Johnson} 
+
+\todo{page length: 1.5 page, overview from Okdype thesis. add an example refactoring}. 
+% http://www.laputan.org/pub/papers/opdyke-thesis.pdf
+@phdthesis{Opdyke:1992:ROF:169783,
+ author = {Opdyke, William F.},
+ title = {Refactoring Object-oriented Frameworks},
+ year = {1992},
+ note = {UMI Order No. GAX93-05645},
+ publisher = {University of Illinois at Urbana-Champaign},
+ address = {Champaign, IL, USA},
+} 
+\todo{page length: 0.5 page, discuss the work by Griswold:1992}
+
+@article{Griswold1993:AutomatedRefactoring,
+ author = {Griswold, William G. and Notkin, David},
+ title = {Automated Assistance for Program Restructuring},
+ journal = {ACM Trans. Softw. Eng. Methodol.},
+ issue_date = {July 1993},
+ volume = {2},
+ number = {3},
+ month = jul,
+ year = {1993},
+ issn = {1049-331X},
+ pages = {228--269},
+ numpages = {42},
+ url = {http://doi.acm.org/10.1145/152388.152389},
+ doi = {10.1145/152388.152389},
+ acmid = {152389},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {CASE, flow analysis, meaning-preserving transformations, software engineering, software evolution, software maintenance, software restructuring, source-level restructuring},
+} 
+
 \todo{Miryung: Write the following paragraph more broadly. refactoring is a special category of automated transformation: refactoring practices (kim et al., emerson murphy hill, ralph johnson) } 
+
+
+
+
 
 Code refactoring is the process of restructuring source code without changing its external behaviors. It is usually applied to improve code readability or extensibility, or to reduce code complexity. 
 Fowler et al.~defined a catalog of refactorings that developers can apply to improve their codebase in different ways~\cite{1999:RID}, although developers can also define and manually apply their own refactorings. Eclipse IDE also provides tool support to automate some of the refactorings mentioned in Fowler's catalog, such as \emph{Extract Method}, \emph{Pull up Method}, and \emph{Move Field}. Researchers proposed various approaches to automate refactoring or to complete the refactoring tasks initiated by developers~\cite{Griswold:1992,Balazinska1999,Dig:2009,Ge:2012,Chen:2013,Lee:2013,Tsantalis2013:icsm,Meng:2015,Kim:2016}.
-\todo{Start from Bill Griswold and Okdype, Ralph Johnson} 
+
+
+
 
 To ensure the semantic equivalence between programs that are before and after a predefined refactoring program transformation, automated tools always check some pre-conditions before applying the transformation, and may check some post-conditions after the transformation.
 In this section, we will explain two refactoring tools with more details: Drag-and-Drop Refactoring (DNDRefactoring)~\cite{Lee:2013} and R3~\cite{Kim:2016}.
