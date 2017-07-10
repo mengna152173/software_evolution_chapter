@@ -228,7 +228,7 @@ Mossienko~\cite{Mossienko:03} and Sneed~\cite{Sneed:2010} automated COBOL-to-Jav
 
 \section{An Organized Tour of Seminal Papers: II. Inspecting Program Changes}
 
-\subsection{Code Reviews Practices}
+\subsection{Code Review Practices}
 since code reviews is a common context where change inspection happens ( peter rigby)  code flow, collaborators in industry. generally starting from code review practices
 
 \todo{Miryung to Tianyi: make the introduciton a little bit broad} 
@@ -251,6 +251,8 @@ Recent studies have investigated the common practices and challenges in modern c
 \todo{The following text should be placed under code review practices}. 
 
 Prior work also observes that developers often submit program changes from multiple programming tasks (e.g., bug fixing, refactorings, feature additions) to a single code review. Reviewers sometimes use ``chunky changes'' or ``code bombs'' to describe such large, unrelated changes that are bundled in a single review. Such changes often lead to difficulty in change comprehension, since reviewers have to mentally ``untangle'' them to figure out which subset of changes addresses which issue first~\cite{kawrykow2011non, murphy2012we, herzig2013impact}. Reviewers have indicated that they can better understand small, cohesive changes rather than large, tangled ones~\cite{rigby2008open}. For example, a code reviewer commented on Gson revision 1154 saying ``I would have preferred to have two different commits: one for adding the new {\ttt getFieldNamingPolicy} method, and another for allowing overriding of primitives.''\footnote{\url{https://code.google.com/p/google-gson/source/detail?r=1154}} This motivates the need of decoupling composite changes in a large code review. 
+
+\todo{Talk about the code review practices and challenges in pull-based integration (Gousious et al., Work practices and challenges in pull-based development: the integrator's perspective, ICSE 15)}
 
 
 \subsection{Techniques for Code Change Comprehension} 
