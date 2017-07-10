@@ -437,11 +437,9 @@ Automatically finding patches using genetic programming 388
 \todo{recent work: describe 1 page on some specialized automated bug fixing techniques by Y.Y Zhou and S. Lu} 
 
 \subsection{Additive Changes}
-discuss literature on adding features, (systematic editing is a specialized technique for automated feature addition) source to source transformation 
 
-\todo{add some literature on cross cutting changes. P. Tarr} 
+\todo{1 page allocation: summarize why feature addition cab be difficult and may require crosscutting edits  add some literature on cross cutting changes. P. Tarr and G. Kiczales} 
 
-% summarize why  
 @inproceedings{Tarr1999:NDS,
 	author = {Tarr, Peri and Ossher, Harold and Harrison, William and Sutton,Jr., Stanley M.},
  title = {N Degrees of Separation: Multi-dimensional Separation of Concerns},
@@ -460,24 +458,50 @@ discuss literature on adding features, (systematic editing is a specialized tech
  keywords = {hypermodules, hyperslices, multi-dimensional separation of concerns, software decomposition and composition},
 } 
 
+@inproceedings{Kiczales:2001:OA:646158.680006,
+ author = {Kiczales, Gregor and Hilsdale, Erik and Hugunin, Jim and Kersten, Mik and Palm, Jeffrey and Griswold, William G.},
+ title = {An Overview of AspectJ},
+ booktitle = {Proceedings of the 15th European Conference on Object-Oriented Programming},
+ series = {ECOOP '01},
+ year = {2001},
+ isbn = {3-540-42206-4},
+ pages = {327--353},
+ numpages = {27},
+ url = {http://dl.acm.org/citation.cfm?id=646158.680006},
+ acmid = {680006},
+ publisher = {Springer-Verlag},
+ address = {London, UK, UK},
+} 
 
 \subsubsection{Source to Source Transformation} 
-
+\todo{1 page} 
 
 TXL is a source transformation language designed to translate or manipulate programming languages~\cite{Cordy2006}. Given a context-free grammar to describe program syntax, and a set of transformation rules to manipulate the syntax, TXL automatically transforms programs of the syntactic structure by applying those rules. With TXL, developers to not need to build programming language translators by coding every line of implementation. Instead, the TXL program transformation engine can automatically translate code once developers specify all needed grammars and rules. Researchers built tools to perform various code translation tasks using TXL~\cite{Chu:08,Hassan:2005,El-Ramly:2006,Tonella:04}. For instance, Hassan et al. migrated web applications between different web development frameworks like ASP and NSP~\cite{Hassan:2005}, while El-Ramly et al.~converted Java programs to C\#~\cite{El-Ramly:2006}. 
 %However, manually defining translation rules using this domain-specific language is still cumbersome and error-prone for developers.
 
-\todo{TXL is a representative technique. So add some example rule representation here.}
+\todo{TXL is a representative technique. So add some example rule representation here. }
 
 mppSMT is the most recent code translation tool, which automatically infers and applies Java-to-C\# migration rules using a phrase-based statistical machine translation approach~\cite{Nguyen:15}. It encodes both Java and C\# source files into sequences of syntactic symbols, called syntaxemes, and then relies on the syntaxemes to align code and to train a sequence-to-sequence translation model. 
 Unlike TXL which requires users to specify mapping rules, mppSMT automatically infers those rules from the corresponding implementations in both languages. 
 However, this approach depends on the highly similar program syntaxes between Java and C\#. It also requires tool builders to manually define rules to encode program syntactic components to syntaxemes. 
 
 \subsubsection{Systematic Editing}
-\label{sec:sysedit}
+\todo{1.5 pages for the entire literature on systematic editing. start from simulataneous text editing and go into SYDIT and LASE. Right now there's too much emphasis on our own technique.} 
+@inproceedings{Miller:2001:ISE:647055.715910,
+ author = {Miller, Robert C. and Myers, Brad A.},
+ title = {Interactive Simultaneous Editing of Multiple Text Regions},
+ booktitle = {Proceedings of the General Track: 2001 USENIX Annual Technical Conference},
+ year = {2001},
+ isbn = {1-880446-09-X},
+ pages = {161--174},
+ numpages = {14},
+ url = {http://dl.acm.org/citation.cfm?id=647055.715910},
+ acmid = {715910},
+ publisher = {USENIX Association},
+ address = {Berkeley, CA, USA},
+} 
 
 \todo{The following is moved from program synthesis section. I think we start broadly in systematic editing techniques and go deeper in sydit and lase} 
-\todo{perhaps reduce the space allocation on systematic editing to 2 pages. Right now, there's too much emphasis on this? } 
 
 Simultaneous editing repetitively applies source code changes that are interactively demonstrated by users~\cite{MiM2001}. When users apply their edits in one program context, the tool replicates the \emph{exact lexical} edits to other code fragments, or transforms code accordingly. For instance, Linked Editing requires users to first specify the similar code snippets which they want to modify in the same way~\cite{TBG2004}. As users interactively edit one of these snippets, Linked Editing simultaneously applies the identical edits to other snippets. 
 CloneTracker takes the output of a clone detector as input and creates a descriptor for each clone~\cite{DuR2007}. With such descriptors, CloneTracker tracks clones across program versions and identifies any modification to those clones. 
