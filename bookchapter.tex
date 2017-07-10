@@ -256,7 +256,6 @@ Many systems guarantee that each transformed program is semantically equivalent 
  address = {Piscataway, NJ, USA},
 } 
 
-
 %http://ieeexplore.ieee.org/abstract/document/6112738/
 
 @ARTICLE{Murphy-Hill2012:refactor, 
@@ -333,9 +332,6 @@ month={May},}
 \paragraph{R3.} Compared with DNDRefactoring which improves the usability of Eclipse Refactoring with better UIs, R3 presents an alternative refactoring engine that works 10 times faster than Eclipse Refactoring. Specifically, R3 provides refactoring scripts as short Java methods, which enables users to easily define new refactorings. 
 To speed up the application of refactorings, R3 first parses Java sources files, and builds a main-memory, non-persistent database to encode Java entity declarations (e.g., packages, class, methods), their containment relationships, and language features such inheritance and modifiers. By converting program Abstract Syntax Tree (AST) transformations to database queries and manipulations, R3 significantly reduces the runtime overhead of automating refactorings.
 
-
-
-
 \begin{figure}
 \centering
 \scalebox{0.5}{\includegraphics{images/r3overview.pdf}}
@@ -348,7 +344,6 @@ Figure~\ref{fig:r3overview} presents the R3 pipeline, which has a series of stag
 Stage (F) execute R3 refactorings. Unlike classical refactoring engines that modify Abstract Syntax Trees (ASTs), R3 refactorings modify only the database. For instance, if developers want to move a method from one class to another class, R3 does not directly move the method AST. Instead, it simply updates the method's database entry to have the new receiver type. With such information updates to the database, R3 can avoid repetitive AST manipulations. Finally, according to the updated entity information in R3 DB, stage (G) pretty-prints the source code, producing the resulting refactored program.
 
 In addition to converting expensive AST manipulations to cheap database updates, R3 also precomputes the value of many properties of Java entities and saves those values in its database. Since these values can be used int the precondition checks of many refactoring tasks, keeping them in the database can avoid repetitive value computations, which can further reduce runtime overhead. R3 can well handle move- and rename-based refactorings, but does not support extract-based refactorings, because it does not store or modify statement-level or expression-level information in the database.  
-
 
 \subsection{Corrective Changes} 
 	- discuss literature on bug fixes  
@@ -442,6 +437,26 @@ Automatically finding patches using genetic programming 388
 discuss literature on adding features, (systematic editing is a specialized technique for automated feature addition) source to source transformation 
 
 \todo{add some literature on cross cutting changes. P. Tarr} 
+
+% summarize why  
+@inproceedings{Tarr1999:NDS,
+	author = {Tarr, Peri and Ossher, Harold and Harrison, William and Sutton,Jr., Stanley M.},
+ title = {N Degrees of Separation: Multi-dimensional Separation of Concerns},
+ booktitle = {Proceedings of the 21st International Conference on Software Engineering},
+ series = {ICSE '99},
+ year = {1999},
+ isbn = {1-58113-074-0},
+ location = {Los Angeles, California, USA},
+ pages = {107--119},
+ numpages = {13},
+ url = {http://doi.acm.org/10.1145/302405.302457},
+ doi = {10.1145/302405.302457},
+ acmid = {302457},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {hypermodules, hyperslices, multi-dimensional separation of concerns, software decomposition and composition},
+} 
+
 
 \subsubsection{Source to Source Transformation} 
 
