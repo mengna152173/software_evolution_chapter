@@ -344,7 +344,6 @@ Figure~\ref{fig:r3overview} presents the R3 pipeline, which has a series of stag
 Stage (F) execute R3 refactorings. Unlike classical refactoring engines that modify Abstract Syntax Trees (ASTs), R3 refactorings modify only the database. For instance, if developers want to move a method from one class to another class, R3 does not directly move the method AST. Instead, it simply updates the method's database entry to have the new receiver type. With such information updates to the database, R3 can avoid repetitive AST manipulations. Finally, according to the updated entity information in R3 DB, stage (G) pretty-prints the source code, producing the resulting refactored program.
 
 In addition to converting expensive AST manipulations to cheap database updates, R3 also precomputes the value of many properties of Java entities and saves those values in its database. Since these values can be used int the precondition checks of many refactoring tasks, keeping them in the database can avoid repetitive value computations, which can further reduce runtime overhead. R3 can well handle move- and rename-based refactorings, but does not support extract-based refactorings, because it does not store or modify statement-level or expression-level information in the database.  
-
 \subsection{Corrective Changes} 
 	- discuss literature on bug fixes  
 
@@ -435,6 +434,7 @@ Automatically finding patches using genetic programming 388
 } 
 
 
+\todo{recent work: describe 1 page on some specialized automated bug fixing techniques by Y.Y Zhou and S. Lu} 
 
 \subsection{Additive Changes}
 discuss literature on adding features, (systematic editing is a specialized technique for automated feature addition) source to source transformation 
