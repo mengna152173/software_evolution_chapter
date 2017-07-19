@@ -157,17 +157,139 @@ Various automatic systems have been built to transform programs in a mechanic wa
 Many systems guarantee that each transformed program is semantically equivalent to the original program, while other systems do not preserve such semantic equivalence while transforming code. In this section, we will first overview various methods, techniques, and tools to automate source-to-source program transformation (Section~\ref{sec:automated}), and then especially discuss refactoring---one kind of semantic-preserving transformation (Section~\ref{sec:refactoring}), and systematic editing---one kind of transformation that does not preserve semantics (Section~\ref{sec:sysedit}).
 
 \subsection{Perfective Changes} 
-\todo{Miryung: Write the following paragraph more broadly. refactoring is a special category of automated transformation: refactoring practices (kim et al., emerson murphy hill, ralph johnson) } 
+\todo{Start from Bill Griswold and Okdype, Ralph Johnson} 
+
+\todo{page length: 1.5 page, overview from Okdype thesis. add an example refactoring}. 
+% http://www.laputan.org/pub/papers/opdyke-thesis.pdf 
+% formalization of 4 refactorings in terms of pre-condition, post-condition and transformation 
+% include one example, rename refactoring. 
+@phdthesis{Opdyke:1992:ROF:169783,
+ author = {Opdyke, William F.},
+ title = {Refactoring Object-oriented Frameworks},
+ year = {1992},
+ note = {UMI Order No. GAX93-05645},
+ publisher = {University of Illinois at Urbana-Champaign},
+ address = {Champaign, IL, USA},
+} 
+\todo{page length: 0.5 page, discuss the work by Griswold:1992}
+% an earliest form of IDE-like automated refactoring. Talk about how the formalization of refactoring transforamtions work led to automatedrefactoring. 
+@article{Griswold1993:AutomatedRefactoring,
+ author = {Griswold, William G. and Notkin, David},
+ title = {Automated Assistance for Program Restructuring},
+ journal = {ACM Trans. Softw. Eng. Methodol.},
+ issue_date = {July 1993},
+ volume = {2},
+ number = {3},
+ month = jul,
+ year = {1993},
+ issn = {1049-331X},
+ pages = {228--269},
+ numpages = {42},
+ url = {http://doi.acm.org/10.1145/152388.152389},
+ doi = {10.1145/152388.152389},
+ acmid = {152389},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {CASE, flow analysis, meaning-preserving transformations, software engineering, software evolution, software maintenance, software restructuring, source-level restructuring},
+} 
+
+% a survey of software refactoring - Tom Mens
+\todo{Miryugn to Na: we should discuss a survey of refactoring papers by Mens} 
+@article{Mens2004,
+ author = {Mens, Tom and Tourw{\'e}, Tom},
+ title = {A Survey of Software Refactoring},
+ journal = {IEEE Trans. Softw. Eng.},
+ issue_date = {February 2004},
+ volume = {30},
+ number = {2},
+ month = feb,
+ year = {2004},
+ issn = {0098-5589},
+ pages = {126--139},
+ numpages = {14},
+ url = {http://dx.doi.org/10.1109/TSE.2004.1265817},
+ doi = {10.1109/TSE.2004.1265817},
+ acmid = {972286},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+ keywords = {Coding tools and techniques, programming environments/construction tools, restructuring, reverse engineering, and reengineering.},
+} 
+
+\paragraph{Refactoring Practices} 
+\todo{1 page: Write the following paragraph more broadly. refactoring is a special category of automated transformation: refactoring practices (kim et al., emerson murphy hill, ralph johnson) } 
+
+@inproceedings{Kim2012:FieldStudy, 
+ author = {Kim, Miryung and Zimmermann, Thomas and Nagappan, Nachiappan},
+ title = {A Field Study of Refactoring Challenges and Benefits},
+ booktitle = {Proceedings of the ACM SIGSOFT 20th International Symposium on the Foundations of Software Engineering},
+ series = {FSE '12},
+ year = {2012},
+ isbn = {978-1-4503-1614-9},
+ location = {Cary, North Carolina},
+ pages = {50:1--50:11},
+ articleno = {50},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/2393596.2393655},
+ doi = {10.1145/2393596.2393655},
+ acmid = {2393655},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {churn, component dependencies, defects, empirical study, refactoring, software evolution},
+}
+
+@article{Kim2014:EmpiricalStudy, 
+ author = {Kim, Miryung and Zimmermann, Thomas and Nagappan, Nachiappan},
+ title = {An Empirical Study of RefactoringChallenges and Benefits at Microsoft},
+ journal = {IEEE Trans. Softw. Eng.},
+ issue_date = {July 2014},
+ volume = {40},
+ number = {7},
+ month = jul,
+ year = {2014},
+ issn = {0098-5589},
+ pages = {633--649},
+ numpages = {17},
+ url = {http://dx.doi.org/10.1109/TSE.2014.2318734},
+ doi = {10.1109/TSE.2014.2318734},
+ acmid = {2693292},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+} 
+
+%http://ieeexplore.ieee.org/abstract/document/6112738/
+
+@ARTICLE{Murphy-Hill2012:refactor, 
+author={E. Murphy-Hill and C. Parnin and A. P. Black}, 
+journal={IEEE Transactions on Software Engineering}, 
+title={How We Refactor, and How We Know It}, 
+year={2012}, 
+volume={38}, 
+number={1}, 
+pages={5-18}, 
+keywords={software maintenance;software tools;Eclipse developers;Mylyn developers;randomly sampled code;refactoring tools;research and development;Java;Refactoring;Software tools;Refactoring;floss refactoring;refactoring tools;root-canal refactoring.}, 
+doi={10.1109/TSE.2011.41}, 
+ISSN={0098-5589}, 
+month={Jan},}
+
+@INPROCEEDINGS{Vailian2012:misuse, 
+author={M. Vakilian and N. Chen and S. Negara and B. A. Rajkumar and B. P. Bailey and R. E. Johnson}, 
+booktitle={2012 34th International Conference on Software Engineering (ICSE)}, 
+title={Use, disuse, and misuse of automated refactorings}, 
+year={2012}, 
+pages={233-243}, 
+keywords={software maintenance;software tools;awareness;behavioral data;interaction data;invocation method;lightweight methods;naming;predictability;predictable automated refactorings;refactoring tools;trust;Context;Educational institutions;Interviews;Programming;Reliability;Software;User interfaces;Human computer interaction;Human factors;Programming environments;Software engineering;Software maintenance;User interfaces}, 
+doi={10.1109/ICSE.2012.6227190}, 
+ISSN={0270-5257}, 
+month={June},}
 
 Code refactoring is the process of restructuring source code without changing its external behaviors. It is usually applied to improve code readability or extensibility, or to reduce code complexity. 
 Fowler et al.~defined a catalog of refactorings that developers can apply to improve their codebase in different ways~\cite{1999:RID}, although developers can also define and manually apply their own refactorings. Eclipse IDE also provides tool support to automate some of the refactorings mentioned in Fowler's catalog, such as \emph{Extract Method}, \emph{Pull up Method}, and \emph{Move Field}. Researchers proposed various approaches to automate refactoring or to complete the refactoring tasks initiated by developers~\cite{Griswold:1992,Balazinska1999,Dig:2009,Ge:2012,Chen:2013,Lee:2013,Tsantalis2013:icsm,Meng:2015,Kim:2016}.
-\todo{Start from Bill Griswold and Okdype, Ralph Johnson} 
+
 
 To ensure the semantic equivalence between programs that are before and after a predefined refactoring program transformation, automated tools always check some pre-conditions before applying the transformation, and may check some post-conditions after the transformation.
 In this section, we will explain two refactoring tools with more details: Drag-and-Drop Refactoring (DNDRefactoring)~\cite{Lee:2013} and R3~\cite{Kim:2016}.
 
-\todo{Miryugn to Na: we should discuss a survey of refactoring papers by Mens} 
-\todo{Miryung to Na: DND refactoring does not seem like a seminal paper. Reduce the space allocation of this example section to a half page as a recent technique after discussing some seminal papers first.} 
+\todo{Miryung to Na: DND refactoring does not seem like a seminal paper. Reduce the space allocation of this example section to 1 paragraph after discussing some seminal papers first.} 
 \paragraph{Drag-and-Drop Refactoring.} Prior research identified at least three dominant usability problems when using automated refactoring tools~\cite{OConnor:2005,Mealy:2007,Parnin:2008,Murphy-Hill:2008,Murphy-Hill:2011,Vakilian:2012}. First, programmers have trouble identifying opportunities for using the tools. Second, programmers have difficulty invoking the right refactoring from a lengthy menu of available refactorings. Third, programmers find it complicated to properly configure refactoring dialogs. DNDRefactoring was proposed to facilitate automated refactoring by allowing programmers to apply refactorings through direct manipulation on program elements, including variables, expressions, statements, and methods, in the IDE. In this way, developers do not need menus or dialogs to specify what refactoring to apply or how to apply those refactorings. Instead, DNDRefactoring can automatically infer such information by monitoring the selection and drag-and-drop operations of developers.
 
 Figure~\ref{fig:dnd} presents two scenarios where DNDRefactoring automates refactorings based on the gestures of developers in Eclipse IDE. As shown in Figure~\ref{fig:dnd} (a), when developers select a code snippet in an existing method \codefont{bar(...)}, and then drag-and-drop the snippet to a location outside \codefont{bar(...)}, DNDRefactoring automates the \emph{Extract Method} refactoring by creating a new method \codefont{extracted(...)}, which takes in one parameter: \codefont{name}. In this process, no menu or configuration dialog is needed, because the tool can infer developers' refactoring intent, and decide all detailed information required for the refactoring, such as the method name, the method body, and the code location where to place the new method. Figure~\ref{fig:dnd} (b) shows another scenario. When developers manually select the \codefont{InnerClass}, a class declared inside another class \codefont{OuterClass}, and then drag-and-drop the class to a package \codefont{pkg}, DNDRefactoring infers that developers want to extract the type and create a new Java file. Therefore, it generates a Java file InnerClass.java to hold all implementation of \codefont{InnerClass}.
@@ -179,12 +301,36 @@ Figure~\ref{fig:dnd} presents two scenarios where DNDRefactoring automates refac
 \label{fig:dnd}
 \end{figure}
 
+@inproceedings{Lee013:DNDRefactoring, 
+ author = {Lee, Yun Young and Chen, Nicholas and Johnson, Ralph E.},
+ title = {Drag-and-drop Refactoring: Intuitive and Efficient Program Transformation},
+ booktitle = {Proceedings of the 2013 International Conference on Software Engineering},
+ series = {ICSE '13},
+ year = {2013},
+ isbn = {978-1-4673-3076-3},
+ location = {San Francisco, CA, USA},
+ pages = {23--32},
+ numpages = {10},
+ url = {http://dl.acm.org/citation.cfm?id=2486788.2486792},
+ acmid = {2486792},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+} 
+
 Although DNDRefactoring demonstrated effectiveness in simplifying the application of automated refactorings, it still suffers from several limitations. First, not every refactoring can be conducted in a drag-and-drop manner. DNDRefactoring effectively supports move- and extract-based refactorings, but does not support \emph{Rename} refactoring. If developers want to rename a variable or a class, they cannot express that intent via selecting some text and moving it around with the cursor. Second, even for move- or extract- based refactorings, DNDRefactoring mainly works when the drag source and drop target elements are shown in the same screen. It does not work when these elements are located too far away to be presented in the same visual editor simultaneously. Third, DNDRefactoring does not allow users to freely configure refactoring details. For example, when users want to specify a meaningful name of an extracted method, with DNDRefactoring, they have no way to customize the information.
 
-\todo{Miryung to Na. R3 does not seem like a seminal paper. Similarly, I will reduce the space to a half page} 
+\todo{Miryung to Na. R3 does not seem like a seminal paper. Similarly, you should reduce the space allocation to 1 paragraph} 
+@INPROCEEDINGS{Kim2016:R3, 
+author={J. Kim and D. Batory and D. Dig and M. Azanza}, 
+booktitle={2016 IEEE/ACM 38th International Conference on Software Engineering (ICSE)}, 
+title={Improving Refactoring Speed by 10X}, 
+year={2016}, 
+pages={1145-1156}, 
+keywords={Java;software maintenance;AST;Eclipse Java development tools;Gang-of-Four text;IDE;JDT;Java entity declarations;Java refactoring engine;abstract syntax trees;integrated development environment;refactoring script;refactoring sequence;refactoring speed;retrofitting design patterns;Computer bugs;Databases;Engines;Graphical user interfaces;Graphics;Java;Maintenance engineering}, 
+doi={10.1145/2884781.2884802}, 
+month={May},}
 \paragraph{R3.} Compared with DNDRefactoring which improves the usability of Eclipse Refactoring with better UIs, R3 presents an alternative refactoring engine that works 10 times faster than Eclipse Refactoring. Specifically, R3 provides refactoring scripts as short Java methods, which enables users to easily define new refactorings. 
 To speed up the application of refactorings, R3 first parses Java sources files, and builds a main-memory, non-persistent database to encode Java entity declarations (e.g., packages, class, methods), their containment relationships, and language features such inheritance and modifiers. By converting program Abstract Syntax Tree (AST) transformations to database queries and manipulations, R3 significantly reduces the runtime overhead of automating refactorings.
-
 
 \begin{figure}
 \centering
@@ -198,35 +344,164 @@ Figure~\ref{fig:r3overview} presents the R3 pipeline, which has a series of stag
 Stage (F) execute R3 refactorings. Unlike classical refactoring engines that modify Abstract Syntax Trees (ASTs), R3 refactorings modify only the database. For instance, if developers want to move a method from one class to another class, R3 does not directly move the method AST. Instead, it simply updates the method's database entry to have the new receiver type. With such information updates to the database, R3 can avoid repetitive AST manipulations. Finally, according to the updated entity information in R3 DB, stage (G) pretty-prints the source code, producing the resulting refactored program.
 
 In addition to converting expensive AST manipulations to cheap database updates, R3 also precomputes the value of many properties of Java entities and saves those values in its database. Since these values can be used int the precondition checks of many refactoring tasks, keeping them in the database can avoid repetitive value computations, which can further reduce runtime overhead. R3 can well handle move- and rename-based refactorings, but does not support extract-based refactorings, because it does not store or modify statement-level or expression-level information in the database.  
-
-
 \subsection{Corrective Changes} 
 	- discuss literature on bug fixes  
-	\todo{more empirical studies by S. Kim et al and T. Nguyen et al} 
-	\todo{specialize bug fix techniques by Y.Y Zhou, S. Lu} 
+
+
+\todo{1 page: discuss characteristics of bug fixes from the two seminal papers by D. Engler and FindBug} 
+
+Bugs as deviant behavior: a general approach to inferring errors in systems code  765 Dawson R. Engler
+
+@inproceedings{Engler:2001:BDB:502034.502041,
+ author = {Engler, Dawson and Chen, David Yu and Hallem, Seth and Chou, Andy and Chelf, Benjamin},
+ title = {Bugs As Deviant Behavior: A General Approach to Inferring Errors in Systems Code},
+ booktitle = {Proceedings of the Eighteenth ACM Symposium on Operating Systems Principles},
+ series = {SOSP '01},
+ year = {2001},
+ isbn = {1-58113-389-8},
+ location = {Banff, Alberta, Canada},
+ pages = {57--72},
+ numpages = {16},
+ url = {http://doi.acm.org/10.1145/502034.502041},
+ doi = {10.1145/502034.502041},
+ acmid = {502041},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+
+Practice of bug finding
+Finding bugs is easy (898) ?
+@article{Hovemeyer:2004:FBE:1052883.1052895,
+ author = {Hovemeyer, David and Pugh, William},
+ title = {Finding Bugs is Easy},
+ journal = {SIGPLAN Not.},
+ issue_date = {December 2004},
+ volume = {39},
+ number = {12},
+ month = dec,
+ year = {2004},
+ issn = {0362-1340},
+ pages = {92--106},
+ numpages = {15},
+ url = {http://doi.acm.org/10.1145/1052883.1052895},
+ doi = {10.1145/1052883.1052895},
+ acmid = {1052895},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+	\todo{discuss 0.5 page about the characteristics of recurring bug fixes: 1 paragraph for S. Kim et al and 1 sentence for CPMiner, 2 sentences for T. Nguyen et al} 
+Predicting faults from cached history
+as recent work
+
+Recurring Bug Fixes in Object-oriented Programs
+
+@inproceedings{Nguyen:2010:RBF:1806799.1806847,
+ author = {Nguyen, Tung Thanh and Nguyen, Hoan Anh and Pham, Nam H. and Al-Kofahi, Jafar and Nguyen, Tien N.},
+ title = {Recurring Bug Fixes in Object-oriented Programs},
+ booktitle = {Proceedings of the 32Nd ACM/IEEE International Conference on Software Engineering - Volume 1},
+ series = {ICSE '10},
+ year = {2010},
+ isbn = {978-1-60558-719-6},
+ location = {Cape Town, South Africa},
+ pages = {315--324},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/1806799.1806847},
+ doi = {10.1145/1806799.1806847},
+ acmid = {1806847},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+\todo{refer to automated repair, less than 2 sentences} 
+Automatically finding patches using genetic programming 388
+
+@inproceedings{Weimer:2009:AFP:1555001.1555051,
+ author = {Weimer, Westley and Nguyen, ThanhVu and Le Goues, Claire and Forrest, Stephanie},
+ title = {Automatically Finding Patches Using Genetic Programming},
+ booktitle = {Proceedings of the 31st International Conference on Software Engineering},
+ series = {ICSE '09},
+ year = {2009},
+ isbn = {978-1-4244-3453-4},
+ pages = {364--374},
+ numpages = {11},
+ url = {http://dx.doi.org/10.1109/ICSE.2009.5070536},
+ doi = {10.1109/ICSE.2009.5070536},
+ acmid = {1555051},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+} 
+
+
+\todo{recent work: describe 1 page on some specialized automated bug fixing techniques by Y.Y Zhou and S. Lu} 
 
 \subsection{Additive Changes}
-discuss literature on adding features, (systematic editing is a specialized technique for automated feature addition) source to source transformation 
 
-\todo{add some literature on cross cutting changes. P. Tarr} 
+\todo{1 page allocation: summarize why feature addition cab be difficult and may require crosscutting edits  add some literature on cross cutting changes. P. Tarr and G. Kiczales} 
+
+@inproceedings{Tarr1999:NDS,
+	author = {Tarr, Peri and Ossher, Harold and Harrison, William and Sutton,Jr., Stanley M.},
+ title = {N Degrees of Separation: Multi-dimensional Separation of Concerns},
+ booktitle = {Proceedings of the 21st International Conference on Software Engineering},
+ series = {ICSE '99},
+ year = {1999},
+ isbn = {1-58113-074-0},
+ location = {Los Angeles, California, USA},
+ pages = {107--119},
+ numpages = {13},
+ url = {http://doi.acm.org/10.1145/302405.302457},
+ doi = {10.1145/302405.302457},
+ acmid = {302457},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {hypermodules, hyperslices, multi-dimensional separation of concerns, software decomposition and composition},
+} 
+
+@inproceedings{Kiczales:2001:OA:646158.680006,
+ author = {Kiczales, Gregor and Hilsdale, Erik and Hugunin, Jim and Kersten, Mik and Palm, Jeffrey and Griswold, William G.},
+ title = {An Overview of AspectJ},
+ booktitle = {Proceedings of the 15th European Conference on Object-Oriented Programming},
+ series = {ECOOP '01},
+ year = {2001},
+ isbn = {3-540-42206-4},
+ pages = {327--353},
+ numpages = {27},
+ url = {http://dl.acm.org/citation.cfm?id=646158.680006},
+ acmid = {680006},
+ publisher = {Springer-Verlag},
+ address = {London, UK, UK},
+} 
 
 \subsubsection{Source to Source Transformation} 
-
+\todo{1 page} 
 
 TXL is a source transformation language designed to translate or manipulate programming languages~\cite{Cordy2006}. Given a context-free grammar to describe program syntax, and a set of transformation rules to manipulate the syntax, TXL automatically transforms programs of the syntactic structure by applying those rules. With TXL, developers to not need to build programming language translators by coding every line of implementation. Instead, the TXL program transformation engine can automatically translate code once developers specify all needed grammars and rules. Researchers built tools to perform various code translation tasks using TXL~\cite{Chu:08,Hassan:2005,El-Ramly:2006,Tonella:04}. For instance, Hassan et al. migrated web applications between different web development frameworks like ASP and NSP~\cite{Hassan:2005}, while El-Ramly et al.~converted Java programs to C\#~\cite{El-Ramly:2006}. 
 %However, manually defining translation rules using this domain-specific language is still cumbersome and error-prone for developers.
 
-\todo{TXL is a representative technique. So add some example rule representation here.}
+\todo{TXL is a representative technique. So add some example rule representation here. }
 
 mppSMT is the most recent code translation tool, which automatically infers and applies Java-to-C\# migration rules using a phrase-based statistical machine translation approach~\cite{Nguyen:15}. It encodes both Java and C\# source files into sequences of syntactic symbols, called syntaxemes, and then relies on the syntaxemes to align code and to train a sequence-to-sequence translation model. 
 Unlike TXL which requires users to specify mapping rules, mppSMT automatically infers those rules from the corresponding implementations in both languages. 
 However, this approach depends on the highly similar program syntaxes between Java and C\#. It also requires tool builders to manually define rules to encode program syntactic components to syntaxemes. 
 
 \subsubsection{Systematic Editing}
-\label{sec:sysedit}
+\todo{1.5 pages for the entire literature on systematic editing. start from simulataneous text editing and go into SYDIT and LASE. Right now there's too much emphasis on our own technique.} 
+@inproceedings{Miller:2001:ISE:647055.715910,
+ author = {Miller, Robert C. and Myers, Brad A.},
+ title = {Interactive Simultaneous Editing of Multiple Text Regions},
+ booktitle = {Proceedings of the General Track: 2001 USENIX Annual Technical Conference},
+ year = {2001},
+ isbn = {1-880446-09-X},
+ pages = {161--174},
+ numpages = {14},
+ url = {http://dl.acm.org/citation.cfm?id=647055.715910},
+ acmid = {715910},
+ publisher = {USENIX Association},
+ address = {Berkeley, CA, USA},
+} 
 
 \todo{The following is moved from program synthesis section. I think we start broadly in systematic editing techniques and go deeper in sydit and lase} 
-\todo{perhaps reduce the space allocation on systematic editing to 2 pages. Right now, there's too much emphasis on this? } 
 
 Simultaneous editing repetitively applies source code changes that are interactively demonstrated by users~\cite{MiM2001}. When users apply their edits in one program context, the tool replicates the \emph{exact lexical} edits to other code fragments, or transforms code accordingly. For instance, Linked Editing requires users to first specify the similar code snippets which they want to modify in the same way~\cite{TBG2004}. As users interactively edit one of these snippets, Linked Editing simultaneously applies the identical edits to other snippets. 
 CloneTracker takes the output of a clone detector as input and creates a descriptor for each clone~\cite{DuR2007}. With such descriptors, CloneTracker tracks clones across program versions and identifies any modification to those clones. 
@@ -294,7 +569,10 @@ Mossienko~\cite{Mossienko:03} and Sneed~\cite{Sneed:2010} automated COBOL-to-Jav
 since code reviews is a common context where change inspection happens ( peter rigby)  code flow, collaborators in industry. generally starting from code review practices
 
 \todo{Miryung to Tianyi: make the introduciton a little bit broad} 
-Peer code review is a quality assurance mechanism that requires software developers to manually inspect each other's source code to find programming mistakes overlooked in the initial development phase. In 1976, Fagan formalized code review as a highly structured inspection process with multiple stages (e.g., {\em overview}, {\em preparation}, {\em inspection}, {\em rework}, {\em follow-up}) and multiple participants (e.g., {\em moderator}, {\em designer}, {\em implementor}, and {\em tester})~\cite{fagan2001design}. This inspection process is performed at the end of each software development phase (e.g., design, implementing, testing), in which software developers attend a series of group meetings and review design documentations and source code line by line. Such careful and thorough inspection process has been proven effective in terms of finding bugs, but the cumbersome and time-consuming nature of this process hinders its universal adoption in practice. 
+
+Peer code review is a quality assurance mechanism that requires software developers to manually inspect each other's source code to find programming mistakes overlooked in the initial development phase. In 1976, Fagan formalized code review as a highly structured inspection process with multiple stages (e.g., {\em overview}, {\em preparation}, {\em inspection}, {\em rework}, {\em follow-up}) and multiple participants (e.g., {\em moderator}, {\em designer}, {\em implementor}, and {\em tester})~\cite{fagan2001design}.
+% if you want to mention a. porter's paper on software inspection process and j. herbsleb and a. mockus's on expertise recommendation. (1 paragraph)   
+This inspection process is performed at the end of each software development phase (e.g., design, implementing, testing), in which software developers attend a series of group meetings and review design documentations and source code line by line. Such careful and thorough inspection process has been proven effective in terms of finding bugs, but the cumbersome and time-consuming nature of this process hinders its universal adoption in practice. 
 
 cite this paper that discusses the inefficiency of formal code inspection.
 
@@ -322,7 +600,6 @@ The following work gives a good summary about code review concepts and practices
   publisher={ACM}
 }
 
-
 \begin{figure}[ht]
  \centering
  \includegraphics[width=0.8\textwidth]{images/review-process.png}
@@ -333,8 +610,34 @@ The following work gives a good summary about code review concepts and practices
 Nowadays many organizations adopt lightweight code review processes with less overhead than formal code inspections. In contrast to formal code review, modern code review occurs more regularly (often on a daily basis) and does not require a dedicated code review team with particular members. In particular, there is a clear trend towards utilizing code review tools to support code review tasks, instead of organizing and attending group meetings. Figure~\ref{fig:review-process} shows the overall process of a code review task. The {\em author} first submits the {\em original source code} for review. The {\em reviewers} then decide whether the submitted code meets the project's quality acceptance criteria. If not, reviewers can add review comments to the source code and send the {\em reviewed source code} back to the author. The author then revises the source code to address reviewers' comments and then send it back for further review. This process continues till all reviewers accept the revised source code. Modern code review is widely practiced both in open-source and industrial contexts and is recognized as a valuable tool to remove common vulnerabilities, performance bugs, and style issues.
 
 \todo{Tianyi: Could you please expand upon the following a little more. I would like this to be about 2 pages in total with some references to recent work such as a short 4 page paper by MSR on code reviews in ICSE 2016.}  
-Recent studies have investigated the common practices and challenges in modern code review. Rigby et al.~conduct a case study in an open-source software project, Apache HTTP server, using archived code review records in email discussions and version control repositories~\cite{rigby2008open}. They find that, in contrast to traditional software inspection (Fagan style), modern code review in open-source projects often involves frequent review tasks of small yet complete program contributions, conducted asynchronously by a small group of self-selected experts. Rigby and Bird conduct a similar investigation on a more diverse set of software projects, including two two Google-led projects, Android and Chromium OS, three Microsoft projects, Bing, Office, and MS SQL, and internal projects at Advanced Micro Devices (AMD)~\cite{rigby2013convergent}. They find several convergent code review practices that may indicate general principles of modern code review. For example, modern code review often involves two reviewers and is performed regularly and quickly. They also observe the benefits of sharing knowledge across the development team via peer code review. In order to understand the expectations, outcomes, and challenges of modern code review, Bacchelli and Bird observe, interview, and survey software developers at Microsoft and manually classify hundreds of review comments across several Microsoft teams~\cite{bacchelli2013expectations}. They find that, although the top motivation of code review is finding defects, the actual outcomes are less about finding defects than expected: only a small portion of review comments are related to software defects, which mainly cover small, low-level logical issues. A key challenge reported by reviewers is the lack of tool support for code change comprehension during peer code review. Tao et al.~also study the challenges that developers face when they comprehend code changes and find that modern code review tools must support the capability to divide a large chunk of code changes into small, cohesive groups and to filter non-essential changes~\cite{tao2012software}. 
 
+@ARTICLE{Bosu2017:codereview, 
+author={A. Bosu and J. C. Carver and C. Bird and J. Orbeck and C. Chockley}, 
+journal={IEEE Transactions on Software Engineering}, 
+title={Process Aspects and Social Dynamics of Contemporary Code Review: Insights from Open Source Development and Industrial Practice at Microsoft}, 
+year={2017}, 
+volume={43}, 
+number={1}, 
+pages={56-75}, 
+keywords={public domain software;software engineering;software management;software reviews;team working;Microsoft teams;OSS;code quality;contemporary code review;knowledge dissemination;open source software developers;Collaboration;Context;Human factors;Inspection;Instruments;Measurement;Organizations;Code review;OSS;commercial projects;open source;peer impressions;survey}, 
+doi={10.1109/TSE.2016.2576451}, 
+ISSN={0098-5589}, 
+month={Jan},}
+
+% one line comment to the recent paper, saying that unfortunately, it's not very effective in finding bugs 
+@INPROCEEDINGS{Czerwonka2015:codereview, 
+author={J. Czerwonka and M. Greiler and J. Tilford}, 
+booktitle={2015 IEEE/ACM 37th IEEE International Conference on Software Engineering}, 
+title={Code Reviews Do Not Find Bugs. How the Current Code Review Best Practice Slows Us Down}, 
+year={2015}, 
+volume={2}, 
+pages={27-28}, 
+keywords={program compilers;program diagnostics;software engineering;Microsoft;bug finding;code integration;code review best practice;code review tools;code review workflow;code submission;software engineering workflow;Best practices;Guidelines;Inspection;Software;Software engineering;Standards;Switches;Software engineering workflow;code integration;code reviews}, 
+doi={10.1109/ICSE.2015.131}, 
+ISSN={0270-5257}, 
+month={May},}
+
+Recent studies have investigated the common practices and challenges in modern code review. Rigby et al.~conduct a case study in an open-source software project, Apache HTTP server, using archived code review records in email discussions and version control repositories~\cite{rigby2008open}. They find that, in contrast to traditional software inspection (Fagan style), modern code review in open-source projects often involves frequent review tasks of small yet complete program contributions, conducted asynchronously by a small group of self-selected experts. Rigby and Bird conduct a similar investigation on a more diverse set of software projects, including two two Google-led projects, Android and Chromium OS, three Microsoft projects, Bing, Office, and MS SQL, and internal projects at Advanced Micro Devices (AMD)~\cite{rigby2013convergent}. They find several convergent code review practices that may indicate general principles of modern code review. For example, modern code review often involves two reviewers and is performed regularly and quickly. They also observe the benefits of sharing knowledge across the development team via peer code review. In order to understand the expectations, outcomes, and challenges of modern code review, Bacchelli and Bird observe, interview, and survey software developers at Microsoft and manually classify hundreds of review comments across several Microsoft teams~\cite{bacchelli2013expectations}. They find that, although the top motivation of code review is finding defects, the actual outcomes are less about finding defects than expected: only a small portion of review comments are related to software defects, which mainly cover small, low-level logical issues. A key challenge reported by reviewers is the lack of tool support for code change comprehension during peer code review. Tao et al.~also study the challenges that developers face when they comprehend code changes and find that modern code review tools must support the capability to divide a large chunk of code changes into small, cohesive groups and to filter non-essential changes~\cite{tao2012software}. 
 
 This work seems to be the first to measure the factors that may influence the effectiveness of code review. 
 
@@ -414,7 +717,7 @@ Additional code review practice papers.
   publisher={Springer}
 }
 
-\todo{The following text should be placed under code review practices}. 
+\todo{The following text should be placed under code review practices: describe what are the common characteristics of modern code review processes}. 
 
 Prior work also observes that developers often submit program changes from multiple programming tasks (e.g., bug fixing, refactorings, feature additions) to a single code review. Reviewers sometimes use ``chunky changes'' or ``code bombs'' to describe such large, unrelated changes that are bundled in a single review. Such changes often lead to difficulty in change comprehension, since reviewers have to mentally ``untangle'' them to figure out which subset of changes addresses which issue first~\cite{kawrykow2011non, murphy2012we, herzig2013impact}. Reviewers have indicated that they can better understand small, cohesive changes rather than large, tangled ones~\cite{rigby2008open}. For example, a code reviewer commented on Gson revision 1154 saying ``I would have preferred to have two different commits: one for adding the new {\ttt getFieldNamingPolicy} method, and another for allowing overriding of primitives.''\footnote{\url{https://code.google.com/p/google-gson/source/detail?r=1154}} This motivates the need of decoupling composite changes in a large code review. 
 
@@ -484,8 +787,8 @@ Audris Mockus
 Code review is effective only when reviewers are able to understand the changes being made. When the information required to inspect code changes is distributed across multiple files, developers find it difficult to inspect code changes~\cite{dunsmore2000object}. For example, when an API gets modified in the latest release, all call sites using this API must be updated correctly. Such edits tend to be systematic\textemdash involving similar but not identical edits to multiple locations.
 
 
-\todo{For example, take a snapshot of CodeFlow or Code Collaborator, describe the tool's feature in more detail. target length should be 1 page including a screenshot.}  
 
+\todo{For example, take a snapshot of CodeFlow or Code Collaborator, describe the tool's feature in more detail. target length should be 1 page including a screenshot.}  
 Unfortunately, popular code review tools\textemdash Facebook's {\phabricator},\footnote{\url{http://phabricator.org}} Google's {\gerrit},\footnote{\url{http://code.google.com/p/gerrit/}} and Microsoft's {\codeflow},\footnote{\url{http://visualstudioextensions.vlasovstudio.com/2012/01/06/codeflow-code-review-tool-for-visual-studio/}}\textemdash all compute program differences per file. This obliges reviewers to read changed lines file by file, even when those cross-file changes are done systematically to address the same issue. Therefore, reviewers are left to manually inspect individual edits to answer questions such as ``what other code locations are changed similar to this change?'' and ``are there any other locations that are similar to this code but are not updated?''
 
 
@@ -511,9 +814,11 @@ To address this issue, Zhang et al.~present {\critics}, a novel approach that al
 
 {\critics} is implemented as an Eclipse plugin.\footnote{{\critics}'s tool and evaluation dataset are available online \url{https://sites.google.com/a/utexas.edu/critics/}} Figure~\ref{fig:critics-UI} shows a screenshot of {\critics} plugin. {\critics} is integrated with the {\bf Compare View} in Eclipse, which displays line-level differences per file (see \ding{172} in Figure~\ref{fig:critics-UI}). A user can specify a program change she wants to inspect by selecting the corresponding code region in the Eclipse Compare View. The {\bf Diff Template View} (see \ding{173} in Figure~\ref{fig:critics-UI}) visualizes the change template of the selected change in a side-by-side view. Reviewers can parameterize concrete identifiers and exclude certain program statements by clicking on the corresponding node in the Diff Template View. {\bf Textual Diff Template View} (see \ding{177} in Figure~\ref{fig:critics-UI}) shows the change template in a unified format. The {\bf Matching Result View} summarizes the consistent changes as {\em similar changes} (see \ding{174} in Figure~\ref{fig:critics-UI}) and inconsistent ones as {\em anomalies} (see \ding{175} in Figure~\ref{fig:critics-UI}).
 
-\todo{the evaluation and quotes are too much for this chapter. so I removed them} 
 
+\todo{the evaluation and quotes are too much for this chapter. so I removed them} 
 \subsubsection{Change Decomposition} 
+ 
+\todo{ make the length less than 1 page in total} 
 
 To address this issue, Barnett et al.~present {\clusterchanges}, a lightweight static analysis technique for decomposing large changes. The insight is that program changes that address the same issue can be related via implicit dependency information such as {\em def-use} relationship. For example, if a method definition is changed in one location and its callsites are changed in two other locations, these three changes are likely to be related and should be reviewed together. Given a code review task, {\clusterchanges} first collects the set of definitions for types, fields, methods, and local variables in the corresponding project under review. Then {\clusterchanges} scans the project for all uses (i.e., references to a definition) of the defined code elements. For instance, any occurrence of a type, field, or method either inside a method or a field initialization is considered to be a use. Based on the extracted def-use information, {\clusterchanges} identifies three relationships between program changes. 
 
