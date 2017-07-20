@@ -79,6 +79,14 @@ Later, many researchers have systematically studied software evolution by measur
 \section{Concepts and Principles}
 \label{sec:concepts}
 
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.8\textwidth]{images/ChangeTypesTopics.pdf}
+ \caption{Change Types and Related Research Topics} 
+ \label{fig:changetypetopic}
+\end{figure}
+
+
 In this section, we focus on software changes---an important aspect of software evolution. To that end, we will first introduce the categorization of software changes, and then overview three principled ways of dealing with software changes. These concepts and principles will navigate our tour of seminal papers in the next section.
 
 \subsection{Classifying Software Changes}
@@ -264,8 +272,20 @@ different techniques to measure the impact of refactorings~\cite{Kataoka2002:eva
 
 \subsubsection{Maintaining Consistency of Refactored Software} 
 Approaches were investigated to ensure the consistency between refactored programs and other software artifacts like design models~\cite{Bottoni2003:coordinatedTransformation,Straeten2003:UML}. For example, Bottoni et al.~modeled a refactoring as a set of distributed graph transformations~\cite{Bottoni2003:coordinatedTransformation}. Each time a code refactoring is applied, the corresponding graph transformations are automatically applied to related design models to preserve consistency. Van Der Straeten et al.~suggested using description logic to maintain the consistency between relevant UML models as they evolve~\cite{Straeten2003:UML}.
+
+
 \subsection{Automatic Change Application}
 \label{sec:automatic}
+
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.8\textwidth]{images/AutomatedChange.pdf}
+ \caption{Automated Change Application and Related Research Topics} 
+ \label{fig:automaticapplication} 
+\end{figure}
+
+
 
 Regardless of change types, various approaches are proposed to automatically suggest program changes to developers or reduce the manual effort of updating software. In this section, we discuss automated change application techniques including source-to-source program transformation, Programming by Demonstration (PbD), simultaneous editing, and systematic editing.
 
@@ -300,6 +320,13 @@ Fowler et al.~defined a catalog of refactorings that developers can apply to imp
 
 \section{An Organized Tour of Seminal Papers: II. Inspecting Changes}
 \label{sec:inspect}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.8\textwidth]{images/ChangeInspection.pdf}
+ \caption{Change Inspection and Related Research Topics} 
+ \label{fig:changeinspection} 
+\end{figure}
 
 \todo{8 pages- Tianyi is in charge} 
 \subsection{Code Review Practices}
@@ -613,13 +640,17 @@ go deeper for a few techniques that help with change comprehension: kim et al. c
 
 
 \end{comment} 
-\section{An Organized Tour of Seminal Papers: III. Debugging and Testing Changes}
+\section{An Organized Tour of Seminal Papers: III. Change Validation} 
 \label{sec:debugtest}
 
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.8\textwidth]{images/ChangeValidation.pdf} 
+ \caption{Change Validation and Related Research Topics} 
+ \label{fig:changevalidation} 
+\end{figure}
 
-\section{An Organized Tour of Seminal Papers: III. Debugging and Testing Changes} 
 
-\todo{6 pages-- Miryung is in charge} 
 
 \subsection{Delta Debugging: Finding Code Changes Causing Errors}
 \todo{2 pages} 
