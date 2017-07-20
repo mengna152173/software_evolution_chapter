@@ -1,0 +1,9 @@
+Section 1: Miryung (*2 page)
+Section 2: Na  (2 page )
+Section 3: Na  (8 page)
+Section 4: Tianyi (Program Diff, MSR 2006) (8 page)
+Section 5: Miryung (Debugging and Testing) (6 page) 
+
+Next Meeting: Monday 10AM on 7/17 
+Task Item: move citations into a bib file. follow citation convention. draft text 
+
