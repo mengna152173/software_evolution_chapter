@@ -303,150 +303,52 @@ Fowler et al.~defined a catalog of refactorings that developers can apply to imp
 
 \todo{8 pages- Tianyi is in charge} 
 \subsection{Code Review Practices}
-To improve the correctness and quality of software systems, developers often perform {\em code reviews} to manually examine program changes made to software systems. Michael Fagan from IBM first introduced ``code inspections'', the original name, in a seminal paper in 1976~\cite{fagan2001design}. Code inspections are performed at the end of major software development phases, with the aim of finding overlooked defects before moving to the next phase. Software artifacts are circulated a few days in advance and then reviewed and discussed in a series of meetings. The meetings include the author of an artifact, other developers to assess the artifact, and a meeting chair to moderate the discussion, and a secretary to record the discussion. Over the years, code inspections have been proven a valuable method to improve the software quality. However, the cumbersome and time-consuming nature of this process hinders its universal adoption in practice~\cite{johnson1998reengineering}. 
+To improve the correctness and quality of software systems, developers often perform {\em code review} to manually examine program changes made to software systems. Michael Fagan from IBM first introduced ``code inspections'', the original name of code review, in a seminal paper in 1976~\cite{fagan2001design}. Code inspections are performed at the end of major software development phases, with the aim of finding overlooked defects before moving to the next phase. Software artifacts are circulated a few days in advance and then reviewed and discussed in a series of meetings. The meetings include the author of an artifact, other developers to assess the artifact, a meeting chair to moderate the discussion, and a secretary to record the discussion. Over the years, code inspections have been proven a valuable method to improve  software quality. However, the cumbersome and time-consuming nature of code inspections hinders its adoption in practice~\cite{johnson1998reengineering}. 
 
 \begin{figure}[ht]
  \centering
- \includegraphics[width=0.8\textwidth]{images/review-process.png}
+ \includegraphics[width=0.75\textwidth]{images/review-process.png}
  \caption{The modern code review process (based on~\cite{beller2014modern})}
  \label{fig:review-process}
 \end{figure}
 
-To avoid the inefficiencies in code inspections, most open-source and industrial projects adopt a lightweight, flexible code review process, which we refer to as {\em modern code reviews}. Figure~\ref{fig:review-process} shows the workflow of modern code reviews. The {\em author} first submits the {\em original source code} for review. The {\em reviewers} then decide whether the submitted code meets the quality acceptance criteria. If not, reviewers can annotate the source code with review comments and send back the {\em reviewed source code}. The author then revises the code to address reviewers' comments and send it back for further reviews. This process continues till all reviewers accept the revised code.
+To avoid the inefficiencies in code inspections, most open-source and industrial projects adopt a lightweight, flexible code review process, which we refer to as {\em modern code review}. Figure~\ref{fig:review-process} shows the workflow of modern code review. The {\em author} first submits the {\em original source code} for review. The {\em reviewers} then decide whether the submitted code meets the quality acceptance criteria. If not, reviewers can annotate the source code with review comments and send back the {\em reviewed source code}. The author then revises the code to address reviewers' comments and send it back for further reviews. This process continues till all reviewers accept the revised code.
 
-In contrast to formal code inspections (Fagan style), modern code reviews occur more regularly and informally on small yet complete program changes. 
+In contrast to formal code inspections (Fagan style), modern code review occurs more regularly and informally on small yet complete program changes. 
 %Mockus et al.~studied the defects in Apache bug database and found the Apache project has a defect density comparable to proprietary software~\cite{mockus2000case}. They found that this was accomplished without a policy requiring substantial code reviews before a release. They comment that this result ``may indicate that fewer defects are injected into the code, or that other defect-finding activities such as inspections are conducted more frequently or more effectively''. 
-Rigby et al.~conducted the first case study about modern code review practices in an open-source software (OSS), Apache HTTP server, using archived code review records in email discussions and version control histories~\cite{rigby2008open}. They described modern code reviews as ``early, frequent reviews of small, independent, complete contributions conducted asynchronously by a potentially large, but actually small, group of self-selected experts.'' As code reviews are practiced in software projects with different settings, cultures, and policies, Rigby and Bird further investigated code review practices in a diverse set of open-source and industrial projects~\cite{rigby2013convergent}. Despite differences among projects, they found that many characteristics of modern code reviews have independently converged to similar values, indicating general principles of modern code review practices. We summarize these convergent code review practices as following.
+Rigby et al.~conducted the first case study about modern code review practices in an open-source software (OSS), Apache HTTP server, using archived code review records in email discussions and version control histories~\cite{rigby2008open}. They described modern code review as ``{\em early, frequent reviews of small, independent, complete contributions conducted asynchronously by a potentially large, but actually small, group of self-selected experts.}'' As code review is practiced in software projects with different settings, cultures, and policies, Rigby and Bird further investigated code review practices in a diverse set of open-source and industrial projects~\cite{rigby2013convergent}. Despite differences among projects, they found that many characteristics of modern code review have independently converged to similar values, indicating general principles of modern code review. We summarize these convergent code review practices as following.
 
-{\bf Modern code reviews occur early, quickly, and frequently.} Traditional code inspections happen after finishing a major software component and often last several weeks. In contrast, modern code reviews happen more frequently and quickly around the time when program changes are committed. Rigby et al.~found that the Apache project has review intervals between a few hours to a day. Rigby and Bird also observed that most reviews are picked up within a few hours among all projects, indicating that reviewers are regularly watching and performing code reviews~\cite{rigby2013convergent}.
+{\bf Modern code review occurs early, quickly, and frequently.} Traditional code inspections happen after finishing a major software component and often last several weeks. In contrast, modern code review happens more frequently and quickly around the time when program changes are committed. Rigby et al.~found that the Apache project has review intervals between a few hours to a day. Rigby and Bird also observed that most reviews are picked up within a few hours in both open-source and industrial projects, indicating that reviewers are regularly watching and performing code review.
 
-{\bf Modern code reviews often examine small program changes.} In the OSS project studied by Rigby et al., the median change varies from 11 to 32 changed lines. The median change size in industrial projects is larger, e.g, 44 lines in Android, 78 lines in Chrome, but still much smaller than code inspections, e.g., 263 lines in Lucent. Such small changes also facilitate developers to constantly review changes and thus keep up-to-date with the activities of their peers. 
+{\bf Modern code review often examines small program changes.} In the OSS project studied by Rigby et al., the median change varies from 11 to 32 changed lines. The median change size in industrial projects is larger, e.g, 44 lines in Android, 78 lines in Chrome, but still much smaller than code inspections, e.g., 263 lines in Lucene. Such small changes also facilitate developers to constantly review changes and thus keep up-to-date with the activities of their peers. 
 
-{\bf Modern code reviews are conducted by a small group of self-selected reviewers.} 
-%Traditional code inspections require a designated inspection team where team members have particular roles.
-In OSS projects, no reviews are assigned and developers can select the changes of interest to review. Program changes and review discussions are broadcast to a large group of stakeholders but only a small number of developers periodically participate into code reviews. In industrial projects, reviews are assigned in a mixed manner---the author adds a group of reviewer candidates and individuals from the group then select changes to review based on their interest and expertise. Rigby and Bird found that two reviewers find a optimal number of defects~\cite{rigby2013convergent}.
+{\bf Modern code review is conducted by a small group of self-selected reviewers.} Traditional code inspections require a designated inspection team where each member has particular roles. However, in open-source projects, program changes and review discussions are broadcast to a large group of stakeholders (often via email). Any developer can participate and share review comments. However, Rigby et al.~found that only a small number of developers (around 15) periodically participated into code review. In industrial projects, reviews are assigned in a mixed manner---the author of the code under review adds a group of reviewer candidates and these candidates then select changes to review based on their interest and expertise. Rigby and Bird found that two reviewers found an optimal number of defects.
 
-{\bf Modern code reviews are often tool-based.} There is a clear trend towards utilizing review tools to support review tasks and communication. Back in 2008, Rigby et al.~reported that code reviews in OSS projects were often email-based due to a lack of tool support. In 2013, Rigby and Bird found that some OSS projects and all industrial projects they studied used a review tool. More recently, popular OSS hosts such as GitHub and BitBucket have integrated lightweight review tools to assign reviewers, enter comments, and record discussions. Compared with email-based reviews and traditional inspections, tool-based reviews provide the benefits of traceability and can record implicit measures. The rise in adoption of review tools provides an indicator of success.
+{\bf Modern code review is often tool-based.} There is a clear trend towards utilizing review tools to support review tasks and communication. Back in 2008, Rigby et al.~reported that code review in OSS projects was often email-based due to a lack of tool support. In 2013, Rigby and Bird found that some OSS projects and all industrial projects they studied used a review tool. More recently, popular OSS hosts such as GitHub and BitBucket have integrated lightweight review tools to assign reviewers, enter comments, and record discussions. Compared with email-based reviews and traditional inspections, tool-based reviews provide the benefits of traceability and can record implicit measures. The rise in adoption of review tools provides an indicator of success.
+
+Although the initial purpose of code review is finding defects, recent studies find that the practices and actual outcomes are less about finding defects than expected. Bacchelli and Bird studied hundreds of review comments at Microsoft and found that only a small portion of review comments were related to defects, which were mainly about small, low-level logical issues~\cite{bacchelli2013expectations}. Rather, code review provides a spectrum of benefits to software teams, such as knowledge transfer, team awareness, and improved solutions with better practices and readability. 
+
+\subsection{Techniques for Code Change Comprehension} 
+
+\subsubsection{Code Review Tools} 
+There is a proliferation of reviewing tools, e.g., Phabricator,\footnote{\url{http://phabricator.org}} Gerrit,\footnote{\url{http://code.google.com/p/gerrit/}} CodeFlow,\footnote{\url{http://visualstudioextensions.vlasovstudio.com/2012/01/06/codeflow-code-review-tool-for-visual-studio/}} Crucible,\footnote{\url{https://www.atlassian.com/software/crucible}} and Review Board.\footnote{\url{https://www.reviewboard.org/}} The number of companies and open-source projects using lightweight review tools is also growing.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.75\textwidth]{images/codeflow.pdf}
+ \caption{Example of code review using CodeFlow (based on~\cite{bosu2015characteristics})}
+ \label{fig:codeflow}
+\end{figure}
+
+Code review tools facilitates review tasks and communications. However, change comprehension still remains a key challenge in modern code review. According to the outcomes they want to achieve, developers employ many mechanisms to fulfill their understanding needs, most of which are not currently met by any code review tool.
+
+\subsubsection{Interactive Code Review using Change Patterns}
+
+\subsubsection{Change Decomposition}
+
+\subsubsection{Refactoring-aware Code Review}
 
 \begin{comment}
-\subsection{Code Reviews Practices}
-since code reviews is a common context where change inspection happens ( peter rigby)  code flow, collaborators in industry. generally starting from code review practices
-
-\todo{Miryung to Tianyi: make the introduciton a little bit broad} 
-
-Peer code review is a quality assurance mechanism that requires software developers to manually inspect each other's source code to find programming mistakes overlooked in the initial development phase. In 1976, Fagan formalized code review as a highly structured inspection process with multiple stages (e.g., {\em overview}, {\em preparation}, {\em inspection}, {\em rework}, {\em follow-up}) and multiple participants (e.g., {\em moderator}, {\em designer}, {\em implementor}, and {\em tester})~\cite{fagan2001design}.
-% if you want to mention a. porter's paper on software inspection process and j. herbsleb and a. mockus's on expertise recommendation. (1 paragraph)   
-This inspection process is performed at the end of each software development phase (e.g., design, implementing, testing), in which software developers attend a series of group meetings and review design documentations and source code line by line. Such careful and thorough inspection process has been proven effective in terms of finding bugs, but the cumbersome and time-consuming nature of this process hinders its universal adoption in practice. 
-
-cite this paper that discusses the inefficiency of formal code inspection.
-
-@article{johnson1998reengineering,
-  title={Reengineering inspection},
-  author={Johnson, Philip M},
-  journal={Communications of the ACM},
-  volume={41},
-  number={2},
-  pages={49--52},
-  year={1998},
-  publisher={ACM}
-}
-
-The following work gives a good summary about code review concepts and practices but it is a little old. 
-
-@article{meyer2008design,
-  title={Design and code reviews in the age of the internet},
-  author={Meyer, Bertrand},
-  journal={Communications of the ACM},
-  volume={51},
-  number={9},
-  pages={66--71},
-  year={2008},
-  publisher={ACM}
-}
-
-\begin{figure}[ht]
- \centering
- \includegraphics[width=0.8\textwidth]{images/review-process.png}
- \caption{The modern code review process (based on~\cite{beller2014modern})}
- \label{fig:review-process}
-\end{figure}
-
-Nowadays many organizations adopt lightweight code review processes with less overhead than formal code inspections. In contrast to formal code review, modern code review occurs more regularly (often on a daily basis) and does not require a dedicated code review team with particular members. In particular, there is a clear trend towards utilizing code review tools to support code review tasks, instead of organizing and attending group meetings. Figure~\ref{fig:review-process} shows the overall process of a code review task. The {\em author} first submits the {\em original source code} for review. The {\em reviewers} then decide whether the submitted code meets the project's quality acceptance criteria. If not, reviewers can add review comments to the source code and send the {\em reviewed source code} back to the author. The author then revises the source code to address reviewers' comments and then send it back for further review. This process continues till all reviewers accept the revised source code. Modern code review is widely practiced both in open-source and industrial contexts and is recognized as a valuable tool to remove common vulnerabilities, performance bugs, and style issues.
-
-\todo{Tianyi: Could you please expand upon the following a little more. I would like this to be about 2 pages in total with some references to recent work such as a short 4 page paper by MSR on code reviews in ICSE 2016.}  
-
-@ARTICLE{Bosu2017:codereview, 
-author={A. Bosu and J. C. Carver and C. Bird and J. Orbeck and C. Chockley}, 
-journal={IEEE Transactions on Software Engineering}, 
-title={Process Aspects and Social Dynamics of Contemporary Code Review: Insights from Open Source Development and Industrial Practice at Microsoft}, 
-year={2017}, 
-volume={43}, 
-number={1}, 
-pages={56-75}, 
-keywords={public domain software;software engineering;software management;software reviews;team working;Microsoft teams;OSS;code quality;contemporary code review;knowledge dissemination;open source software developers;Collaboration;Context;Human factors;Inspection;Instruments;Measurement;Organizations;Code review;OSS;commercial projects;open source;peer impressions;survey}, 
-doi={10.1109/TSE.2016.2576451}, 
-ISSN={0098-5589}, 
-month={Jan},}
-
-% one line comment to the recent paper, saying that unfortunately, it's not very effective in finding bugs 
-@INPROCEEDINGS{Czerwonka2015:codereview, 
-author={J. Czerwonka and M. Greiler and J. Tilford}, 
-booktitle={2015 IEEE/ACM 37th IEEE International Conference on Software Engineering}, 
-title={Code Reviews Do Not Find Bugs. How the Current Code Review Best Practice Slows Us Down}, 
-year={2015}, 
-volume={2}, 
-pages={27-28}, 
-keywords={program compilers;program diagnostics;software engineering;Microsoft;bug finding;code integration;code review best practice;code review tools;code review workflow;code submission;software engineering workflow;Best practices;Guidelines;Inspection;Software;Software engineering;Standards;Switches;Software engineering workflow;code integration;code reviews}, 
-doi={10.1109/ICSE.2015.131}, 
-ISSN={0270-5257}, 
-month={May},}
-
-Recent studies have investigated the common practices and challenges in modern code review. Rigby et al.~conduct a case study in an open-source software project, Apache HTTP server, using archived code review records in email discussions and version control repositories~\cite{rigby2008open}. They find that, in contrast to traditional software inspection (Fagan style), modern code review in open-source projects often involves frequent review tasks of small yet complete program contributions, conducted asynchronously by a small group of self-selected experts. Rigby and Bird conduct a similar investigation on a more diverse set of software projects, including two two Google-led projects, Android and Chromium OS, three Microsoft projects, Bing, Office, and MS SQL, and internal projects at Advanced Micro Devices (AMD)~\cite{rigby2013convergent}. They find several convergent code review practices that may indicate general principles of modern code review. For example, modern code review often involves two reviewers and is performed regularly and quickly. They also observe the benefits of sharing knowledge across the development team via peer code review. In order to understand the expectations, outcomes, and challenges of modern code review, Bacchelli and Bird observe, interview, and survey software developers at Microsoft and manually classify hundreds of review comments across several Microsoft teams~\cite{bacchelli2013expectations}. They find that, although the top motivation of code review is finding defects, the actual outcomes are less about finding defects than expected: only a small portion of review comments are related to software defects, which mainly cover small, low-level logical issues. A key challenge reported by reviewers is the lack of tool support for code change comprehension during peer code review. Tao et al.~also study the challenges that developers face when they comprehend code changes and find that modern code review tools must support the capability to divide a large chunk of code changes into small, cohesive groups and to filter non-essential changes~\cite{tao2012software}. 
-
-This work seems to be the first to measure the factors that may influence the effectiveness of code review. 
-
-@article{porter1998understanding,
-  title={Understanding the sources of variation in software inspections},
-  author={Porter, Adam and Siy, Harvey and Mockus, Audris and Votta, Lawrence},
-  journal={ACM Transactions on Software Engineering and Methodology (TOSEM)},
-  volume={7},
-  number={1},
-  pages={41--79},
-  year={1998},
-  publisher={ACM}
-}
-
-Mockus et al.~studied the defects in Apache bug database and found the Apache project has a defect density comparable to proprietary software. They found that this was accomplished without a policy requiring substantial code reviews before a release. They comment that this result ``may indicate that fewer defects are injected into the code, or that other defect-finding activities such as inspections are conducted more frequently or more effectively''.
-
-@inproceedings{mockus2000case,
-  title={A case study of open source software development: the Apache server},
-  author={Mockus, Audris and Fielding, Roy T and Herbsleb, James},
-  booktitle={Software Engineering, 2000. Proceedings of the 2000 International Conference on},
-  pages={263--272},
-  year={2000},
-  organization={IEEE}
-}
-
-@inproceedings{mockus2002expertise,
-  title={Expertise browser: a quantitative approach to identifying expertise},
-  author={Mockus, Audris and Herbsleb, James D},
-  booktitle={Proceedings of the 24th international conference on software engineering},
-  pages={503--512},
-  year={2002},
-  organization={ACM}
-}
-
-The seminal paper in code review practices (already cited)
-
-@inproceedings{rigby2008open,
-  title={Open source software peer review practices: a case study of the apache server},
-  author={Rigby, Peter C and German, Daniel M and Storey, Margaret-Anne},
-  booktitle={Proceedings of the 30th international conference on Software engineering},
-  pages={541--550},
-  year={2008},
-  organization={ACM}
-}
-
 
 Additional code review practice papers. 
 
@@ -526,9 +428,6 @@ other expertise recommendation techniques
 }
 
 
-
-\todo{Talk more about the outcomes of code
-
 \todo{Talk about the code review practices and challenges in pull-based integration}
 @inproceedings{gousios2015work,
   title={Work practices and challenges in pull-based development: the integrator's perspective},
@@ -542,9 +441,6 @@ other expertise recommendation techniques
 expertise assignment
 Audris Mockus
 
-
-
-
 \subsection{Techniques for Code Change Comprehension} 
 \todo{Tianyi: Make one of the commercial code review tools a little bit more concrete and go deeper with screen shots. the following text seems like it was just copied from the intro of critics paper.}
 
@@ -554,6 +450,17 @@ Code review is effective only when reviewers are able to understand the changes 
 
 \todo{For example, take a snapshot of CodeFlow or Code Collaborator, describe the tool's feature in more detail. target length should be 1 page including a screenshot.}  
 Unfortunately, popular code review tools\textemdash Facebook's {\phabricator},\footnote{\url{http://phabricator.org}} Google's {\gerrit},\footnote{\url{http://code.google.com/p/gerrit/}} and Microsoft's {\codeflow},\footnote{\url{http://visualstudioextensions.vlasovstudio.com/2012/01/06/codeflow-code-review-tool-for-visual-studio/}}\textemdash all compute program differences per file. This obliges reviewers to read changed lines file by file, even when those cross-file changes are done systematically to address the same issue. Therefore, reviewers are left to manually inspect individual edits to answer questions such as ``what other code locations are changed similar to this change?'' and ``are there any other locations that are similar to this code but are not updated?''
+
+\todo{This paper gives a very good walk-through of CodeFlow at Microsoft.}
+
+@inproceedings{bosu2015characteristics,
+  title={Characteristics of useful code reviews: An empirical study at microsoft},
+  author={Bosu, Amiangshu and Greiler, Michaela and Bird, Christian},
+  booktitle={Mining Software Repositories (MSR), 2015 IEEE/ACM 12th Working Conference on},
+  pages={146--156},
+  year={2015},
+  organization={IEEE}
+}
 
 
 \subsubsection{Interactive Code Review using Code Patterns} 
