@@ -1,0 +1,3942 @@
+===============================================================================
+References for Software Engineering
+ * Initial revision by Sunny Wong, Drexel University
+ * Based on work of David Coppit, University of Virginia
+===============================================================================
+
+=*= abbreviations =*=
+
+-- conference abbreviations --
+@string {c-aaai = "AAAI"}
+@string {c-aosd = "AOSD"}
+@string {c-apsec = "APSEC"}
+@string {c-ase = "ASE"}
+@string {c-cascon = "CASCON"}
+@string {c-cscw = "CSCW"}
+@string {c-csmr = "CSMR"}
+@string {c-ecoop = "ECOOP"}
+@string {c-esem = "ESEM"}
+@string {c-fase = "FASE"}
+@string {c-fose = "FoSE"}
+@string {c-fse = "FSE"}
+@string {c-gecco = "GECCO"}
+@string {c-group = "GROUP"}
+@string {c-icpc = "ICPC"}
+@string {c-icgse = "ICGSE"}
+@string {c-icse = "ICSE"}
+@string {c-icsm = "ICSM"}
+@string {c-lics = "LICSE"}
+@string {c-metric = "METRIC"}
+@string {c-mod = "SIGMOD"}
+@string {c-models = "MODELS"}
+@string {c-oopsla = "OOPSLA"}
+@string {c-pldi = "PLDI"}
+@string {c-profes = "PROFES"}
+@string {c-sat = "SAT"}
+@string {c-seke = "SEKE"}
+@string {c-stoc = "STOC"}
+@string {c-uml = "UML"}
+@string {c-wcre = "WCRE"}
+@string {c-wicsa = "WICSA"}
+
+-- journal abbreviations --
+@string {j-acm = "JACM"}
+@string {j-cacm = "CACM"}
+@string {j-comp = "SIAM Journal of Computing"}
+@string {j-ese = "Empirical Soft. Engr."}
+@string {j-ipl = "Information Processing Letters" }
+@string {j-mnsc = "Management Science"}
+@string {j-sen = "SEN"}
+@string {j-soft = "IEEE Software"}
+@string {j-ss = "JSS"}
+@string {j-sys = "IBM Systems Journal"}
+@string {j-tem = "TEM"}
+@string {j-theory = "Theoretical Computer Science"}
+@string {j-toc = "TOC"}
+@string {j-tosem = "TOSEM"}
+@string {j-tse = "TSE"}
+@string {j-tsmc = "IEEE Transactions on Systems, Man, and Cybernetics"}
+
+-- publisher abbreviations --
+@string {p-aw = "Addison-Wesley"}
+@string {p-comp = "IEEE Computer Society"}
+@string {p-harvard = "Harvard University Press"}
+@string {p-mit = "MIT Press"}
+@string {p-mk = "Morgan Kaufmann"}
+@string {p-ph = "Prentice Hall"}
+@string {p-siam = "Society for Industrial and Applied Mathematics"}
+@string {p-spr = "Springer"}
+@string {p-thomson = "Thomson Course Technology"}
+
+-- series abbreviations --
+@string {s-lncs = "Lecture Notes in Computer Science"}
+@string {s-taocp = "The Art of Computer Programming"}
+
+-- workshop abbreviations --
+@string {w-acom = "ACoM"}
+@string {w-iwpc = "IWPC"}
+@string {w-msr = "MSR"}
+@string {w-scam = "SCAM"}
+@string {w-stc = "STC"}
+@string {w-wosq = "WoSQ"}
+
+
+=*= Conference and Workshop Papers =*=
+
+@inproceedings {adbi:compsac09,
+	author = "M. K. Abdi and Hakim Lounis and Houari A. Sahraoui",
+	title = "Predicting Change Impact in Object-Oriented Applications with
+				Bayesian Networks",
+	booktitle = "Proc. 33rd " # c-compsac,
+	month = jul,
+	year = 2009,
+	pages = "234--239"
+}
+
+@inproceedings {abdi:seke09,
+	author = "M. K. Abdi and Hakim Lounis and Houari A. Sahraoui",
+	title = "Predicting Maintainability Expressed as Change Impact: A
+				Machine-Learning-based Approach",
+	booktitle = "Proc. 21st " # c-seke,
+	month = jul,
+	year = 2009,
+	pages = "122--128"
+}
+
+@inproceedings {agrawal:pldi90,
+	author = "Hiralal Agrawal and Joseph R. Horgan",
+	title = "Dynamic Program Slicing",
+	booktitle = c-pldi,
+	month = jun,
+	year = 1990,
+	pages = "246--256"
+}
+
+@inproceedings {agrawal:icde95,
+	author = "Rakesh Agrawal and Ramakrishnan Srikant",
+	title = "Mining Sequential Patterns",
+	booktitle = "Proc. 11th " # c-icde,
+	month = mar,
+	year = 1995,
+	pages = "3--14"
+}
+
+@inproceedings {agrawal:vldb94,
+	author = "Rakesh Agrawal and Ramakrishnan Srikant",
+	title = "Fast Algorithms for Mining Association Rules in Large Databases",
+	booktitle = "Proc. 20th " # c-vldb,
+	month = sep,
+	year = 1994,
+	pages = "487-499"
+}
+
+@inproceedings {agrawal:mod93,
+	author = "Rakesh Agrawal and Tomasz Imielinski and Arun Swami",
+	title = "Mining Association Rules between Sets of Items in Large Databases",
+	booktitle = "Proc. " # c-kdd,
+	month = may,
+	year = 1993,
+	pages = "207--216"
+}
+
+@inproceedings {alekram:isese05,
+	author = "Raihan Al-Ekram and Cory Kapser and Richard C. Holt
+				and Michael W. Godfrey",
+	title = "Cloning by Accident: An Empirical Study of Source Code Cloning 
+				Across Software Systems",
+	booktitle = "Proc. " # c-esem,
+	month = nov,
+	year = 2005,
+	pages = "376--385"
+}
+
+@inproceedings {aldrich:icse02,
+	author = "Jonathan Aldrich and Craig Chambers and David Notkin",
+	title = "{ArchJava}: Connecting Software Architecture to Implementation",
+	booktitle = "Proc. 24th " # c-icse,
+	month = may,
+	year = 2002,
+	pages = "187--197"
+}
+
+@inproceedings {alexander:ecbs00,
+	author = "Perry Alexander and Roshan Kamath and David Barton",
+	title = "System Specification in {Rosetta}",
+	booktitle = "Proc. 7th IEEE International Symposium on Engineering of 
+					Computer-Based Systems",
+	month = apr,
+	year = 2000,
+	pages = "299--307"
+}
+
+@inproceedings {anastasakis:models07,
+    author = "Kyriakos Anastasakis and Behzad Bordbar and Geri Georg
+                  and Indrakshi Ray",
+    title = "{UML2Alloy}: A Challenging Model Transformation",
+    booktitle = "Proc. 10th " # c-models,
+    month = sep,
+    year = 2007,
+    pages = "436--450"
+}
+
+@inproceedings {andreopoulos:wcre05,
+	author = "Bill Andreopoulos and Aijun An and Vassilios Tzerpos
+				and Xiaogang Wang",
+	title = "Multiple Layer Clusterings of Large Software Systems",
+    booktitle = "Proc. 12th " # c-wcre,
+	month = nov,
+    year = 2005,
+	pages = "79--88"
+}
+
+@inproceedings {anvik:msr07,
+	author = "John Anvik and Gail C. Murphy",
+	title = "Determining Implementation Expertise from Bug Reports",
+	booktitle = "Proc. 4th " # w-msr,
+	month = may,
+	year = 2007,
+	pages = "2--11"
+}
+
+@inproceedings {anvik:icse06,
+	author = "John Anvik and Lyndon Hiew and Gail C. Murphy",
+	title = "Who Should Fix This Bug?",
+	booktitle = "Proc. 28th " # c-icse,
+	month = may,
+	year = 2006,
+	pages = "361--370"
+}
+
+@inproceedings {apiwattanapong:icse05,
+	author = "Taweesup Apiwattanapong and Alessandro Orso and Mary Jean Harrold",
+	title = "Efficient and Precise Dynamic Impact Analysis Using Execute-After
+				Sequences",
+	booktitle = "Proc. 27th " # c-icse,
+	month = may,
+	year = 2005,
+	pages = "432--441"
+}
+
+@inproceedings {aranda:icse09,
+	author = "Jorge Aranda and Gina Venolia",
+	title = "The Secrete Life of Bugs: Going Past the Errors and Omissions in
+				Software Repositories",
+	booktitle = "Proc. 31st " # c-icse,
+	month = may,
+	year = 2009,
+	pages = "298--308"
+}
+
+@inproceedings {arnold:icsm93,
+	author = "Robert S. Arnold and Shawn A. Bohner",
+	title = "Impact Analysis - Towards A Framework for Comparison",
+	booktitle = "Proc. 9th " # c-icsm,
+	month = sep,
+	year = 1993,
+	pages = "292--301"
+}
+
+@inproceedings {askari:msr06,
+	author = "Mina Askari and Ric Holt",
+	title = "Information Theoretic Evaluation of Change Prediction Models for 
+				Large-Scale Software",
+	booktitle = "Proc. 3rd " # w-msr,
+	month = may,
+	year = 2006,
+	pages = "126--132"
+}
+
+@inproceedings {aversano:scam07,
+	author = "Lerina Aversano and Luigi Cerulo and Massimiliano Di Penta",
+	title = "Relating the Evolution of Design Patterns and Crosscutting
+				Concerns",
+	booktitle = "Proc. 7th " # c-scam,
+	month = sep,
+	year = 2007,
+	pages = "180--192"
+}
+
+@inproceedings {avritzer:wicsa08,
+	author = "Alberto Avritzer and Daniel Paulish and Yuanfang Cai",
+	title = "Coordination Implications of Software Architecture in a
+				Global Software Development Project",
+	booktitle = "Proc. 7th " # c-wicsa,
+	month = feb,
+	year = 2008,
+	pages = "107--116"
+}
+
+@inproceedings {ayari:cascon07,
+	author = "Kamel Ayari and Peyman Meshkinfam and Giuliano Antoniol and
+				Massimiliano Di Penta",
+	title = "Threats on Building Models from {CVS} and {B}ugzilla Repositories:
+				The Mozilla Case Study",
+	booktitle = "Proc. " # c-cascon,
+	month = oct,
+	year = 2007,
+	pages = "215--228"
+}
+
+@inproceedings {ayewah:msr09,
+	author = "Nathaniel Ayewah and William Pugh",
+	title = "Learning from Defect Removals",
+	booktitle = "Proc. 6th " # w-msr,
+	month = may,
+	year = 2009,
+	pages = "179--182"
+}
+
+@inproceedings {bacchus:aaai98,
+	author = "Fahiem Bacchus and Peter van Beek",
+	title = "On the Conversion Between Non-Binary and Binary Constraint
+				Satisfaction Problems",
+	booktitle = "Proc. 15th " # c-aaai,
+	month = jul,
+	year = 1998,
+	pages = "310--318"
+}
+
+@inproceedings {bahsoon:icsm04,
+	author = "Rami Bahsoon and Wolfgang Emmerich",
+	title = "Evaluating Architectural Stability with Real Options Theory",
+	booktitle = "Proc. 20th " # c-icsm,
+	month = sep,
+	year = 2004,
+	pages = "443--447"
+}
+
+@inproceedings {balazinska:wcre00,
+	author = "Magdalena Balazinska and Ettore Merlo and Michel Dagenais
+				and Bruno Lag{\"u}e and Kostas Kontogiannis",
+	title = "Advanced Clone-Analysis to Support Object-Oriented System 
+				Refactoring",
+	booktitle = "Proc. 7th " # c-wcre,
+	month = nov,
+	year = 2000,
+	pages = "98"
+}
+
+@inproceedings {baniassad:icse03,
+	author = "Elisa L. A. Baniassad and Gail C. Murphy
+				and Christa Schwanninger",
+	title = "Design Pattern Rationale Graphs: Linking Design to Source",
+	booktitle = "Proc. 25th " # c-icse,
+	month = may,
+	year = 2005,
+	pages = "352--362"
+}
+
+@inproceedings {bass:wicsa07,
+	author = "Matthew Bass and Wesna Mikulovic and Len Bass
+				and James D. Herbsleb and Marcelo Cataldo",
+	title = "Architectural Misalignment: An Experience Report",
+	booktitle = "Proc. 6th " # c-wicsa,
+	month = jan,
+	year = 2007,
+	pages = "17"
+}
+
+@inproceedings {batory:icse03,
+	author = "Don Batory and Jacob N. Sarvela and Axel Rauschmayer",
+	title = "Scaling Step-Wise Refinement",
+	booktitle = "Proc. 25th " # c-icse,
+	month = may,
+	year = 2003,
+	pages = "187--197"
+}
+
+@inproceedings {bawa:para02,
+	author = "Seema Bawa and G. K. Sharma",
+	title = "A Parallel Transitive Closure Computation Algorithm for
+				{VLSI} Test Generation",
+	booktitle = "Proc. 6th International Conference on Applied Parallel 
+					Computing Advanced Scientific Computing",
+	month = jun,
+	year = 2002,
+	pages = "243--252"
+}
+
+@inproceedings {baxter:icsm98,
+	author = "Ira D. Baxter and Andrew Yahin and Leonardo Moura
+				and Marcelo Sant'Anna and Lorraine Bier",
+	title = "Clone Detection Using Abstract Syntax Trees",
+	booktitle = "Proc. 14th " # c-icsm,
+	month = nov,
+	year = 1998,
+	pages = "368--377"
+}
+
+@inproceedings {benlarbi:issre00,
+	author = "Sa{\"i}da Benlarbi and Khaled El Emam and Nishith Goel and Shesh N. Rai",
+	title = "Thresholds for Object-Oriented Measures",
+	booktitle = "Proc. 11th " # c-issre,
+	month = oct,
+	year = 2000,
+	pages = "24--39"
+}
+
+@inproceedings {bettenburg:fse08,
+	author = "Nicolas Bettenburg and Sascha Just and Adrian Schr{\"o}ter
+				and Cathrin Weiss and Rahul Premraj and Thomas Zimmermann",
+	title = "What Makes a Good Bug Report?",
+	booktitle = "Proc. 16th " # c-fse,
+	month = nov,
+	year = 2008,
+	pages = "308--318"
+}
+
+@inproceedings {bettenburg:msr08,
+	author = "Nicolas Bettenburg and Rahul Premraj and Thomas Zimmermann
+				and Sunghun Kim",
+	title = "Extracting Structural Information from Bug Reports",
+	booktitle = "Proc. 5th " # w-msr,
+	month = may,
+	year = 2008,
+	pages = "27--30"
+}
+
+@inproceedings {bird:fse09,
+	author = "Christian Bird and Adrian Bachmann and Eirik Aune and John Duffy
+				and Abraham Bernstein and Vladimir Filkov
+				and Premkumar Devanbu",
+	title = "Fair and Balanced? Bias in Bug-Fix Datasets",
+	booktitle = "Proc. 17th " # c-fse,
+	month = aug,
+	year = 2009,
+	pages = "121--130"
+}
+
+@inproceedings {bird:fse08,
+	author = "Christian Bird and David Pattison and Raissa D'Souza and
+				Vladimir Filkov and Premkumar Devanbu",
+	title = "Latent Social Structure in Open Source Projects",
+	booktitle = "Proc. 16th " # c-fse,
+	month = nov,
+	year = 2008,
+	pages = "24--35"
+}
+
+@inproceedings {bohner:icsm02,
+	author = "Shawn A. Bohner",
+	title = "Software Change Impacts - An Evolving Perspective",
+	booktitle = "Proc. 18th " # c-icsm,
+	month = oct,
+	year = 2002,
+	pages = "263--272"
+}
+
+@inproceedings {bouktif:wcre06,
+	author = "Salah Bouktif and Yann-Ga{\"e}l Gu\'eh\'eneuc and
+				Giuliano Antoniol",
+	title = "Extracting Change-patterns from {CVS} Repositories",
+	booktitle = "Proc. 13th " # c-wcre,
+	month = oct,
+	year = 2006,
+	pages = "221--230"
+}
+
+@inproceedings {bouktif:gecco06a,
+	author = "Salah Bouktif and Houari A. Sahraoui and Giuliano Antoniol",
+	title = "Simulated Annealing for Improving Software Quality Prediction",
+	booktitle = "Proc. " # c-gecco,
+	month = jul,
+	year = 2006,
+	pages = "1893--1900"
+}
+
+@inproceedings {bouktif:gecco06b,
+	author = "Salah Bouktif and Giuliano Antoniol and Ettore Merlo
+				and Markus Neteler",
+	title = "A Novel Approach to Optimize Clone Refactoring Activity",
+	booktitle = "Proc. " # c-gecco,
+	month = jul,
+	year = 2006,
+	pages = "1885--1892"
+}
+
+@inproceedings {bowman:iwpc99,
+	author = "Ivan T. Bowman and Richard C. Holt",
+	title = "Reconstructing Ownership Architectures to Help Understand Software 
+				Systems",
+	booktitle = "Proc. 7th " # w-iwpc,
+	month = may,
+	year = 1999,
+	pages = "28--37"
+}
+
+@inproceedings {bowman:cascon98,
+	author = "Ivan T. Bowman and Richard C. Holt",
+	title = "Software Architecture Recovery Using {C}onway's Law",
+	booktitle = "Proc. " # c-cascon,
+	month = nov,
+	year = 1998,
+	pages = "6"
+}
+
+@inproceedings {bowring:issta04,
+	author = "James F. Bowring and James M. Rehg and Mary Jean Harrold",
+	title = "Active Learning for Automatic Classification of Software Behavior",
+	booktitle = "Proc. " # c-issta,
+	month = jul,
+	year = 2004,
+	pages = "195--205"
+}
+
+@inproceedings {briand:icsm03,
+	author = "Lionel C. Briand and Yvan Labiche and Leeshawn O'Sullivan",
+	title = "Impact Analysis and Change Management of {UML} Models",
+	booktitle = "Proc. 19th " # c-icsm,
+	month = sep,
+	year = 2003,
+	pages = "256--265"
+}
+
+@inproceedings {briand:seke02,
+	author = "Lionel C. Briand and Jie Feng and Yvan Labiche",
+	title = "Using Genetic Algorithms and Coupling Measures to Devise
+				Optimal Integration Test Orders",
+	booktitle = "Proc. 14th " # c-seke,
+	month = jul,
+	year = 2002,
+	pages = "43--50"
+}
+
+@inproceedings {briand:icsm99,
+	author = "Lionel C. Briand and J{\"u}rgen W{\"u}st and Hakim Lounis",
+	title = "Using Coupling Measurement for Impact Analysis on Object-Oriented 
+				Systems",
+	booktitle = "Proc. 15th " # c-icsm,
+	month = aug,
+	year = 1999,
+	pages = "475--482"
+}
+
+@inproceedings {briand:icse99,
+	author = "Lionel C. Briand and J{\"u}rgen W{\"u}st
+				and Stefan V. Ikonomovski and Hakim Lounis",
+	title = "Investigating Quality Factors in Object-Oriented Designs: An
+				Industrial Case Study",
+	booktitle = "Proc. 21st " # c-icse,
+	month = may,
+	year = 1999,
+	pages = "345--354"
+}
+
+@inproceedings {brin:mod97,
+	author = "Sergey Brin and Rajeev Motwani and Craig Silverstain",
+	title = "Beyond Market Baskets, Generalizing Association Rules to
+				Correlations",
+	booktitle = "Proc. " # c-mod,
+	month = may,
+	year = 1997,
+	pages = "265--276"
+}
+
+@inproceedings {burch:vlsi91,
+	author = "Jerry R. Burch and Edmund M. Clarke and David E. Long",
+	title = "Symbolic Model Checking with Partitioned Transition Relations",
+	booktitle = "Proc. International Conference on Very Large Scale 
+					Integration",
+	month = aug,
+	year = 1991,
+	pages = "49--58"
+}
+
+@inproceedings {burch:lics90,
+	author = "Jerry R. Burch and Edmund M. Clarke and Kenneth L. McMillan
+				and David L. Dill and L. J. Hwang",
+	title = "Symbolic Model Checking: $10^{20}$ States and Beyond",
+	booktitle = "Proc. 5th " # c-lics,
+	month = jun,
+	year = 1990,
+	pages = "428--439"
+}
+
+@inproceedings {cai:ase07,
+    author = "Yuanfang Cai and Sunny Huynh and Tao Xie",
+    title = "A Framework and Tools Support for Testing Modularity of
+				Software Design",
+    booktitle = "Proc. 22nd " # c-ase,
+    month = nov,
+    year = 2007,
+	pages = "441--444"
+}
+
+@inproceedings {cai:acom07,
+    author = "Yuanfang Cai and Sunny Huynh",
+    title = "An Evolution Model for Software Modularity Assessment",
+    booktitle = "Proc. 1st ICSE " # w-acom,
+    month = may,
+    year = 2007
+}
+
+@inproceedings {cai:ase06,
+    author = "Yuanfang Cai and Kevin J. Sullivan",
+    title = "Modularity Analysis of Logical Design Models",
+    booktitle = "Proc. 21st " # c-ase,
+    month = sep,
+    year = 2006,
+	pages = "91--102"
+}
+
+@inproceedings {cai:ase05,
+    author = "Yuanfang Cai and Kevin J. Sullivan",
+    title = "Simon: A Tool for Logical Design Space Modeling and
+				Analysis",
+    booktitle = "Proc. 20th " # c-ase,
+    month = nov,
+    year = 2005,
+	pages = "329--332"
+}
+
+@inproceedings{cataldo:esem08,
+	author = "Marcelo Cataldo and James D. Herbsleb and Kathleen M. Carley",
+	title = "Socio-Technical Congruence: A Framework for Assessing the
+				Impact of Technical and Work Dependencies on Software
+				Development Productivity",
+	booktitle = "Proc. 2nd " # c-esem,
+	month = oct,
+	year = 2008,
+	pages = "2--11"
+}
+
+@inproceedings {cataldo:cscw08,
+	author = "Marcelo Cataldo and James D. Herbleb",
+	title = "Communication Networks in Geographically Distributed Software 
+				Development",
+	booktitle = "Proc. " # c-cscw,
+	month = nov,
+	year = 2008,
+	pages = "579--588"
+}
+
+@inproceedings {cataldo:icgse07,
+	author = "Marcelo Cataldo and Matthew Bass and James D. Herbsleb
+				and Len Bass",
+	title = "On Coordination Mechanism in Global Software Development",
+	booktitle = "Proc. " # c-icgse,
+	month = aug,
+	year = 2007,
+	pages = "71--80"
+}
+
+@inproceedings {cataldo:cscw06,
+	author = "Marcelo Cataldo and Patrick Wagstrom and James D. Herbsleb
+				and Kathleen M. Carley",
+	title = "Identification of Coordination Requirements: Implications
+               for the Design of Collaboration and Awareness Tools",
+	booktitle = "Proc. " # c-cscw,
+	month = nov,
+	year = 2006,
+	pages = "353--362"
+}
+
+@inproceedings {ceccarelli:icse10,
+	author = "Michele Ceccarelli and Luigi Cerulo and Gerardo Canfora and
+				Massimiliano Di Penta",
+	title = "An Eclectic Approach for Change Impact Analysis",
+	booktitle = "Proc. 32nd " # c-icse,
+	month = may,
+	year = 2010,
+	pages = "163--166"
+}
+
+@inproceedings {chang:parabase90,
+	author = "Pintsang Chang and Lawrence J. Henschen",
+	title = "Parallel Transitive Closure and Transitive Reduction Algorithms",
+	booktitle = "Proc. International Conference on Databases, Parallel 
+					Architectures, and Their Applications",
+	month = mar,
+	year = 1990,
+	pages = "152--154"
+}
+
+@inproceedings {cheung:icse08,
+	author = "Leslie Cheung and Roshanak Roshandel and Nenad Medvidovic and
+				Leana Golubchik",
+	title = "Early Prediction of Software Component Reliability",
+	booktitle = "Proc. 30th " # c-icse,
+	month = may,
+	year = 2008,
+	pages = "111--120"
+}
+
+@inproceedings {ching:hipc04,
+	author = "Wai-Ki Ching and Michael K. Ng and Shuqin Zhang",
+	title = "On Computation with Higher-order Markov Chains",
+	booktitle = "Proc. International Conference on High Performance Computing 
+					and Applications",
+	month = aug,
+	year = 2004,
+	pages = "15--24"
+}
+
+@inproceedings {christl:wcre05,
+    author = "Andreas Christl and Rainer Koschke and Margaret-Anne Storey",
+    title = "Equipping the Reflexion Model with Automated Clustering",
+    booktitle = "Proc. 12th " # c-wcre,
+	month = nov,
+    year = 2005,
+	pages = "89--98"
+}
+
+@inproceedings {clarke:info01,
+	author = "Edmund M. Clarke and Orna Grumberg and Somesh Jha and Yuan Lu
+				and Helmut Veith",
+	title = "Progress on the State Explosion Problem in Model Checking",
+	booktitle = "Informatics",
+	year = 2001,
+	pages = "176--194"
+}
+
+@inproceedings {clarke:wolp81,
+	author = "Edmund M. Clark and E. Allen Emerson",
+	title = "Design and Synthesis of Synchronization Skeletons Using 
+				Branching-Time Temporal Logic",
+	booktitle = "Proc. Workshop on Logics of Programs",
+	month = may,
+	year = 1981,
+	pages = "51--71"
+}
+
+@inproceedings {cook:icse95,
+	author = "Jonathan E. Cook and Alexander L. Wolf",
+	title = "Automating Process Discovery through Event-Data Analysis",
+	booktitle = "Proc. 17th " # c-icse,
+	month = may,
+	year = 1995,
+	pages = "73--82"
+}
+
+@inproceedings {cook:stoc71,
+	author = "Stephen A. Cook",
+	title = "The Complexity of Theorem-Proving Procedures",
+	booktitle = "Proc. 3rd " # c-stoc,
+	month = may,
+	year = 1971,
+	pages = "151--158"
+}
+
+@inproceedings {coppit:icse03,
+	author = "David Coppit and Kevin J. Sullivan",
+	title = "Sound Methods and Effective Tools for Engineering Modeling and 
+				Analysis",
+	booktitle = "Proc. 25th " # c-icse,
+	month = may,
+	year = 2003,
+	pages = "198--207"
+}
+
+@inproceedings {cunningham:oopsla92,
+	author = "Ward Cunningham",
+	title = "The {WyCash} Portfolio Management System",
+	booktitle = "Addendum to Proc. 7th " # c-oopsla,
+	month = oct,
+	year = 1992,
+	pages = "29--30"
+}
+
+@inproceedings {czarnecki:gtmda03,
+	author = "Krzysztof Czarnecki and Simon Helsen",
+	title = "Classification of Model Transformation Approaches",
+	booktitle = "Proc. 2nd OOPSLA Workshop on Generative Techniques in the
+					Context of MDA",
+	month = oct,
+	year = 2003
+}
+
+@inproceedings {dambros:msr06,
+	author = "Marcho D'Ambros and Michele Lanza and Mircea Lungu",
+	title = "The Evolution Radar: Visualizing Integrated Logical Coupling 
+				Information",
+	booktitle = "Proc. 3rd " # w-msr,
+	month = may,
+	year = 2006,
+	pages = "27--33"
+}
+
+@inproceedings{desouza:group07,
+	author = "Cleidson R. B. de Souza and Stephen Quirk and Erik Trainer
+				and David Redmiles",
+	title = "Supporting Collaborative Software Development Through the 
+				Visualization of Socio-Technical Dependencies",
+	booktitle = "Proc. " # c-group,
+	year = 2007,
+	pages = "147--156"
+}
+
+@inproceedings{desouza:fse04,
+	author = "Cleidson R. B. de Souza and David Redmiles and Li-Te Cheng
+				and David Millen and John Patterson",
+	title = "How a Good Software Practice Thwarts Collaboration: The Multiple 
+				Roles of {APIs} in Software Development",
+	booktitle = "Proc. 12th " # c-fse,
+	month = nov,
+	year = 2004,
+	pages = "221--230"
+}
+
+@inproceedings {dig:ecoop06,
+	author = "Danny Dig and Ralph Johnson",
+	title = "Automated Detection of Refactorings in Evolving Components",
+	booktitle = "Proc. " # c-ecoop,
+	month = jul,
+	year = 2006,
+	pages = "404--428"
+}
+
+@inproceedings {ducasse:icsm99,
+	author = "St\'ephene Ducasse and Matthias Rieger and Serge Demeyer",
+	title = "A Language Independent Approach for Detecting Duplicated Code",
+	booktitle = "Proc. 15th " # c-icsm,
+	month = aug,
+	year = 1999,
+	pages = "109--118"
+}
+
+@inproceedings {egyed:icse07,
+	author = "Alexander Egyed",
+	title = "Fixing Inconsistencies in {UML} Design Models",
+	booktitle = "Proc. 29th " # c-icse,
+	month = may,
+	year = 2007,
+	pages = "292--301"
+}
+
+@inproceedings {egyed:icse06,
+	author = "Alexander Egyed",
+	title = "Instance Consistency Checking for {UML}",
+	booktitle = "Proc. 28th " # c-icse,
+	month = may,
+	year = 2006,
+	pages = "381--390"
+}
+
+@inproceedings {egyed:fase05,
+	author = "Alexander Egyed and Wuwei Shen and Kun Wang",
+	title = "Maintaining Life Perspectives During the Refinement of
+				{UML} Class Structures",
+	booktitle = "Proc. 8th " # c-fase,
+	month = apr,
+	year = 2005,
+	pages = "310--325"
+}
+
+@inproceedings {ehrlich:stc08,
+	author = "Kate Ehrlich and Mary Helander and Giuseppe Valetto
+				and Stephen Davies and Clay Williams",
+	title = "An Analysis of Congruence Gaps and Their Effect on Distributed 
+				Software Development",
+	booktitle = "Proc. ICSE " # w-stc,
+	month = may,
+	year = 2008
+}
+
+@inproceedings {eichberg:icse08,
+	author = "Michael Eichberg and Sven Kloppenburg and Karl Klose
+				and Mira Mezini",
+	title = "Defining and Continuous Checking of Structural Program 
+				Dependencies",
+	booktitle = "Proc. 30th " # c-icse,
+	month = may,
+	year = 2008,
+	pages = "391--400"
+}
+
+@inproceedings {elish:csmr03,
+	author = "Mahmoud O. Elish and David C. Rine",
+	title = "Investigation of Metrics for Object-Oriented Design Logical Stability",
+	booktitle = "Proc. 7th " # c-csmr,
+	month = mar,
+	year = 2003,
+	pages = "193--200"
+}
+
+@inproceedings {enslen:msr09,
+	author = "Eric Enslen and Emily Hill and Lori Pollock and K. Vijay-Shanker",
+	title = "Mining Source Code to Automatically Split Identifiers for Software 
+				Analysis",
+	booktitle = "Proc. 6th " # w-msr,
+	month = may,
+	year = 2009,
+	pages = "71--80"
+}
+
+@inproceedings {figueiredo:icse08,
+	author = "Eduardo Figueiredo and N\'elio Cacho and Claudio Sant'Anna
+				and Mario Monteiro and Uira Kulesza and Alessandro Garcia
+				and Sergio Soares and Fabiano Ferrari and Safoora Khan
+				and Fernando C. Filho and Francisco Dantas",
+	title = "Evolving Software Product Lines with Aspects: An Empirical Study
+				on Design Stability",
+	booktitle = "Proc. 30th " # c-icse,
+	month = may,
+	year = 2008,
+	pages = "261--270"
+}
+
+@inproceedings{filho:fse06,
+	author = "Fernando C. Filho and N\'elio Cacho and Eduardo Figueiredo
+				and Raquel Maranh{\~a}o and Alessandro Garcia
+				and Cec\'ilia M. F. Rubira",
+	title = "Exceptions and Aspects: The Devil Is in the Details",
+	booktitle = "Proc. 14th " # c-fse,
+	month = nov,
+	year = 2006,
+	pages = "152--162"
+}
+
+@inproceedings {fluri:scam05,
+	author = "Beat Fluri and Harald C. Gall and Martin Pinzger",
+	title = "Fine-Grained Analysis of Change Couplings",
+	booktitle = "Proc. 5th " # w-scam,
+	month = sep,
+	year = 2005,
+	pages = "66-74"
+}
+
+@inproceedings {france:fose07,
+	author = "Robert France and Bernhard Rumpe",
+	title = "Model-Driven Development of Complex Software: A Research Roadmap",
+	booktitle = "Proc. " # c-fose,
+	month = may,
+	year = 2007,
+	pages = "37--54"
+}
+
+@inproceedings {fritz:fse07,
+	author = "Thomas Fritz and Gail C. Murphy and Emily Hill",
+	title = "Does a Programmer's Activity Indicate Knowledge of Code?",
+	booktitle = "Proc. 11th " # c-fse,
+	month = sep,
+	year = 2007,
+	pages = "341--350"
+}
+
+@inproceedings {furer:aaim07,
+	author = "Martin F{\"u}rer and Shiva P. Kasiviswanathan",
+	title = "Algorithms for Counting 2-SAT Solutions and Colorings with 
+				Applications",
+	booktitle = "Proc. 3rd International Conference on Algorithmic Aspects in 
+					Information Management",
+	month = jun,
+	year = 2007,
+	pages = "47--57"
+}
+
+@inproceedings {gall:icsm98,
+	author = "Harald Gall and Karin Hajek and Mehdi Jazayeri",
+	title = "Detection of Logical Coupling Based on Product Release History",
+	booktitle = "Proc. 14th " # c-icsm,
+	month = nov,
+	year = 1998,
+	pages = "190--197"
+}
+
+@inproceedings {garcia:csmr09,
+	author = "Joshua Garcia and Daniel Popescu and George Edwards
+				and Nenad Medvidovic",
+	title = "Identifying Architectural Bad Smells",
+	booktitle = "Proc. 13th " # c-csmr,
+	month = mar,
+	year = 2009,
+	pages = "255--258"
+}
+
+@inproceedings {garcia:aosd05,
+	author = "Alessandro Garcia and Claudio Sant'Anna and Eduardo Figueiredo
+				and Uir\'a Kulesza and Carlos J. Lucena and Arndt von Staa",
+	title = "Modularizing Design Patterns with Aspects: A Quantitative Study",
+	booktitle = "Proc. 4th " # c-aosd,
+	month = mar,
+	year = 2005,
+	pages = "3--14"
+}
+
+@inproceedings {geppert:metric05,
+	author = "Birgit Geppert and Audris Mockus and Frank R{\"o}{\ss}ler",
+	title = "Refactoring  for Changeability: A Way to Go?",
+	booktitle = "Proc. 11 " # c-metric,
+	month = sep,
+	year = 2005,
+	pages = "35--48"
+}
+
+@inproceedings {grinter:group99,
+	author = "Rebecca E. Grinter and James D. Herbsleb and Dewayne E. Perry",
+	title = "The Geography of Coordination: Dealing with Distance in {R\&D} 
+				Work",
+	booktitle = "Proc. " # c-group,
+	month = nov,
+	year = 1999,
+	pages = "306--315"
+}
+
+@inproceedings {grinter:cscw98,
+	author = "Rebecca E. Grinter",
+	title = "Recomposition: Putting It All Back Together Again",
+	booktitle = "Proc. " # c-cscw,
+	month = nov,
+	year = 1998,
+	pages = "393--402"
+}
+
+@inproceedings {gurbani:icse06,
+	author = "Vijay K. Gurbani and Anita Garvert and James D. Herbsleb",
+	title = "A Case Study of a Corporate Open Source Development Model",
+	booktitle = "Proc. 28th " # c-icse,
+	month = may,
+	year = 2006,
+	pages = "472--481"
+}
+
+@inproceedings {han:mod00,
+	author = "Jiawei Han and Jian Pei and Yiwen Yin",
+	title = "Mining Frequent Patterns without Candidate Generation",
+	booktitle = "Proc. " # c-mod,
+	month = may,
+	year = 2000,
+	pages = "1--12"
+}
+
+@inproceedings {hannemann:oopsla02,
+	author = "Jan Hannemann and Gregor Kiczales",
+	title = "Design Pattern Implementation in {J}ava and {AspectJ}",
+	booktitle = "Proc. 17th " # c-oopsla,
+	month = nov,
+	year = 2002,
+	pages = "161--173"
+}
+
+@inproceedings {hassan:icsm04,
+	author = "Ahmed E. Hassan and Richard C. Holt",
+	title = "Predicting Change Propagation in Software Systems",
+	booktitle = "Proc. 20th " # c-icsm,
+	month = sep,
+	year = 2004,
+	pages = "284--293"
+}
+
+@inproceedings {herbsleb:stc08,
+	author = "James D. Herbsleb and Anita Sarma and Audris Mockus
+				and Marcelo Cataldo",
+	title = "Using Distributed Constraint Satisfaction to Build a Theory of 
+				Congruence",
+	booktitle = "Proc. ICSE " # w-stc,
+	month = may,
+	year = 2008
+}
+
+@inproceedings {herbsleb:fose07,
+	author = "James D. Herbsleb",
+	title = "Global Software Engineering: The Future of Socio-Technical 
+				Coordination",
+	booktitle = "Proc. " # c-fose,
+	month = may,
+	year = 2007,
+	pages = "188--198"
+}
+
+@inproceedings {herbsleb:icse05,
+	author = "James D. Herbsleb and Daniel J. Paulish and Matthew Bass",
+	title = "Global Software Development at {S}iemens: Experience from Nine 
+				Projects",
+	booktitle = "Proc. 27th " # c-icse,
+	month = may,
+	year = 2005,
+	pages = "524--533"
+}
+
+@inproceedings {herbsleb:icse01,
+	author = "James D. Herbsleb and Audris Mockus and Thomas A. Finholt
+				and Rebecca E. Grinter",
+	title = "An Empirical Study of Global Software Development: Distance and 
+				Speed",
+	booktitle = "Proc. 23rd " # c-icse,
+	month = may,
+	year = 2001,
+	pages = "81--90"
+}
+
+@inproceedings {herbsleb:icse99,
+	author = "James D. Herbsleb and Rebecca E. Grinter",
+	title = "Splitting the Organization and Integrating the Code: {C}onway's Law 
+				Revisited",
+	booktitle = "Proc. 21st " # c-icse,
+	month = may,
+	year = 1999,
+	pages = "85--95"
+}
+
+@inproceedings {higo:profes04,
+	author = "Yoshiki Higo and Toshihiro Kamiya and Shinji Kusumoto
+				and Katsuro Inoue",
+	title = "Refactoring Support Based on Code Clone Analysis",
+	booktitle = "Proc. 5th " # c-profes,
+	month = apr,
+	year = 2004,
+	pages = "220--233"
+}
+
+@inproceedings {hill:icse09,
+	author = "Emily Hill and Lori Pollock and K. Vijay-Shanker",
+	title = "Automatically Capturing Source Code Context of {NL}-Queries for
+				Software Maintenance and Reuse",
+	booktitle = "Proc. 31st " # c-icse,
+	month = may,
+	year = 2009,
+	pages = "232--242"
+}
+
+@inproceedings {hill:ase07,
+	author = "Emily Hill and Lori Pollock and K. Vijay-Shanker",
+	title = "Exploring the Neighborhood with {D}ora to Expedite Software 
+				Maintenance",
+	booktitle = "Proc. 22nd " # c-ase,
+	month = nov,
+	year = 2007,
+	pages = "14--23"
+}
+
+@inproceedings {hindle:icse09,
+	author = "Abram Hindle and Michael W. Godfrey and Richard C. Holt",
+	title = "Mining Recurrent Activities: Fourier Analysis of Change Events",
+	booktitle = "Proc. 31st " # c-icse,
+	month = may,
+	year = 2009,
+	pages = "295--298"
+}
+
+@inproceedings {holmes:ase09,
+	author = "Reid Holmes and Tristan Ratchford and Martin P. Robillard
+				and Robert J. Walker",
+	title = "Automatically Recommending Triage Decisions for Reuse Tasks",
+	booktitle = "Proc. 24th " # c-ase,
+	month = nov,
+	year = 2009,
+	pages = "397--408"
+}
+
+@inproceedings {horwitz:icse92,
+	author = "Susan Horwitz and Thomas W. Reps",
+	title = "The Use of Program Dependence Graphs in Software Engineering",
+	booktitle = "Proc. 14th " # c-icse,
+	month = may,
+	year = 1992,
+	pages = "392--411"
+}
+
+@inproceedings {horwitz:pldi88,
+	author = "Susan Horwitz and Thomas W. Reps and David Binkley",
+	title = "Interprocedural Slicing Using Dependence Graphs",
+	booktitle = "Proc. " # c-pldi,
+	month = jun,
+	year = 1988,
+	pages = "35--46"
+}
+
+@inproceedings {huynh:acom08,
+	author = "Sunny Huynh and Yuanfang Cai",
+	title = "Measuring Software Design Modularity",
+	booktitle = "Proc. 2nd OOPSLA " # w-acom,
+	month = oct,
+	year = 2008
+}
+
+@inproceedings {huynh:icse08,
+	author = "Sunny Huynh and Yuanfang Cai and Yuanyuan Song
+				and Kevin Sullivan",
+	title = "Automatic Modularity Conformance Checking",
+	booktitle = "Proc. 30th " # c-icse,
+	month = may,
+	year = 2008,
+	pages = "411--420"
+}
+
+@inproceedings {huynh:wosq07,
+	author = "Sunny Huynh and Yuanfang Cai",
+	title = "An Evolutionary Approach to Software Modularity Analysis",
+	booktitle = "Proc. 5th ICSE " # w-wosq,
+	month = may,
+	year = 2007
+}
+
+@inproceedings {jalote:apsec04,
+	author = "Pankaj Jalote and Gourav Jain",
+	title = "Assigning Tasks in a 24-Hour Soft Development Model",
+	booktitle = "Proc. 11th " # c-apsec,
+	month = dec,
+	year = 2004,
+	pages = "309--315"
+}
+
+@inproceedings {jeong:fse09,
+	author = "Gaeul Jeong and Sunghun Kim and Thomas Zimmermann",
+	title = "Improving Bug Triage with Bug Tossing Graphs",
+	booktitle = "Proc. 17th " # c-fse,
+	month = aug,
+	year = 2009,
+	pages = "111--120"
+}
+
+@inproceedings {jiang:scam07,
+	author = "Zhen Ming Jiang and Ahmed E. Hassan",
+	title = "A Framework for Studying Clones in Large Software Systems",
+	booktitle = "Proc. 7th " # c-scam,
+	month = sep,
+	year = 2007,
+	pages = "203--212"
+}
+
+@inproceedings {kagdi:msr07,
+	author = "Huzefa Kagdi and Jonathan I. Maletic",
+	title = "Combining Single-Version and Evolutionary Dependencies for 
+				Software-Change Prediction",
+	booktitle = "Proc. 4th " # w-msr,
+	month = may,
+	year = 2007,
+	pages = "17--20"
+}
+
+@inproceedings {kagdi:msr06,
+	author = "Huzefa Kagdi and Shehnaaz Yusuf and Jonathan I. Maletic",
+	title = "Mining Sequence of Changed-files from Version Histories",
+	booktitle = "Proc. 3rd " # w-msr,
+	month = may,
+	year = 2006,
+	pages = "47--53"
+}
+
+@inproceedings {khurshid:sat03,
+	author = "Sarfraz Khurshid and Darko Marinov and Ilya Shlyakhter
+				and Daniel Jackson",
+	title = "A Case for Efficient Solution Enumeration",
+	booktitle = "Proc. 6th " # c-sat,
+	month = may,
+	year = 2003,
+	pages = "272--286"
+}
+
+@inproceedings {kiczales:icse97,
+	author = "Gregor Kiczales and John Lamping and Cristina V. Lopes
+				and Chris Maeda and Anurag Mendhekar and Gail Murphy",
+	title = "Open Implementation Design Guidelines",
+	booktitle = "Proc. 19th " # c-icse,
+	month = may,
+	year = 1997,
+	pages = "481--490"
+}
+
+@inproceedings {kim:icse07,
+	author = "Miryung Kim and David Notkin and Dan Grossman",
+	title = "Automatic Inference of Structural Changes for Matching Across
+				Program Versions",
+	booktitle = "Proc. 29th " # c-icse,
+	month = may,
+	year = 2007,
+	pages = "333--343"
+}
+
+@inproceedings {kim:msr06,
+	author = "Miryung Kim and David Notkin",
+	title = "Program Element Matching for Multi-Version Program Analysis",
+	booktitle = "Proc. 3rd " # w-msr,
+	month = may,
+	year = 2006,
+	pages = "58--64"
+}
+
+@inproceedings {kim:fse05,
+	author = "Miryung Kim and Vibha Sazawal and David Notkin
+				and Gail C. Murphy",
+	title = "An Empirical Study of Code Clone Genealogies",
+	booktitle = "Proc. 13th " # c-fse,
+	month = sep,
+	year = 2005,
+	pages = "187--196"
+}
+
+@inproceedings {kim:msr07,
+	author = "Sunghum Kim and Michael D. Ernst",
+	title = "Prioritizing Warning Categories by Analyzing Software History",
+	booktitle = "Proc. 4th" # w-msr,
+	month = may,
+	year = 2007
+}
+
+@inproceedings {kittur:chi09,
+	author = "Aniket Kittur and Bryant Lee and Robert E. Kraut",
+	title = "Coordination in Collective Intelligence: The Role of Team Structure 
+				and Task Interdependence",
+	booktitle = "Proc. 27th International Conference on Human Factors in 
+					Computing Systems",
+	month = apr,
+	year = 2009,
+	pages = "1495--1504"
+}
+
+@inproceedings {krinke:wcre01,
+	author = " Krinke",
+	title = "Identifying Similar Code with Program Dependence Graphs",
+	booktitle = "Proc. 8th " # c-wcre,
+	month = oct,
+	year = 2001,
+	pages = "301--309"
+}
+
+@inproceedings {kothari:icpc07,
+	author = "Jay Kothari and Trip Denton and Ali Shokoufandeh
+				and Spiros Mancoridis",
+	title = "Reducing Program Comprehension Effort in Evolving Software by
+				Recognizing Feature Implementation Convergence",
+	booktitle = "Proc. 15th " # c-icpc,
+	month = jun,
+	year = 2007,
+	pages = "17--26"
+}
+
+@inproceedings {kothari:icpc06,
+	author = "Jay Kothari and Ali Shokoufandeh and Spiros Mancoridis
+				and Ahmed E. Hassan",
+	title = "Studying the Evolution of Software Systems Using Change Clusters",
+	booktitle = "Proc. 14th " # c-icpc,
+	month = jun,
+	year = 2007,
+	pages = "46--55"
+}
+
+@inproceedings {kothari:wcre06,
+	author = "Jay Kothari and Trip Denton and Spiros Mancoridis
+				and Ali Shokoufandeh",
+	title = "On Computing the Canonical Features of Software Systems",
+	booktitle = "Proc. 13th " # c-wcre,
+	month = oct,
+	year = 2006,
+	pages = "93--102"
+}
+
+@inproceedings {komondoor:iwpc03,
+	author = "Raghavan Komondoor and Susan Horwitz",
+	title = "Effective, Automatic Procedure Extraction",
+	booktitle = "Proc. 11th " # w-iwpc,
+	year = 2003,
+	month = may,
+	pages = "33"
+}
+
+@inproceedings {krikhaar:icsm99,
+	author = "Ren\'e L. Krikhaar and Andr\'e Postma and M. P. A. Sellink
+				and M. Stroucken and Chris Verhoef",
+	title = "A Two-Phase Process for Software Architecture Improvement",
+	booktitle = "Proc. 15th " # c-icsm,
+	month = aug,
+	year = 1999,
+	pages = "371--380"
+}
+
+@inproceedings {kung:icsm94,
+	author = "David C. Kung and Jerry Gao and Pei Hsia and F. Wen and
+				Yasufumi Toyoshima and Cris Chen",
+	title = "Change Impact Identification in Object Oriented Software 
+				Maintenance",
+	booktitle = "Proc. 10th " # c-icsm,
+	month = sep,
+	year = 1994,
+	pages = "202--211"
+}
+
+@inproceedings {kwan:stc09,
+	author = "Irwin Kwan and Adrian Schr{\"o}ter and Daniela Damian",
+	title = "A Weighted Congruence Measure",
+	booktitle = "Proc. ICSE " # w-stc,
+	month = may,
+	year = 2009
+}
+
+@inproceedings {lamantia:wicsa08,
+	author = "Matthew J. LaMantia and Yuanfang Cai and Alan D. MacCormack
+				and John Rusnak",
+	title = "Analyzing the Evolution of Large Software Systems using
+				Design Structure Matrices and Design Rule Theory",
+	booktitle = "Proc. 7th " # c-wicsa,
+	month = feb,
+	year = 2008,
+	pages = "83--92"
+}
+
+@inproceedings {law:icse03,
+	author = "James Law and Gregg Rothermel",
+	title = "Whole Program Path-Based Dynamic Impact Analysis",
+	booktitle = "Proc. 25th " # c-icse,
+	month = may,
+	year = 2003,
+	pages = "308--318"
+}
+
+@inproceedings {li:fse04,
+	author = "Paul Luo Li and Mary Shaw and James D. Herbsleb
+				and Bonnie K. Ray and Peter Santhanam",
+	title = "Empirical Evaluation of Defect Projection Models for 
+				Widely-Deployed Production Software Systems",
+	booktitle = "Proc. 12th " # c-fse,
+	month = nov,
+	year = 2004,
+	pages = "263--272"
+}
+
+@inproceedings {liebeherr:ngc99,
+	author = "J{\"o}rg Liebeherr and Tyler K. Beam",
+	title = "HyperCast: A Protocol for Maintaining Multicast Group Members
+				in a Logical Hypercube Topology",
+	booktitle = "Networked Group Communication",
+	year = 1999,
+	pages = "72--89"
+}
+
+@inproceedings {liu:fse09,
+	author = "Hui Liu and Limei Yang and Zhendong Niu and Zhiyi Ma
+				and Weizhong Shao",
+	title = "Facilitating Software Refactoring with Appropriate Resolution Order 
+				of Bad Smells",
+	booktitle = "Proc. 17th " # c-fse,
+	month = aug,
+	year = 2009,
+	pages = "265--268"
+}
+
+@inproceedings {lopes:aosd05,
+    author = "Cristina V. Lopes and Sushil K. Bajracharya",
+    title = "An Analysis of Modularity in Aspect-Oriented Design",
+    booktitle = "Proc. 4th " # c-aosd,
+    month = mar,
+    year = 2005,
+    pages = "15--26"
+}
+
+@inproceedings {maia:fse09,
+	author = "Paulo H. Maia and Jeff Kramer and Sebastian Uchitel and Nabor C. Mendon\c{c}a",
+	title = "Towards Accurate Probabilistic Models Using State Refinement",
+	booktitle = "Proc. 17th " # c-fse,
+	month = aug,
+	year = 2009,
+	pages = "281--284"
+}
+
+@inproceedings {mancoridis:icsm99,
+	author = "Spiros Mancoridis and Brian S. Mitchell and Yih-Farn Chen
+				and Emden R. Gansner",
+	title = "Bunch: A Clustering Tool for the Recovery and Maintenance of 
+				Software System Structures",
+	booktitle = "Proc. 15th " # c-icsm,
+	month = aug,
+	year = 1999,
+	pages = "50--59"
+}
+
+@inproceedings {marinov:sat05,
+	author = "Darko Marinov and Sarfraz Khurshid and Suhabe Bugrara
+				and Lintao Zhang and Martin Rinard",
+	title = "Optimizations for Compiling Declarative Models into Boolean 
+				Formulas",
+	booktitle = "Proc. 8th " # c-sat,
+	month = jun,
+	year = 2005,
+	pages = "187--202"
+}
+
+@inproceedings {mcdonald:cascon01,
+	author = "David W. McDonald",
+	title = "Evaluating Expertise Recommendations",
+	booktitle = "Proc. " # c-cascon,
+	month = nov,
+	year = 2001,
+	pages = "241--223"
+}
+
+@inproceedings {mcdonald:cscw00,
+	author = "David W. McDonald and Mark S. Ackerman",
+	title = "Expertise Recommender: A Flexible Recommendation System and 
+				Architecture",
+	booktitle = "Proc. " # c-cscw,
+	month = dec,
+	year = 2000,
+	pages = "231--240"
+}
+
+@inproceedings {medvidovic:fse96,
+	author = "Nenad Medvidovic and Peyman Oreizy and Jason E. Robbins
+				and Richard N. Taylor",
+	title = "Using Object-Oriented Typing to Support Architectural Design in the 
+				{C2} Style",
+	booktitle = "Proc. 4th " # c-fse,
+	month = oct,
+	year = 1996,
+	pages = "24--32"
+}
+
+@inproceedings {meneely:fse08,
+	author = "Andrew Meneely and Laurie Williams and Will Snipes
+				and Jason Osborne",
+	title = "Predicting Failures with Developer Networks and Social Network 
+				Analysis",
+	booktitle = "Proc. 16th " # c-fse,
+	month = nov,
+	year = 2008,
+	pages = "13--23"
+}
+
+@inproceedings {mens:icsm08,
+	author = "Tom Mens and Juan Fern\'andez-Ramil and Sylvain Degrandsart",
+	title = "The Evolution of {E}clipse",
+	booktitle = "Proc. 24th " # c-icsm,
+	month = oct,
+	year = 2008,
+	pages = "386--395"
+}
+
+@inproceedings {minto:msr07,
+	author = "Shawn Minto and Gail C. Murphy",
+	title = "Recommending Emergent Teams",
+	booktitle = "Proc. 4th " # w-msr,
+	month = may,
+	year = 2007,
+	pages = "5--12"
+}
+
+@inproceedings {mirarab:icpc07,
+	author = "Siavash Mirarab and Alaa Hassouna and Ladan Tahvildari",
+	title = "Using Bayesian Belief Networks to Predict Change Propagation in
+				Software Systems",
+	booktitle = "Proc. 15th " # c-icpc,
+	month = jun,
+	year = 2007,
+	pages = "177--188"
+}
+
+@inproceedings {mockus:icse02,
+	author = "Audris Mockus and James D. Herbsleb",
+	title = "Expertise Browser: A Quantitative Approach to Identifying
+				Expertise",
+	booktitle = "Proc. 24th " # c-icse,
+	month = may, 
+	year = 2002,
+	pages = "503--512"
+}
+
+@inproceedings {moha:fase08,
+	author = "Naouel Moha and Yann-Ga{\"e}l Gu\'eh\'eneuc
+				and Anne-Fran\c{c}oise {Le Meur} and Laurence Duchien",
+	title = "A Domain Analysis to Specify Design Defects and Generate Detection 
+				Algorithms",
+	booktitle = "Proc. 11th " # c-fase,
+	month = mar,
+	year = 2008,
+	pages = "276--291"
+}
+
+@inproceedings {murphy:icse96,
+	author = "Gail C. Murphy and David Notkin and Erica S.-C. Lan",
+	title = "An Empirical Study of Static Call Graph Extractors",
+	booktitle = "Proc. 18th " # c-icse,
+	month = mar,
+	year = 1996,
+	pages = "90--8"
+}
+
+@inproceedings {murphy:fse95,
+	author = "Gail C. Murphy and David Notkin and Kevin J. Sullivan",
+	title = "Software Reflexion Models: Bridging the Gap Between Source and 
+				High-Level Models",
+	booktitle = "Proc. 3rd " # c-fse,
+	month = oct,
+	year = 1995,
+	pages = "18--28"
+}
+
+@inproceedings {nagappan:icse08,
+	author = "Nachiappan Nagappan and Brendan Murphy and Victor R. Basili",
+	title = "The Influence of Organizational Structure on Software Quality: An 
+				Empirical Case Study",
+	booktitle = "Proc. 30th " # c-icse,
+	month = may,
+	year = 2008,
+	pages = "521--540"
+}
+
+@inproceedings {nagappan:icse05a,
+	author = "Nachiappan Nagappan and Thomas Ball",
+	title = "Static Analysis Tools as Early Indicators of Pre-Release Defect 
+				Density",
+	booktitle = "Proc. 27th " # c-icse,
+	month = may,
+	year = 2005,
+	pages = "580--586"
+}
+
+@inproceedings {nagappan:icse05b,
+	author = "Nachiappan Nagappan and Thomas Ball",
+	title = "Use of Relative Code Churn Measures to Predict System Defect 
+				Density",
+	booktitle = "Proc. 27th " # c-icse,
+	month = may,
+	year = 2005,
+	pages = "284--292"
+}
+
+@inproceedings {parnas:icse94,
+	author = "David L. Parnas",
+	title = "Software Aging",
+	booktitle = "Proc. 16th " # c-icse,
+	month = may,
+	year = 1994,
+	pages = "279--287"
+}
+
+@inproceedings {pinzger:fse08,
+	author = "Martin Pinzger and Nachiappan Nagappan and Brendan Murphy",
+	title = "Can Developer-Module Networks Predict Failures?",
+	booktitle = "Proc. 16th " # c-fse,
+	month = nov,
+	year = 2008,
+	pages = "2--12"
+}
+
+@inproceedings {prehofer:ecoop97,
+	author = "Christian Prehofer",
+	title = "Feature-Oriented Programming: A Fresh Look at Objects",
+	booktitle = "Proc. " # c-ecoop,
+	month = jun,
+	year = 1997,
+	pages = "419--443"
+}
+
+@inproceedings {rahman:esem09,
+	author = "Md Mainur Rahman and Guenther Ruhe and Thomas Zimmermann",
+	title = "Optimized Assignment of Developers for Fixing Bugs: An Initial
+				Evaluation for Eclipse Projects",
+	booktitle = "Proc. 3rd " # c-esem,
+	month = oct,
+	year = 2009,
+	pages = "439--442"
+}
+
+@inproceedings {rajlich:icsm97,
+	author = "V\'aclav Rajlich",
+	title = "A Model for Change Propagation Based on Graph Rewriting",
+	booktitle = "Proc. 13th " # c-icsm,
+	month = oct,
+	year = 1997,
+	pages = "84--91"
+}
+
+@inproceedings {ratzinger:msr08,
+	author = "Jacek Ratzinger and Thomas Sigmund and Harald Gall",
+	title = "On the Relation of Refactoring and Software Defects",
+	booktitle = "Proc. 5th " # w-msr,
+	month = may,
+	year = 2008,
+	pages = "35--38"
+}
+
+@inproceedings {ratzinger:msr05,
+	author = "Jacek Ratzinger and Michael Fischer and Harald Gall",
+	title = "Improving Evolvability Through Refactoring",
+	booktitle = "Proc. 2nd " # w-msr,
+	month = may,
+	year = 2005,
+	pages = "1--5"
+}
+
+@inproceedings {ren:oopsla04,
+	author = "Xiaoxia Ren and Barbara G. Ryder and Maximilian St{\"o}rzer and Frank Tip",
+	title = "Chianti: A Change Impact Analysis Tool for Java Programs",
+	booktitle = "Proc. 19th " # c-oopsla,
+	month = oct,
+	year = 2004,
+	pages = "432--448"
+}
+
+@inproceedings {robillard:fse05,
+	author = "Martin P. Robillard",
+	title = "Automatic Generation of Suggestions for Program Investigation",
+	booktitle = "Proc. 13th " # c-fse,
+	month = sep,
+	year = 2005,
+	pages = "11-20"
+}
+
+@inproceedings {robles:msr09,
+	author = "Gregorio Robles and Jesus M. Gonzalez-Barahona and
+				Israel Herraiz",
+	title = "Evolution of the Core Team of Developers in Libre Software 
+				Projects",
+	booktitle = "Proc. 6th " # w-msr,
+	month = may,
+	year = 2009,
+	pages = "167--170"
+}
+
+@inproceedings {sangal:oopsla05,
+	author = "Neeraj Sangal and Ev Jordan and Vineet Sinha and Daniel Jackson",
+	title = "Using Dependency Models to Manage Complex Software Architecture",
+	booktitle = "Proc. 20th " # c-oopsla,
+	month = oct,
+	year = 2005,
+	pages = "167--176"
+}
+
+@inproceedings {sanguesa:ijcai01,
+	author = "Ramon Sang{\"u}esa and Josep M. Pujol",
+	title = "{NetExpert}: A Multiagent System for Expertise Location",
+	booktitle = "Proc. International Joint Conference on Artificial 
+					Intelligence",
+	month = aug,
+	year = 2001,
+	pages = "85--93"
+}
+
+@inproceedings {sarkar:apsec06,
+	author = "Santonu Sarkar and Girish Maskeri Rama and Ramachandran Shubbha",
+	title = "A Method for Detecting and Measuring Architecture Layering 
+				Violations in Source Code",
+	booktitle = "Proc. 13th " # c-apsec,
+	month = dec,
+	year = 2006,
+	pages = "165--172"
+}
+
+@inproceedings {sarma:icse09,
+	author = "Anita Sarma and Larry Maccherone and Patrick Wagstrom
+				and James D. Herbsleb",
+	title = "Tesseract: Interactive Visual Exploration of Socio-Technical 
+				Relationships in Software Development",
+	booktitle = "Proc. 31st " # c-icse,
+	month = may,
+	year = 2009,
+	pages = "23-33"
+}
+
+@inproceedings {schuler:msr08,
+	author = "David Schuler and Thomas Zimmermann",
+	title = "Mining Usage Expertise from Version Archive",
+	booktitle = "Proc. 5th " # w-msr,
+	month = may,
+	year = 2008,
+	pages = "121--124"
+}
+
+@inproceedings {schwanke:icse91,
+	author = "Robert W. Schwanke",
+	title = "An Intelligent Tool for Re-Engineering Software Modularity",
+	booktitle = "Proc. 13th " # c-icse,
+	month = may,
+	year = 1991,
+	pages = "83--92"
+}
+
+@inproceedings {sefika:icse96,
+	author = "Mohlalefi Sefika and Aamod Sane and Roy H. Campbell",
+	title = "Monitoring Compliance of a Software System with its High-Level 
+				Design Models",
+	booktitle = "Proc. 18th " # c-icse,
+	month = mar,
+	year = 1996,
+	pages = "387--396"
+}
+
+@inproceedings {sethi:wicsa09,
+	author = "Kanwarpreet Sethi and Yuanfang Cai and Sunny Wong
+				and Alessandro Garcia and Claudio Sant'Anna",
+	title = "From Retrospect to Prospect: Assessing Modularity and Stability 
+				from Software Architecture",
+	booktitle = "Proc. 8th " # c-wicsa,
+	month = sep,
+	year = 2009,
+	pages = "269--272"
+}
+
+@inproceedings {sethi:acom08,
+	author = "Kanwarpreet Sethi and Sunny Huynh and Yuanfang Cai",
+	title = "Assessing Modularity of Feature Models with ACNs",
+	booktitle = "Proc. 2nd OOPSLA " # w-acom,
+	month = oct,
+	year = 2008
+}
+
+@inproceedings {sharafat:csmr07,
+	author = "Ali R. Sharafat and Ladan Tahvildari",
+	title = "A Probabilistic Approach to Predict Changes in Object-Oriented Software Systems",
+	booktitle = "Proc. 11th " # c-csmr,
+	month = mar,
+	year = 2007,
+	pages = "27--38"
+}
+
+@inproceedings {shirabad:icsm03,
+	author = "Jelber Sayyad Shirabad and Timothy C. Lethbridge and Stan Matwin",
+	title = "Mining the Maintenance History of a Legacy Software System",
+	booktitle = "Proc. 19th " # c-icsm,
+	month = sep,
+	year = 2003,
+	pages = "95--104"
+}
+
+@inproceedings {srikant:edbt96,
+	author = "Ramakrishnan Srikant and Rakesh Agrawal",
+	title = "Mining Sequential Patterns: Generalizations and Performance
+				Improvements",
+	booktitle = "Proc. 5th International Conference on Extending Database 
+					Technology",
+	month = mar,
+	year = 1996,
+	pages = "3--17"
+}
+
+@inproceedings {straeten:uml03,
+	author = "Ragnhild Van Der Straeten and Tom Mens and Jocelyn Simmonds
+				and Viviane Jonckers",
+	title = "Using Description Logic to Maintain Consistency between
+				{UML} Models",
+	booktitle = "Proc. 6th " # c-uml,
+	month = oct,
+	year = 2003,
+	pages = "326--340",
+}
+
+@inproceedings {strohmaier:stc09,
+	author = "Markus Strohmaier and Michel Wermelinger and Yijun Yu",
+	title = "Using Network Properties to Study Congruence of Software
+				Dependencies and Maintenance Activities in {E}clipse",
+	booktitle = "Proc. ICSE " # w-stc,
+	month = may,
+	year = 2009
+}
+
+@inproceedings {sullivan:ftc99,
+	author = "Kevin J. Sullivan and Joanne B. Dugan and David Coppit",
+	title = "The {G}alileo Fault Tree Analysis Tool",
+	booktitle = "Proc. 29th International Symposium on Fault-Tolerant 
+					Computing",
+	month = jun,
+	year = 1999,
+	pages = "232--5"
+}
+
+@inproceedings {sullivan:fse05,
+    author = "Kevin J. Sullivan and William Griswold and Yuanyuan Song
+				and Yuanfang Cai and Macneil Shonle and Nishit Tewari
+				and Hridesh Rajan",
+    title = "Information Hiding Interfaces for Aspect-Oriented Design",
+    booktitle = "Proc. 10th " # c-fse,
+    month = sep,
+    year = 2005,
+    pages = "166--175"
+}
+
+@inproceedings {sullivan:fse01,
+    author = "Kevin J. Sullivan and William G. Griswold and Yuanfang Cai
+                  and Ben Hallen",
+    title = "The Structure and Value of Modularity in Software Design",
+    booktitle = "Proc. 8th " # c-fse,
+    month = sep,
+    year = 2001,
+    pages = "99--108"
+}
+
+@inproceedings {tairas:acmse06,
+	author = "Robert Tairas and Jeffrey G. Gray",
+	title = "Phoenix-Based Clone Detection Using Suffix Trees",
+	booktitle = "Proc. 44th ACM Southeast Regional Conference",
+	month = mar,
+	year = 2006,
+	pages = "679--684"
+}
+
+@inproceedings {taylor:fose07,
+	author = "Richard N. Taylor and Andr\'e {van der Hoek}",
+	title = "Software Design and Architecture: The Once and Future Focus of 
+				Software Engineering",
+	booktitle = "Proc. " # c-fose,
+	year = 2007,
+	pages = "226--243"
+}
+
+@inproceedings {top:cidm07,
+	author = "Philip Top and Farid Dowla and Jim Gansemer",
+	title = "A Dynamic Programming Algorithm for Name Matching",
+	booktitle = "Proc. IEEE Symposium on Computational Intelligence and Data 
+					Mining", 
+	month = apr,
+	year = 2007,
+	pages = "547--551"
+}
+
+@inproceedings {tran:iwpc00,
+	author = "John B. Tran and Michael B. Godfrey and Eric H. S. Lee
+				and Richard C. Holt",
+	title = "Architectural Repair of Open Source Software",
+	booktitle = "Proc. 8th " # w-iwpc,
+	month = jun,
+	year = 2000,
+	pages = "48--59"
+}
+
+@inproceedings {tran:cascon99,
+	author = "John B. Tran and Richard C. Holt",
+	title = "Forward and Reverse Architecture Repair",
+	booktitle = "Proc. " # c-cascon,
+	month = nov,
+	year = 1999,
+	pages = "15--24"
+}
+
+@inproceedings {travassos:oopsla99,
+	author = "Guilherme H. Travassos and Forrest Shull and Michael Fredericks 
+				and Victor R. Basili",
+	title = "Detecting Defects in Object Oriented Designs: Using Reading 
+				Techniques to Increase Software Quality",
+	booktitle = "Proc. 14th " # c-oopsla,
+	month = nov,
+	year = 1999,
+	pages = "47--56"
+}
+
+@inproceedings {treude:icse09,
+	author = "Christoph Treude and Margaret-Anne Storey",
+	title = "How Tagging Helps Bridge the Gap Between Social and Technical
+				Aspects in Software Development",
+	booktitle = "Proc. 31st " # c-icse,
+	month = may,
+	year = 2009,
+	pages = "12--22"
+}
+
+@inproceedings {trujillo:icse07,
+	author = "Salvador Trujillo and Don Batory and Oscar Diaz",
+	title = "Feature Oriented Model Driven Development: A Case Study for 
+				Portlets",
+	booktitle = "Proc. 29th " # c-icse,
+	month = may,
+	year = 2007,
+	pages = "44--53"
+}
+
+@inproceedings {tsantalis:csmr08,
+	author = "Nikolaos Tsantalis and Theodoros Chaikalis
+				and Alexander Chatzigeorgiou",
+	title = "{JDeodorant}: Identification and Removal of Type-Checking Bad 
+				Smells",
+	booktitle = "Proc. 12th " # c-csmr,
+	month = apr,
+	year = 2008,
+	pages = "329--331"
+}
+
+@inproceedings {tsantalis:csmr09,
+	author = "Nikolaos Tsantalis and Alexander Chatzigeorgiou",
+	title = "Identification of Extract Method Refactoring Opportunities",
+	booktitle = "Proc. 13th " # c-csmr,
+	month = mar,
+	year = 2009,
+	pages = "119--128"
+}
+
+@inproceedings {valetto:stc08,
+	author = "Giuseppe Valetto and Sunita Chulani and Clay Williams",
+	title = "Balancing the Value and Risk of Socio-Technical Congruence",
+	booktitle = "Proc. ICSE " # w-stc,
+	month = may,
+	year = 2008
+}
+
+@inproceedings {valetto:msr07,
+	author = "Giuseppe Valetto and Mary E. Helander and Kate Ehrlich
+				and Sunita Chulani and Mark N. Wegman and Clay Williams",
+	title = "Using Software Repositories to Investigate Socio-technical 
+				Congruence in Development Projects",
+	booktitle = "Proc. 4th " # w-msr,
+	month = may,
+	year = "2007"
+}
+
+@inproceedings{vandelaar:msr09,
+	author = "Pi{\"e}rre van de Laar",
+	title = "On the Transfer of Evolutionary Coupling to Industry",
+	booktitle = "Proc. 6th " # w-msr,
+	month = may,
+	year = 2009,
+	pages = "187--190"
+}
+
+@inproceedings {vander:fmics08,
+	author = "Jos\'e {Vander Meulen} and Charles Pecheur",
+	title = "Efficient Symbolic Model Checking for Process Algebras",
+	booktitle = "Proc. 13th International Workshop on Formal Methods for
+					Industrial Critical Systems",
+	month = sep,
+	year = 2008
+}
+
+@inproceedings {weissgerber:msr07,
+	author = "Peter Wei{\ss}gerber and Mathias Pohl and Michael Burch",
+	title = "Visual Data Mining in Software Archives to Detect How Developers 
+				Work Together",
+	booktitle = "Proc. 4th " # w-msr,
+	month = may,
+	year = 2007,
+	pages = "9--16"
+}
+
+@inproceedings {weissgerber:ase06,
+	author = "Peter Wei{\ss}gerber and Stephan Diehl",
+	title = "Identifying Refactorings from Source-Code Changes",
+	booktitle = "Proc. 21st " # c-ase,
+	month = sep,
+	year = 2006,
+	pages = "231--240"
+}
+
+@inproceedings {whitehead:fose07,
+	author = "Jim Whitehead",
+	title = "Collaboration in Software Engineering: A Roadmap",
+	booktitle = "Proc. " # c-fose,
+	month = may,
+	year = 2007,
+	pages = "214--225"
+}
+
+@inproceedings {wolf:icse09,
+	author = "Timo Wolf and Adrian Schro{\"o}ter and Daniela Damien
+				and Thanh Nguyen",
+	title = "Predicting Build Failures Using Social Network Analysis on 
+				Developer Communication",
+	booktitle = "Proc. 31st " # c-icse,
+	month = may,
+	year = 2009,
+	pages = "1--11"
+}
+
+@inproceedings {wong:ase09b,
+	author = "Sunny Wong and Yuanfang Cai",
+	title = "Improving the Efficiency of Dependency Analysis in Logical Models",
+	booktitle = "Proc. 24th " # c-ase,
+	month = nov,
+	year = 2009,
+	pages = "173--184"
+}
+
+@inproceedings {wong:ase09a,
+	author = "Sunny Wong and Yuanfang Cai and Giuseppe Valetto
+				and Georgi Simeonov and Kanwarpreet Sethi",
+	title = "Design Rule Hierarchies and Parallelism in Software Development
+				Tasks",
+	booktitle = "Proc. 24th " # c-ase,
+	month = nov,
+	year = 2009,
+	pages = "197--208"
+}
+
+@inproceedings {wong:icsm09,
+	author = "Sunny Wong and Yuanfang Cai",
+	title = "Predicting Change Impact from Logical Models",
+	booktitle = "Proc. 25th " # c-icsm,
+	month = sep,
+	year = 2009,
+	pages = "467--470"
+}
+
+@inproceedings {wu:icse10,
+	author = "Wei Wu and Yann-Ga{\"e}l Gu\'eh\'eneuc and Giuliano Antoniol 
+				and Miryung Kim",
+	title = "{AURA}: A Hybrid Approach to Identify Framework Evolution",
+	booktitle = "Proc. 32nd " # c-icse,
+	month = may,
+	year = 2010
+}
+
+@inproceedings {xiang:stc09,
+	author = "Pei Feng Xiang and Annie T. T. Ying and Ping Cheng
+				and Ya Bin Dang and Kate Ehrlich and Mary E. Helander
+				and Paul M. Matchen and Andrew Sempere and Peri L. Tarr
+				and Clay Williams and Shun Xiang Yang",
+	title = "Ensemble: A Recommendation Tool for Promoting Communication in
+				Software Teams",
+	booktitle = "Proc. ICSE " # w-stc,
+	month = may,
+	year = 2009
+}
+
+@inproceedings {xing:ase05,
+	author = "Zhenchang Xing and Eleni Stroulia",
+	title = "{UMLDiff}: An Algorithm for Object-oriented Design Differencing",
+	booktitle = "Proc. 20th " # c-ase,
+	year = 2005,
+	pages = "54--65"
+}
+
+@inproceedings {ye:fse07,
+	author = "Yunwen Ye and Yasuhiro Yamamoto and Kumiyo Nakakoji",
+	title = "A Socio-Technical Framework for Supporting Programmers",
+	booktitle = "Proc. 11th " # c-fse,
+	month = sep,
+	year = 2007,
+	pages = "351--360"
+}
+
+@inproceedings {zimmermann:icse08,
+	author = "Thomas Zimmermann and Nachiappan Nagappan",
+	title = "Predicting Defects Using Network Analysis on Dependency Graphs",
+	booktitle = "Proc. 30th " # c-icse,
+	month = may,
+	year = 2008,
+	pages = "531--540"
+}
+
+@inproceedings {zimmermann:msr07,
+	author = "Thomas Zimmermann",
+	title = "Mining Workspace Updates in {CVS}",
+	booktitle = "Proc. 4th " # w-msr,
+	month = may,
+	year = 2007,
+	pages = "11--14"
+}
+
+@inproceedings {zimmermann:icse04,
+	author = "Thomas Zimmermann and Peter Wei{\ss}gerber and Stephan Diehl
+				and Andreas Zeller",
+	title = "Mining Version Histories to Guide Software Changes",
+	booktitle = "Proc. 26th " # c-icse,
+	month = may,
+	year = 2004,
+	pages = "563--572"
+}
+
+
+=*= Journal Papers =*=
+
+@article {allen:tosem97,
+	author = "Robert Allen and David Garlan",
+	title = "A Formal Basis for Architectural Connection",
+	journal = j-tosem,
+	month = apr,
+	year = 1997,
+	volume = 6,
+	number = 3,
+	pages = "213--249"
+}
+
+@article{amrit:infosys08,
+	author = "Chintan Amrit and Jos van Hillegersberg",
+	title = "Detecting Coordination Problems in Collaborative Software 
+				Development Environments",
+	journal = "Information Systems Management",
+	volume = 25,
+	number = 1,
+	year = 2008,
+	pages = "57--70"
+}
+
+@article {arisholm:tse04,
+	author = "Erik Arisholm and Lionel C. Briand and Audun Foyen",
+	title = "Dynamic Coupling Measurement for Object-Oriented Software",
+	journal = j-tse,
+	volume = 30,
+	number = 8,
+	month = aug,
+	year = 2004,
+	pages = "491--506"
+}
+
+@article {aspvall:ipl79,
+	author = "Bengt Aspvall and Michael F. Plass and Robert E. Tarjan",
+	title = "A Linear-Time Algorithm for Testing the Truth of Certain 
+				Quantified Boolean Formulas",
+	journal = j-ipl,
+	month = mar,
+	volume = 8,
+	number = 3,
+	year = 1979,
+	pages = "121--123"
+}
+
+@article {baldwin:hbr97,
+	author = "Carliss Y. Baldwin and Kim B. Clark",
+	title = "Managing In an Age of Modularity",
+	journal = "Harvard Business Review",
+	month = sep,
+	year = 1997,
+	volume = 75,
+	number = 5,
+	pages = "84--92"
+}
+
+@article {bajracharya:sen05,
+	author = "Sushil K. Bajracharya and Trung C. Ngo and Cristina V. Lopes",
+	title = "On Using Net Options Value as a Value Based Design Framework",
+	journal = j-sen,
+	month = jan,
+	year = 2005,
+	volume = 30,
+	number = 1,
+	pages = "1--3"
+}
+
+@article {basili:cacm84,
+	author = "Victor R. Basili and Barry T. Perricone",
+	title = "Software Errors and Complexity: An Empirical Investigation",
+	journal = j-cacm,
+	year = 1984,
+	volume = 27,
+	number = 1,
+	pages = "42--52"
+}
+
+@article {belady:jsys76,
+	author = "Laszlo A. Belady and Meir M. Lehman",
+	title = "A Model of Large Program Development",
+	journal = j-sys,
+	year = 1976,
+	volume = 15,
+	number = 3,
+	pages = "225--252"
+}
+
+@article {boehm:comp88,
+	author = "Barry W. Boehm",
+	title = "A Spiral Model of Software Development and Enhancement",
+	journal = j-comp,
+	month = may,
+	year = 1988,
+	volume = 21,
+	number = 5,
+	pages = "61--72"
+}
+
+@article {briand:jss06,
+	author = "Lionel C. Briand and Yvan Labiche and Leeshawn O'Sullivan
+				and Michal M. S\'owka",
+	title = "Automated Impact Analysis of {UML} models",
+	journal = j-ss,
+	volume = 79,
+	number = 3,
+	month = mar,
+	year = 2006,
+	pages = "339--352"
+}
+
+@article {briand:tse03,
+	author = "Lionel C. Briand and Yvan Labiche and Yihong Wang",
+	title = "An Investigation of Graph-Based Class Integration Test Order
+				Strategies",
+	journal = j-tse,
+	volume = 29,
+	number = 7,
+	month = jul,
+	year = 2003,
+	pages = "594--607"
+}
+
+@article {briand:jss00,
+	author = "Lionel C. Briand and J{\"u}rgen W{\"u}st and John W. Daly
+				and D. Victor Porter",
+	title = "Exploring the Relationships between Design Measures and
+				Software Quality in Object-Oriented Systems",
+	journal = j-ss,
+	volume = 51,
+	number = 3,
+	year = 2000,
+	pages = "245--273"
+}
+
+@article {briand:tse99,
+	author = "Lionel C. Briand and John W. Daly and J{\"u}rgen W{\"u}st",
+	title = "A Unified Framework for Coupling Measurement in Object-Oriented 
+				Systems",
+	journal = j-tse,
+	month = jan,
+	year = 1999,
+	volume = 25,
+	number = 1,
+	pages = "91--121"
+}
+
+@article {briand:ese98,
+	author = "Lionel C. Briand and John W. Daly and J{\"u}rgen W{\"u}st",
+	title = "A Unified Framework for Cohesion Measurement in Object-Oriented 
+				Systems",
+	journal = j-ese,
+	month = sep,
+	year = 1998,
+	volume = 3,
+	number = 3,
+	pages = "299--307"
+}
+
+@article {brooks:comp87,
+	author = "Fred Brooks",
+	title = "No Silver Bullets: Essence and Accidents of Software Engineering",
+	journal = j-comp,
+	month = apr,
+	year = 1987,
+	volume = 20,
+	number = 4,
+	pages = "10--19"
+}
+
+@article {bryant:toc86,
+	author = "Randal E. Bryant",
+	title = "Graph-Based Algorithms for Boolean Function Manipulation",
+	journal = j-toc,
+	year = 1986,
+	volume = 35,
+	number = 8,
+	year = 1986,
+	pages = "677--691"
+}
+
+@article {cataldo:tse09,
+	author = "Marcelo Cataldo and Audris Mockus and Jeffrey A. Roberts
+				and James D. Herbsleb",
+	title = "Software Dependencies, Work Dependencies, and Their Impact on 
+				Failures",
+	journal = j-tse,
+	month = jul,
+	year = 2009,
+	volume = 35,
+	number = 6,
+	pages = "864--878"
+}
+
+@article {chidamber:tse94,
+	author = "Shyam R. Chidamber and Chris F. Kemerer",
+	title = "A Metrics Suite for Object Oriented Design",
+	journal = j-tse,
+	month = jun,
+	year = 1994,
+	volume = 20,
+	number = 6,
+	pages = "476--493"
+}
+
+@article {chvatal:acm88,
+	author = "Va\v{s}ek Chv\'atal and Endre Szemer\'edi",
+	title = "Many Hard Examples for Resolution",
+	journal = j-acm,
+	month = oct,
+	year = 1988,
+	volume = 35,
+	number = 4,
+	pages = "759--768"
+}
+
+@article {clarke:sttt98,
+	author = "Edmund M. Clarke and Orna Grumberg and Marius Minea
+				and Doron Peled",
+	title = "State Space Reduction Using Partial Ordering Techniques",
+	journal = "International Journal on Software Tools for Technology Transfer",
+	year = 1998,
+	volume = 2,
+	number = 3,
+	pages = "279--287"
+}
+
+@article {conway:data68,
+	author = "Melvin E. Conway",
+	title = "How Do Committees Invent?",
+	journal = "Datamation",
+	month = apr,
+	year = 1968,
+	volume = 14,
+	number = 4,
+	pages = "28--31"
+}
+
+@article {curtis:cacm88,
+	author = "Bill Curtis and Herb Krasner and Neil Iscoe",
+	title = "A Field Study of the Software Design Process for Large Systems",
+	journal = j-cacm,
+	month = nov,
+	year = 1988,
+	volume = 31,
+	number = 11,
+	pages = "1268--1287"
+}
+
+@article {dashofy:tosem05,
+	author = "Eric M. Dashofy and Andr\'e {van der Hoek}
+				and Richard N. Taylor",
+	title = "A Comprehensive Approach for the Development of Modular Software
+				Architecture Languages",
+	journal = j-tosem,
+	month = apr,
+	year = 2005,
+	volume = 14,
+	number = 2,
+	pages = "199--245"
+}
+
+@article {davis:acm60,
+	author = "Martin Davis and Hilary Putnam",
+	title = "A Computing Procedure for Quantification Theory",
+	journal = j-acm,
+	month = jul,
+	year = 1960,
+	volume = 7,
+	number = 3,
+	pages = "201--215"
+}
+
+@article {dijkstra:cacm68b,
+	author = "Edsger W. Dijkstra",
+	title = "The Structure of the ``{THE}''-Multiprogramming System",
+	journal = j-cacm,
+	volume = 11,
+	number = 5,
+	month = may,
+	year = 1968,
+	pages = "341--6"
+}
+
+@article {dijkstra:cacm68a,
+	author = "Edsger W. Dijkstra",
+	title = "Go To Statement Considered Harmful",
+	journal = j-cacm,
+	volume = 11,
+	number = 3,
+	month = mar,
+	year = 1968,
+	pages = "147--8"
+}
+
+@article {dyer:theory03,
+	author = "Martin Dyer and Alan Frieze and Michael Molloy",
+	title = "A Probabilistic Analysis of Randomly Generated Binary Constraint",
+	journal = j-theory,
+	volume = 290,
+	number = 3,
+	year = 2003,
+	pages = "1815--1828"
+}
+
+@article {eaddy:tse08,
+	author = "Mark Eaddy and Thomas Zimmermann and Kaitin D. Sherwood
+				and Vibhav Garg and Gail C. Murphy and Nachiappan Nagappan
+				and Alfred V. Aho",
+	title = "Do Crosscutting Concerns Cause Defects?",
+	journal = j-tse,
+	volume = 34,
+	number = 4,
+	year = 2008,
+	pages = "497--515"
+}
+
+@article {egyed:tosem02,
+	author = "Alexander Egyed",
+	title = "Automated Abstraction of Class Diagrams",
+	journal = j-tosem,
+	volume = 11,
+	issue = 4,
+	year = 2002,
+	pages = "449--491"
+}
+
+@article {eick:tse02,
+	author = "Stephen G. Eick and Todd L. Graves and Alan F. Karr
+				and Audris Mockus and Paul Schuster",
+	title = "Visualizing Software Changes",
+	journal = j-tse,
+	month = apr,
+	year = 2002,
+	volume = 28,
+	number = 4,
+	pages = "396--412"
+}
+
+@article {eick:tse01,
+	author = "Stephen G. Eick and Todd L. Graves and Alan F. Karr
+				and J. S. Marron and Audris Mockus",
+	title = "Does Code Decay? Assessing the Evidence from Change Management
+				Data",
+	journal = j-tse,
+	month = jan,
+	year = 2001,
+	volume = 27,
+	number = 1,
+	pages = "1--12"
+}
+
+@article {eppinger:jed91,
+    author = "Steven D. Eppinger",
+    title = "Model-Based Approaches to Managing Concurrent Engineering",
+    journal = "Journal of Engineering Design",
+    year = 1991,
+    volume = 2,
+    number = 4,
+    pages = "283--290"
+}
+
+@article {erdos:debrecen59,
+	author = "Paul Erd\H{o}s and Alfr\'ed R\'enyi",
+	title = "On Random Graphs {I}",
+	journal = "Publicationes Mathematicae Debrecen",
+	volume = 6,
+	year = 1959,
+	pages = "290--297"
+}
+
+@article {evans:csi98,
+	author = "Andy Evans and Robert France and Kevin Lano and Bernhard Rumpe",
+	title = "The {UML} as a Formal Modeling Notation",
+	journal = "Computer Standards and Interfaces",
+	volume = 19,
+	number = 17,
+	year = 1998,
+	pages = "325--334"
+}
+
+@article {even:comp76,
+	author = "Shimon Even and Alon Itai and Adi Shamir",
+	title = "On the Complexity of Timetable and Multicommodity Flow Problems",
+	journal = j-comp,
+	volume = 5,
+	number = 4,
+	year = 1976,
+	pages = "691--703"
+}
+
+@article {faraj:mnsc06,
+	author = "Samer Faraj and Yan Xiao",
+	title = "Coordination in Fast-Response Organizations",
+	journal = j-mnsc,
+	month = aug,
+	year = 2006,
+	volume = 52,
+	number = 8,
+	pages = "1155--1169"
+}
+
+@article {feder:algo94,
+	author = "Toma\'as Feder",
+	title = "Network Flow and 2-Satisfiability",
+	journal = "Algorithmica",
+	volume = 11,
+	number = 3,
+	year = 1994,
+	pages = "291--319"
+}
+
+@article {fenton:tse99,
+	author = "Norman E. Fenton and Martin Neil",
+	title = "A Critique of Software Defect Prediction Models",
+	journal = j-tse,
+	year = 1999,
+	volume = 25,
+	number = 5,
+	pages = "675--689"
+}
+
+@article {fowler:soft02,
+	author = "Martin Fowler",
+	title = "Public versus Published Interfaces",
+	journal = j-soft,
+	month = mar # "/" # apr,
+	year = 2002,
+	volume = 19,
+	number = 2,
+	pages = "18--19"
+}
+
+@article {frieze:rand06,
+	author = "Alan Frieze and Michael Molloy",
+	title = "The Satisfiability Threshold for Randomly Generated Binary 
+				Constraint Satisfaction Problems",
+	journal = "Random Structures and Algorithms",
+	volume = 28,
+	number = 3,
+	year = 2006,
+	pages = "323--339"
+}
+
+@article {gallagher:tse91,
+	author = "Keith B. Gallagher and James R. Lyle",
+	title = "Using Program Slicing in Software Maintenance",
+	journal = j-tse,
+	volume = 17,
+	number = 8,
+	year = 1991,
+	pages = "751--761"
+}
+
+@article {garlan:tse95,
+	author = "David Garlan and Dewayne Perry",
+	title = "Introduction to the Special Issue on Software Architecture",
+	journal = j-tse,
+	volume = 24,
+	number = 4,
+	month = apr,
+	year = 1995,
+	pages = "269--274"
+}
+
+@article {ghezzi:tse91,
+	author = "Carlo Ghezzi and Dino Mandrioli and Sandro Morasca
+				and Mauro Pezz\`e",
+	title = "A Unified High-Level Petri Net Formalism for Time-Critical 
+				Systems",
+	journal = j-tse,
+	volume = 17,
+	number = 2,
+	month = feb,
+	year = 1991,
+	pages = "160--172"
+}
+
+@article {girba:jsme06,
+	author = "Tudor G\^irba and St\'ephane Ducasse",
+	title = "Modeling History to Analyze Software Evolution",
+	journal = j-sme,
+	volume = 18,
+	year = 2006,
+	pages = "207--236"
+}
+
+@article {graves:tse00,
+	author = "Todd L. Graves and Alan F. Karr and J. S. Marron
+				and Harvey P. Siy",
+	title = "Predicting Fault Incidence Using Software Change History",
+	journal = j-tse,
+	volume = 26,
+	number = 7,
+	year = 2000,
+	pages = "653--661"
+}
+
+@article {griswold:soft06,
+	author = "William G. Griswold and Kevin J. Sullivan and Yuanyuan Song
+				and Nishit Tewari and Macneil Shonle and Yuanfang Cai
+				and Hridesh Rajan",
+	title = "Modular Software Design with Crosscutting Interfaces",
+	journal = j-soft,
+	month = jan # "/" # feb,
+	volume = 23,
+	number = 1,
+	year = 2006,
+	pages = "51--60"
+}
+
+@article {griswold:tosem93,
+	author = "William G. Griswold and David Notkin",
+	title = "Automated Assistance for Program Restructuring",
+	journal = j-tosem,
+	month = jul,
+	year = 1993,
+	volume = 2,
+	number = 3,
+	pages = "228--69"
+}
+
+@article {han:dmkd04,
+	author = "Jiawei Han and Jian Pei and Yiwen Yin and Runying Mao",
+	title = "Mining Frequent Patterns without Candidate Generation: A
+				Frequent-Pattern Tree Approach",
+	journal = j-dmkd,
+	month = jan,
+	year = 2004,
+	volume = 8,
+	issue = 1,
+	pages = "53--87"
+}
+
+@article {hassan:ese06,
+	author = "Ahmed E. Hassan and Richard C. Holt",
+	title = "Replaying Development History to Assess the Effectiveness of Change 
+				Propagation Tools",
+	journal = j-ese,
+	month = sep,
+	year = 2006,
+	volune = 11,
+	number = 3,
+	pages = "335--367"
+}
+
+@article {henderson:adsci90,
+	author = "Rebecca M. Henderson and Kim B. Clark",
+	title = "Architectural Innovation: The Reconfiguration of Existing Product 
+				Technologies and the Failure of Established Firms",
+	journal = "Administrative Science Quarterly",
+	month = mar,
+	year = 1990,
+	volume = 35,
+	number = 1,
+	pages = "9--30"
+}
+
+@article {herbsleb:tse03,
+	author = "James D. Herbsleb and Audris Mockus",
+	title = "An Empirical Study of Speed and Communication in 
+				Globally-Distributed Software Development",
+	journal = j-tse,
+	month = jun,
+	year = 2003,
+	volume = 29,
+	number = 6,
+	pages = "1--14"
+}
+
+@article {herbsleb:hci95,
+	author = "James D. Herbsleb and Helen Klein and Gary M. Olson
+				and Hans Brunner and Judith S. Olson and Joe Harding",
+	title = "Object-Oriented Analysis and Design in Software Project Teams",
+	journal = "Human-Computer Interaction",
+	year = 1995,
+	volume = 10,
+	number = "2--3",
+	pages = "249--292"
+}
+
+@article {hoffman:tse90,
+	author = "Daniel Hoffman",
+	title = "On Criteria for Module Interfaces",
+	journal = j-tse,
+	month = may,
+	year = 1990,
+	volume = 16,
+	number = 5,
+	pages = "537--542"
+}
+
+@article {hutchens:tse85,
+	author = "David H. Hutchens and Victor R. Basili",
+	title = "System Structure Analysis: Clustering with Data Bindings",
+	journal = j-tse,
+	month = aug,
+	year = 1985,
+	volume = 11,
+	number = 8,
+	pages = "749--757"
+}
+
+@article {jackson:tosem02,
+    author = "Daniel Jackson",
+    title = "Alloy: A Lightweight Object Modeling Notation",
+    journal = j-tosem,
+    volume = 11,
+    number = 2,
+    year = 2002,
+    pages = "256--290"
+}
+
+@article {jorgensen:cacm94,
+	author = "Paul C. Jorgensen and Carl Erickson",
+	title = "Object-Oriented Integration Testing",
+	journal = j-cacm,
+	volume = 37,
+	number = 9,
+	month = sep,
+	year = 1994,
+	pages = "30--8"
+}
+
+@article {kafura:jss81,
+	author = "Dennis G. Kafura and Sallie M. Henry",
+	title = "Software Quality Metrics Based on Interconnectivity",
+	journal = j-ss,
+	volume = 2,
+	number = 2,
+	month = jun,
+	year = 1981,
+	pages = "121--131"
+}
+
+@article {kagdi:jsme07,
+	author = "Huzefa Kagdi and Michael L. Collard and Jonathan I. Maletic",
+	title = "A Survey and Taxonomy of Approaches for Mining Software 
+				Repositories in the Context of Software Evolution",
+	journal = j-sme,
+	volume = 19,
+	year = 2007,
+	pages = "77--131"
+}
+
+@article {kiczales:soft96,
+	author = "Gregor Kiczales",
+	title = "Beyond the Black Box: Open Implementation",
+	journal = j-soft,
+	volume = 13,
+	number = 1,
+	month = jan,
+	year = 1996,
+	pages = "8--11"
+}
+
+@article {kraut:cacm95,
+	author = "Robert E. Kraut and Lynn A. Streeter",
+	title = "Coordination in Software Development",
+	journal = j-cacm,
+	volume = 38,
+	number = 3,
+	year = 1995,
+	pages = "69--81"
+}
+
+@article {kumar:ai92,
+	author = "Vipin Kumar",
+	title = "Algorithms for Constraint-Satisfaction Problems: A Survey",
+	journal = "{AI} Magazine",
+	volume = 13,
+	number = 1,
+	year = 1992,
+	pages = "32--44"
+}
+
+@article {larman:soft01,
+	author = "Craig Larman",
+	title = "Protected Variation: The Importance of Being Closed",
+	journal = j-soft,
+	month = may # "/" # jun,
+	year = 2001,
+	volume = 18,
+	number = 3,
+	pages = "89--91"
+}
+
+@article {lehman:soft98,
+	author = "Meir M. Lehman",
+	title = "Software's Future: Managing Evolution",
+	journal = j-soft,
+	month = jan # "/" # feb,
+	volume = 15,
+	number = 1,
+	year = 1998,
+	pages = "40--4"
+}
+
+@article {lehman:jss80,
+	author = "Meir M. Lehman",
+	title = "On Understanding Laws, Evolution, and Conservation in the 
+				Large-Program Life Cycle",
+	journal = j-ss,
+	month = jan,
+	volume = 1,
+	number = 1,
+	year = 1980,
+	pages = "213--221"
+}
+
+@article {maccormack:mnsc06,
+	author = "Alan MacCormack and John Rusnak and Carliss Y. Baldwin",
+	title = "Exploring the Structure of Complex Software Designs:
+				An Empirical Study of Open Source and Proprietary Code",
+	journal = j-mnsc,
+	volume = 52,
+	number = 7,
+	month = jul,
+	year = 2006,
+	pages = "1015--1030"
+}
+
+@article {mackworth:ai77,
+	author = "Alan Mackworth",
+	title = "Consistency in Networks of Relations",
+	journal = "Artificial Intelligence",
+	volume = 8,
+	number = 1,
+	year = 1977,
+	pages = "99--118"
+}
+
+@article {mccabe:tse76,
+	author = "Thomas J. Mc{C}abe",
+	title = "A Complexity Measure",
+	journal = j-tse,
+	volume = 2,
+	number = 4,
+	month = dec,
+	year = 1976,
+	pages = "308--320"
+}
+
+@article {medvidovic:tse00,
+	author = "Nenad Medvidovic and Richard N. Taylor",
+	title = "A Classification and Comparison Framework for Software Architecture 
+				Description Languages",
+	journal = j-tse,
+	volume = 26,
+	number = 1,
+	month = jan,
+	year = 2000,
+	pages = "70--93"
+}
+
+@article {mockus:tosem02,
+	author = "Audris Mockus and Roy T. Fielding and James D. Herbsleb",
+	title = "Two Case Studies of Open Source Software Development: Apache and 
+				Mozilla",
+	journal = j-tosem,
+	month = mar,
+	year = 2002,
+	volume = 11,
+	number = 3,
+	pages = "309--346"
+}
+
+@article {moha:tse10,
+	author = "Naouel Moha and Yann-Ga{\"e}l Gu\'eh\'eneuc
+				and Laurence Duchien and Anne-Fran\c{c}oise {Le Meur}",
+	title = "{DECOR}: A Method for the Specification and Detection of Code
+				and Design Smells",
+	journal = j-tse,
+	volume = 36,
+	number = 1,
+	month = jan,
+	year = 2010,
+	pages = "20--36"
+}
+
+@article {moha:fac10,
+	author = "Naouel Moha and Yann-Ga{\"e}l Gu\'eh\'eneuc
+				and  Anne-Fran\c{c}oise {Le Meur} and Laurence Duchien
+				and Alban Tiberghien",
+	title = "From a Domain Analysis to the Specification and Detection of Code
+				and Design Smells",
+	journal = "Formal Aspects of Computing",
+	volume = 22,
+	number = 3,
+	month = may,
+	year = 2010,
+	pages = "345--361"
+}
+
+@article {montanari:infosci74,
+	author = "Ugo Montanari",
+	title = "Networks of Constraints: Fundamental Properties and Applications
+				to Picture Processing",
+	journal = "Information Sciences",
+	volume = 7,
+	year = 1974,
+	pages = "95--132"
+}
+
+@article {medvidovic:sen97,
+	author = "Nenad Medvidovic and Richard N. Taylor",
+	title = "A Framework for Classifying and Comparing Architecture Description
+				Languages",
+	journal = j-sen,
+	month = nov,
+	year = 1997,
+	volume = 22,
+	number = 6,
+	pages = "60--76"
+}
+
+@article {morelli:tem95,
+	author = "Mark D. Morelli and Steven D. Eppinger and Rosaline K. Gulati",
+	title = "Predicting Technical Communication in Product Development 
+				Organizations",
+	journal = j-tem,
+	month = aug,
+	year = 1995,
+	volume = 42,
+	number = 3,
+	pages = "215--222"
+}
+
+@article {mitchell:tse06,
+	author = "Brian S. Mitchell and Spiros Mancoridis",
+	title = "On the Automatic Modularization of Software Systems Using the
+				{B}unch Tool",
+	journal = j-tse,
+	volume = 32,
+	number = 3,
+	year = 2006,
+	pages = "193--208"
+}
+
+@article{murphy:tse01,
+	author = "Gail C. Murphy and David Notkin and Kevin J. Sullivan",
+	title = "Software Reflexion Models: Bridging the Gap between Design and 
+				Implementation",
+	journal = j-tse,
+	volume = 27,
+	month = apr,
+	year = 2001,
+	pages = "364--380"
+}
+
+@article {parnas:tse86,
+	author = "David L. Parnas and Paul C. Clements",
+	title = "A Rational Design Process: How and Why to Fake It",
+	journal = j-tse,
+	month = feb,
+	year = 1986,
+	volume = 12,
+	number = 2,
+	pages = "251--7"
+}
+
+@article {parnas:tse79,
+	author = "David L. Parnas",
+	title = "Designing Software for Ease of Extension and Contraction",
+	journal = j-tse,
+	month = mar,
+	year = 1979,
+	volume = 5,
+	number = 2,
+	pages = "128--138"
+}
+
+@article {parnas:tse76,
+	author = "David L. Parnas",
+	title = "On the Design and Development of Program Families",
+	journal = j-tse,
+	month = mar,
+	year = 1976,
+	volume = 2,
+	number = 1,
+	pages = "1--9"
+}
+
+@article {parnas:cacm72,
+    author = "David L. Parnas",
+    title = "On the Criteria to be Used in Decomposing Systems into Modules",
+    journal = j-cacm,
+    month = dec,
+    year = 1972,
+    volume = 15,
+    number = 12,
+    pages = "1053--8"
+}
+
+@article {perry:soft94,
+	author = "Dewayne E. Perry and Nancy A. Staudenmayer and Lawrence G. Votta",
+	title = "People, Organizations, and Process Improvement",
+	journal = j-soft,
+	month = jul,
+	year = 1994,
+	volume = 11,
+	number = 4,
+	pages = "36--45"
+}
+
+@article {raftery:jrss85,
+	author = "Adrian E. Raftery",
+	title = "A Model for High-Order Markov Chains",
+	journal = "Journal of the Royal Statistical Society",
+	year = 1985,
+	volume = 47,
+	number = 3,
+	pages = "528--539"
+}
+
+@article {raghavan:combin87,
+	author = "Prabhakar Raghavan and Clark D. Tompson",
+	title = "Randomized Rounding: A Technique for Provably Good Algorithms and
+				Algorithmic Proofs",
+	journal = "Combinatorica",
+	volume = 7,
+	number = 4,
+	month = dec,
+	year = 1987,
+	pages = "365--374"
+}
+
+@article {robillard:tosem08,
+	author = "Martin P. Robillard",
+	title = "Topology Analysis of Software Dependencies",
+	journal = j-tosem,
+	month = aug,
+	year = 2008,
+	volume = 17,
+	number = 4,
+	pages = "18:1--18:36"
+}
+
+@article {sanfeliu:tsmc83,
+	author = "Alberto Sanfeliu and King-Sun Fu",
+ 	title = "A Distance Measure Between Attributed Relational Graphs
+				for Pattern Recognition",
+ 	journal = j-tsmc,
+ 	year = 1983,
+ 	volume = 13,
+ 	number = 3,
+ 	pages = "353--362"
+}
+
+@article {sarkar:tse07,
+	author = "Santonu Sarkar and Girish M. Rama and Avinash C. Kak",
+	title = "{API}-Based and Information-Theoretic Metrics for Measuring the 
+				Quality of Software Modularization",
+	journal = j-tse,
+	year = 2007,
+	volume = 33,
+	number = 1,
+	pages = "14--32"
+}
+
+@article {selby:tse91,
+	author = "Richard W. Selby and Victor R. Basili",
+	title = "Analyzing Error-Prone System Structure",
+	journal = j-tse,
+	month = feb,
+	year = 1991,
+	volume = 17,
+	number = 2,
+	pages = "141--152"
+}
+
+@article {skillicorn:csur98,
+	author = "David B. Skillicorn and Domenico Talia",
+	title = "Models and Languages for Parallel Computation",
+	journal = j-csur,
+	month = jun,
+	year = 1998,
+	volume = 30,
+	number = 2,
+	pages = "123--169"
+}
+
+@article {sosa:mnsc04,
+	author = "Manuel E. Sosa and Steven D. Eppinger and Craig M. Rowles",
+	title = "The Misalignment of Product Architecture and Organizational 
+				Structure in Complex Product Development",
+	journal = j-mnsc,
+	month = dec,
+	year = 2004,
+	volume = 50,
+	number = 12,
+	pages = "1674--1689"
+}
+
+@article {sosa:tem02,
+	author = "Manuel E. Sosa and Steven D. Eppinger and Michael Pich
+				and David G. McKendrick and Suzanne K. Stout",
+	title = "Factors that Influence Technical Communication in Distributed 
+				Product Development:  An Empirical Study in the 
+				Telecommunications Industry",
+	journal = j-tem,
+	month = feb,
+	year = 2002,
+	volume = 49,
+	number = 1,
+	pages = "45--58"
+}
+
+@article {sullivan:sen01,
+    author = "Kevin J. Sullivan and Yuanfang Cai and Ben Hallen
+				and William G. Griswold",
+    title = "The Structure and Value of Modularity in Design",
+    journal = j-sen,
+    volume = 26,
+    number = 5,
+    month = sep,
+    year = 2001,
+    pages = "99--108"
+}
+
+@article {stevens:ibm74,
+	author = "Wayne P. Stevens and Glenford J. Meyers and Larry L. Constantine",
+	title = "Structured Design",
+	journal = "IBM Systems Journal",
+	year = 1974,
+	volume = 13,
+	number = 2,
+	pages = "115--139"
+}
+
+@article {steward:tem81,
+    author = "Donald V. Steward",
+    title = "The Design Structure System: A Method for Managing the
+				Design of Complex Systems",
+    journal = j-tem,
+    year = 1981,
+    volume = 28,
+    number = 3,
+    pages = "71--84"
+}
+
+@article {tairas:ese09,
+	author = "Robert Tairas and Jeffrey G. Gray",
+	title = "An Information Retrieval Process to Aid in the Analysis of Code 
+				Clones",
+	journal = j-ese,
+	volume = 14,
+	number = 1,
+	month = feb,
+	year = 2009,
+	pages = "33--56"
+}
+
+@article {tarjan:comp72,
+    author = "Robert Tarjan",
+    title = "Depth-First Search and Linear Graph Algorithms",
+    journal = j-comp,
+    volume = 1,
+    number = 2,
+    month = jun,
+    year = 1972,
+    pages = "146--160"
+}
+
+@article {tsantalis:tse09,
+	author = "Nikolaos Tsantalis and Alexander Chatzigeorgiou",
+	title = "Identification of Move Method Refactoring Opportunities",
+	journal = j-tse,
+	volume = 35,
+	number = 3,
+	month = may,
+	year = 2009,
+	pages = "347--367"
+}
+
+@article {tsantalis:tse05,
+	author = "Nikolaos Tsantalis and Alexander Chatzigeorgiou and
+				George Stephanide",
+	title = "Predicting the Probability of Change in Object-Oriented Systems",
+	journal = j-tse,
+	volume = 31,
+	number = 7,
+	month = jul,
+	year = 2005,
+	pages = "601--614"
+}
+
+@article {weiser:tse84,
+	author = "Mark Weiser",
+	title = "Program Slicing",
+	journal = j-tse,
+	month = jul,
+	year = 1984,
+	volume = 10,
+	number = 4,
+	pages = "352--357"
+}
+
+@article {whittaker:tse94,
+	author = "James A. Whittaker and Michael G. Thomason",
+	title = "A Markov Chain Model for Statistical Software Testing",
+	journal = j-tse,
+	month = oct,
+	year = 1994,
+	volume = 20,
+	number = 10,
+	pages = "812--824"
+}
+
+@article {whittaker:tosem93,
+	author = "James A. Whittaker and J. H. Poore",
+	title = "Markov Analysis of Software Specifications",
+	journal = j-tosem,
+	month = jan,
+	year = 1993,
+	volume = 2,
+	number = 1,
+	pages = "93--106"
+}
+
+@article {ying:tse04,
+	author = "Annie T. T. Ying and Gail C. Murphy and Raymond Ng
+				and Mark C. Chu-Carroll",
+	title = "Predicting Source Code Changes by Mining Change History",
+	journal = j-tse,
+	volume = 30,
+	number = 9,
+	month = sep,
+	year = 2004,
+	pages = "574--586"
+}
+
+@article {zimmermann:tse05,
+	author = "Thomas Zimmermann and Peter Wei{\ss}gerber and Stephan Diehl
+				and Andreas Zeller",
+	title = "Mining Version Histories to Guide Software Changes",
+	journal = j-tse,
+	volume = 31,
+	number = 6,
+	month = jun,
+	year = 2005,
+	pages = "429--445"
+}
+
+@article {zou:tse05,
+	author = "Lijie Zou and Michael W. Godfrey",
+	title = "Using Origin Analysis to Detect Merging and Splitting of Source 
+				Code Entities",
+	journal = j-tse,
+	volume = 31,
+	number = 2,
+	year = 2005,
+	pages = "166--181"
+}
+
+
+=*= Books and Book Chapters =*=
+
+@book {aho:compilers07,
+	author = "Alfred V. Aho and Monica S. Lam and Ravi Sethi
+				and Jeffrey D. Ullman",
+	title = "Compilers: Principles, Techniques, \& Tools",
+	publisher = p-aw,
+	edition = "2nd",
+	year = 2007
+}
+
+@book {alexander:form70,
+	author = "Christopher W. Alexander",
+	title = "Notes on the Synthesis of Form",
+	publisher = p-harvard,
+	year = 1970
+}
+
+@book {allen:mgmt77,
+	author = "Thomas J. Allen",
+	title = "Managing the Flow of Technology",
+	publisher = p-mit,
+	year = 1977
+}
+
+@book {arnold:java05,
+	author = "Ken Arnold and James Gosling and David Holmes",
+	title = "The Java Programming Language",
+	publisher = p-ph,
+	edition = "4th",
+	year = 2005
+}
+
+@incollection {baresi:lncs05,
+	author = "Luciano Baresi and Mauro Pezz\`{e}",
+	title = "From Graph Transformation to Software Engineering and Back",
+	booktitle = "Formal Methods in Software and Systems Modeling",
+	publisher = p-spr,
+	year = 2005,
+	volume = 3393,
+	series = s-lncs,
+	pages = "24--37"
+}
+
+@incollection {baresi:lncs01,
+	author = "Luciano Baresi and Mauro Pezz\`{e}",
+	title = "On Formalizing {UML} with High-Level Petri Nets",
+	booktitle = "Concurrent Object-Oriented Programming and Petri Nets",
+	publisher = p-spr,
+	year = 2001,
+	volume = 2001,
+	series = s-lncs,
+	pages = "271--300"
+}
+
+@book {baldwin:dr00,
+	author = "Carliss Y. Baldwin and Kim B. Clark",
+	title = "Design Rules, Vol. 1: The Power of Modularity",
+	publisher = p-mit,
+	year = 2000
+}
+
+@book {bass:arch03,
+	author = "Len Bass and Paul Clements and Rick Kazman",
+	title = "Software Architecture in Practice",
+	publisher = p-aw,
+	edition = "2nd",
+	year = 2003
+}
+
+@book {bohner:impact96,
+	author = "Shawn A. Bohner and Robert S. Arnold",
+	title = "Software Change Impact Analysis",
+	publisher = p-comp,
+	year = 1996
+}
+
+@book {bollobas:rand01,
+	author = "B\'ela Bollob\'as",
+	title = "Random Graphs",
+	publisher = "Cambridge University Press",
+	edition = "2nd",
+	year = 2001
+}
+
+@book {bollobas:graph98,
+	author = "B\'ela Bollob\'as",
+	title = "Modern Graph Theory",
+	publisher = p-spr,
+	year = 1998
+}
+
+@book {brooks:myth95,
+	author = "Fredrick P. Brooks",
+	title = "The Mythical Man-Month: Essays on Software Engineering",
+	publisher = p-aw,
+	edition = "2nd",
+	year = 1995
+}
+
+@book {ching:markov06,
+	author = "Wai-Ki Ching and Michael K. Ng",
+	title = "Markov Chains: Models, Algorithms, and Applications",
+	publisher = p-spr,
+	edition = "2nd",
+	year = 1996
+}
+
+@incollection {cho:model10,
+	author = "Hyun Cho and Jeff Gray and Yuanfang Cai and Sunny Wong and
+				Tao Xie",
+	title = "Model-Driven Impact Analysis of Software Product Lines",
+	booktitle = "Model-Driven Domain Analysis and Software Development: 
+					Architectures and Functions",
+	publisher = "Information Science Publishing",
+	year = 2010
+}
+
+@book {clarke:model99,
+	author = "Edmund M. Clarke and Orna Grumberg and Doron A. Peled",
+	title = "Model Checking",
+	publisher = p-mit,
+	year = 1999
+}
+
+@book {constantine:struct79,
+	author = "Larry L. Constantine and Edward Yourdon",
+	title = "Structured Design: Fundamentals of a Discipline of Computer Program 
+				and Systems Design",
+	publisher = p-ph,
+	year = 1979
+}
+
+@book {cormen:algo03,
+	author = "Thomas H. Cormen and Charles E. Leiserson and Ronald L. Rivest
+				and Clifford Stein",
+	title = "Introduction to Algorithms",
+	publisher = p-mit,
+	edition = "2nd",
+	year = 2003
+}
+
+@book {diestel:graph06,
+	author = "Reinhard Diestel",
+	title = "Graph Theory",
+	publisher = p-spr,
+	edition = "3rd",
+	year = 2006
+}
+
+@book {fowler:refactor99,
+	author = "Martin Fowler",
+	title = "Refactoring: Improving the Design of Existing Code",
+	publisher = p-aw,
+	month = jul,
+	year = 1999
+}
+
+@book {gamma:patterns94,
+    author = "Erich Gamma and Richard Helm and Ralph Johnson
+				and John M. Vlissides",
+    title = "Design Patterns: Elements of Reusable Object-Oriented Software",
+    publisher = p-aw,
+    month = nov,
+    year = 1994
+}
+
+@book {garey:np79,
+	author = "Michael R. Garey and David S. Johnson",
+	title = "Computers and Intractability: A Guide to the Theory of 
+				{NP}-Completeness",
+	publisher = "W. H. Freeman",
+	year = 1979
+}
+
+@book {ghezzi:se02,
+	author = "Carlos Ghezzi and Medhi Jazayeri and Dino Mandriolo",
+	title = "Fundamentals of Software Engineering",
+	publisher = p-ph,
+	edition = "2nd",
+	year = 2002
+}
+
+@book {herlihy:multi08,
+	author = "Maurice Herlihy and Nir Shavit",
+	title = "The Art of Multiprocessor Programming",
+	publisher = p-mk,
+	year = 2008
+}
+
+@book {huang:speech90,
+	author = "Xuedong Huang and Yasuo Ariki and Mervyn Jack",
+	title = "Hidden Markov Models for Speech Recognition",
+	publisher = "Columbia University Press",
+	year = 1990
+}
+
+@book {kay:xslt04,
+	author = "Michael Kay",
+	title = "{XSLT} 2.0 Programmer's Reference",
+	publisher = "Wrox",
+	edition = "3rd",
+	year = 2004
+}
+
+@book {kerievsky:refactor04,
+	author = "Joshua Kerievsky",
+	title = "Refactoring to Patterns",
+	publisher = p-aw,
+	year = 2004
+}
+
+@book {lanza:metrics06,
+	author = "Michele Lanza and Radu Marinescu",
+	title = "Object-Oriented Metrics in Practice: Using Software Metrics to 
+				Characterize, Evaluate, and Improve the Design of 
+				Object-Oriented Systems",
+	publisher = p-spr,
+	year = 2006
+}
+
+@book {taylor:arch09,
+	author = "Richard N. Taylor and Nenad Medvidovic and Eric M. Dashofy",
+	title = "Software Architecture: Foundations, Theory, and Practice",
+	publisher = "Wiley",
+	year = 2009
+}
+
+@book {papadimitriou:opt98,
+	author = "Christos H. Papadimitriou and Kenneth Steiglitz",
+	title = "Combinatorial Optimization",
+	publisher = "Dover",
+	year = 1998
+}
+
+@incollection {parnas:se01,
+	author = "David L. Parnas",
+	title = "Some Software Engineering Principles",
+	booktitle = "Software Fundamentals: Collected Papers by David L. Parnas",
+	editor = "Daniel M. Hoffman and David M. Weiss",
+	publisher = p-aw,
+	year = 2001,
+	pages = "257--266"
+}
+
+@book {patterson:comporg08,
+	author = "David A. Patterson and John L. Hennessy",
+	title = "Computer Organization and Design: The Hardware/Software
+				Interface",
+	publisher = p-mk,
+	edition = "4th",
+	year = 2008
+}
+
+@book {paulish:pm02,
+	author = "Daniel J. Paulish",
+	title = "Architecture-Centric Software Project Management: A Practical 
+				Guide",
+	publisher = p-aw,
+	year = 2002
+}
+
+@book {rumbaugh:uml98,
+    author = "James Rumbaugh and Ivar Jacobson and Grady Booch",
+    title = "The Unified Modeling Language Reference Manual",
+    publisher = p-aw,
+    year = 1998
+}
+
+@book {russell:ai03,
+	author = "Stuart Russell and Peter Norvig",
+	title = "Artificial Intelligence: A Modern Approach",
+	publisher = p-ph,
+	edition = "2nd",
+	year = 2003
+}
+
+@book {shaw:arch96,
+	author = "Mary Shaw and David Garlan",
+	title = "Software Architecture: Perspectives on an Emerging Discipline",
+	publisher = p-ph,
+	year = 1996
+}
+
+@book {simon:ai96,
+	author = "Herbert A. Simon",
+	title = "The Sciences of the Artificial",
+	publisher = p-mit,
+	edition = "3rd",
+	year = 1996
+}
+
+@book {sipser:theory06,
+	author = "Michael Sipser",
+	title = "Introduction to the Theory of Computation",
+	publisher = p-thomson,
+	edition = "2nd",
+	year = 2006
+}
+
+@incollection {spanoudakis:trace05,
+	author = "George Spanoudakis and Andrea Zisman",
+	title = "Software Traceability: A Roadmap",
+	booktitle = "Handbook of Software Engineering and Knowledge Engineering,
+					Vol. 3: Recent Advances",
+	publisher = "World Scientific Publishing",
+	editor = "Shi-Kuo Chang",
+	year = 2005
+}
+
+@book {spivey:z92,
+	author = "J. Michael Spivey",
+	title = "The {Z} Notation: A Reference Manual",
+	publisher = p-ph,
+	edition = "2nd",
+	year = 1992
+}
+
+@book {tarjan:algo83,
+	author = "Robert E. Tarjan",
+	title = "Data Structures and Network Algorithms",
+	publisher = p-siam,
+	year = 1983
+}
+
+@book {vanrijsbergen:ir79,
+	author = "C. J. van Rijsbergen",
+	title = "Informational Retrieval",
+	publisher = "Butterworths",
+	edition = "2nd",
+	year = 1979
+}
+
+@book {zimmermann:fuzzy01,
+	author = "Hans-J{\"u}rgen Zimmermann",
+	title = "Fuzzy Set Theory and Its Applications",
+	publisher = p-spr,
+	edition = "4th",
+	year = 2001
+}
+
+
+=*= Technical Reports =*=
+
+@techreport {cai:tr08,
+	author = "Yuanfang Cai and Sunny Huynh",
+	title = "A Case Study of Integrating Design Rule Theory and Analytical
+				Decision Models into a Software Development Process",
+	institution = "Drexel University",
+	number = "DU-CS-08-02",
+	month = apr,
+	year = 2008,
+	note = "\url{https://www.cs.drexel.edu/node/13662}"
+}
+
+@techreport {cai:tr07,
+	author = "Yuanfang Cai and Sunny Huynh",
+	title = "Logic-Based Software Project Decomposition",
+	institution = "Drexel University",
+	number = "DU-CS-07-02",
+	month = apr,
+	year = 2007,
+	note = "\url{https://www.cs.drexel.edu/node/13659}"
+}
+
+@techreport {colfer:tr10,
+	author = "Lyra J. Colfer and Carliss Y. Baldwin",
+	title = "The Mirroring Hypothesis: Theory, Evidence and Exceptions",
+	institution = "Harvard Business School",
+	number = "10-058",
+	month = jan,
+	year = 2010,
+	note = "\url{http://www.hbs.edu/research/pdf/10-058.pdf}"
+}
+
+@techreport {gulati:tr96,
+	author = "Rosaline K. Gulati and Steven D. Eppinger",
+	title = "The Coupling of Product Architecture and Organizational Structure 
+				Decisions",
+	institution = "Massachusetts Institute of Technology",
+	number = "3906",
+	month = may,
+	year = 1996,
+	note = "\url{http://mit.edu/eppinger/www/pdf/Gulati\_SloanWP3906.pdf}"
+}
+
+@techreport {huynh:tr08b,
+	author = "Sunny Huynh and Yuanfang Cai and Kanwarpreet Sethi",
+	title = "Design Rule Hierarchy and Analytical Decision Model 
+				Transformation",
+	institution = "Drexel University",
+	number = "DU-CS-08-04",
+	month = nov,
+	year = 2008,
+	note = "\url{https://www.cs.drexel.edu/node/13664}"
+}
+
+@techreport {huynh:tr08a,
+	author = "Sunny Huynh and Yuanfang Cai and Wuwei Shen",
+	title = "Automatic Transformation of {UML} Models into Analytical Decision 
+				Models",
+	institution = "Drexel University",
+	number = "DU-CS-08-01",
+	month = apr,
+	year = 2008,
+	note = "\url{https://www.cs.drexel.edu/node/13661}"
+}
+
+@techreport {luo:tr09,
+	author = "Jianxi Luo and Daniel E. Whitney and Carliss Y. Baldwin and 
+				Christopher L. Magee",
+	title = "Measuring and Understanding Hierarchy as an Architectural Element in Industry Sectors",
+	institution = "Harvard Business School",
+	number = "09-144",
+	month = jun,
+	year = 2009,
+	note = "\url{http://www.hbs.edu/research/pdf/09-144.pdf}"
+}
+
+@techreport {maccormack:tr10,
+	author = "Alan MacCormack and Carliss Baldwin and John Rusnak",
+	title = "The Architecture of Complex Systems: Do Core-periphery Structures 
+				Dominate?",
+	institution = "Harvard Business School",
+	number = "10-059",
+	month = jan,
+	year = 2010,
+	note = "\url{http://www.hbs.edu/research/pdf/10-059.pdf}"
+}
+
+@techreport {maccormack:tr08,
+	author = "Alan MacCormack and John Rusnak and Carliss Baldwin",
+	title = "Exploring the Duality between Product and Organizational 
+				Architecture: A Test of the Mirroring Hypothesis",
+	institution = "Harvard Business School",
+	number = "08-039",
+	month = oct,
+	year = 2008,
+	note = "\url{http://www.hbs.edu/research/pdf/08-039.pdf}"
+}
+
+@techreport {maccormack:tr07,
+	author = "Alan MacCormack and John Rusnak and Carliss Baldwin",
+	title = "The Impact of Component Modularity on Design Evolution: Evidence 
+				from the Software Industry",
+	institution = "Harvard Business School",
+	number = "08-038",
+	month = dec,
+	year = 2007,
+	note = "\url{http://www.hbs.edu/research/pdf/08-038.pdf}"
+}
+
+@techreport {sethi:tr08,
+	author = "Kanwarpreet Sethi and Yuanfang Cai and Sunny Huynh
+				and Alessandro Garcia and Claudio Sant'Anna",
+	title = "Assessing Design Modularity and Stability Using
+				Analytical Decision Models",
+	institution = "Drexel University",
+	number = "DU-CS-08-03",
+	month = sep,
+	year = 2008,
+	note = "\url{https://www.cs.drexel.edu/node/13663}"
+}
+
+@techreport {wong:tr10,
+	author = "Sunny Wong and Yuanfang Cai and Miryung Kim and Michael Dalton",
+	title = "Detecting Design Rule Violations",
+	institution = "Drexel University",
+	number = "DU-CS-10-01",
+	month = apr,
+	year = 2010,
+	note = "\url{https://www.cs.drexel.edu/node/15301}"
+}
+
+@techreport {wong:tr09b,
+	author = "Sunny Wong and Yuanfang Cai and Michael Dalton",
+	title = "Detecting Design Defects Caused by Design Rule Violations",
+	institution = "Drexel University",
+	number = "DU-CS-09-04",
+	month = oct,
+	year = 2009,
+	note = "\url{https://www.cs.drexel.edu/node/14348}"
+}
+
+@techreport {wong:tr09a,
+	author = "Sunny Wong and Yuanfang Cai",
+	title = "Predicting Change Impact from Logical Models",
+	institution = "Drexel University",
+	number = "DU-CS-09-02",
+	month = jun,
+	year = 2009,
+	note = "\url{https://www.cs.drexel.edu/node/13952}"
+}
+
+
+=*= Theses =*=
+
+@phdthesis {cai:phd06,
+    author = "Yuanfang Cai",
+    title = "Modularity in Design: Formal Modeling and Automated Analysis",
+    school = "University of Virginia",
+    month = aug,
+    year = 2006
+}
+
+@phdthesis {cataldo:phd07,
+	author = "Marcelo Cataldo",
+	title = "Dependencies in Geographically Distributed Software Development:
+				Overcoming the Limits of Modularity",
+	school = "Carnegie Mellon University",
+	year = 2007
+}
+
+@phdthesis {coppit:phd03,
+	author = "David Coppit",
+	title = "Engineering Modeling and Analysis: Sound Methods and Effective 
+				Tools",
+	school = "University of Virginia",
+	month = jan,
+	year = 2003
+}
+
+@phdthesis {desouza:phd05,
+	author = "Cleidson R. B. de Souza",
+	title = "On the Relationship between Software Dependencies and Coordination: 
+				Field Studies and Tool Support",
+	school = "University of California, Irvine",
+	year = 2005
+}
+
+@phdthesis {kim:phd08,
+  author = "Miryung Kim",
+  title = "Analyzing and Inferring the Structure of Code Changes",
+  school = "University of Washington",
+  year = 2008,
+}
+
+@mastersthesis {koni_nsapu:ms01,
+	author = "Georges Golomingi Koni-N'Sapu",
+	title = "A Scenario Based Approach for Refactoring Duplicated Code in 
+				Object-Oriented Systems",
+	school = "University of Bern",
+	month = jun,
+	year = 2001
+}
+
+@mastersthesis {marques:ms08,
+	author = "Fernando S\'ergio Bryton Dias Marques",
+	title = "Modularity Improvements with Aspect-Oriented Programming",
+	school = "Universidade Nova de Lisboa",
+	year = 2008
+}
+
+@phdthesis {mitchell:phd02,
+	author = "Brian S. Mitchell",
+	title = "A Heuristic Search Approach to Solving the Software Clustering 
+				Problem",
+	school = "Drexel University",
+	year = 2002
+}
+
+@phdthesis {nuutila:phd95,
+	author = "Esko Nuutila",
+	title = "Efficient Transitive Closure Computation in Large Digraphs",
+	school = "Helsinki University of Technology",
+	year = 1995
+}
+
+@phdthesis {orso:phd99,
+	author = "Alexandro Orso",
+	title = "Integration Testing of Object-Oriented Software",
+	school = "Politecnico di Milano",
+	month = feb,
+	year = 1999
+}
+
+@mastersthesis {sethi:ms09,
+	author = "Kanwarpreet Sethi",
+	title = "From Retrospect to Prospect: Assessing Modularity and Stability 
+				from Software Architecture",
+	school = "Drexel University",
+	month = jun,
+	year = 2009
+}
+
+@phdthesis {torlak:phd09,
+	author = "Emina Torlak",
+	title = "A Constraint Solver for Software Engineering: Finding Models and 
+				Cores of Large Relational Specifications",
+	school = "Massachusetts Institute of Technology",
+	month = feb,
+	year = 2009
+}
+
+@mastersthesis {ying:ms03,
+	author = "Annie T. T. Ying",
+	title = "Predicting Source Code Changes by Mining Revision History",
+	school = "University of British Columbia",
+	month = oct,
+	year = 2003
+}
+
+@mastersthesis {young:ms05,
+    author = "Trevor Young",
+    title = "Using {AspectJ} to Build a Software Product Line for Mobile
+				Devices",
+    school = "University of British Columbia",
+    month = aug,
+    year = 2005
+}
+
+@mastersthesis {zimmermann:ms04,
+	author = "Thomas Zimmermann",
+	title = "Mining Version Archives to Guide Software Changes",
+	school = "Universit{\"a}t Passau",
+	month = jun,
+	year = 2004
+}
+
+
+=*= Others =*=
+
+@misc {herbsleb:icis06,
+	author = "James D. Herbsleb and Audris Mockus and Jeffrey A. Roberts",
+	title = "Collaboration in Software Engineering Projects: A Theory of 
+				Coordination",
+	month = dec,
+	year = 2006,
+	howpublished = "Presented at International Conference on Information 
+					Systems"
+}
+
+@misc {huynh:fse08,
+	author = "Sunny Huynh and Yuanfang Cai and Kanwarpreet Sethi",
+	title = "Design Rule Hierarchy and Model Transformations",
+	month = nov,
+	year = 2008,
+	howpublished = "Presented at Student Research Forum of 16th " # c-fse,
+	note = "(Best Student Poster Award)"
+}
+
+@misc {lattix:lattix,
+	author = "{Lattix Inc.}",
+	title = "The {L}attix Approach Whitepaper",
+	year = 2004,
+	howpublished = "\url{http://www.lattix.com}"
+}
+
+@misc {omg:uml07,
+	author = "{Object Management Group}",
+    title = "Unified Modeling Language: Superstructure Version 2.1.1",
+    month = feb,
+    year = 2007,
+	howpublished = "\url{http://www.omg.org/technology/documents/formal/uml.htm}"
+}
+
+@misc {omg:ocl06,
+	author = "{Object Management Group}",
+    title = "Object Constraint Language Specification Version 2.0",
+    month = may,
+    year = 2006,
+	howpublished = "\url{http://www.omg.org/technology/documents/formal/ocl.htm}"
+}
+
+@misc {omg:xmi07,
+	author = "{Object Management Group}",
+	title = "{XML} Metadata Interchange Version 2.1",
+	month = dec,
+	year = 2007,
+	howpublished = "\url{http://www.omg.org/technology/documents/formal/xmi.htm}"
+}
