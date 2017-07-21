@@ -335,7 +335,7 @@ To improve the correctness and quality of software systems, developers often per
 \begin{figure}[ht]
  \centering
  \includegraphics[width=0.75\textwidth]{images/review-process.png}
- \caption{The modern code review process (based on~\cite{beller2014modern})}
+ \caption{Modern Code Review Process~\cite{beller2014modern}}
  \label{fig:review-process}
 \end{figure}
 
@@ -357,17 +357,19 @@ Although the initial purpose of code review is finding defects, recent studies f
 
 \subsection{Techniques for Code Change Comprehension} 
 
-\subsubsection{Code Review Tools} 
-There is a proliferation of reviewing tools, e.g., Phabricator,\footnote{\url{http://phabricator.org}} Gerrit,\footnote{\url{http://code.google.com/p/gerrit/}} CodeFlow,\footnote{\url{http://visualstudioextensions.vlasovstudio.com/2012/01/06/codeflow-code-review-tool-for-visual-studio/}} Crucible,\footnote{\url{https://www.atlassian.com/software/crucible}} and Review Board.\footnote{\url{https://www.reviewboard.org/}} The number of companies and open-source projects using lightweight review tools is also growing.
+\subsubsection{Commercial Code Review Tools} 
+There is a proliferation of review tools, e.g., Phabricator,\footnote{\url{http://phabricator.org}} Gerrit,\footnote{\url{http://code.google.com/p/gerrit/}} CodeFlow,\footnote{\url{http://visualstudioextensions.vlasovstudio.com/2012/01/06/codeflow-code-review-tool-for-visual-studio/}} Crucible,\footnote{\url{https://www.atlassian.com/software/crucible}} and Review Board.\footnote{\url{https://www.reviewboard.org/}} We will illustrate CodeFlow, a collaborative code review tool at Microsoft. Other review tools share similar functionality as CodeFlow.
 
 \begin{figure}[ht]
  \centering
  \includegraphics[width=0.75\textwidth]{images/codeflow.pdf}
- \caption{Example of code review using CodeFlow (based on~\cite{bosu2015characteristics})}
+ \caption{Example of Code Review using CodeFlow~\cite{bosu2015characteristics}}
  \label{fig:codeflow}
 \end{figure}
 
-Code review tools facilitates review tasks and communications. However, change comprehension still remains a key challenge in modern code review. According to the outcomes they want to achieve, developers employ many mechanisms to fulfill their understanding needs, most of which are not currently met by any code review tool.
+To create a review task in CodeFlow, a developer uploads changed files and a short description to CodeFlow. Reviewers then get notified via email and can examine the changes in CodeFlow. Figure~\ref{fig:codeflow} shows the desktop window of CodeFlow that reviewers interact with. It includes the list of changed files under review (A), the reviewers and their status (B), the diff-highlighted content of a changed file (C), a summary of all review comments and their status (D), and the iterations of a review (E). If a reviewer would like to provide feedback, she can highlight a portion of the code and enter a comment which is overlayed with the selected change (F). The author and other reviewers can follow up the discussion by entering comments in the same thread. Typically, after receiving feedback, the author may revise the changes accordingly and submit the updated changes for additional feedback, which constitutes another review cycle and is termed an {\em iteration}. In Figure~\ref{fig:codeflow}-E, there are five iterations. CodeFlow assigns a status label to each review comment to keep track of the working progress. The initial status is ``Active'' and can be changed to ``Pending'', ``Resolved'', ``Won't Fix'', and ``Closed'' by anyone. Once a reviewer is satisfied with the updated changes, she can indicate this by setting their status to ``signed off''. After enough reviewers signed off (sign off policies vary by team), the author checks in the changes to the source code repository.
+
+Commercial code review tools facilitates review tasks and communications but do not provide much tool support for code change comprehension. According to~\cite{bacchelli2013expectations}, understanding program changes and their contexts remains a key challenge in modern code review. Reviewers employ many mechanisms to fulfill their understanding needs, most of which are not currently met by any code review tool.
 
 \subsubsection{Interactive Code Review using Change Patterns}
 
