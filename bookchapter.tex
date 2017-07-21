@@ -354,13 +354,13 @@ On the other hand, several research efforts found contradicting evidence that re
 {\it Real-world refactorings are generally not semantics-preserving.} 
 To investigate the challenges associated with refactorings, Kim et al.~conducted a survey with professional developers at Microsoft~\cite{Kim2012:fieldrefactoring}. They sent a survey invitation to 1290 engineers whose commit messages include a keyword ``refactoring'' in the version histories of five MS products. 328 of them responded to the survey. More than half of the participants said they carry out refactorings in the context of bug fixes or feature additions, and these changes are generally not semantics-preserving. When they asked about their own definition of refactoring, 46\% of participants did not mention preservation of semantics, behavior, or functionality at all. This observation is consistent with Johnson's argument that, while refactoring preserves some behavior, it does not preserve behavior in all aspects~\cite{Johnson2011}. 53\% reported that refactorings that they perform do not match the types and capability of transformations supported by existing refactoring engines. 
 
-\begin{wrapfigure}{r}{0.6\textwidth}
-\vspace*{-1ex}
-    \includegraphics[width=0.55\textwidth]{images/manualRefactoring.pdf}
+\begin{figure}[!htb]
 \centering
+    \includegraphics[width=0.55\textwidth]{images/manualRefactoring.pdf}
 \caption{The percentage of survey participants who know individual refactoring types but do those refactorings manually.} 
 \label{fig:manualRefactoring} 
-\end{wrapfigure} 
+\end{figure} 
+
 
 {\it Real-world refactorings are mostly done manually.} 
 When Kim et al., surveyed~\cite{Kim2012:fieldrefactoring}, {\it ``what percentage of your refactoring is done manually as opposed to using automated refactoring tools?''}, developers said they do 86\% of refactoring manually on average. Figure~\ref{fig:manualRefactoring} shows the percentages of developers who usually apply individual refactoring types manually despite the awareness of automated refactoring tool support. Vakilian et al.~\cite{Vakilian2012:usedisuse} and Murphy et al.~\cite{Murphy2006:JSD} also find that programmers do not use automated refactoring despite their awareness of the availability of automated refactorings. Murphy-Hill manually inspected source code produced by 12 developers and found that developers only used refactoring tools for 10\% of refactorings for which tools were available~\cite{Murphy-Hill2009:refactor}. 
