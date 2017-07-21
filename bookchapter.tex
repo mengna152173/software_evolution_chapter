@@ -233,8 +233,13 @@ TXL is a source transformation language designed to translate or manipulate prog
 With TXL, developers to not need to build programming language translators by coding every line of implementation. Instead, the transformation engine can automatically translate code once developers specify all needed grammars and rules. Researchers built tools using TXL to automate various code translation tasks, like ASP-to-NSP and Java-to-C\#~\cite{Chu:08,Hassan:2005,El-Ramly:2006,Tonella:04}.
 
 \subsubsection{Cross-System Porting} 
-\todo{FSE 2012} 
+Software forking\textemdash creating a variant product by copying and modifying an existing product\textemdash is often considered an ad hoc, low cost alternative to principled product line development. To maintain such forked products, developers often need to port an existing feature or bug-fix from one product variant to another. 
 
+Several studies analyzed the evolution of BSD product family. For example, Fischer et al.~analyzed change commit messages of the BSD family and found a decreasing trend of information flow between OpenBSD and other BSD projects~\cite{Fischer2005}. Their analysis does not automatically identify similar code modifications made to different BSD projects. Yamamoto et al.~found up to 40\% of lines of code are shared among NetBSD, OpenBSD, and FreeBSD~\cite{Yamamoto2005:bsdclone}. James et al.~showed the evidence of adopted code in device driver modules between Linux and FreeBSD~\cite{Cordy2011:largecloning}. 
+German et al.~also studied cross project cloning in the BSD product family and analyzed copyright implications when code fragments transfer between different systems under different licenses. On the other hand, our study focuses on the characteristics of cross-system ported changes. 
+Canfora et al.~investigated the social characteristics of contributors who make cross-system bug fixes between FreeBSD and OpenBSD~\cite{Canfora2011:bsdfork}. They used textual analysis of change commit logs and mailing list communication logs. Their findings are aligned with our finding that contributors who port changes from other projects are highly active contributors.  Unlike Canfora et al., our study investigates all three projects (OpenBSD,  FreeBSD, and NetBSD), and automatically detects ported changes by determining similar edit content and edit operation sequences within release-level patches as opposed to the textual analysis of change commit messages only. Furthermore, our study extends Canfora et al.~by measuring the time taken to port changes, the percentage of files affected by porting, the workload distribution among the contributors who port patches from other projects, and the correlation between defects and ported changes vs. non-ported changes. Ozment et al.~investigated security vulnerabilities in the OpenBSD project to examine whether software security improves with age~\cite{Ozment2006}. However, they did not investigate the extent and frequency of ported changes from other BSD projects. 
+
+Ray et al.~\cite{Ray2012:porting} comprehensively characterize the temporal, spatial, and developer dimensions of cross-system porting using the case study of BSD family. Their study finds that maintaining forked projects involves significant effort of porting patches from other projects. Cross-system porting happens periodically and the porting rate does not necessarily decrease over time. A significant portion of active developers participate in porting changes from peer projects. Ported changes are less defect-prone than non-ported changes. 
 
 
 \subsection{Perfective Change}
@@ -311,7 +316,14 @@ Researchers have proposed different approaches, techniques, or formalisms to sup
 The Eclipse IDE provides automatic support for a variety of refactorings, including \emph{rename}, \emph{move}, and \emph{extractMethod}. With such support, developers do not need to worry about how to check for preconditions or postconditions before manually applying a certain refactoring. Instead, they can simply select the refactoring command from a menu (e.g., \emph{extractMethod}), and provide necessary information to accomplish the refactoring (e.g., method name). The Eclipse refactoring engine takes care of the precondition check, program transformation, and postcondition check. Additionally, 
 researchers conducted empirical studies to characterize the refactorings applied by developers~\cite{Kim2012:FSR,Murphy-Hill2012:refactor,Vailian2012:misuse,Silva2016:WWR}, and proposed various approaches to automate refactoring or to complete the refactoring tasks initiated by developers~\cite{Griswold:1992,Balazinska1999,Dig:2009,Ge:2012,Chen:2013,Lee:2013,Tsantalis2013:icsm,Meng:2015,Kim:2016}. For instance, Silva et al.~observed that refactoring activity is mainly driven by changes in the requirements and much less by code smells~\cite{Silva2016:WWR}. Kim et al.~developed R3, an alternative refactoring engine that works 10 times faster than Eclipse Refactoring~\cite{Kim:2016}. 
 
-\todo{Example of Clone Removal Refactoring. RASE ICSE 2015} 
+
+\paragraph{Clone Removal Refactoring.}  
+Based on code clones detected by various techniques~\cite{Kamiya2002, Jiang2007:deckard, Krinke2001}, many tools identify or rank refactoring opportunities~\cite{Balazinska1999a, Higo2008, Goto2013:rank, Higo2013, Tsantalis2011:ranking}. For instance, Balazinska et al.~\cite{Balazinska1999a} define a clone classification scheme based on various types of differences between clones and automate the classification to help developers assess refactoring opportunities for each clone group. Higo et al.~and Goto et al.\/ rank clones as refactoring candidates based on coupling or cohesion metrics~\cite{Higo2008,Goto2013:rank}. Others integrate evolution information in software history to rank clones that have been repetitively or simultaneously changed in the past~\cite{Higo2013, Tsantalis2011:ranking}. While these tools detect refactoring opportunities for clones, they do not automatically refactor code.
+
+A number of techniques automate clone removal refactorings by factorizing the common parts and by parameterizing their differences using a {\em strategy} design pattern or a {\em form template method} refactoring~\cite{Balazinska1999, Tairas2012:CeDAR, Juillerat2007, Higo:2012, Tsantalis2013:icsm}. These tools insert customized calls in each original location to use newly created methods. Juillerat et al.~automate {\em introduce exit label} and {\em introduce return object} refactorings~\cite{Juillerat2007}. However, for variable and expression variations, Juillerat et al.'s approach and CloRT~\cite{Balazinska1999} define extra methods to mask the differences. CloRT was applied to JDK 1.5 to automatically reengineer class level clones. Similar to our results, they find this reengineering effort led to an increase in the total size of code because it created numerous simple methods. Hotta et al.\/ use program dependence analysis to handle gapped clones---trivial differences inside code clones that are safe to factor out and such that they can apply the {\em form template method} refactoring to the code~\cite{Higo:2012}. Krishnan et al.~use PDGs of two programs to identify a maximum common subgraph so that the differences between the two programs are minimized and fewer parameters are introduced~\cite{Tsantalis2013:icsm}. RASE is a state-of-the art clone removal refactoring technique that (1) extracts common code guided by a systematic  edit; (2) creates new types and methods as needed; (3) parameterizes differences in types, methods, variables, and expressions; and (4) inserts return objects and exit labels based on control and data flow~\cite{Meng2015:rase}. 
+\todo{Tsantalis's new work on clone removal from ICSE 2017 using lambda} 
+
+\noindent{\bf Automatic Procedure Extraction.} Komondoor et al.\/ extract methods based on the user-selected or tool-selected statements in one method~\cite{Komondoor2000, Komondoor:2003}. The {\em extract method} refactoring in the Eclipse IDE requires contiguous statements, whereas these tools handle non-contiguous statements. Program dependence analysis identifies the relation between selected and unselected statements and determines whether the non-contiguous code can be moved together to form extractable contiguous code. Similar to RASE, Komondoor et al.\/ apply {\em introduce exit label} refactoring to handle exiting jumps in selected statements~\cite{Komondoor:2003}. Tsantalis et al.\/ extend the techniques by requiring developers to specify a variable of interest at a specific point only~\cite{Tsantalis2011:extract}. They use a block-based slicing technique to suggest a program slice to isolate the computation of the given variable. These approaches are only focused on extracting code from a single method. Therefore, they do not handle extracting common code from multiple methods and resolving the differences between them. 
 
 \subsubsection{Empirical Studies of Refactoring} 
 
@@ -650,7 +662,52 @@ Other approaches ensure the consistency between refactored programs and other so
 
 
 \paragraph{\bf Detecting Inconsistent Changes to Clones} 
-\todo{ASE 2013 paper} 
+Juergens et al.~\cite{Juergens2009:clone-bug} conduct an empirical
+study on the impact of inconsistent clones in a code base. They detect
+inconsistent clones using a suffix-tree based, lexical clone detection
+algorithm. Their interviews with developers confirm that
+inconsistencies in the found clones are indeed bugs and report that
+{\em ``nearly every second, unintentional inconsistent changes to
+  clones lead to a fault."}
+
+Chou et al.~show that porting is an important source of bugs in
+operating systems~\cite{Chou2001:EmpOsError}. In 65\% of the ported
+code, at least one identifier is renamed, and in 27\% cases at least
+one statement is inserted, modified, or
+deleted~\cite{Li2004:CP-Miner}. An incorrect adaptation of ported code
+often leads to porting errors~\cite{Jiang2007:clone-bug}. This
+observation is aligned with our findings\textemdash where we find 113
+and 182 porting errors by mining FreeBSD and Linux version histories
+respectively.
+
+Using CP-Miner, a mining based clone detection tool, Li et al.~find 28 and 23
+errors in Linux and FreeBSD respectively, which developers created by
+forgetting to rename identifiers consistently after copy and
+paste~\cite{Li2004:CP-Miner}. Jablonski et
+al.~\cite{Jablonski2007:CReN} detect similar errors by tracking
+copy-paste code within an Eclipse IDE and by comparing the
+corresponding AST representations.  
+
+SPA~\cite{Ray2013:spa} detects a broader scope of inconsistent renamings by tokenizing
+function names, file names, and identifier names using a camel case
+naming convention and mapping corresponding tokens. Our algorithm
+detects an inconsistency when a token in one context maps to multiple
+tokens in the other context.  For example, when code is ported
+from~\texttt{Export.java} to~\texttt{Import.java}, SPA checks
+whether all names related to~\texttt{export} are updated
+to~\texttt{import}.
+
+Jiang et al.~show that an inconsistent context can also cause porting
+errors~\cite{Jiang2007:clone-bug}. However, their definition of
+context is limited to the {\em innermost} control flow construct
+surrounding the cloned code. They identify syntactic clones using AST
+level similarity~\cite{Jiang2007:deckard}, and then detect
+inconsistencies by comparing the contexts. 
+
+DejaVu extends the work by Jiang et al. by using several filtering
+heuristics, such as assessing textual similarity and pruning
+non-cloned contexts, to improve its
+precision~\cite{Gabel2010:dejavu}. 
 
 
 \paragraph{\bf Change Conflicts, Interference, and Relevance. } 
@@ -679,7 +736,7 @@ Several visualization tools focus on representing changes between versions \cite
 Existing program differencing techniques use similarities in names and structure to match code elements at a particular granularity: (1) lines and tokens \cite{Apostolico1997, Hunt1977, Reiss2008, Tichy1984}, (2) abstract syntax tree nodes \cite{Cottrell2007, Fluri2007, Hunt2002, Neamtiu2005, Raghavan2004, Yang1991}, (3) control flow graph nodes \cite{Apiwattanapong2004, Laski1992}, (4) program dependence graph nodes \cite{Binkley1995, Horwitz1990, Jackson1994}, etc.  For example, the ubiquitous tool {\it diff} computes line-level differences per file using the longest common subsequence algorithm \cite{Hunt1977}. These tools output individual additions and deletions at a particular granularity without any structure, obliging the developer to read individual differences. Some approaches attempt to mitigate this problem by grouping the differences by physical locations (directories and files) \cite{Hunt1976}, by logical locations (packages, classes, and methods) \cite{Xing2005}, by structural dependencies (define-use and overriding) \cite{Chesley2005}, or by similarity of names. 
 As existing approaches do not recognize regularities in code changes, subsequently they are unable to detect inconsistencies in code changes, leaving it to a programmer to discover potential bugs.  
 
-\subsection{Code Matching} 
+The program differecing problem is a dual problem of code matching.  
 		\label{related_codematching}
 \indent{\textit{Suppose that a program $P'$ is created by modifying $P$. Determine the difference $\Delta$ between $P$ and $P'$. For a code fragment $c' \in P'$, determine whether $c' \in \Delta$. If not, find $c'$'s corresponding origin $c$ in $P.$}}
 
@@ -874,7 +931,7 @@ leverage automated analysis to help developers manage the impact of other develo
 subsubsection heading and should not be assigned a number.
 
 \section{The References Section}\label{references}
-\bibliography{tianyi,mengna,reference,miryung,kim,refs-kim,refs-wong,kimthesis,libsync,libsync2,chime,faultracer,repair,everton,kimrefactor}
+\bibliography{tianyi,mengna,reference,miryung,kim,refs-kim,refs-wong,kimthesis,libsync,libsync2,chime,faultracer,repair,everton,kimrefactor,rase,spa}
 \bibliographystyle{abbrv}
 
 \section*{Appendix} 
