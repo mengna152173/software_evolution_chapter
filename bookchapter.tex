@@ -162,13 +162,14 @@ Rule template                  & Example                                        
 Engler et al.~defined a meta-language for users to easily specify temporal system rules such as ``release locks after acquiring them''~\cite{Engler2000:CSR}. They also extended a compiler to interpret the rules and dynamically generate additional checks in the compiler. If any code snippet violates the specified rule(s), the approach reports the snippet as a software bug. Table~\ref{tab:rule} presents some exemplar system rule templates and instances. 
 With this approach, developers can flexibly define their own rules to avoid some project-specific bugs, without worrying how to implement checkers to enforce the rules.
 
+FixWizard identifies code clones based on object usage and interactions, recognizes recurring bug-fixes to the clones, and suggests a location and example edit~\cite{Nguyen2010:RBF}. FixWizard identifies edit locations automatically only in pre-identified clones.  It does {\em not generate syntactic edits}, nor does it support abstraction of variables, methods, and types. These limitations leave programmers with the burden of manually editing the suggested fix-location, which is error-prone and tedious.
+
 Li et al. developed CP-Miner, an automatic approach to find copy-paste related bugs in large-scale software~\cite{Li2006:CPMiner}. CP-Miner was created based on a prior empirical study~\cite{Chou2001:ESO}, which revealed that under the Linux {\sf drivers/i2o} directory, 34 out of 35 errors were caused by copy-paste or duplicated code. 
 One of the major reasons why copy-paste introduces bugs is that when developers copy code from one location and paste it to another location, they forget to consistently rename identifiers of variables, functions, and types. CP-Miner first identifies copy-paste code in a scalable way, and then detects bugs associated with copy-paste by checking the renamed identifiers. If an identifier is inconsistently renamed, with some of its occurrences replaced and some not replaced, CP-Miner reports it as a copy-paste bug. Many previously unknown bugs in popular operating systems were detected in this way, 49 in Linux and 31 in FreeBSD, meaning that CP-Miner can effectively capture copy-paste related bugs. 
 
 \subsubsection{Automated Repair.} 
 
-Automatic program repair generates candidate patches and checks correctness using compilation and testing~\cite{Weimer2009:AFP}.  For example, Weimer et al.~generate candidate patches by replicating, mutating, or deleting code \emph{randomly} from the existing program. They do not infer edits from multiple edit examples, nor do they systematically apply an edit to multiple places. Specification-based program repair such as AutoFix-E~\cite{Wei:2010:AutoFix-E} generates simple bug fixes from manually prescribed contracts. FixMeUp inserts missing security checks interprocedurally using a specification, but these additions are very specific and stylized~\cite{son2013fix}.  
-Kim et al.'s PAR~\cite{Kim2013:PAR} use ten common bug fix patterns inferred from Eclipse JDT's version history to improve the patch suggestions of Weimer et al.~\cite{Weimer2009:AFP}. However, the patterns are created manually. Since systematic editing techniques such as LASE automate bug fix pattern inference and when used together with PAR, it could reduce manual effort of similar bug fixes significantly. Given concurrency error reports, Jin et al. select from and test a handful of synchronization patterns to fix them~\cite{JZDLL:12}. They insert appropriate synchronization into a compiler intermediate representation, whereas LASE~\cite{Meng12:lase} directly modifies the program. Although LASE does not coordinate cross method or interprocedural changes, it handles a much larger class of edits than all these tools. 
+Automatic program repair generates candidate patches and checks correctness using compilation and testing~\cite{Weimer2009:AFP}.  For example, Weimer et al.~generate candidate patches by replicating, mutating, or deleting code \emph{randomly} from the existing program. They do not infer edits from multiple edit examples, nor do they systematically apply an edit to multiple places. Specification-based program repair such as AutoFix-E~\cite{Wei:2010:AutoFix-E} generates simple bug fixes from manually prescribed contracts. FixMeUp inserts missing security checks interprocedurally using a specification, but these additions are very specific and stylized~\cite{son2013fix}. Kim et al.'s PAR~\cite{Kim2013:PAR} use ten common bug fix patterns inferred from Eclipse JDT's version history to improve the patch suggestions of Weimer et al.~\cite{Weimer2009:AFP}. However, the patterns are created manually. Since systematic editing techniques such as LASE automate bug fix pattern inference and when used together with PAR, it could reduce manual effort of similar bug fixes significantly. Given concurrency error reports, Jin et al. select from and test a handful of synchronization patterns to fix them~\cite{JZDLL:12}. They insert appropriate synchronization into a compiler intermediate representation, whereas LASE~\cite{Meng12:lase} directly modifies the program. Although LASE does not coordinate cross method or interprocedural changes, it handles a much larger class of edits than all these tools. 
 
 One class of strategies in automatic software repair relies on specifications or contracts to guide sound patch generation~\cite{gopinath2011, liblit2011, liu2012, semfix13,Wei:2010:AutoFix-E}. This provides confidence that the output is correct.  Genetic programming has also been used to co-evolve defect repairs and unit test cases~\cite{Arcuri11,wilkerson2012}; these techniques tend to rely at least in part on formal specifications to define correctness~\cite{arcuriy08,wilkerson11}.  Such techniques struggle to scale, and are usually limited to manually specified code, which is rare in practice.
 
@@ -216,7 +217,8 @@ mppSMT is the most recent code translation tool, which automatically infers and 
 
 
 \paragraph{\textbf{Mining API Migration Rules}}
-When migrating programs across languages, API usage conversion poses another challenge for developers who manually define program translation rules or reimplement software from scratch, because the diverse usage of API libraries induces an endless process of specifying API translation rules or identifying API mappings. Zhong et al.~\cite{zhong2010mining} and Nguyen et al.~\cite{nguyen2014statistical,Nguyen:2017:EAE} automatically mined API usage mappings between Java and C\#. Specifically, Zhong et al.~aligned the code in two versions based on similar names of classes and methods, and then constructed the API transformation graphs for each pair of aligned statements to identify API mappings~\cite{zhong2010mining}. StaMiner~\cite{nguyen2014statistical} mines API usage sequence mappings by conducting program dependency analysis~\cite{Muchnick:1998} and representing API usage as groums---a graph-basedmodel for representing object API usage~\cite{Nguyen09}. API2VEC mines API usage sequence mappings by converting API element sequences to vectors, and comparing cosine similarities between vectors~\cite{Nguyen:2017:EAE}. 
+When migrating programs across languages, API usage conversion poses another challenge for developers who manually define program translation rules or reimplement software from scratch, because the diverse usage of API libraries induces an endless process of specifying API translation rules or identifying API mappings. Zhong et al.~\cite{zhong2010mining} and Nguyen et al.~\cite{nguyen2014statistical,Nguyen:2017:EAE} automatically mined API usage mappings between Java and C\#. Specifically, Zhong et al.~aligned the code in two versions based on similar names of classes and methods, and then constructed the API transformation graphs for each pair of aligned statements to identify API mappings~\cite{zhong2010mining}. StaMiner~\cite{nguyen2014statistical} mines API usage sequence mappings by conducting program dependency analysis~\cite{Muchnick:1998} and representing API usage as groums---a graph-based
+model for representing object API usage~\cite{Nguyen09}. API2VEC mines API usage sequence mappings by converting API element sequences to vectors, and comparing cosine similarities between vectors~\cite{Nguyen:2017:EAE}. 
 
 \subsubsection{Software Library Upgrade}
 
@@ -250,16 +252,9 @@ Furthermore, CatchUp requires that library and client application developers use
 
 SemDiff~\cite{Dagenais2008:RAC} mines API usage changes from other client code or the evolution of library itself. %similar to our work.  
 %The key difference of {LibSync} from SemDiff is that with our work uses a graph-based representation to capture the context of an API usage, including the dependencies among method calls and with a surrounding control logic. In our work, an adaptation pattern is captured in term of a frequent set of graph editing operations that are common to multiple API usage skeletons before and after library migration. On the other hand, 
-SemDiff defines an adaptation pattern as a frequent {\em replacement} of a method invocation. That is, if a method call to $A.m$ is changed to $B.n$ in several adaptations, $B.n$ is likely to be a correct replacement for the calls to $A.m$. As SemDiff models API usages in terms of method calls, it cannot support complex adaptations that involve multiple objects and method calls and that require the knowledge of the surrounding context of those calls. A survey of techniques for easing API migration is found elsewhere~\cite{cossette2012}. Cossette and Walker found that, while most broken code may be mended using one or more of these techniques, each is ineffective when used in isolation~\cite{cossette2012}.  
-%{LibSync}'s key departure point is that when a library's API declarations are modified, such evolution often involves coordinating uses of multiple objects and multiple method calls under certain contexts.
+SemDiff defines an adaptation pattern as a frequent {\em replacement} of a method invocation. That is, if a method call to $A.m$ is changed to $B.n$ in several adaptations, $B.n$ is likely to be a correct replacement for the calls to $A.m$. As SemDiff models API usages in terms of method calls, it cannot support complex adaptations that involve multiple objects and method calls and that require the knowledge of the surrounding context of those calls. LibSync helps client applications migrate library API usages by learning migration patterns~\cite{Nguyen2010:GAA} with respect to a partial AST with containment and data dependences. Though it suggests what code locations to examine and shows example API updates, it is \emph{unable} to transform code.  Furthermore, its flexibility is limited by its inability to abstract variable, method, and type names.
 
-
-
-%Tansey and Tilevich's approach~\cite{Tansey2008:composite} infers generalized transformation rules from given examples so that application developers use the inferred rules to refactor legacy applciations. However, this approach focuses on annotation refactorings that replace the type and naming requirements to the annotation requirements of a target framework. Furthermore, this approach does not focus on updating client applications to cope with evolving libraries. 
-
-%Andersen and Lawall~\cite{Andersen2008:patch} proposed {\em spdiff} that identifies common changes made in a set of files.  API developers could use {\em spdiff} to extract a generic patch and apply it to other clients. Their approach models the changes at the level of {\em text-line} changes. On the other hand, {LibSync} uses a graph-based representation to capture more thorough syntactic and semantic information for adapting API usages.  SmPL~\cite{Padioleau2007,Lawall2009:apienforce} is a domain-specific source transformation language that captures textual patches with a more semantic description of program changes. However, it does not explicitly distinguish API changes from their usage changes. 
-
-
+A survey of techniques for easing API migration is found elsewhere~\cite{cossette2012}. Cossette and Walker found that, while most broken code may be mended using one or more of these techniques, each is ineffective when used in isolation~\cite{cossette2012}.  
 
 \paragraph{\textbf{API Usage Specification Extraction}} 
 There exist several approaches for extracting API usage specifications. The forms of recovered API usage specifications and patterns include finite state automaton~\cite{zeller07,doc2spec}, pairs of method calls~\cite{Livshits2005,williams-tse05}, partial orders of calls~\cite{mapo-fse07,taoxie-ase09}, and Computation Tree Logic formulas~\cite{zeller-ase09}. The API usage representations in those static approaches are still limited, for example, the patterns are without control structures and involve only individual objects belonging to one class. 
@@ -267,9 +262,6 @@ There exist several approaches for extracting API usage specifications. The form
 In contrast to those static approaches, dynamic approaches recover the specifications by investigating the execution traces of programs~\cite{javert,perracotta,shoham-issta07,ramanathan-isce07,mike-ase09}.  These dynamic approaches require a huge amount of execution traces.  
 %Our graph-based representation, iGROUM, captures API usage patterns with control and data dependencies among method calls, and surrounding control logic such as \codefont{while} loop and \codefont{if} statement. 
 %The API usage representations in this paper extend our prior work on GRouMiner~\cite{Nguyen09} to tailor the original multi-object usage representation in order to capture the relevant context surrounding the use of external APIs. In particular, iGROUM explicitly captures API types and methods that appear in action and data nodes, so that program slicing can isolate only a sub-graph that is relevant to the use of a particular library. We also created a new model called xGROUM to represent overriding and inheritance relationships between client methods and API methods. 
-
-
-
 \subsection{Perfective Change}
 \label{sec:perfective}
 
@@ -341,8 +333,18 @@ Researchers have proposed different approaches, techniques, or formalisms to sup
 
 \subsubsection{Automated Refactoring.} 
 
-The Eclipse IDE provides automatic support for a variety of refactorings, including \emph{rename}, \emph{move}, and \emph{extractMethod}. With such support, developers do not need to worry about how to check for preconditions or postconditions before manually applying a certain refactoring. Instead, they can simply select the refactoring command from a menu (e.g., \emph{extractMethod}), and provide necessary information to accomplish the refactoring (e.g., method name). The Eclipse refactoring engine takes care of the precondition check, program transformation, and postcondition check. Additionally, 
-researchers conducted empirical studies to characterize the refactorings applied by developers~\cite{Kim2012:FSR,Murphy-Hill2012:refactor,Vakilian:2012,Silva2016:WWR}, and proposed various approaches to automate refactoring or to complete the refactoring tasks initiated by developers~\cite{Griswold:1992,Balazinska1999,Dig:2009,Ge:2012,Chen:2013,Lee:2013,Tsantalis2013:icsm,Meng2015:ARO,Kim:2016}. For instance, Silva et al.~observed that refactoring activity is mainly driven by changes in the requirements and much less by code smells~\cite{Silva2016:WWR}. Kim et al.~developed R3, an alternative refactoring engine that works 10 times faster than Eclipse Refactoring~\cite{Kim:2016}. 
+The Eclipse IDE provides automatic support for a variety of refactorings, including \emph{rename}, \emph{move}, and \emph{extractMethod}. With such support, developers do not need to worry about how to check for preconditions or postconditions before manually applying a certain refactoring. Instead, they can simply select the refactoring command from a menu (e.g., \emph{extractMethod}), and provide necessary information to accomplish the refactoring (e.g., method name). The Eclipse refactoring engine takes care of the precondition check, program transformation, and postcondition check. 
+
+For example, during refactoring automation, Opdyke suggests to ensure behavior preservation by specifying \emph{refactoring preconditions}~\cite{Opdyke1992:ROF}. For instance, when conducting an \emph{create\_method\_function} refactoring, before inserting a member function $F$ to a class $C$, developers should specify and check for five preconditions, as shown in Figure~\ref{fig:preconditions}. If any precondition is not satisfied, the refactoring should not be applied to the program.
+
+\begin{figure}[!htb]
+\centering
+\scalebox{0.55}{\includegraphics{images/preconditions.pdf}}
+\caption{Preconditions for \emph{create\_method\_function} refactoring~\cite{Opdyke1992:ROF}}
+\label{fig:preconditions}
+\end{figure}
+
+Additionally, researchers conducted empirical studies to characterize the refactorings applied by developers~\cite{Kim2012:FSR,Murphy-Hill2012:refactor,Vakilian:2012,Silva2016:WWR}, and proposed various approaches to automate refactoring or to complete the refactoring tasks initiated by developers~\cite{Griswold:1992,Balazinska1999,Dig:2009,Ge:2012,Chen:2013,Lee:2013,Tsantalis2013:icsm,Meng2015:ARO,Kim:2016}. For instance, Silva et al.~observed that refactoring activity is mainly driven by changes in the requirements and much less by code smells~\cite{Silva2016:WWR}. Kim et al.~developed R3, an alternative refactoring engine that works 10 times faster than Eclipse Refactoring~\cite{Kim:2016}. 
 
 Based on code clones detected by various techniques~\cite{Kamiya2002,Jiang2007a,Krinke2001:PDG}, many tools identify or rank refactoring opportunities~\cite{Balazinska1999a, Higo2008:metricrefactoring, goto2013extract, higo2013identifying, Tsantalis2011:rankRefactoring}. For instance, Balazinska et al.~\cite{Balazinska1999a} define a clone classification scheme based on various types of differences between clones and automate the classification to help developers assess refactoring opportunities for each clone group. Higo et al.~and Goto et al.\/ rank clones as refactoring candidates based on coupling or cohesion metrics~\cite{Higo2008:metricrefactoring,goto2013extract}. Others integrate evolution information in software history to rank clones that have been repetitively or simultaneously changed in the past~\cite{higo2013identifying, Tsantalis2011:rankRefactoring}. While these tools detect refactoring opportunities for clones, they do not automatically refactor code.
 
@@ -384,7 +386,6 @@ To investigate the challenges associated with refactorings, Kim et al.~conducted
 \label{fig:manualRefactoring} 
 \end{figure} 
 
-
 {\it Real-world refactorings are mostly done manually.} 
 When Kim et al., surveyed~\cite{Kim2012:FSR}, {\it ``what percentage of your refactoring is done manually as opposed to using automated refactoring tools?''}, developers said they do 86\% of refactoring manually on average. Figure~\ref{fig:manualRefactoring} shows the percentages of developers who usually apply individual refactoring types manually despite the awareness of automated refactoring tool support. Vakilian et al.~\cite{Vakilian:2012} and Murphy et al.~\cite{Murphy2006:JSD} also find that programmers do not use automated refactoring despite their awareness of the availability of automated refactorings. Murphy-Hill manually inspected source code produced by 12 developers and found that developers only used refactoring tools for 10\% of refactorings for which tools were available~\cite{Murphy-Hill2012:refactor}. 
 
@@ -403,10 +404,10 @@ Clio~\cite{Wong2011:cleo} detects modularity violations based on the assumptions
 
 Related to the problem of code smells detection, various approaches have been proposed to automatically suggest refactoring opportunities based on program context or version history~\cite{Balazinska2000:ACA,Kataoka2001:ASP,Higo2008:metricrefactoring,Tsantalis2011:rankRefactoring,Wang2014:recommendClones,Meng2015:ARO}. Specifically, Kataoka et al.~developed Daikon to infer program invariants at runtime, and thus to suggest candidate refactorings~\cite{Kataoka2001:ASP}. For instance, if Daikon observes that one parameter of a method is always constant, it then suggests a \emph{removeParameter} refactoring. Balazinska et al.~used a clone detection tool to identify duplicated code and to suggest clone removal refactorings~\cite{Balazinska2000:ACA}. Tsantalis et al.~ranked clones that have been repetitively or simultaneously changed in the past to suggest refactorings~\cite{Tsantalis2011:rankRefactoring}. Wang et al.~extracted features from code to reflect program context, code smell, and evolution history, and then used a machine learning technique to rank clones for refactorings~\cite{Wang2014:recommendClones}.
 
+\todo{Recent Work: Max Di Penta and Denys Poshyvanyk} 
 
 \subsection{Automatic Change Application}
 \label{sec:automatic}
-
 
 \begin{figure}[ht]
  \centering
@@ -500,11 +501,6 @@ Manually applying systematic edits is tedious and error-prone.
 %To improve programmer productivity and software quality, 
 Several approaches~\cite{MKM2011,Meng12:lase,Rolim:2017} have been proposed to infer the general program transformation from one or more code change examples provided by developers, and then apply the transformation to other program contexts in need of similar changes. Specifically, LASE requires developers to provide multiple similarly changed Java methods (at least two)~\cite{Meng12:lase}. By extracting the commonality between demonstrated changes and abstracting the changes in terms of identifier usage and control- or data-dependency constraints in edit contexts, LASE creates a general program transformation, which can both detect code locations that should be changed similarly, and suggest customized code changes for each candidate location.
 
-\subsubsection{Suggesting Edit Location.}
-
-LibSync helps client applications migrate library API usages by learning migration patterns~\cite{Nguyen2010:GAA} with respect to a partial AST with containment and data dependences. Though it suggests what code locations to examine and shows example API updates, it is \emph{unable} to transform code.  Furthermore, its flexibility is limited by its inability to abstract variable, method, and type names.
-
-FixWizard identifies code clones based on object usage and interactions, recognizes recurring bug-fixes to the clones, and suggests a location and example edit~\cite{Nguyen2010:RBF}. FixWizard identifies edit locations automatically only in pre-identified clones.  It does {\em not generate syntactic edits}, nor does it support abstraction of variables, methods, and types. These limitations leave programmers with the burden of manually editing the suggested fix-location, which is error-prone and tedious.
 
 \subsection{Other Studies of Software Evolution and its Visualization} 
 Kemerer and Slaughter \cite{Kemerer1999} manually coded over 25000 change logs to classify each change event to 6 types of corrective, 6 types of adaptive, and 6 types of perfective changes. Their analysis used phase mapping and gamma sequence analysis methods originally developed in social psychology to identify and understand the phases of software evolution. 
@@ -539,6 +535,8 @@ Girba et al. \cite{Girba2004} introduced the {\it Yesterday's Weather} metric th
 Rysselberghe et al. \cite{Rysselberghe2004a} proposed a dot plot visualization of change data extracted from a version control system to identify unstable components, coherent entities, productivity fluctuations, etc.  
 
 These visualization techniques assume a substantial interpretation effort on behalf of their users and do not scale well. They become unreadable for a long evolution history of large systems with numerous components. In addition, many of these techniques are inherently limited by the source of history data\textemdash most version control systems consider a software system as a set of files containing lines of texts and consequently they report changes at the lexical level and are unaware of the high-level logical structural changes of the software system. 
+
+\todo{Re-check whether we are talking about the seminal work} 
 
 \section{An Organized Tour of Seminal Papers: II. Inspecting Changes}
 \label{sec:inspect}
@@ -723,10 +721,11 @@ To address this issue, Zhang et al.~present {\critics}, a novel approach that al
  \caption{A screen snapshot of {\critics}'s Eclipse plugin and its features}
  \label{fig:critics-UI}
 \end{figure}
-
+\todo {Tianyi: remove the work flow and condense the text} 
 {\critics} is implemented as an Eclipse plugin.\footnote{{\critics}'s tool and evaluation dataset are available online \url{https://sites.google.com/a/utexas.edu/critics/}} Figure~\ref{fig:critics-UI} shows a screenshot of {\critics} plugin. {\critics} is integrated with the {\bf Compare View} in Eclipse, which displays line-level differences per file (see \ding{172} in Figure~\ref{fig:critics-UI}). A user can specify a program change she wants to inspect by selecting the corresponding code region in the Eclipse Compare View. The {\bf Diff Template View} (see \ding{173} in Figure~\ref{fig:critics-UI}) visualizes the change template of the selected change in a side-by-side view. Reviewers can parameterize concrete identifiers and exclude certain program statements by clicking on the corresponding node in the Diff Template View. {\bf Textual Diff Template View} (see \ding{177} in Figure~\ref{fig:critics-UI}) shows the change template in a unified format. The {\bf Matching Result View} summarizes the consistent changes as {\em similar changes} (see \ding{174} in Figure~\ref{fig:critics-UI}) and inconsistent ones as {\em anomalies} (see \ding{175} in Figure~\ref{fig:critics-UI}).
 
 \subsection{Program Differencing} 
+\todo{need better transition and introduction} 
 Existing program differencing techniques use similarities in names and structure to match code elements at a particular granularity: (1) lines and tokens \cite{Apostolico1997,Hunt1977:LCS, Reiss2008, Tichy1984}, (2) abstract syntax tree nodes \cite{Cottrell:2007,FWP2007, Hunt2002, Neamtiu2005,Raghavan:2004:Dex, Yang1991}, (3) control flow graph nodes \cite{Apiwattanapong2004, Laski1992}, (4) program dependence graph nodes \cite{Binkley1995, Horwitz1990, Jackson1994}, etc.  For example, the ubiquitous tool {\it diff} computes line-level differences per file using the longest common subsequence algorithm \cite{Hunt1977:LCS}. These tools output individual additions and deletions at a particular granularity without any structure, obliging the developer to read individual differences. Some approaches attempt to mitigate this problem by grouping the differences by physical locations (directories and files) \cite{Hunt1976}, by logical locations (packages, classes, and methods) \cite{UMLDiff2005}, by structural dependencies (define-use and overriding) \cite{Chesley2005}, or by similarity of names. 
 As existing approaches do not recognize regularities in code changes, subsequently they are unable to detect inconsistencies in code changes, leaving it to a programmer to discover potential bugs.  
 
@@ -849,7 +848,7 @@ As different language semantics lead to different program differencing requireme
 
 The simplest matching method treats code elements as immutable entities with a fixed name and matches the elements by name. For example, Zimmermann et al. model a function as a tuple, \textit{(file name, FUNCTION, function name)}, and a field as a tuple, \textit{(function name, FIELD, field name)} \cite{Zimmermann2004}. Similarly, Ying et al. \cite{Ying2004} model a file with its full path name. %In fact, matching by name would be sufficient for many evolution analyses that intend to identify coarse-grained patterns such as the characteristics of fault prone modules \cite{Eick2001:CodeDecay,Graves2000,Nagappan2005}.  
 
-\subsubsection{Recording Changes: Edit Capture and Replay.} 
+\subsection{Recording Changes: Edit Capture and Replay.} 
 Recorded change operations can be used to help programmers reason about software changes. We first describe techniques that capture change operations in an editor or an integrated development environment. Next we describe source code transformation languages, which can serve as a basis for capturing high-level semantic transformations. 
 
 %purpose
@@ -887,6 +886,7 @@ Chesley et al.~\cite{Chesley2005} propose Crisp, which uses four pre-defined rul
 
 \subsection{Regression Testing} 
 Existing regression test selection algorithms take two program versions $V_1$ and $V_2$, and a test suite $T$ as input and select $tests \in T$ relevant to the delta between $V_1$ and $V_2$. Some algorithms such as DejaVoo~\cite{Rothermel1997, Harrold2001, Orso2004} construct control flow graphs (CFG) for both versions and simultaneously traverse the two graphs to identify matching CFG nodes, $\{(o_1, n_1), (o_2, n_2), \ldots (o_k, n_k)\}$, whose outgoing edges have different targets. Then the tests that exercised any of \{$o_1$, $o_2$, \ldots $o_k$\} are selected as {\em affected tests} because the changes to its control flow may lead to different run-time behavior in the new version $V_2$. 
+\todo{ forward reference to another chapter} 
 
 \subsection{Debugging Changes} 
 Delta Debugging~\cite{Zeller1999,zeller01} iteratively applies a subset of all changes to
@@ -903,14 +903,7 @@ FaultTracer~\cite{zhang2011localizing}, combines the strengths of Chianti-style 
 
 \subsection{Refactoring Validation} 
 
-Opdyke suggested to ensure such behavior preservation by specifying \emph{refactoring preconditions}~\cite{Opdyke1992:ROF}. For instance, when conducting an \emph{create\_method\_function} refactoring, before inserting a member function $F$ to a class $C$, developers should specify and check for five preconditions, as shown in Figure~\ref{fig:preconditions}. If any precondition is not satisfied, the refactoring should not be applied to the program.
 
-\begin{figure}[!htb]
-\centering
-\scalebox{0.55}{\includegraphics{images/preconditions.pdf}}
-\caption{Preconditions for \emph{create\_method\_function} refactoring~\cite{Opdyke1992:ROF}}
-\label{fig:preconditions}
-\end{figure}
 
 Schaeffer et al.~validate refactoring edits by comparing data and control dependences between two program versions~\cite{Schaefer2010:refactoring}. As opposed to validating refactoring edits, Daniel et al. focus on testing refactoring engines by systematically generating input programs for refactoring transformations~\cite{Brett2007:reftest}. 
 
