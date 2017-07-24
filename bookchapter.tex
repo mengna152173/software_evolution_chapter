@@ -229,6 +229,8 @@ Canfora et al.~investigated the social characteristics of contributors who make 
 
 Ray et al.~\cite{Ray2012:FSE} comprehensively characterize the temporal, spatial, and developer dimensions of cross-system porting using the case study of BSD family. Their study finds that maintaining forked projects involves significant effort of porting patches from other projects. Cross-system porting happens periodically and the porting rate does not necessarily decrease over time. A significant portion of active developers participate in porting changes from peer projects. Ported changes are less defect-prone than non-ported changes. 
 
+\todo{Add Mark Harman's work} 
+
 \subsection{Perfective Change}
 \label{sec:perfective}
 
@@ -343,7 +345,6 @@ To investigate the challenges associated with refactorings, Kim et al.~conducted
 \label{fig:manualRefactoring} 
 \end{figure} 
 
-
 {\it Real-world refactorings are mostly done manually.} 
 When Kim et al., surveyed~\cite{Kim2012:FSR}, {\it ``what percentage of your refactoring is done manually as opposed to using automated refactoring tools?''}, developers said they do 86\% of refactoring manually on average. Figure~\ref{fig:manualRefactoring} shows the percentages of developers who usually apply individual refactoring types manually despite the awareness of automated refactoring tool support. Vakilian et al.~\cite{Vakilian:2012} and Murphy et al.~\cite{Murphy2006:JSD} also find that programmers do not use automated refactoring despite their awareness of the availability of automated refactorings. Murphy-Hill manually inspected source code produced by 12 developers and found that developers only used refactoring tools for 10\% of refactorings for which tools were available~\cite{Murphy-Hill2012:refactor}. 
 
@@ -362,10 +363,10 @@ Clio~\cite{Wong2011:cleo} detects modularity violations based on the assumptions
 
 Related to the problem of code smells detection, various approaches have been proposed to automatically suggest refactoring opportunities based on program context or version history~\cite{Balazinska2000:ACA,Kataoka2001:ASP,Higo2008:metricrefactoring,Tsantalis2011:rankRefactoring,Wang2014:recommendClones,Meng2015:ARO}. Specifically, Kataoka et al.~developed Daikon to infer program invariants at runtime, and thus to suggest candidate refactorings~\cite{Kataoka2001:ASP}. For instance, if Daikon observes that one parameter of a method is always constant, it then suggests a \emph{removeParameter} refactoring. Balazinska et al.~used a clone detection tool to identify duplicated code and to suggest clone removal refactorings~\cite{Balazinska2000:ACA}. Tsantalis et al.~ranked clones that have been repetitively or simultaneously changed in the past to suggest refactorings~\cite{Tsantalis2011:rankRefactoring}. Wang et al.~extracted features from code to reflect program context, code smell, and evolution history, and then used a machine learning technique to rank clones for refactorings~\cite{Wang2014:recommendClones}.
 
+\todo{Recent Work: Max Di Penta and Denys Poshyvanyk} 
 
 \subsection{Automatic Change Application}
 \label{sec:automatic}
-
 
 \begin{figure}[ht]
  \centering
@@ -498,6 +499,8 @@ Girba et al. \cite{Girba2004} introduced the {\it Yesterday's Weather} metric th
 Rysselberghe et al. \cite{Rysselberghe2004a} proposed a dot plot visualization of change data extracted from a version control system to identify unstable components, coherent entities, productivity fluctuations, etc.  
 
 These visualization techniques assume a substantial interpretation effort on behalf of their users and do not scale well. They become unreadable for a long evolution history of large systems with numerous components. In addition, many of these techniques are inherently limited by the source of history data\textemdash most version control systems consider a software system as a set of files containing lines of texts and consequently they report changes at the lexical level and are unaware of the high-level logical structural changes of the software system. 
+
+\todo{Re-check whether we are talking about the seminal work} 
 
 \section{An Organized Tour of Seminal Papers: II. Inspecting Changes}
 \label{sec:inspect}
@@ -682,10 +685,11 @@ To address this issue, Zhang et al.~present {\critics}, a novel approach that al
  \caption{A screen snapshot of {\critics}'s Eclipse plugin and its features}
  \label{fig:critics-UI}
 \end{figure}
-
+\todo {Tianyi: remove the work flow and condense the text} 
 {\critics} is implemented as an Eclipse plugin.\footnote{{\critics}'s tool and evaluation dataset are available online \url{https://sites.google.com/a/utexas.edu/critics/}} Figure~\ref{fig:critics-UI} shows a screenshot of {\critics} plugin. {\critics} is integrated with the {\bf Compare View} in Eclipse, which displays line-level differences per file (see \ding{172} in Figure~\ref{fig:critics-UI}). A user can specify a program change she wants to inspect by selecting the corresponding code region in the Eclipse Compare View. The {\bf Diff Template View} (see \ding{173} in Figure~\ref{fig:critics-UI}) visualizes the change template of the selected change in a side-by-side view. Reviewers can parameterize concrete identifiers and exclude certain program statements by clicking on the corresponding node in the Diff Template View. {\bf Textual Diff Template View} (see \ding{177} in Figure~\ref{fig:critics-UI}) shows the change template in a unified format. The {\bf Matching Result View} summarizes the consistent changes as {\em similar changes} (see \ding{174} in Figure~\ref{fig:critics-UI}) and inconsistent ones as {\em anomalies} (see \ding{175} in Figure~\ref{fig:critics-UI}).
 
 \subsection{Program Differencing} 
+\todo{need better transition and introduction} 
 Existing program differencing techniques use similarities in names and structure to match code elements at a particular granularity: (1) lines and tokens \cite{Apostolico1997,Hunt1977:LCS, Reiss2008, Tichy1984}, (2) abstract syntax tree nodes \cite{Cottrell:2007,FWP2007, Hunt2002, Neamtiu2005,Raghavan:2004:Dex, Yang1991}, (3) control flow graph nodes \cite{Apiwattanapong2004, Laski1992}, (4) program dependence graph nodes \cite{Binkley1995, Horwitz1990, Jackson1994}, etc.  For example, the ubiquitous tool {\it diff} computes line-level differences per file using the longest common subsequence algorithm \cite{Hunt1977:LCS}. These tools output individual additions and deletions at a particular granularity without any structure, obliging the developer to read individual differences. Some approaches attempt to mitigate this problem by grouping the differences by physical locations (directories and files) \cite{Hunt1976}, by logical locations (packages, classes, and methods) \cite{UMLDiff2005}, by structural dependencies (define-use and overriding) \cite{Chesley2005}, or by similarity of names. 
 As existing approaches do not recognize regularities in code changes, subsequently they are unable to detect inconsistencies in code changes, leaving it to a programmer to discover potential bugs.  
 
@@ -846,6 +850,7 @@ Chesley et al.~\cite{Chesley2005} propose Crisp, which uses four pre-defined rul
 
 \subsection{Regression Testing} 
 Existing regression test selection algorithms take two program versions $V_1$ and $V_2$, and a test suite $T$ as input and select $tests \in T$ relevant to the delta between $V_1$ and $V_2$. Some algorithms such as DejaVoo~\cite{Rothermel1997, Harrold2001, Orso2004} construct control flow graphs (CFG) for both versions and simultaneously traverse the two graphs to identify matching CFG nodes, $\{(o_1, n_1), (o_2, n_2), \ldots (o_k, n_k)\}$, whose outgoing edges have different targets. Then the tests that exercised any of \{$o_1$, $o_2$, \ldots $o_k$\} are selected as {\em affected tests} because the changes to its control flow may lead to different run-time behavior in the new version $V_2$. 
+\todo{ forward reference to another chapter} 
 
 \subsection{Debugging Changes} 
 Delta Debugging~\cite{Zeller1999,zeller01} iteratively applies a subset of all changes to
