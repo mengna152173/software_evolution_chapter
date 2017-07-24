@@ -819,7 +819,7 @@ As different language semantics lead to different program differencing requireme
 
 The simplest matching method treats code elements as immutable entities with a fixed name and matches the elements by name. For example, Zimmermann et al. model a function as a tuple, \textit{(file name, FUNCTION, function name)}, and a field as a tuple, \textit{(function name, FIELD, field name)} \cite{Zimmermann2004}. Similarly, Ying et al. \cite{Ying2004} model a file with its full path name. %In fact, matching by name would be sufficient for many evolution analyses that intend to identify coarse-grained patterns such as the characteristics of fault prone modules \cite{Eick2001:CodeDecay,Graves2000,Nagappan2005}.  
 
-\subsubsection{Recording Changes: Edit Capture and Replay.} 
+\subsection{Recording Changes: Edit Capture and Replay.} 
 Recorded change operations can be used to help programmers reason about software changes. We first describe techniques that capture change operations in an editor or an integrated development environment. Next we describe source code transformation languages, which can serve as a basis for capturing high-level semantic transformations. 
 
 %purpose
