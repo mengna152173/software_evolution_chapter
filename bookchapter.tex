@@ -82,47 +82,10 @@ For each of the four types of software changes mentioned in Section~\ref{sec:con
 
 \subsection{Corrective Change}
 \label{sec:corrective}
-Corrective changes such as bug fixes are frequently applied by developers to eliminate defects in software. There are mainly two lines of research conducted: empirical studies to characterize bugs or corresponding fixes~\cite{Fenton2000:QAF,Li2006:TCE,Kim2006:MBF,Lu2008:LMC,Nguyen2010:RBF,Yin2011:FBB,Park2012:supplementary,Zhong2015:ESR}, and automatic approaches to help developers detect and fix bugs~\cite{Engler2000:CSR,Bush2000:SAF,Hangal2002:TDS,Hovemeyer2004:FBE,Naik2006:ESR,Weimer2009:AFP}. There is no clear boundary between the two lines of research, because some prior work~\cite{Li2006:CPMiner,Pham2010:DRS,Jin2012:UDR,Kim2013:PAR} did leverage the characteristics observed in empirical studies to automatically detect and fix bugs.
-
-\subsubsection{Empirical Studies of Bug Fixes.}
-To analyze bug characteristics, Li et al.~conducted an empirical study on bugs from two popular open source projects: Mozilla and Apache HTTP Server~\cite{Li2006:TCE}. By manually examining 264 bug reports from the Mozilla Bugzilla database~\cite{mozilla}, and 209 bug reports from the Apache Bugzilla database~\cite{asf}, they investigated the root cause, impact, and software components of each software error that exhibited abnormal runtime behaviors. They observed three major root causes: memory, concurrency, and semantics. The memory bugs account for 16.3\% in Mozilla and 12.2\% in Apache. Among memory bugs, NULL pointer dereference was observed as a major cause, accounting for 37.2 to 41.7\%. More importantly, semantic bugs are observed to be dominant, accounting for 81.1\% in Mozilla and 86.7\% in Apache. One possible reason is that most semantic bugs are specific to applications. A developer can easily introduce semantic bugs while coding, due to a lack of thorough understanding of the software. It is challenging to automatically detect or fix such bugs, because diagnosing and resolving them may require a lot of domain-specific knowledge.
-
-To characterize bug fixes, Kim et al.~conduct an empirical study on bug fixing data from the change history of five open source projects: ArgoUML, Columba, Eclipse, jEdit, and Scarab~\cite{Kim2006:MBF}. With keywords like ``Fixed'' or ``Bugs'', they retrieved code commits in software version history that are relevant to bug fixes, chopped each commit into contiguous code change blocks (i.e., hunks), and then clustered similar code changes. They observed that 19.3 to 40.3\% bugs appeared repeatedly in version history, while 7.9 to 15.5\% of bug-and-fix pairs appeared more than once. The results demonstrate that project-specific bug fix patterns occur frequently enough to be useful as a bug detection technique. Furthermore, for the bug-and-fix pairs, it is possible to both detect the bug and provide a strong suggestion for the fix. 
-
-\begin{table}[]
-\centering
-\caption{Sample system rule templates and examples from~\cite{Engler2000:CSR}}
-\label{tab:rule}
-\begin{tabular}{l|l}
-\toprule
-Rule template                  & Example                                                 \\ \hline
-``Never/always do X''          & ``Do not use floating point in the kernel''             \\\hline
-``Do X rather than Y''         & ``Use memory mapped I/O rather than copying''           \\ \hline
-``Always do X before/after Y'' & ``Check user pointers before using them in the kernel''\\
-\bottomrule
-\end{tabular}
-\end{table} 
-
-\subsubsection{Automatic Bug Detection and Fixing Approaches.}
-Engler et al.~defined a meta-language for users to easily specify temporal system rules such as ``release locks after acquiring them''~\cite{Engler2000:CSR}. They also extended a compiler to interpret the rules and dynamically generate additional checks in the compiler. If any code snippet violates the specified rule(s), the approach reports the snippet as a software bug. Table~\ref{tab:rule} presents some exemplar system rule templates and instances. 
-With this approach, developers can flexibly define their own rules to avoid some project-specific bugs, without worrying how to implement checkers to enforce the rules.
-
-FixWizard identifies code clones based on object usage and interactions, recognizes recurring bug-fixes to the clones, and suggests a location and example edit~\cite{Nguyen2010:RBF}. FixWizard identifies edit locations automatically only in pre-identified clones.  It does {\em not generate syntactic edits}, nor does it support abstraction of variables, methods, and types. These limitations leave programmers with the burden of manually editing the suggested fix-location, which is error-prone and tedious.
-
-Li et al. developed CP-Miner, an automatic approach to find copy-paste related bugs in large-scale software~\cite{Li2006:CPMiner}. CP-Miner was created based on a prior empirical study~\cite{Chou2001:ESO}, which revealed that under the Linux {\sf drivers/i2o} directory, 34 out of 35 errors were caused by copy-paste or duplicated code. 
-One of the major reasons why copy-paste introduces bugs is that when developers copy code from one location and paste it to another location, they forget to consistently rename identifiers of variables, functions, and types. CP-Miner first identifies copy-paste code in a scalable way, and then detects bugs associated with copy-paste by checking the renamed identifiers. If an identifier is inconsistently renamed, with some of its occurrences replaced and some not replaced, CP-Miner reports it as a copy-paste bug. Many previously unknown bugs in popular operating systems were detected in this way, 49 in Linux and 31 in FreeBSD, meaning that CP-Miner can effectively capture copy-paste related bugs. 
-
-\subsubsection{Automated Repair.} 
-
-Automatic program repair generates candidate patches and checks correctness using compilation and testing~\cite{Weimer2009:AFP}.  For example, Weimer et al.~generate candidate patches by replicating, mutating, or deleting code \emph{randomly} from the existing program. They do not infer edits from multiple edit examples, nor do they systematically apply an edit to multiple places. Specification-based program repair such as AutoFix-E~\cite{Wei:2010:AutoFix-E} generates simple bug fixes from manually prescribed contracts. FixMeUp inserts missing security checks interprocedurally using a specification, but these additions are very specific and stylized~\cite{son2013fix}. Kim et al.'s PAR~\cite{Kim2013:PAR} use ten common bug fix patterns inferred from Eclipse JDT's version history to improve the patch suggestions of Weimer et al.~\cite{Weimer2009:AFP}. However, the patterns are created manually. Since systematic editing techniques such as LASE automate bug fix pattern inference and when used together with PAR, it could reduce manual effort of similar bug fixes significantly. Given concurrency error reports, Jin et al. select from and test a handful of synchronization patterns to fix them~\cite{JZDLL:12}. They insert appropriate synchronization into a compiler intermediate representation, whereas LASE~\cite{Meng12:lase} directly modifies the program. Although LASE does not coordinate cross method or interprocedural changes, it handles a much larger class of edits than all these tools. 
-
-One class of strategies in automatic software repair relies on specifications or contracts to guide sound patch generation~\cite{gopinath2011, liblit2011, liu2012, semfix13,Wei:2010:AutoFix-E}. This provides confidence that the output is correct.  Genetic programming has also been used to co-evolve defect repairs and unit test cases~\cite{Arcuri11,wilkerson2012}; these techniques tend to rely at least in part on formal specifications to define correctness~\cite{arcuriy08,wilkerson11}.  Such techniques struggle to scale, and are usually limited to manually specified code, which is rare in practice.
-
-Another set of techniques uses search-based software engineering~\cite{harman07} or predefined repair templates to generate many candidate repairs for a bug, and then validates them using indicative workloads or test suites~\cite{Kim2013:PAR, genprog-icse2012, Perkins09:clearview}.  Many of these approaches can scale to repair defects in large systems with human-competitive costs.  However, they tend to find the smallest possible fix for a given failure, and current evidence suggests that humans may find the resulting patches unacceptable in many cases~\cite{genprog-maintainability,Kim2013:PAR}. 
+\input{bugfix} 
 
 \subsection{Adaptive Change}
 \label{sec:adaptive}
-
 Adaptive changes are applied to a software product when its environment changes. For instance, when a software system is installed on a computer, the installation can depend on configurations of the hardware, the software, and the device drivers for particular devices. If we move the software to a different computer that uses a different processor, installs a different operating system, and uses different drivers, the software will not execute. To overcome this problem and make the software executable again, we need adaptive changes to adjust the software to the new environment. 
 Specifically, if the software system is written in a fully portable programming language (e.g., Go) that supports compilations for different platforms, we can recompile the source code of the software without manually applying any adaptive source code change for different operating systems and processors. For partially portable languages (e.g., C and C++) that contain some platform-specific library APIs, developers need to rewrite the part of the software implementation which depends on the platform-specific features. In extreme cases, e.g., when porting a Java desktop application to the iOS platform, developers need to rewrite everything from scratch, because both the programming language (i.e., Swift) and software libraries are totally different.  
 
@@ -880,6 +843,8 @@ overcome these limitations by automatically inferring awareness-interests and mo
 leverages in-depth automated code change analysis to abstract program differences at a high-level, to determine which subset of changes are refactorings, to reason about {\em interdependence} and {\em interference} among program deltas in order to investigate, search and monitor code changes by their content and structure.  
 leverage automated analysis to help developers manage the impact of other developers' modifications. 
 
+ 
+Since systematic editing techniques such as LASE automate bug fix pattern inference and when used together with PAR, it could reduce manual effort of similar bug fixes significantly. 
 \subsubsection*{Acknowledgments.} The heading should be treated as a
 subsubsection heading and should not be assigned a number.
 
