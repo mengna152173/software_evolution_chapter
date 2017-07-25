@@ -1,0 +1,40 @@
+Perfective change is the change undertaken to expand the existing requirements of a system. Not much research is done to characterize feature enhancement or addition. One possible reason is that the implementation logic is always domain and project-specific and that it is challenging for any automatic tool to predict what new feature to add and how that new feature must be implemented. Therefore, the nature and characteristics of feature additions are under-studied for that reason. 
+
+In this section, we discuss a rather well-understood type of perfective changes, called {\em crosscutting concerns} and techniques for implementing and managing crosscutting concerns. As programs evolve over time, they may suffer from the {\it the tyranny of dominant decomposition}~\cite{Tarr1999}. They can be modularized in only one way at a time. Concerns that are added later may end up being scattered across many modules and tangled with one another. Logging, performance, error handling, and synchronization are canonical examples of such secondary design decisions that lead to non-localized changes.
+  
+Aspect-oriented programming languages provide language constructs to allow concerns to be updated in a modular fashion~\cite{Kiczales2001:OA}. Other approaches instead leave the crosscutting concerns in a program, while providing mechanisms to document and manage related but dispersed code fragments. For example, Griswold's information transparency technique uses naming conventions, formatting styles, and ordering of code in a file to provide indications about crosscutting concern code that should change together \cite{Griswold2001}. 
+
+\subsubsection{Techniques for Locating Crosscutting Concerns.}
+Several tools allow programmers to automatically or semi-automatically locate crosscutting concerns. Robillard et al.~\cite{Robillard2003} allow programmers to manually document crosscutting concerns using structural dependencies in code. Similarly, the Concern Manipulation Environment \cite{Harrison2005} allows programmers to locate and document different types of concerns. Van Engelen et al.~\cite{VanEngelen2005} use clone detectors to locate crosscutting concerns. Shepherd et al.~\cite{Shepherd2007} locate concerns using natural language program analysis. Breu et al.~\cite{Breu2006} mine aspects from version history by grouping method-calls that are added together. Dagenais et al.~\cite{Dagenais2007} automatically infer and represent structural patterns among the participants of the same concern as rules in order to trace the concerns over program versions. 
+
+\subsubsection{Language Support for Crosscutting Concerns.}
+{\it Aspect-Oriented Programming} (AOP) is a programming paradigm that aims to increase modularity by allowing the separation of crosscutting concerns~\cite{aspectj}. Suppose developers want to add a new feature such as logging to to log all executed functions. The logging logic is straightforward: printing the function's name at each function's entry. However, manually inserting the same implementation to each function body is tedious and error-prone. With AOP, developers only need to first define the logging logic as \textbf{an advice}, and then specify the place where to insert the advice (i.e., \textbf{pointcut}), such as the entry point of each function. An aspect weaver will read the aspect-oriented code, and generate appropriate object-oriented code with the aspects integrated. In this way, AOP facilitates developers to efficiently introduce new program behaviors without cluttering the core implementation in the existing codebase. Many Java bytecode manipulation frameworks implement the AOP paradigm, like ASM~\cite{asm}, Javassist~\cite{javassist}, and AspectJ~\cite{aspectj}, so that developers can easily modify program runtime behaviors without touching source code. 
+
+{\it Feature Oriented Programming} (FOP) is another paradigm for program generation in software product lines and for incremental development of programs~\cite{Batory1992:DIH}. FOP is closely related to AOP. Both deal with modules that encapsulate crosscuts of classes, and both express program extensions. In FOP, every software is considered as a composition of multiple features or layers. Each feature implements a certain program functionality, while features may interact with each other to collaboratively provide a larger functionality. A software product line (SPL) is a family of programs where each program is defined by a unique composition of features. Formally, FOP considers programs as \emph{values} and program extensions as \emph{functions}~\cite{Lammel2013:fop}. The discussion of program generation techniques for software product lines is described elsewhere in \todo{cross reference a chapter on the product line Chapter~\ref{ch:productline}}. 
+
+\begin{comment} 
+Suppose there are two programs: 
+
+$f \text{	// program with feature }f$, and
+
+$g\text{	// program with feature }g$.
+
+\noindent
+A program extension is a function that takes a program as input and produces a feature-augmented program output. Suppose there are two program extensions:
+
+$i \bullet x$ // adds feature i to program x, and 
+
+$j \bullet y$ // adds feature j to program y.
+
+By applying the functions to the values, we can compose more than one multi-featured application as below:
+
+$app1 = i \bullet f$ // app1 has features i and f,
+
+$app2 = j \bullet g$ // app2 has features j and g, and
+ 
+$app3 = i \bullet j \bullet f$ // app3 has features i, j, f.
+\end{comment} 
+ 
+ 
+
+
