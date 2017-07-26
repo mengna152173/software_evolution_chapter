@@ -100,41 +100,8 @@ We discuss the characteristics of {\em corrective}, {\em adaptive}, {\em perfect
 \label{sec:automatic}
 \input{transformation} 
 
-\subsection{Other Studies of Software Evolution and its Visualization} 
-Kemerer and Slaughter \cite{Kemerer1999} manually coded over 25000 change logs to classify each change event to 6 types of corrective, 6 types of adaptive, and 6 types of perfective changes. Their analysis used phase mapping and gamma sequence analysis methods originally developed in social psychology to identify and understand the phases of software evolution. 
-
-Eick et al. \cite{Eick2001:CodeDecay} developed a process for analyzing the change history of the code, which is assumed to reside in a version management system, calculating code-decay indices, and predicting the fault potential and change effort through regression analysis. The objective of this research is to support project management so that code decay is delayed. 
-
-Hassan and Holt \cite{Hassan2003} studied the chaos of software systems in terms of information entropy\textemdash the amount of uncertainty related to software products. Intuitively, in the context of software evolution, if a software system is being modified across all its modules, it has high entropy, and the software maintainers will have a hard time keeping track of all the changes. Their work relies on maintenance documentation to keep track of software modifications in order to compute information entropy of files that evolved over a period of time. The major drawback of this line of research is that it requires developers' comments recorded in the version management system. In most real-world software projects, comments are inconsistent in their detail and they often do not even exist. 
-
-There are several visualization techniques that focus on software evolution, in particular, changes in software-process statistics, source code metrics, static dependence graphs, {\it diff}-based deltas and their derivatives, etc. 
-
-% ball 1996 - software visualization in the large
-Ball et al. \cite{Ball1996} developed the one of the first systems that \cite{Ball1996} explored visualizing software evolution data, in particular, the age of individual code lines as a color. Their work also visualizes program differences between two versions, which are calculated using {\it diff}.
-
-%Holt and Pak 1996 
-Holt and Pak \cite{Holt1996} visualized structural changes between two program versions by explicitly modeling code elements and their structural dependencies. Their visualization focuses on which structural dependencies are common, which dependencies are new, and which dependencies are deleted between two versions at the subsystem level. 
-
-% ball 1997 - if version control system could talk. 
-
-%eick 2002
-Eick et al.~\cite{Eick2002} developed a number of views (matrix, cityscape, bar and pie charts, data sheets, and network) that facilitate rapid exploration of high-level structure in software evolution data and also serve as a powerful visual interface to the data details as needed. These visualization tools explicitly model logical software changes as their visualization is built upon proprietary evolution history data, where a set of related program deltas are grouped to a logical software change called a modification request (MR) and its change type is manually written by developers as an adaptive, corrective, or perfective change. 
-
-% pingzger 2005 -RelVis
-Pinzger et al.'s RelVis approach \cite{Pinzger05:sv} condenses multi-dimensional software evolution metric data into two graphs. The first graph visualizes modules and their metrics over time. The second graph visualizes relationships between source code modules. In both graphs, the evolution of metrics is visualized using a Kiviat diagram where annual rings indicate metric values for each release.
-
-% Lanza 2003 
-Lanza and Ducasse's Polymetric views \cite{Lanza2003} is a lightweight software visualization technique enriched with software metrics information. Polymetric views help to understand the structure and detect problems of a software system in the initial phases of a reverse engineering process by combining software visualization and software metrics. Lanza applied this general visualization technique to metric values over multiple program versions, and named this view an evolution matrix \cite{Lanza01:sv}. This view is instantiated at two granularity levels (a system level or a class level) and can help programmers understand how the system size grows, when and where classes are added or deleted, etc. 
-
-%Girba 2004
-Girba et al. \cite{Girba2004} introduced the {\it Yesterday's Weather} metric that can further condense historical change patterns at a class granularity. This metric is designed to help a programmer identify a candidate for further reverse engineering based on the observation that classes that changed most in the recent past are likely to undergo important changes in the near future. 
- 
-%Rysselberge 2004
-Rysselberghe et al. \cite{Rysselberghe2004a} proposed a dot plot visualization of change data extracted from a version control system to identify unstable components, coherent entities, productivity fluctuations, etc.  
-
-These visualization techniques assume a substantial interpretation effort on behalf of their users and do not scale well. They become unreadable for a long evolution history of large systems with numerous components. In addition, many of these techniques are inherently limited by the source of history data\textemdash most version control systems consider a software system as a set of files containing lines of texts and consequently they report changes at the lexical level and are unaware of the high-level logical structural changes of the software system. 
-
-\todo{Re-check whether we are talking about the seminal work} 
+%\subsection{Other Studies of Software Evolution and its Visualization} 
+%\input{evolutionvis} 
 
 \section{An Organized Tour of Seminal Papers: II. Inspecting Changes}
 \label{sec:inspect}
