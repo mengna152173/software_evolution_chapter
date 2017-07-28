@@ -109,66 +109,13 @@ We discuss the characteristics of {\em corrective}, {\em adaptive}, {\em perfect
 \subsection{Program Differencing} 
 \label{sec:differencing} 
 \input{differencing} 
-
 \subsection{Recording Changes: Edit Capture and Replay.} 
 \label{sec:record} 
 \input{recording} 
 
-
-
 \section{An Organized Tour of Seminal Papers: III. Change Validation} 
 \label{sec:debugtest}
-
-\begin{figure}[ht]
- \centering
- \includegraphics[width=0.6\textwidth]{images/ChangeValidation.pdf} 
- \caption{Change Validation and Related Research Topics} 
- \label{fig:changevalidation} 
-\end{figure}
-
-\subsection{Change Impact Analysis} 
-%Various approaches have defined change impacts at a different granularity and implemented static and dynamic analyses for computing the impact of a code change~\cite{Apiwattanapong2005, Arnold1996:impact, Elbaum2001,Orso:2003, Orso2004:impact, Ren2004}.  
-Change Impact Analysis~\cite{Arnold1996:impact,Law:2003,Orso:2003,Orso2004:impact, ryder2001change,Ren2004, ren2006identifying} aims to determine the impact of source code edits on programs under test. Existing techniques, such as Chianti~\cite{ryder2001change,Ren2004, ren2006identifying}, select a subset of regression tests whose behavior might have been influenced by program edits and then identify affecting program edits that might related to test failures.  More specifically, Chianti~\cite{Ren2004} constructs dynamic call graphs, modeling programs at a coarser granularity. It compares the syntax tree of the old and new program versions and decomposes the edits into atomic changes at a method and field level~\cite{Ren2004} such as \textsf{AM} for an method addition and \textsf{CM} for method body edits. It reports {\bf affected tests}\textemdash a subset of regression tests relevant to edits and {\bf affecting changes}\textemdash a subset of changes relevant to the execution of affected tests in the new version. 
-
-Chesley et al.~\cite{Chesley2005} propose Crisp, which uses four pre-defined rules to group relevant edits based on compilation dependences. However, this technique still requires manual debugging to localize failure-inducing changes. Stoerzer et al.~\cite{Stoerzer2006} use change classification techniques to find failure-inducing changes. However, this technique does not rank changes, and the classified changes might still be large in number. 
-
-\subsection{Regression Testing} 
-Existing regression test selection algorithms take two program versions $V_1$ and $V_2$, and a test suite $T$ as input and select $tests \in T$ relevant to the delta between $V_1$ and $V_2$. Some algorithms such as DejaVoo~\cite{Rothermel1997, Harrold2001, Orso2004} construct control flow graphs (CFG) for both versions and simultaneously traverse the two graphs to identify matching CFG nodes, $\{(o_1, n_1), (o_2, n_2), \ldots (o_k, n_k)\}$, whose outgoing edges have different targets. Then the tests that exercised any of \{$o_1$, $o_2$, \ldots $o_k$\} are selected as {\em affected tests} because the changes to its control flow may lead to different run-time behavior in the new version $V_2$. 
-\todo{ forward reference to another chapter} 
-
-\subsection{Debugging Changes} 
-Delta Debugging~\cite{Zeller1999,zeller01} iteratively applies a subset of all changes to
-construct intermediate versions to find a minimum set of changes that lead to
-a test failure. However, Delta Debugging considers all changes between
-the old and new program version as the candidate set without considering compilation dependences among those changes. Furthermore,
-Delta Debugging does not rank these edits according to their test spectra, leaving it to a
-programmer to sort out a real culprit of a regression test failure among a
-large set of potential failure-inducing changes.
-
-Spectrum-based fault localization techniques~\cite{hao2005similarity,Hao:com09,harrold05tarantula,Abreu:testing07,Baudry:icse06,liblit05,Yanbing:icse08, abreu2009practical} such as Tarantula~\cite{Jones2002:tarantula} statistically compute suspiciousness scores for statements based on execution traces of both passed and failed test cases, and rank potential faulty statements based on the derived suspiciousness scores. Recently, researchers have also introduced more suspiciousness computation measures to the realm of fault localization for localizing faulty statements~\cite{naish2011model, lo2010comprehensive}. For example, Lucia et al.~\cite{lo2010comprehensive} introduced 20 association measures to the area of spectrum-based fault localization and compare them against Tarantula~\cite{Jones2002:tarantula} and Ochiai~\cite{Abreu:testing07}. Researchers have also developed various automated tool-sets which embodies different spectrum-based fault localization techniques~\cite{tarantula-url, janssen2009zoltar}. However, such spectrum-based fault localization techniques are not scalable to large evolving software systems, as they compute spectra on all statements in each program version and do not leverage information about program edits between the old and new versions.
-
-FaultTracer~\cite{zhang2011localizing}, combines the strengths of Chianti-style change impact analysis and Tarantula-style fault localization. To present a ranked list of potential failure-inducing edits, FaultTracer applies a set of spectrum-based ranking techniques to the affecting changes determined by Chianti-style change impact analysis. It uses a new enhanced call graph representation to measure test spectrum information directly for field-level edits and to improve upon the existing Chianti algorithm. Ren et al.~\cite{Ren2007} propose a heuristic ranking algorithm for method-level edits based on their numbers of ancestors, descendants, callers and callees on call graphs of tests. Ren et al.'s heuristic is confined to rank only method-level edits, while FaultTracer uses test profile at the level of {\em extended call graphs} to consider both method calls and field accesses and can rank all types of program edits including addition, modification, and deletion of methods, as well as fields.  
-
-\subsection{Refactoring Validation} 
-
-
-
-Schaeffer et al.~validate refactoring edits by comparing data and control dependences between two program versions~\cite{Schaefer2010:refactoring}. As opposed to validating refactoring edits, Daniel et al. focus on testing refactoring engines by systematically generating input programs for refactoring transformations~\cite{Brett2007:reftest}. 
-
-Regression testing is the most used strategy for checking refactoring correctness. However, Rachatasumrit and Kim~\cite{Rachatasumrit2012:refactortest} find that test suites are often inadequate and developers may hesitate to initiate or perform refactoring tasks due to inadequate test coverage~\cite{Kim2012:FSR}. Soares et al.~\cite{Soares:icse10} design and implement SafeRefactor that uses randomly generated test suites for detecting refactoring anomalies. Mongiovi et al.~\cite{mongiovi2013making} introduces SafeRefactorImpact. SafeRefactorImpact extends SafeRefactor by adding an impact analysis step. SafeRefactorImpact decomposes an edit into small-grained transformations and analyzes the impact of each one. Then, it uses Randoop to generate test cases for the impacted methods. In our studies, we show that even tool-generated tests can be inadequate. Using a SafeRefactor like testing validation, we find that about 25\% of the refactoring anomalies are not identified by using generated test suites, even with a long generation time limit (100 seconds). 
-
-Formal verification is an alternative for avoiding refactoring anomalies~\cite{Mens2004:SSR}. Corn\'elio et al.~\cite{cornelio2010sound} propose rules for guaranteeing semantic preservation. Similarly, Mens et al.~\cite{mens2005formalizing} use graph rewriting for specifying refactorings. Overbey et al.~\cite{overbey2010collection} present a collection of refactoring specifications for Fortran 95. However, these approaches focus on improving the correctness of automated refactoring through formal specifications, as opposed to finding anomalies during manual refactoring. 
-
-
-RefDistiller is a static analysis approach~\cite{Alves2017:refdistiller,Alves:2014:RRA:2635868.2661674} to support the inspection of manual refactorings. It combines two techniques. First, it applies predefined templates to identify potential missed edits during manual refactoring. Second, it leverages an automated refactoring engine to identify extra edits that might be incorrect, helping to  determine the root cause of detected refactoring anomalies.
-
-GhostFactor~\cite{geManual2014} checks the correctness of manual refactoring, similar to RefDistiller. 
-However, unlike RefDistiller, GhostFactor does not have any capability to isolate potential behavior changes from pure refactoring by running an equivalent automated refactoring. GhostFactor detects missing edits only, while RefDistiller detects both missing and extra edits. 
-
-Ge and Murphy-Hill~\cite{emersoncodereview:2014chase} propose a refactoring-aware code review tool, with goals similar to RefDistiller. This tool helps reviewers by identifying applied refactorings and letting developers examine them in isolation. Ge and Murphy-Hill leverage Eclipse refactoring APIs to separate pure refactorings. RefDistiller goes a step further by extending Eclipse refactoring APIs to prevent unsafe refactoring by checking bug conditions, allowing to apply automated refactoring in a safe manner when isolating pure refactoring. 
-
-
-Other approaches ensure the consistency between refactored programs and other software artifacts like design models~\cite{Bottoni2003:coordinatedTransformation,Straeten2003:UML}. For example, Bottoni et al.~modeled a refactoring as a set of distributed graph transformations~\cite{Bottoni2003:coordinatedTransformation}. Each time a code refactoring is applied, the corresponding graph transformations are automatically applied to related design models to preserve consistency. Van Der Straeten et al.~suggested using description logic to maintain the consistency between relevant UML models as they evolve~\cite{Straeten2003:UML}.
+\input{validation} 
 
 \input{future}
 

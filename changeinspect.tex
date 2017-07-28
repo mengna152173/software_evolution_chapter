@@ -136,8 +136,7 @@ As development teams become distributed, and the size of the system is often too
 
 Most version control systems are only able to detect most simple types of conflicting changes\textemdash changes made on top of other changes~\cite{mens:survey02}. To detect changes that indirectly conflict with each other, some define the notion of {\em semantic interference} using program slicing on program dependence graphs, and integrate non-interfering versions only if there is no overlap between program slices~\cite{Horwitz1989}. As another example, some define semantic interference as the overlap between the data-dependence based impact sets of parallel updates~\cite{Shao2007:interference}. 
 
-Several techniques identify related changes across revisions rely on temporal proximity \cite{Bevan2005, Fischer2003, German2004:softchange, Zimmermann2004b}, syntactic dependence \cite{Chesley2005}, physical location \cite{Zeller1999}, committer information \cite{Fischer2003, German2004:softchange, Zimmermann2004b}, history of co-changes \cite{Gall1998, Ying2004, Zimmermann2004}, and content similarity~\cite{Kim:2009,NNP2009}. For example, Crisp \cite{Chesley2005} computes atomic structural changes such as method additions and deletions via AST differencing and groups syntactically dependent changes through def-use relationships.
-
+%Several techniques identify related changes across revisions rely on temporal proximity \cite{Bevan2005, Fischer2003, German2004:softchange, Zimmermann2004b}, syntactic dependence \cite{Chesley2005}, physical location \cite{Zeller1999}, committer information \cite{Fischer2003, German2004:softchange, Zimmermann2004b}, history of co-changes \cite{Gall1998, Ying2004, Zimmermann2004}, and content similarity~\cite{Kim:2009,NNP2009}. For example, Crisp \cite{Chesley2005} computes atomic structural changes such as method additions and deletions via AST differencing and groups syntactically dependent changes through def-use relationships.  
 %\subsubsection{Search of Software Changes.}
 %\label{sec:changesearch} 
 
@@ -154,15 +153,14 @@ Code cloning is an important source of bugs in operating systems~\cite{releaseno
 % Jiang et al.~show that an inconsistent context can also cause porting errors~\cite{Jiang2007}. However, their definition of context is limited to the {\em innermost} control flow construct surrounding the cloned code. They identify syntactic clones using AST level similarity~\cite{Jiang2007a}, and then detect inconsistencies by comparing the contexts. 
 %DejaVu extends the work by Jiang et al. by using several filtering heuristics, such as assessing textual similarity and pruning non-cloned contexts, to improve its precision~\cite{Gabel2010:dejavu}. 
 
-\begin{figure}[ht]
- \centering
- \includegraphics[width=0.8\textwidth]{images/critics-workflow.pdf}
- \caption{The workflow of {\critics}}
- \label{fig:critics-workflow}
-\end{figure}
+%\begin{figure}[ht]
+% \centering
+% \includegraphics[width=0.8\textwidth]{images/critics-workflow.pdf}
+% \caption{The workflow of {\critics}}
+% \label{fig:critics-workflow}
+%\end{figure}
 
-\paragraph{Example: {\critics}.} It allows reviewers to interactively detect inconsistent changes during peer code review~\cite{zhang2015interactive}. 
-Given a specified change that a reviewer would like to inspect, {\critics} creates a change template from the selected change, which serves as the pattern for searching similar changes. {\critics} includes {\em change context} in the template---unchanged, surrounding program statements that are relevant to the selected change. {\critics} models the template as Abstract Syntax Tree (AST) edits and allows reviewers to iteratively customize the template by parameterizing its content and by excluding certain statements. {\critics} then matches the customized template against the rest of the codebase to summarize similar changes and locate potential inconsistent or missing changes. Reviewers can incrementally refine the template and progressively search for similar changes until they are satisfied with the inspection results. This interactive feature allows reviewers with little knowledge of a codebase to flexibly explore the program changes with a desired pattern. Figure~\ref{fig:critics-workflow} describes the interactive workflow of {\critics}. 
+\paragraph{Example: {\critics}.} {\critics} allows reviewers to interactively detect inconsistent changes through template-based code search and anomaly detection~\cite{zhang2015interactive}. Given a specified change that a reviewer would like to inspect, {\critics} creates a change template from the selected change, which serves as the pattern for searching similar changes. {\critics} includes {\em change context} in the template---unchanged, surrounding program statements that are relevant to the selected change. {\critics} models the template as Abstract Syntax Tree (AST) edits and allows reviewers to iteratively customize the template by parameterizing its content and by excluding certain statements. {\critics} then matches the customized template against the rest of the codebase to summarize similar changes and locate potential inconsistent or missing changes. Reviewers can incrementally refine the template and progressively search for similar changes until they are satisfied with the inspection results. This interactive feature allows reviewers with little knowledge of a codebase to flexibly explore the program changes with a desired pattern. %Figure~\ref{fig:critics-workflow} describes the interactive workflow of {\critics}. 
 
 \begin{figure}[ht]
  \centering
@@ -171,4 +169,4 @@ Given a specified change that a reviewer would like to inspect, {\critics} creat
  \label{fig:critics-UI}
 \end{figure}
 
-Figure~\ref{fig:critics-UI} shows a screenshot of {\critics} plugin. {\critics} is integrated with the {\bf Compare View} in Eclipse, which displays line-level differences per file (see \ding{172} in Figure~\ref{fig:critics-UI}). A user can specify a program change she wants to inspect by selecting the corresponding code region in the Eclipse Compare View. The {\bf Diff Template View} (see \ding{173} in Figure~\ref{fig:critics-UI}) visualizes the change template of the selected change in a side-by-side view. Reviewers can parameterize concrete identifiers and exclude certain program statements by clicking on the corresponding node in the Diff Template View. {\bf Textual Diff Template View} (see \ding{177} in Figure~\ref{fig:critics-UI}) shows the change template in a unified format. The {\bf Matching Result View} summarizes the consistent changes as {\em similar changes} (see \ding{174} in Figure~\ref{fig:critics-UI}) and inconsistent ones as {\em anomalies} (see \ding{175} in Figure~\ref{fig:critics-UI}).
+Figure~\ref{fig:critics-UI} shows a screenshot of {\critics} plugin. {\critics} is integrated with the {Compare View} in Eclipse, which displays line-level differences per file (see \ding{172} in Figure~\ref{fig:critics-UI}). A user can specify a program change she wants to inspect by selecting the corresponding code region in the Eclipse Compare View. The {Diff Template View} (see \ding{173} in Figure~\ref{fig:critics-UI}) visualizes the change template of the selected change in a side-by-side view. Reviewers can parameterize concrete identifiers and exclude certain program statements by clicking on the corresponding node in the Diff Template View. {Textual Diff Template View} (see \ding{177} in Figure~\ref{fig:critics-UI}) shows the change template in a unified format. The {Matching Result View} summarizes the consistent changes as {\em similar changes} (see \ding{174} in Figure~\ref{fig:critics-UI}) and inconsistent ones as {\em anomalies} (see \ding{175} in Figure~\ref{fig:critics-UI}).
