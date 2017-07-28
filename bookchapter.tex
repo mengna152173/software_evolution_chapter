@@ -112,25 +112,8 @@ We discuss the characteristics of {\em corrective}, {\em adaptive}, {\em perfect
 
 \subsection{Recording Changes: Edit Capture and Replay.} 
 \label{sec:record} 
+\input{recording} 
 
-Recorded change operations can be used to help programmers reason about software changes. We first describe techniques that capture change operations in an editor or an integrated development environment. Next we describe source code transformation languages, which can serve as a basis for capturing high-level semantic transformations. 
-
-%purpose
-Several editors or integrated development environment (IDE) extensions capture and replay keystrokes, editing operations, and high-level update commands to use the recorded change information for intelligent version merging, studies of programmers' activities, and automatic updates of client applications. 
-
-% example
-For example, Dig et al.'s MolhadoRef \cite{Dig2007} automatically resolves merging conflicts that a regular {\it diff}-based merging algorithm cannot resolve by taking into account the semantics of recorded move and rename refactorings. This algorithm extends Lippe's operation-based merging \cite{Lippe1992} by defining a model of merging conflicts in case of rename and move refactorings. While Lippe's operation-based merging only defined abstract change operations and did not have a means of recording change operations in IDE, MolhadoRef implements refactoring-aware version merging by recording refactoring commands in the Eclipse IDE.\footnote{Refactoring-aware version merging is one instance of version merging algorithms. A survey of version merging algorithms and tools is described in \cite{mens:survey02}.}
-
-Henkel and Diwan's CatchUp \cite{Henkel2005} captures API refactoring actions as a developer evolves an API and allows the users of the API to replay the refactorings to bring their client software up to date. 
-
-Robbes \cite{Robbes2007} extended a small talk IDE to capture AST-level change operations (creation, addition, removal and property change of an AST node) as well as refactorings. He used the recorded changes to study when and how programmers perform refactorings. Spyware~\cite{Robbes2008:spyware} captures refactorings during development sessions in an IDE rather than trying to infer refactorings from two program versions. Refactoring reconstruction can complement recorded refactorings by providing information about the types of refactorings that are not directly supported by IDEs.
-
-
-Evans et al. \cite{Evans2003} collected students' programming data by capturing keystroke, mouse and window focus events generated from the Windows operating system and used this data to observe programming practices. Similarly, Kim et al.~\cite{Kim04} studied copy and paste programming practices by recording keystrokes and edit operations in an Eclipse IDE. 
-
-% granularity -> limitations 
-When recorded change operations are used for helping programmers reason about software changes, this approach's limitation depends on the granularity of recorded changes. If an editor records only keystrokes and basic edit operations such as cut and paste, it is a programmer's responsibility to raise the abstraction level by grouping keystrokes. If an IDE records only high-level change commands such as refactorings, programmers cannot retrieve a complete change history. 
-In general, capturing change operations to help programmers reason about software change is {\it impractical} as this approach constrains programmers to use a particular IDE. 
 
 
 \section{An Organized Tour of Seminal Papers: III. Change Validation} 
