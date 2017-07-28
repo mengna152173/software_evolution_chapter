@@ -32,7 +32,7 @@
 
 \noindent\keywordname\enspace\ignorespaces#1}
 
-\newcommand{\factfont}[1]{\footnotesize{\sf{{#1}}}\normalsize}
+\newcommand{\factfont}[1]{\scriptsize {\sf{{#1}}}\normalsize}
 \newcommand{\codefont}[1]{\footnotesize{\texttt{#1}}\normalsize}
 \newcommand{\text}[1]{\footnotesize{\texttt{#1}}\normalsize}
 
@@ -105,192 +105,10 @@ We discuss the characteristics of {\em corrective}, {\em adaptive}, {\em perfect
 
 \section{An Organized Tour of Seminal Papers: II. Inspecting Changes}
 \label{sec:inspect}
-
-\begin{figure}[ht]
- \centering
- \includegraphics[width=0.95\textwidth]{images/ChangeInspection.pdf}
- \caption{Change Inspection and Related Research Topics} 
- \label{fig:changeinspection} 
-\end{figure}
-
-\subsection{Software Inspection} 
-To improve the correctness and quality of software systems, developers often perform {\em code reviews} to manually examine program changes made to software systems. Michael Fagan from IBM first introduced ``code inspections'', the original name, in a seminal paper in 1976~\cite{Fagan1999:checklist}. Code inspections are performed at the end of major software development phases, with the aim of finding overlooked defects before moving to the next phase. Software artifacts are circulated a few days in advance and then reviewed and discussed in a series of meetings. The meetings include the author of an artifact, other developers to assess the artifact, and a meeting chair to moderate the discussion, and a secretary to record the discussion. Over the years, code inspections have been proven a valuable method to improve the software quality. However, the cumbersome and time-consuming nature of this process hinders its universal adoption in practice~\cite{johnson1998reengineering}. 
-
-\begin{figure}[ht]
- \centering
- \includegraphics[width=0.75\textwidth]{images/review-process.png}
- \caption{Modern Code Review Process~\cite{beller2014modern}}
- \label{fig:review-process}
-\end{figure}
-
-To avoid the inefficiencies in code inspections, most open-source and industrial projects adopt a lightweight, flexible code review process, which we refer to as {\em modern code reviews}. Figure~\ref{fig:review-process} shows the workflow of modern code reviews. The {\em author} first submits the {\em original source code} for review. The {\em reviewers} then decide whether the submitted code meets the quality acceptance criteria. If not, reviewers can annotate the source code with review comments and send back the {\em reviewed source code}. The author then revises the code to address reviewers' comments and send it back for further reviews. This process continues till all reviewers accept the revised code.
-
-\subsubsection{Modern Code Review Practices.} 
-In contrast to formal code inspections (Fagan style), modern code reviews occur more regularly and informally on small yet complete program changes. 
-%Mockus et al.~studied the defects in Apache bug database and found the Apache project has a defect density comparable to proprietary software~\cite{mockus2000case}. They found that this was accomplished without a policy requiring substantial code reviews before a release. They comment that this result ``may indicate that fewer defects are injected into the code, or that other defect-finding activities such as inspections are conducted more frequently or more effectively''. 
-Rigby et al.~conducted the first case study about modern code review practices in an open-source software (OSS), Apache HTTP server, using archived code review records in email discussions and version control histories~\cite{Rigby2008:apache}. They described modern code reviews as ``early, frequent reviews of small, independent, complete contributions conducted asynchronously by a potentially large, but actually small, group of self-selected experts.'' As code reviews are practiced in software projects with different settings, cultures, and policies, Rigby and Bird further investigated code review practices in a diverse set of open-source and industrial projects~\cite{rigby2013convergent}. Despite differences among projects, they found that many characteristics of modern code reviews have independently converged to similar values, indicating general principles of modern code review practices. We summarize these convergent code review practices as following.
-
-{\it Modern code reviews occur early, quickly, and frequently.} Traditional code inspections happen after finishing a major software component and often last several weeks. In contrast, modern code reviews happen more frequently and quickly around the time when program changes are committed. Rigby et al.~found that the Apache project has review intervals between a few hours to a day. Rigby and Bird also observed that most reviews are picked up within a few hours among all projects, indicating that reviewers are regularly watching and performing code reviews~\cite{rigby2013convergent}.
-
-{\it Modern code reviews often examine small program changes.} In the OSS project studied by Rigby et al., the median change varies from 11 to 32 changed lines. The median change size in industrial projects is larger, e.g, 44 lines in Android, 78 lines in Chrome, but still much smaller than code inspections, e.g., 263 lines in Lucent. Such small changes also facilitate developers to constantly review changes and thus keep up-to-date with the activities of their peers. 
-
-{\it Modern code reviews are conducted by a small group of self-selected reviewers.} 
-%Traditional code inspections require a designated inspection team where team members have particular roles.
-In OSS projects, no reviews are assigned and developers can select the changes of interest to review. Program changes and review discussions are broadcast to a large group of stakeholders but only a small number of developers periodically participate into code reviews. In industrial projects, reviews are assigned in a mixed manner---the author adds a group of reviewer candidates and individuals from the group then select changes to review based on their interest and expertise. Rigby and Bird found that two reviewers find a optimal number of defects~\cite{rigby2013convergent}.
-
-{\it Modern code reviews are often tool-based.} There is a clear trend towards utilizing review tools to support review tasks and communication. Back in 2008, Rigby et al.~reported that code reviews in OSS projects were often email-based due to a lack of tool support. In 2013, Rigby and Bird found that some OSS projects and all industrial projects they studied used a review tool. More recently, popular OSS hosts such as GitHub and BitBucket have integrated lightweight review tools to assign reviewers, enter comments, and record discussions. Compared with email-based reviews and traditional inspections, tool-based reviews provide the benefits of traceability and can record implicit measures. The rise in adoption of review tools provides an indicator of success.
-
-Although the initial purpose of code review is to find defects, recent studies find that the practices and actual outcomes are less about finding defects than expected. Bacchelli and Bird studied hundreds of review comments at Microsoft and found that only a small portion of review comments were related to defects, which were mainly about small, low-level logical issues~\cite{bacchelli2013expectations}. Rather, code review provides a spectrum of benefits to software teams, such as knowledge transfer, team awareness, and improved solutions with better practices and readability. 
-
-\subsubsection{Commercial Code Review Tools.} 
-
-There is a proliferation of review tools, e.g., Phabricator,\footnote{\url{http://phabricator.org}} Gerrit,\footnote{\url{http://code.google.com/p/gerrit/}} CodeFlow,\footnote{\url{http://visualstudioextensions.vlasovstudio.com/2012/01/06/codeflow-code-review-tool-for-visual-studio/}} Crucible,\footnote{\url{https://www.atlassian.com/software/crucible}} and Review Board.\footnote{\url{https://www.reviewboard.org/}} We will illustrate CodeFlow, a collaborative code review tool at Microsoft. Other review tools share similar functionality as CodeFlow.
-
-\begin{figure}[ht]
- \centering
- \includegraphics[width=0.75\textwidth]{images/codeflow.pdf}
- \caption{Example of Code Review using CodeFlow~\cite{bosu2015characteristics}}
- \label{fig:codeflow}
-\end{figure}
-
-To create a review task, a developer uploads changed files and a short description to CodeFlow. Reviewers then get notified via email and can examine the changes in CodeFlow. Figure~\ref{fig:codeflow} shows the desktop window of CodeFlow. It includes the list of changed files under review (A), the reviewers and their status (B), the highlighted diff in a changed file (C), a summary of all review comments and their status (D), and the iterations of a review (E). If a reviewer would like to provide feedback, she can select a change and enter a comment which is overlayed with the selected change (F). The author and other reviewers can follow up the discussion by entering comments in the same thread. Typically, after receiving feedback, the author may revise the change accordingly and submit the updated change for additional feedback, which constitutes another review cycle and is termed as an {\em iteration}. In Figure~\ref{fig:codeflow}-E, there are five iterations. CodeFlow assigns a status label to each review comment to keep track of the working progress. The initial status is ``Active'' and can be changed to ``Pending'', ``Resolved'', ``Won't Fix'', and ``Closed'' by anyone. Once a reviewer is satisfied with the updated changes, she can indicate this by setting their status to ``signed off''. After enough reviewers signed off (sign off policies vary by team), the author can check in the changes to the source code repository.
-
-Commercial code review tools facilitates conduct and manage code reviews but do not provide much tool support for code change comprehension. According to~\cite{bacchelli2013expectations}, understanding program changes and their contexts remains a key challenge in modern code review. Many interviewees in Bachelli and Bird's study acknowledged that it is difficult to understand the rationale behind specific changes. All commercial review tools we are aware of only show the highlighted diff of a changed file. However, when the information required to inspect code changes is distributed across multiple files, developers find it difficult to inspect code changes~\cite{Dunsmore2000:ooinspection}. This obliges reviewers to read changed lines file by file, even when those cross-file changes are done systematically to address the same issue. 
-
-Prior studies also observe that developers often package program changes of multiple tasks to a single code review~\cite{Kawrykow2011,Murphy-Hill2012:refactor,herzig2013impact}. Such large, unrelated changes often lead to difficulty in code change comprehension, since reviewers have to mentally ``untangle'' them to figure out which subset of changes addresses which issue. Reviewers have indicated that they can better understand small, cohesive changes rather than large, tangled ones~\cite{Rigby2008:apache}. For example, a code reviewer commented on Gson revision 1154 saying ``{\em I would have preferred to have two different commits: one for adding the new {\ttt getFieldNamingPolicy} method, and another for allowing overriding of primitives.}''\footnote{\url{https://code.google.com/p/google-gson/source/detail?r=1154}} Currently no review tools support decoupling composite changes in a large code review. 
-\subsubsection{Change Decomposition.}
-
-To address this issue, Barnett et al.~present {\clusterchanges}, a lightweight static analysis technique for decomposing large changes. The insight is that program changes that address the same issue can be related via implicit dependency information such as {\em def-use} relationship. For example, if a method definition is changed in one location and its callsites are changed in two other locations, these three changes are likely to be related and should be reviewed together. Given a code review task, {\clusterchanges} first collects the set of definitions for types, fields, methods, and local variables in the corresponding project under review. Then {\clusterchanges} scans the project for all uses (i.e., references to a definition) of the defined code elements. For instance, any occurrence of a type, field, or method either inside a method or a field initialization is considered to be a use. Based on the extracted def-use information, {\clusterchanges} identifies three relationships between program changes. 
-
- {\bf Def-use relation}. If the definition of a method or a class field is changed, all the uses should also be updated. The change in the definition and the corresponding changes in its references are considered related.
- {\bf Use-use relation}. If two or more uses of a method or a class field defined within the change-set are changed, these changes are considered related. 
- {\bf Enclosing relation}. Program changes in the same method are considered related because a) based on observation, program changes to the same method are often related, (b) reviewers often inspect methods atomically rather than reviewing different changed regions in the same method separately.
-
-Given these relations, {\clusterchanges} creates a partition over the set of program changes by computing a transitive closure of related changes. On the other hand, if a change is not related to any other changes, it will be put into a specific partition, {\em miscellaneous changes}.
-
-\todo{Expand the following technique a little bit more. Give similar weights to ClusterChange.}
-Independently from {\clusterchanges}, Tao et al.~present a similar change decomposition technique that leverages more sophisticated heuristics, other than the def-use analysis only~\cite{tao2015partitioning}. Tao et al.~cluster changes based on the following heuristics.
-
-\subsubsection{Refactoring Aware Code Review and Refactoring Reconstruction.}  
-Demeyer {et al.} first proposed the idea of inferring refactorings from two program versions by comparing two program versions. They used a set of ten characteristic metrics, such as LOC and the number of method calls within a method~\cite{Demeyer2000}. Zou and Godfrey first coined the term origin analysis, which serves as a basis for refactoring reconstruction by matching code elements using multiple criteria (e.g., names, signatures, metric values, callers, and callees)~\cite{Zou2005}. Their approach infers merge, split, and rename refactorings. Van Rysselberghe and Demeyer used a clone detector to detect moved methods~\cite{Rysselberghe2003}.  Antoniol {et al.} identified class-level refactorings using a vector space information retrieval approach~\cite{Antoniol2004}. Malpohl {et al.} \cite{Malpohl2000} align tokens using {\it diff} and infers a function or variable renaming when distinct tokens are surrounded by mapped token pairs. Dig et al.'s approach, {Refactoring Crawler} identifies refactorings in two stages~\cite{Dig2006}. First, it finds a list of code element pairs using {\em shingles} (a metric-based fingerprint) and performs a semantic analysis based on reference relationships (calls, instantiations, uses of types, import statements). The second part of the algorithm is an iterative, fix point algorithm that considers refactorings in a top-down order. 
-
-Wei{\ss}gerber and Diehl's approach~\cite{Weissgerber2006} extracts added and deleted entities (fields, methods, and classes) by parsing deltas from a version control system and then compares these entities based on their {name similarity}. When it cannot disambiguate all refactoring candidates, it uses a {clone detector} (CCFinder~\cite{Kamiya2002}) to rank these candidates. S. Kim et al.'s approach~\cite{SKim2005} considers various information (such as {calling relationships}, {clone detection} results, and {name similarity}) to match method-headers.  Wu et al.'s approach~\cite{Wu2010:AHA} is a hybrid approach that combines the strengths of {call-graph matching} and {name-similarity} based matching. Nguyen et al.'s approach~\cite{Nguyen2010:GAA} identifies refactorings in libraries to support adaptation of the client applications that use those libraries. Similar to Xing et al.'s approach, the algorithm matches code elements top-down based on method name similarity and method body contents. Fluri et al.'s approach~\cite{FWP2007} compares two versions of abstract syntax trees, computes tree-edit operations, and maps each tree-edit to atomic AST-level change types (e.g., parameter ordering change).
-
-Xing et al.'s approach~\cite{UMLDiff2005} UMLDiff extracts class models from two versions of a program, traverses the two models, and identifies corresponding entities based on their {name similarity} and {structure similarity} {(i.e., similarity in type declaration and uses, field accesses, and method calls)}.
-Xing {et al.} later presented an extended approach to refactoring reconstruction based on change-facts {\em queries} \cite{Eleni01}. They first extract facts regarding design-level entities and relations from each individual source code version. These facts are then pairwise compared to determine how the basic entities and relations have changed from one version to the next. Finally, queries corresponding to well-known refactoring types are applied to the change-facts database to find concrete refactoring instances.
-
-Prete et al.'s {\em RefFinder} uses a rule-based program differencing approach~\cite{Prete2010:reffinder,Kim2010:reffinder} to reconstruct refactoring from program versions. It encodes 63 out of 72 refactoring types in Fowler's catalog as template logic rules, and uses a logic-query approach to infer concrete refactoring instances~\cite{Prete2010:reffinder}. Prete et al.~use pre-defined logic rules to detect structural differences that fit known refactoring types. It actively leverages the structural constraints of a program before and after each refactoring type and has two advantages. First, RefFinder analyzes the body of methods including changes to the control structure within method bodies. Thus, it can handle the detection of refactorings such as {\it replacing conditional code with polymorphism}. Second, it handles composite refactorings, since the approach reasons about which constituent refactorings must be detected first and reason about how those constituent refactorigs are knit together to detect higher-level, composite refactorings.
-
-\label{sec:intro} 
-\begin{figure*}
-\centering
-\includegraphics[width=0.95\textwidth]{images/reffinder.png}
-\caption{RefFinder infers a {\it replace conditionals with polymorphism} refactoring from change facts {\it deleted\_conditional}, {\it after\_subtype}, {\it before\_method}, {\it added\_method} and {\it similar\_body}.\cite{Kim2010:reffinder}}
- \label{fig:reffinderscreenshot}
-\end{figure*}
-
-A developer may begin her investigation by selecting two program versions either from her current workspace projects or revisions from a Subversion repository. RefFinder compares the syntax tree of each version to compute structural change-facts such as \factfont{deleted\-\_trycatch}. RefFinder then invokes template logic queries, each of which encode the structural constraints of a program before and after refactorings. 
-
-Consider a {\it replace conditionals with polymorphism} refactoring example from version 4.3.1 of jEdit, an open source text editor. In the old version, the class \codefont{LHS} contained a method, \codefont{assign()}, whose behavior depended on the value of the \codefont{type} field. The new version of this methods supplants this conditional logic by adding \codefont{LHS}'s subclasses and then using polymorphism to invoke a different behavior by overriding \codefont{assign()} in each of the subclasses.
-In order to find a \factfont{replace\_\-conditionals\-\_with\-\_polymorphism(oldmethod, subclass)} refactoring, RefFinder invokes a query \factfont{(deleted\-\_conditional\-(?condition, ?thenpart, ?elsepart, ?superclass) $\wedge$ before\-\_method\-(?oldmethod, ?superclass), after\-\_subtype\-(?superclass, ?subclass) $\wedge$ added\-\_method\-(?newmethod, ?subclass) $\wedge$ similar\-\_body\-(?new\-method, ?oldmethod))}, to check that a type check was performed in the conditional and that the new method body is similar to the original method. In our logic query description, \factfont{?x} indicates an existentially quantified logic variable, \factfont{x}. 
-As shown in Figure \ref{fig:reffinderscreenshot}, RefFinder visualizes the reconstructed refactorings as a list.  The panel on the right summarizes key details of the selected refactoring and allows the developer quickly navigate to the associated code fragments. 
-
-
-%Ref-Finder: a Refactoring Reconstruction Tool based on Logic Query Templates, Miryung Kim, Matthew Gee, Alex Loh, and Napol Rachatasumrit, FSE' 10: Proceedings of the 18th ACM SIGSOFT Symposium on the Foundations of Software Engineering, Pages 371-372, Publisher: ACM DOI, Formal Research Demonstration (local pdf)  
-
-% Refactoring Inspection Support for Manual Refactoring Edits, Everton L.G. Alves, Myoungkyu Song, Tiao Massoni, Patricia D. L. Machado, Miryung Kim, TSE: IEEE Transactions on Software Engineering, 20 pages (Accepted, March 2017) (link) 
-
-\subsubsection{Change Conflicts, Interference, and Relevance. } 
-Most version control systems are only able to detect most simple types of conflicting changes\textemdash changes made on top of other changes~\cite{mens:survey02}. Men's survey on software merging lists various conflict and interference detection models and algorithms~\cite{mens:survey02}. To detect changes that indirectly conflict with each other, Horwitz et al. developed a semantics based tool that automatically integrates non-interfering versions by using program slicing on program dependence graphs to determine if there is interference. They provide, however, no empirical evidence on how often non-interference occurs. As another example, Shao et al.'s research on semantic interference detection checks the overlap between the data-dependence based impact sets of parallel updates~\cite{Shao2007:interference}.  Furthermore, various approaches have defined change impacts at a different granularity and implemented static and dynamic analyses for computing the impact of a code change~\cite{Apiwattanapong2005, Arnold1996:impact, Elbaum2001,Orso:2003, Orso2004:impact, Ren2004}.  
-
-Existing techniques that can identify related changes across revisions rely on temporal proximity \cite{Bevan2005, Fischer2003, German2004:softchange, Zimmermann2004b}, syntactic dependence \cite{Chesley2005}, physical location \cite{Zeller1999}, committer information \cite{Fischer2003, German2004:softchange, Zimmermann2004b}, history of co-changes \cite{Gall1998, Ying2004, Zimmermann2004}, and content similarity~\cite{Kim:2009,NNP2009} and other heuristics \cite{Zeller1999}. For example, Crisp \cite{Chesley2005} computes atomic structural changes such as method additions and deletions via AST differencing and groups syntactically dependent changes through def-use relationships. As various notions of delta-relationships (e.g., interference, dependence, and similarity, co-occurrence) can be used to identify relevant software modifications,  
-
-%\paragraph{Comprehending Structural Dependencies} 
-Representing a program's code elements and structural dependencies as a set of logic facts has been used for decades. Grok \cite{Holt1998} extracts facts about code elements and structural relationships in software and supports querying the resulting relational databases. CodeQuest \cite{Hajiyev2006} automatically evaluates logic queries specified by programmers to assist program investigation. Mens et al.'s intentional view \cite{Mens2002b} allows programmers to specify concerns or design patterns using logic rules. Eichberg et al. \cite{Eichberg2008} use Datalog rules to continuously enforce constraints on structural dependencies as software evolves. DeMIMA~\cite{Gueheneuc2008:demima} finds concrete instantiations of design patterns by matching the skeleton of design patterns against a program structure. Tourw{\'e} {et al.} \cite{Tourwe01} use logic meta-programming to detect bad smells to identify which parts of a system needs to be refactored.
-
-%\paragraph{Maintaining Awareness about Software Changes} 
-As development teams become distributed, and the size of the system is often too large to be handled by a few developers, multiple developers often work on the same module at the same time. In addition, the market-pressure to develop new features or products makes parallel development no longer an option.
-Professor Perry's study on a subsystem of Lucent 5ESS telephone found that 12.5\% of all changes are made by different developers to the same files within 24 hours, showing a high degree of parallel updates~\cite{Perry2001:parallel}. A subsequent study by Shao et al. found that even though only 3\% of the changes made within 24 hours by different developers physically overlapped each other's changes at a textual level but there was a high degree of semantic interference among parallel changes at a data flow analysis level (about 43\% of revisions made within one week). They also discovered a significant correlation between files with a high degree of parallel development and the number of defects~\cite{Shao2007:interference}. 
-
-% Informaition Needs: Ko et al.~\cite{Ko07InformationNeeds} studied software engineers' information needs by observing their daily activities and analyzing observation logs. Sillito and Murphy~\cite{Sillito2008} studied the types of questions that programmers ask to assess how well existing tools support those questions. Software engineers often need to be aware of other programmers' activities so as to avoid overlapping effort,  prevent potential conflicts, identify experts, discover opportunities for ad-hoc collaboration, and find a common ground for further communication \cite{Dourish1992, Herbsleb2007:global, Sarma2008}. 
-
-Workspace awareness systems such as FASTDash \cite{Biehl2007} and CollabVS~\cite{Hegde2008:collabVS} provide information about other developers' task status or activities. Palantir \cite{Sarma2003} and Lighthouse \cite{daSilva2006} can assist programmers in detecting structural conflicts early by monitoring changes in other programmers' workspace in real-time. Nightwatch \cite{OReilly2003} and CVS-Watch \cite{Berliner1990:cvs2} monitor other developers' activities using programmer-specified watch-points. These existing approaches either overload programmers with a large number of change-events or require substantial effort by programmers to specify what they want to monitor. YooHoo~\cite{Holmes2010:Yoohoo} mitigates this problem in some degree by filtering out changes according to predefined rules; however, it limited to API declaration changes that lead to build errors. 
-
-\subsubsection{Search of Software Changes.}
-SCM query systems such as SCQL \cite{Hindle2005} or CVS Query \cite{bonsai} can search check-ins based on who changed which file and when, but cannot search change history by code elements and dependencies. Systems such as Hipikat \cite{Hipikat}, Bridge \cite{Venolia2006:bridge}, Tesseract \cite{Tesseract}, and Deep Intellisense \cite{Holmes2008:intellisense} automatically associate different types of software artifacts (e.g., check-ins, bug reports, and emails) but provide limited help in querying code changes. 
-
-Several visualization tools focus on representing changes between versions \cite{Ball1996,Eick2002,Girba2004,Holt1996,Lanza01:sv,Lanza2003,Rysselberghe2004a}. For example, Evolution Matrix \cite{Lanza01:sv} visualizes classes that have been added, modified, and deleted in different versions and creates a 2-D matrix where the rows represent classes and the columns represent the versions of the artifact. These tools generally require substantial interpretation effort by developers to understand system evolution. Studying program evolution by analyzing existing software project artifacts is increasingly becoming a popular research approach. Existing research infrastructures for mining software artifacts focus on data extraction \cite{Bevan2005,Fischer2003} and integration of different types of software artifacts \cite{Hipikat, Venolia2006:bridge,Tesseract, Begel2010:codebook}. 
-
-
-\subsubsection{Detecting and Preventing Inconsistent Changes to Clones.} 
-Juergens et al.~\cite{Juergens2009:clone-bug} conduct an empirical
-study on the impact of inconsistent clones in a code base. They detect
-inconsistent clones using a suffix-tree based, lexical clone detection
-algorithm. Their interviews with developers confirm that
-inconsistencies in the found clones are indeed bugs and report that
-{\em ``nearly every second, unintentional inconsistent changes to
-  clones lead to a fault."}
-
-Chou et al.~show that porting is an important source of bugs in
-operating systems~\cite{releasenote}. In 65\% of the ported
-code, at least one identifier is renamed, and in 27\% cases at least
-one statement is inserted, modified, or
-deleted~\cite{Li2004:CP-Miner}. An incorrect adaptation of ported code
-often leads to porting errors~\cite{Jiang2007}. This
-observation is aligned with our findings\textemdash where we find 113
-and 182 porting errors by mining FreeBSD and Linux version histories
-respectively.
-
-Using CP-Miner, a mining based clone detection tool, Li et al.~find 28 and 23
-errors in Linux and FreeBSD respectively, which developers created by
-forgetting to rename identifiers consistently after copy and
-paste~\cite{Li2004:CP-Miner}. Jablonski et
-al.~\cite{Jablonski2007:CReN} detect similar errors by tracking
-copy-paste code within an Eclipse IDE and by comparing the
-corresponding AST representations.  
-
-SPA~\cite{Ray2013:spa} detects a broader scope of inconsistent renamings by tokenizing
-function names, file names, and identifier names using a camel case
-naming convention and mapping corresponding tokens. Our algorithm
-detects an inconsistency when a token in one context maps to multiple
-tokens in the other context.  For example, when code is ported
-from~\texttt{Export.java} to~\texttt{Import.java}, SPA checks
-whether all names related to~\texttt{export} are updated
-to~\texttt{import}.
-
-Jiang et al.~show that an inconsistent context can also cause porting
-errors~\cite{Jiang2007}. However, their definition of
-context is limited to the {\em innermost} control flow construct
-surrounding the cloned code. They identify syntactic clones using AST
-level similarity~\cite{Jiang2007a}, and then detect
-inconsistencies by comparing the contexts. 
-
-DejaVu extends the work by Jiang et al. by using several filtering
-heuristics, such as assessing textual similarity and pruning
-non-cloned contexts, to improve its
-precision~\cite{Gabel2010:dejavu}. 
-
-\begin{figure}[ht]
- \centering
- \includegraphics[width=0.8\textwidth]{images/critics-workflow.pdf}
- \caption{The workflow of {\critics}}
- \label{fig:critics-workflow}
-\end{figure}
-
-To address this issue, Zhang et al.~present {\critics}, a novel approach that allows reviewers to interactively inspect such systematic changes during peer code review~\cite{zhang2015interactive}. Figure~\ref{fig:critics-workflow} describes the interactive workflow of {\critics}. Given a specified change that a reviewer would like to inspect, {\critics} creates a change template from the selected change, which serves as the pattern for searching similar changes. {\critics} includes {\em change context} in the template---unchanged, surrounding program statements that are relevant to the selected change. {\critics} models the template as Abstract Syntax Tree (AST) edits and allows reviewers to iteratively customize the template by parameterizing its content and by excluding certain statements. {\critics} then matches the customized template against the rest of the codebase to summarize similar changes and locate potential inconsistent or missing changes. Reviewers can incrementally refine the template and progressively search for similar changes until they are satisfied with the inspection results. This interactive feature allows reviewers with little knowledge of a codebase to flexibly explore the program changes with a desired pattern.
-
-
-\begin{figure}[ht]
- \centering
- \includegraphics[width=\textwidth]{images/critics-UI.pdf}
- \caption{A screen snapshot of {\critics}'s Eclipse plugin and its features}
- \label{fig:critics-UI}
-\end{figure}
-\todo {Tianyi: remove the work flow and condense the text} 
-{\critics} is implemented as an Eclipse plugin.\footnote{{\critics}'s tool and evaluation dataset are available online \url{https://sites.google.com/a/utexas.edu/critics/}} Figure~\ref{fig:critics-UI} shows a screenshot of {\critics} plugin. {\critics} is integrated with the {\bf Compare View} in Eclipse, which displays line-level differences per file (see \ding{172} in Figure~\ref{fig:critics-UI}). A user can specify a program change she wants to inspect by selecting the corresponding code region in the Eclipse Compare View. The {\bf Diff Template View} (see \ding{173} in Figure~\ref{fig:critics-UI}) visualizes the change template of the selected change in a side-by-side view. Reviewers can parameterize concrete identifiers and exclude certain program statements by clicking on the corresponding node in the Diff Template View. {\bf Textual Diff Template View} (see \ding{177} in Figure~\ref{fig:critics-UI}) shows the change template in a unified format. The {\bf Matching Result View} summarizes the consistent changes as {\em similar changes} (see \ding{174} in Figure~\ref{fig:critics-UI}) and inconsistent ones as {\em anomalies} (see \ding{175} in Figure~\ref{fig:critics-UI}).
-
+\input{changeinspect} 
 \subsection{Program Differencing} 
-\todo{need better transition and introduction} 
+\label{sec:differencing} 
+
 Existing program differencing techniques use similarities in names and structure to match code elements at a particular granularity: (1) lines and tokens \cite{Apostolico1997,Hunt1977:LCS, Reiss2008, Tichy1984}, (2) abstract syntax tree nodes \cite{Cottrell:2007,FWP2007, Hunt2002, Neamtiu2005,Raghavan:2004:Dex, Yang1991}, (3) control flow graph nodes \cite{Apiwattanapong2004, Laski1992}, (4) program dependence graph nodes \cite{Binkley1995, Horwitz1990, Jackson1994}, etc.  For example, the ubiquitous tool {\it diff} computes line-level differences per file using the longest common subsequence algorithm \cite{Hunt1977:LCS}. These tools output individual additions and deletions at a particular granularity without any structure, obliging the developer to read individual differences. Some approaches attempt to mitigate this problem by grouping the differences by physical locations (directories and files) \cite{Hunt1976}, by logical locations (packages, classes, and methods) \cite{UMLDiff2005}, by structural dependencies (define-use and overriding) \cite{Chesley2005}, or by similarity of names. 
 As existing approaches do not recognize regularities in code changes, subsequently they are unable to detect inconsistencies in code changes, leaving it to a programmer to discover potential bugs.  
 
@@ -403,7 +221,6 @@ Binkley et al. \cite{Binkley1995} presents a 3-way merging algorithm that is bas
 
 In general, PDG-based algorithms are not applicable to popular modern program languages because they can run only on a limited subset of C-like languages without global variables, pointers, arrays, or procedures. 
 
-
 \subsubsection{Related Topics: Model Differencing and Clone Detection.} 
 
 A clone detector is simply an implementation of an arbitrary equivalence function. The equivalence function defined by each clone detector depends on a program representation and a comparison algorithm. Most clone detectors are heavily dependent on (1) hash functions to improve performance, (2) parametrization to allow flexible matches, and (3) thresholds to remove spurious matches. A clone detector can be considered as a many-to-many matcher based solely on content similarity heuristics. 
@@ -416,6 +233,8 @@ As different language semantics lead to different program differencing requireme
 The simplest matching method treats code elements as immutable entities with a fixed name and matches the elements by name. For example, Zimmermann et al. model a function as a tuple, \textit{(file name, FUNCTION, function name)}, and a field as a tuple, \textit{(function name, FIELD, field name)} \cite{Zimmermann2004}. Similarly, Ying et al. \cite{Ying2004} model a file with its full path name. %In fact, matching by name would be sufficient for many evolution analyses that intend to identify coarse-grained patterns such as the characteristics of fault prone modules \cite{Eick2001:CodeDecay,Graves2000,Nagappan2005}.  
 
 \subsection{Recording Changes: Edit Capture and Replay.} 
+\label{sec:record} 
+
 Recorded change operations can be used to help programmers reason about software changes. We first describe techniques that capture change operations in an editor or an integrated development environment. Next we describe source code transformation languages, which can serve as a basis for capturing high-level semantic transformations. 
 
 %purpose
@@ -447,6 +266,7 @@ In general, capturing change operations to help programmers reason about softwar
 \end{figure}
 
 \subsection{Change Impact Analysis} 
+%Various approaches have defined change impacts at a different granularity and implemented static and dynamic analyses for computing the impact of a code change~\cite{Apiwattanapong2005, Arnold1996:impact, Elbaum2001,Orso:2003, Orso2004:impact, Ren2004}.  
 Change Impact Analysis~\cite{Arnold1996:impact,Law:2003,Orso:2003,Orso2004:impact, ryder2001change,Ren2004, ren2006identifying} aims to determine the impact of source code edits on programs under test. Existing techniques, such as Chianti~\cite{ryder2001change,Ren2004, ren2006identifying}, select a subset of regression tests whose behavior might have been influenced by program edits and then identify affecting program edits that might related to test failures.  More specifically, Chianti~\cite{Ren2004} constructs dynamic call graphs, modeling programs at a coarser granularity. It compares the syntax tree of the old and new program versions and decomposes the edits into atomic changes at a method and field level~\cite{Ren2004} such as \textsf{AM} for an method addition and \textsf{CM} for method body edits. It reports {\bf affected tests}\textemdash a subset of regression tests relevant to edits and {\bf affecting changes}\textemdash a subset of changes relevant to the execution of affected tests in the new version. 
 
 Chesley et al.~\cite{Chesley2005} propose Crisp, which uses four pre-defined rules to group relevant edits based on compilation dependences. However, this technique still requires manual debugging to localize failure-inducing changes. Stoerzer et al.~\cite{Stoerzer2006} use change classification techniques to find failure-inducing changes. However, this technique does not rank changes, and the classified changes might still be large in number. 
