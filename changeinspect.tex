@@ -101,6 +101,7 @@ For example, consider an \emph{extract superclass} refactoring that extracts com
 \hline
 template &
 \factfont{deleted\_method(m1, n, t1) $\wedge$ after\_subtype(t2, t1) $\wedge$ added\_method(m1, n, t2) $\Rightarrow$ pull\_up\_method(n, t1, t2)}  \\
+\cline{1-2}
 logic rules&  \factfont{pull\_up\_method(m1, t1, t2) $\wedge$ added\_type(t2) $\Rightarrow$ extract\_superclass(t1,t2)} \\
 \hline
 code example & \vspace{-5mm} 
