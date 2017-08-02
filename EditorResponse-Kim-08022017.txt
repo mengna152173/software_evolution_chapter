@@ -1,0 +1,34 @@
+Dear authors,
+Let me first confess that I am not really an expert on software evolution. Take my comments as potentially useful suggestions offered by someone who are knowledgeable on software engineering issues in general. At the cost of being verbose, let me write down my opinions so that you may find some of my comments useful in revising and finalizing the chapter.
+
+Overall, I really like the organization of the chapter, and it is in pretty good shape. Your chapter helped me better understand various topics relevant to software evolution. On your "rather extended" references,  I am not the one to decide which is right. You are, and I will support your final decision. 
+
+If I were to offer my opinions from the viewpoints of "consumers" (e.g., PhD students beginning research on this topic), I have a mixed opinion. While having a thorough references will give me a level of comfort, it would not be as useful as I hope due to "overflow". I would want to know which papers I should read next after finishing your chapter, and I may not be too strongly motivated if there are too many to read. As established experts on the topic, it would have been nicer if you had told the audience what papers are worth reading and why. That is, I would like to see more of selective (rather than comprehensive) discussion and op-ed like discussion on the chosen topics. For example, discussion on representative tools and techniques (e.g., CodeFlow, RefFinder, etc) are highly useful to me. If it is impractical (or not that useful) to be selective on discussion on empirical studies, I understand why but would try to focus mostly only on the studies that are worth further discussion. Needless to say, I would want your op-ed like discussion on why such papers are worth reading.
+
+If you believe that it is beneficial to explictly denote "seminal" or "influential" papers on each topic, you might annotate figures with references. Perhaps you could move Fig 1 to the beginning of section 3 and annotate them with "major" references. For example, on Empirical stuides on Bugs, I would pick [135,120] and annotate Fig 1 as such. Do it only if you like the idea. 
+
+
+=> Throughout the paper, we have reduced the citations and added more opinions and perspectives.
+
+
+=> We decided not to add seminal paper citations in the figure, as some citations are seminal, worth reading but some are rather *a* representative example in the line of research. 
+
+Section 2.2 
+This argument was less clear and persuasive to me. I would suspect that I do not need to modify the program and that smart compiler should generate optimized code. What do I miss here? 
+=> Deleted cross language translation. 
+
+Section 2.3.
+- Section reference fixed
+Perhaps due to my lack of deep knowledge on this topic, but I would appreciate more detailed (perhaps along with examples) discussions on "crosscutting concerns" concept
+=> Expanded a description on crosscutting concerns. 
+
+
+Section 3.1 
+I offer this suggestion with caution. ;) Having information on diverse empirical studies is useful, but are they all equally valuable as candidates for further reading? If not, you might decide to become more selective so that readers are more likely to read given the limited time available. 
+==> We removed citations and talked about two representative examples instead. 
+
+Do numbers add up properly? I thought that 16.3%, 37.2%, and 81.1% indicate Mozilla values and that they should add up to 100%. What did I misunderstand?
+=> They are not supposed to add up to 100% as NULL pointer dereference is a
+part of memory bugs and the percentages are within memory bugs. 
+ 
+ 
