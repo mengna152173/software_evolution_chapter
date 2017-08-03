@@ -33,7 +33,7 @@ When maintaining a legacy system that was written in an old programming language
 %\todo{Na, more techniques? I think this section is relatively weaker than others. I also do not think we can talk about TXL here, since we decided to talk about automated techniques separately.} 
 
 \paragraph{{Cross-Language Program Translation.}}
-To translate code implementation from one language to another, researchers have built tools by hard coding the translation rules and implementing any missing functionality between languages~\cite{Yasumatsu:95,1192409:03,Sneed:2010}. 
+To translate code implementation from one language to another, researchers have built tools by hard coding the translation rules and implementing any missing functionality between languages. %~\cite{Yasumatsu:95,1192409:03,Sneed:2010}. 
 %SPiCE translates Smalltalk programs into a C environment by mapping the execution models of two languages. Specifically, 
 Yasumatsu et al.~map compiled methods and contexts in Smalltalk to machine code and stack frames respectively, and implement runtime replacement classes in correspondence with the Smalltalk execution model and runtime system~\cite{Yasumatsu:95}. Mossienko~\cite{1192409:03} and Sneed~\cite{Sneed:2010} automate COBOL-to-Java code migration by defining and implementing rules to generate Java classes, methods, and packages from COBOL programs. 
 {\em mppSMT} automatically infers and applies Java-to-C\# migration rules using a phrase-based statistical machine translation approach~\cite{7372046}. It encodes both Java and C\# source files into sequences of syntactic symbols, called {\em syntaxemes}, and then relies on the syntaxemes to align code and to train sequence-to-sequence translation. 
