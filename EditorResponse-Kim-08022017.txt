@@ -36,7 +36,6 @@ Did they report on the type of repeated bugs?
 past bug fix histories do not overlap with the bugs that can be detected by
 a static bug finding tool, PMD. 
 
-
 Section 3.1.3. 
 How do such actions achieve the goal of automated repair? I would ask such question and would want to know your explanation.
 => We expanded the description of GenProg. 
@@ -46,4 +45,3 @@ I understand that automated repair is easier said than done, but I am not ready 
 description of AutoFix-E, a representative technique in the area of
 specification-based repair. 
 
- 
