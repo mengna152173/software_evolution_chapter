@@ -84,4 +84,25 @@ citation missing?
 => We added a citation to Purushothaman and Perry. 
 
 Am I right in getting impression that [182] and [113] reported results that seem to conflict with each other? While I understand that it is entirely possible due to many factors, I would want to hear expert explanation on it if you are kind enough to offer any.
-=>  
+=> We restructured Section 3.4.2 to clarify that there are two contradicting
+beliefs about refactoring and empirical evidence supporting two distinct views
+is also contrary to each other. We made edits such that the text is separated into two
+views clearly. 
+ 
+Section 3.4.3 
+I understand why such preconditions are proposed, but are they important enough to be "formalized" like Fig 3? Perahps informal and intuitive description would be sufficient. You may not even have to list all 5. I offer suggestions, and you decide. 
+
+=> We agree that the original Fig 3 was visually overwhelming. We  deleted the
+fiture and added intuitive and informal descriptions in text instead. 
+
+
+Figure 4. 
+Somehow, I tried to relate this numbers to 86% mentioned earlier. Another suggestion is to use larger font so that "mature" readers like I can also see the figures more clearly. Sigh...
+=> We made the figure size bigger.  
+
+SEction 3.4.6 
+This is just an example of topics that can be addressed in greater detail if you also believe that they deserve more in-depth coverage. As for the page count, your current chapter is not short, but can be extended by a few more pages if you like.
+Springer will not charge you by each additional page. ;)
+
+=> I added some conrete code smells from DECOR. 
+
