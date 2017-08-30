@@ -106,3 +106,18 @@ Springer will not charge you by each additional page. ;)
 
 => I added some conrete code smells from DECOR. 
 
+Figure 6 
+
+As mentioned earlier, I liked seminal or representative approach being described in reasonable depth.
+Unfortunately, I did not understand the "value" of the transformation rules used here. They looked the same to me. Perhaps example of before-and-after would help?
+
+=> We replaced the example to talk about the TXL approach with more details.
+The newly added text should be made clear what is the before and after the
+transformation. 
+
+
+My personal opinion is that editing-related issues can be dropped if you feel the need to reduce page counts. But, you make the final call. There is no page limit on this project.
+=> I actually believe that the line of work on simultaneous editing is
+important. Therefore, I decided to keep. I added a new code example to discuss
+the LASE capability in more details as well. 
+ 
