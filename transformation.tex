@@ -18,11 +18,16 @@ Source transformation tools allow programmers to author their change intent in a
 
 Each transformation rule specifies a {\em target type} to be transformed, a {\em pattern} (an example of the particular instance of the type that we are interested in replacing), and a {\em replacement} (an example of the result we want when we find such an instance). In particular, the pattern is an actual source text example expressed in terms of tokens (terminal symbols) and variables (non-terminal types). When the pattern is matched, variable names are bound to the corresponding instances of their types in the match. Transformation rules can be composed like function compositions.  
 
-As shown in Figure~\ref{fig:txl}, a typical TXL file consists of two parts. The first part defines a context-free grammar to describe program syntax, while the second part describes a set of transformation rules to manipulate the syntax. For our illustrative example, the grammar defines a simple language that only allows numbers, addition and subtraction numerical expressions. The rule \codefont{resolveAddition} describes the resolution of an addition expression by replacing the expression with a number value \codefont{N1 [ + N2 ]}. Given such a file, the TXL program transformation engine automatically transforms programs of the syntactic structure by applying the rules. TXL was used to automate various code translation tasks, like ASP-to-NSP and Java-to-C\#~\cite{Chu:08,Hassan:2005,El-Ramly:2006,Tonella:04}.
+%As shown in Figure~\ref{fig:txl}, a typical TXL file consists of two parts. The first part defines a context-free grammar to describe program syntax, while the second part describes a set of transformation rules to manipulate the syntax. For our illustrative example, the grammar defines a simple language that only allows numbers, addition and subtraction numerical expressions. The rule \codefont{resolveAddition} describes the resolution of an addition expression by replacing the expression with a number value \codefont{N1 [ + N2 ]}. Given such a file, the TXL program transformation engine automatically transforms programs of the syntactic structure by applying the rules. TXL was used to automate various code translation tasks, like ASP-to-NSP and Java-to-C\#~\cite{Chu:08,Hassan:2005,El-Ramly:2006,Tonella:04}.
+
+TXL programs normally consist of three parts, a context-free “base” grammar for the language to be manipulated, a set of context-free grammatical “overrides” (extensions or changes) to the base grammar, and a rooted set of source transformation rules to implement transformation of the extensions to the base language, as shown in Figure~\ref{}. This TXL program overrides the grammar of statements to allow a new statement form. The transformation rule {\tt main} transforms new forms of using the statement {\tt V+=E} syntax to an old statement { \tt V:= V+(E)}. 
 
 \begin{figure}
 \centering
-\scalebox{0.5}{\includegraphics{images/txl.pdf}}
+\scalebox{0.5}{
+	%\includegraphics{images/txl.pdf}
+	\includegraphics{images/txl2.pdf}
+}
 \caption{A simple exemplar TXL file based on~\cite{txltour}}
 \label{fig:txl}
 \end{figure}
