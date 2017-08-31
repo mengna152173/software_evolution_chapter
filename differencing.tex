@@ -4,7 +4,7 @@ Program differencing serves as a basis for analyzing software changes between pr
 
 A code fragment in the new version either contributes to the difference or comes from the old version. If the code fragment has a corresponding origin in the old version, it means that it does not contribute to the difference. Thus, finding the delta between two versions is the same problem as finding corresponding code fragments between two versions. 
 
-Suppose that a programmer inserts if-else statements in the beginning of the method \codefont{m\_A} and reorders several statements in the method \codefont{m\_B} without changing semantics (see Figure~\ref{fig:changeexample}). An intuitively correct matching technique should produce [(p0-c0), (p1-c1), (p2-c3), (p4-c4), (p4-c6), (p5-c7), (p6-c9), (p7-c8), (p8-c10), (p9-c11) ] and identify that c1 and c5 are added.  
+Suppose that a programmer inserts if-else statements in the beginning of the method \codefont{m\_A} and reorders several statements in the method \codefont{m\_B} without changing semantics (see Figure~\ref{fig:changeexample}). An intuitively correct matching technique should produce [(p0-c0), (p1-c2), (p2-c3), (p4-c4), (p4-c6), (p5-c7), (p6-c9), (p7-c8), (p8-c10), (p9-c11) ] and identify that c1 and c5 are added.  
 
 \begin{figure*}
 \centering

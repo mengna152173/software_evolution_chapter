@@ -115,9 +115,16 @@ Unfortunately, I did not understand the "value" of the transformation rules used
 The newly added text should be made clear what is the before and after the
 transformation. 
 
-
 My personal opinion is that editing-related issues can be dropped if you feel the need to reduce page counts. But, you make the final call. There is no page limit on this project.
-=> I actually believe that the line of work on simultaneous editing is
-important. Therefore, I decided to keep. I added a new code example to discuss
-the LASE capability in more details as well. 
+=> I actually believe that the line of work on systematic editing is important
+because it is closed related to the challenge of coping with crosscutting
+concerns and refactoring. I made this point clear. Therefore, I decided to keep. I added a new code example to discuss the LASE capability in more details as well. 
+
+
+Can the figure be made more readable (e.g., larger font)? Your annotations could certainly use larger font, IMO.
+=> We made the annotation on the figure more readable with a larger font. 
+
+typo? (p1-c2)?
+=> We fixed the error. Thanks for catching this. 
+
  
