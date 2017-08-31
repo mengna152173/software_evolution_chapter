@@ -145,3 +145,19 @@ expanded the text description of Chianti's overall 2-phase approach.
 I am lost here. I looked at Fig 21 and could not follow.
 => I added what the change dependence represented as an arrow means. 
 
+--- 
+Figure 22. 
+To me, it looks like you have a code fragment to the left, and some kind of screen shot to the right. That was all I could practically get out of this figure.
+=> I decided to delete Figure 22 since the figure does not seem to add much, in addition to existing text description in the preceding paragraph. 
+
+missing \?
+=> fixed the typo. 
+
+
+Section 6 
+I like your selection of future directions and open problems. But, on each topic, I would like to have more guided explanation on the current state-of-the-art in terms of which sections to read again to better understand this challenge. 
+
+=> I added cross-references to the prior section so that the discussion can be
+more guided there. 
+
+

@@ -14,7 +14,7 @@ Change Impact Analysis consists of a collection of techniques for determining th
 In this section, we discuss the seminal change impact analysis work, called Chianti that serve the both purposes of affected test identification and isolation of failure-inducing deltas. 
 It uses a two-phase approach in Figure~\ref{fig:twophase}~\cite{Ren2004}. 
 
-In the first phasee, to identify which test cases a developer must rerun on the new version to ensure that all potential regression faults are identified, Chianti takes the old and new program versions $P_o$ and $P_n$ and an existing test suite $T$ as inputs, and identify a set of atomic program changes at the level of methods, fields, and subtyping relationships. It then computes the profile of the test suite $T$ on $P_o$ in terms of dynamic call graphs and selects $T'\subset T$ that guarantees the same regression fault revealing capability between $T$ and $T'$. 
+In the first phase, to identify which test cases a developer must rerun on the new version to ensure that all potential regression faults are identified, Chianti takes the old and new program versions $P_o$ and $P_n$ and an existing test suite $T$ as inputs, and identify a set of atomic program changes at the level of methods, fields, and subtyping relationships. It then computes the profile of the test suite $T$ on $P_o$ in terms of dynamic call graphs and selects $T'\subset T$ that guarantees the same regression fault revealing capability between $T$ and $T'$. 
 
 In the second phase, Chianti then first runs the selected test cases $T'$ from the first phase on the new program version $P_n$ and computes the profile of $T'$ on $P_n$ in terms of dynamic call graphs. It then uses both the atomic change set information together with dynamic call graphs to identify which subset of the delta between $P_o$ and $P_n$ led to the behavior differences for each failed test on $P_n$. 
 
@@ -54,24 +54,25 @@ Phase II then reports {\bf affecting changes}\textemdash a subset of changes rel
 \label{sec:deltadebugging} 
 The problem of simplifying and isolating failure-inducing input is a long standing problem in software engineering. {\it Delta Debugging (DD)} addresses this problem by repetitively running a program with different sub-configurations (subsets) of the input to systematically isolate failure-inducing inputs~\cite{Zeller1999, zeller01}. DD splits the original input into two halves using a binary search-like strategy and re-runs them.  DD requires a test oracle function $test(c)$ that takes an input configuration $c$ and checks whether running a program with $c$ leads to a failure.  If one of the two halves fails, DD recursively applies the same procedure for only that failure-inducing input configuration. On the other hand, if both halves pass, DD tries different sub-configurations by mixing fine-grained sub-configurations with larger sub-configurations (computed as the complement from the current configuration). 
 
-Under the assumption that failure is {\em monotone}\textemdash where $C$ is a super set of all configurations, if a larger configuration $c$ is successful, then any of its smaller sub-configurations $c'$ does not fail, i.e., $\forall c \subset C\ (\ test(c)=\text{\cmark} \rightarrow \forall c' \subset c \  (test(c') \neq$ \ding{55})), DD returns a minimal failure-inducing configuration. Figure~\ref{fig:deltadebugging} shows the pseudo-code of DD and the illustration of isolating failure-inducing inputs. 
+Under the assumption that failure is {\em monotone}\textemdash where $C$ is a super set of all configurations, if a larger configuration $c$ is successful, then any of its smaller sub-configurations $c'$ does not fail, i.e., $\forall c \subset C\ (\ test(c)=\text{\cmark} \rightarrow \forall c' \subset c \  (test(c') \neq$ \ding{55})), DD returns a minimal failure-inducing configuration. %Figure~\ref{fig:deltadebugging} shows the pseudo-code of DD and the illustration of isolating failure-inducing inputs. 
 
+\begin{comment}
 \begin{figure*}
 \centering
-\begin{minipage}{.48\textwidth}
+\begin{minipage}{0.9\textwidth}
   \centering
 \includegraphics[width=1\textwidth]{images/DeltaDebugging.pdf}
 \end{minipage}
-\begin{minipage}{.48\textwidth}
+\begin{minipage}{0.9\textwidth}
   \centering
 \includegraphics[width=1\textwidth]{images/DeltaDebuggingIlustration.pdf}
 \end{minipage}
 \caption{Delta Debugging: Algorithm and Illustration} 
 \label{fig:deltadebugging} 
 \end{figure*}
+\end{comment}  
 
-
-This idea of Delta Debugging was applied to isolate failure-inducing changes. It considers all line-level changes between the old and new program version as the candidate set without considering compilation dependences among those changes. In Zeller's seminal paper, {\textit``yesterday, my program worked, but today, it does not, why?''} Zeller demonstrates the application of DD to isolate program edits responsible for regression failures~\cite{Zeller1999}. DDD 3.1.2, released in December, 1998, exhibited a nasty behavioral change: When invoked with a the name of a non-existing file, DDD 3.1.2 dumped core, while its predecessor DDD 3.1.1 simply gave an error message. The DDD configuration management archive lists 116 logical changes between the 3.1.1 and 3.1.2 releases. These changes were split into 344 textual changes to the DDD source. After only 12 test runs and 58 minutes, the failure-inducing change was found: 
+This idea of Delta Debugging was applied to isolate failure-inducing changes. It considers all line-level changes between the old and new program version as the candidate set without considering compilation dependences among those changes. In Zeller's seminal paper, {\em ``yesterday, my program worked, but today, it does not, why?''} Zeller demonstrates the application of DD to isolate program edits responsible for regression failures~\cite{Zeller1999}. DDD 3.1.2, released in December, 1998, exhibited a nasty behavioral change: When invoked with a the name of a non-existing file, DDD 3.1.2 dumped core, while its predecessor DDD 3.1.1 simply gave an error message. The DDD configuration management archive lists 116 logical changes between the 3.1.1 and 3.1.2 releases. These changes were split into 344 textual changes to the DDD source. After only 12 test runs and 58 minutes, the failure-inducing change was found: 
 \begin{verbatim}
 diff -r1.30 -r1.30.4.1 ddd/gdbinit.C 
 295,296c296
@@ -94,7 +95,7 @@ To address this problem, FaultTracer~\cite{zhang2011localizing} combines Chianti
 
 Unlike other types of changes, refactoring validation is a special category of change validation. By definition, refactoring must guarantee behavior preservation and thus the old version's behavior could be compared against the new version's behavior for behavior preservation. Regression testing is the most used strategy for checking refactoring correctness. However, a recent study finds that test suites are often inadequate ~\cite{Rachatasumrit2012:refactortest} and developers may hesitate to initiate or perform refactoring tasks due to inadequate test coverage~\cite{Kim2012:FSR}. Soares et al.~\cite{Soares:icse10} design and implement SafeRefactor that uses randomly generated test suites for detecting refactoring anomalies. 
 
-Formal verification is an alternative for avoiding refactoring anomalies~\cite{Mens2004:SSR}. Some propose rules for guaranteeing semantic preservation~cite{cornelio2010sound}, use graph rewriting for specifying refactorings~\cite{mens2005formalizing}, or present a collection of refactoring specifications, which guarantee the correctness by construction~\cite{overbey2010collection}. However, these approaches focus on improving the correctness of automated refactoring through formal specifications only. Assuming that developers may apply refactoring manually rather, Schaeffer et al.~validate refactoring edits by comparing data and control dependences between two program versions~\cite{Schaefer2010:refactoring}. 
+Formal verification is an alternative for avoiding refactoring anomalies~\cite{Mens2004:SSR}. Some propose rules for guaranteeing semantic preservation~\cite{cornelio2010sound}, use graph rewriting for specifying refactorings~\cite{mens2005formalizing}, or present a collection of refactoring specifications, which guarantee the correctness by construction~\cite{overbey2010collection}. However, these approaches focus on improving the correctness of automated refactoring through formal specifications only. Assuming that developers may apply refactoring manually rather, Schaeffer et al.~validate refactoring edits by comparing data and control dependences between two program versions~\cite{Schaefer2010:refactoring}. 
 
 RefDistiller is a static analysis approach~\cite{Alves2017:refdistiller,Alves:2014:RRA:2635868.2661674} to support the inspection of manual refactorings. It combines two techniques. First, it applies predefined templates to identify potential missed edits during manual refactoring. Second, it leverages an automated refactoring engine to identify extra edits that might be incorrect, helping to  determine the root cause of detected refactoring anomalies. GhostFactor~\cite{geManual2014} checks the correctness of manual refactoring, similar to RefDistiller. Another approach by Ge and Murphy-Hill~\cite{emersoncodereview:2014chase} helps reviewers by identifying applied refactorings and letting developers examine them in isolation by separating pure refactorings. 
 
