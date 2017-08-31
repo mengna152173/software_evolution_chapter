@@ -127,4 +127,21 @@ Can the figure be made more readable (e.g., larger font)? Your annotations could
 typo? (p1-c2)?
 => We fixed the error. Thanks for catching this. 
 
- 
+Figure 15
+Figure appears to be too small to be useful. And, LCS is intuitive-enough concept to most readers, I assume. Perhaps this figure can be dropped.
+=> I removed the figure. I agree that the text can be explained without
+reference to the figure. 
+
+Figure 16: Similar to the comment made on Fig 15
+=> I removed the figure and associated text description for both Figure 16 and
+Figure 17. 
+
+
+Section 5.1 
+careful reading of Fig 20 did not help me better understand the chapter at this point. 
+=> I understand that the corresponding text description was too brief. I
+expanded the text description of Chianti's overall 2-phase approach. 
+
+I am lost here. I looked at Fig 21 and could not follow.
+=> I added what the change dependence represented as an arrow means. 
+

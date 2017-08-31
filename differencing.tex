@@ -23,14 +23,16 @@ When a program is represented as a string, the best match between two strings is
 
 The line-level LCS implementation, \textit{diff} \cite{Hunt1977:LCS} is fast, reliable, and readily available. Thus, it has served as a basis for popular version control systems such as CVS. Many evolution analyses are based on {\it diff} because they use version control system data as input. For example, identification of fix-inducing code snippets is based on line tracking \textit{(file name:: function name:: line number)} backward from the moment that a bug is fixed~\cite{Sliwerski:2005} 
 
-The longest common subsequence algorithm is a dynamic programming algorithm with $O(mn)$ in time and space, when $m$ is the line size of the past program and the $n$ is the line size of the current program. The goal of LCS-based diff is to report the minimum number of line changes necessary to convert one file to another. It consists of two phases: (1) computing the length of LCS and (2) reading out the longest common subsequence using a backtrace algorithm. Figure~\ref{fig:lcs} shows the pseudo code and the two dimensional array used to compute the LCS. Blue boxes mean the cells where the lines are identical. The red boxes represents the back trace of reading out the LCS, which produces the line matching of [(p0-c0), (p1-c1), (p2-c3), (p3-c5), (p4-c6), (p5-c7), (p6-c9), (p8-c10), (p9-c11) ]. Due to the assumption of no crossing matches, LCS does not find (p7-c8). In addition, because the matching is done at the line level and LCS does not consider the syntactic structure of code, it produces a line-level match such as (p3-c5) that do not observe the matching block parentheses rule. 
+The longest common subsequence algorithm is a dynamic programming algorithm with $O(mn)$ in time and space, when $m$ is the line size of the past program and the $n$ is the line size of the current program. The goal of LCS-based diff is to report the minimum number of line changes necessary to convert one file to another. It consists of two phases: (1) computing the length of LCS and (2) reading out the longest common subsequence using a backtrace algorithm. 
+%Figure~\ref{fig:lcs} shows the pseudo code and the two dimensional array used to compute the LCS. Blue boxes mean the cells where the lines are identical. The red boxes represents the back trace of reading out the LCS, which produces the 
+Applying LCS to the example in Figure~\ref{fig:changeexample} will produce the line matching of [(p0-c0), (p1-c1), (p2-c3), (p3-c5), (p4-c6), (p5-c7), (p6-c9), (p8-c10), (p9-c11)]. Due to the assumption of no crossing matches, LCS does not find (p7-c8). In addition, because the matching is done at the line level and LCS does not consider the syntactic structure of code, it produces a line-level match such as (p3-c5) that do not observe the matching block parentheses rule. 
 
-\begin{figure*}
-\centering
-\includegraphics[width=0.95\textwidth]{images/LCS.pdf}
-\caption{Longest common subsequence (LCS) algorithm and program differencing results based on LCS}
-\label{fig:lcs} 
-\end{figure*}
+%\begin{figure*}
+%\centering
+%\includegraphics[width=0.95\textwidth]{images/LCS.pdf}
+%\caption{Longest common subsequence (LCS) algorithm and program differencing results based on LCS}
+%\label{fig:lcs} 
+%\end{figure*}
 
 %Reiss \cite{Reiss2008} evaluated practical LCS-based source line tracking techniques. His investigation shows that the {\it W\_BEST\_LINE} method\textemdash  a variation of LCS algorithm that considers $k$ number of contextual lines\textemdash is about as effective as any other method but is faster and requires only a small amount of storage. This method compares each line to derive a normalized match value between zero (no match) and one (exact match); looks at a context consisting of $k/2$ lines before and after the line; and counts the number of these lines that match the corresponding line in the new version.  
 
@@ -38,8 +40,11 @@ The longest common subsequence algorithm is a dynamic programming algorithm with
 %Recently, Canfora et al. \cite{Canfora2007} developed a source line technique that takes differencing results from {\it diff}-based version control systems as input and identifies changed-lines in addition to added- and deleted-lines. This technique first computes hunk similarity between every possible hunk pair using a vector space model and then computes the Levenstein distance \cite{Levenstein1966} to map source lines within the mapped hunk pairs. In contrast to {\it diff}, this approach detects changed-lines in addition to deleted- and added-lines. 
 
 \subsubsection{Syntax Tree Matching.}
-For software version merging, Yang~\cite{Yang1991} developed an AST differencing algorithm. Given a pair of functions $(f_T,f_R)$, the algorithm creates two abstract syntax trees $T$ and $R$ and attempts to match the two tree roots. Once the two roots match, the algorithm aligns $T$'s subtrees ${t_1, t_2, ..., t_i}$ and $R$'s subtrees ${r_1, r_2, ... r_j}$ using the LCS algorithm and maps subtrees recursively. This type of tree matching respects the parent-child relationship as well as the order between sibling nodes, but is very sensitive to changes in nested blocks and control structures because tree roots must be matched for every level. Figure~\ref{fig:AST} shows the abstract tree representations of the code example shown in Figure~\ref{fig:changeexample}. Figure~\ref{fig:YangDiff} shows its AST differencing algorithm in pseudo-code and the differencing results.  Because the algorithm respects parent-child relationships when matching code, all matches are observe the syntactic boundary of code and  the matching block parentheses rule. Similar to LCS, because Yang's algorithm aligns subtrees at the current level by LCS, it cannot find crossing matches caused by code reordering. Furthermore, the algorithm is very sensitive to tree level changes or insertion of new control structures in the middle, because Yang's algorithm performs top-down AST matching. 
+For software version merging, Yang~\cite{Yang1991} developed an AST differencing algorithm. Given a pair of functions $(f_T,f_R)$, the algorithm creates two abstract syntax trees $T$ and $R$ and attempts to match the two tree roots. Once the two roots match, the algorithm aligns $T$'s subtrees ${t_1, t_2, ..., t_i}$ and $R$'s subtrees ${r_1, r_2, ... r_j}$ using the LCS algorithm and maps subtrees recursively. This type of tree matching respects the parent-child relationship as well as the order between sibling nodes, but is very sensitive to changes in nested blocks and control structures because tree roots must be matched for every level. 
+%Figure~\ref{fig:AST} shows the abstract tree representations of the code example shown in Figure~\ref{fig:changeexample}. Figure~\ref{fig:YangDiff} shows its AST differencing algorithm in pseudo-code and the differencing results.  
+Because the algorithm respects parent-child relationships when matching code, all matches are observe the syntactic boundary of code and  the matching block parentheses rule. Similar to LCS, because Yang's algorithm aligns subtrees at the current level by LCS, it cannot find crossing matches caused by code reordering. Furthermore, the algorithm is very sensitive to tree level changes or insertion of new control structures in the middle, because Yang's algorithm performs top-down AST matching. 
 
+\begin{comment}
 \begin{figure*}
 \centering
 \begin{minipage}{.45\textwidth}
@@ -60,6 +65,7 @@ For software version merging, Yang~\cite{Yang1991} developed an AST differencing
 \caption{Yang's Abstract Syntax Tree differencing algorithm and results} 
 \label{fig:YangDiff} 
 \end{figure*}
+\end{comment} 
 
 %For dynamic software updating, Neamtiu et al. \cite{Neamtiu2005} built an AST-based algorithm that tracks simple changes to variables, types, and functions. Neamtiu's algorithm assumes that function names are relatively stable over time.  It traverses two ASTs in parallel; matches the ASTs of functions with the same name; and incrementally adds one-to-one mappings as long as the ASTs have the same shape. In contrast to Yang's algorithm, it cannot compare structurally different ASTs. 
 
