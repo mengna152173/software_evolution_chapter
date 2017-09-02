@@ -154,10 +154,15 @@ missing \?
 => fixed the typo. 
 
 
-Section 6 
+Section 6.1 
 I like your selection of future directions and open problems. But, on each topic, I would like to have more guided explanation on the current state-of-the-art in terms of which sections to read again to better understand this challenge. 
 
 => I added cross-references to the prior section so that the discussion can be
-more guided there. 
+more guided here. 
+
+Section 6.2 
+Similar comments (see 6.1). I would like to have more discussion on the best practices and tools, too.
+=> I added cross-references to the prior section so that the discussion can be
+more guided here. 
 
 
