@@ -7,13 +7,6 @@ Later, many researchers have systematically studied software evolution by measur
 %One of Lehman's students, Yuen studied bug data from a large operating system over time~\cite{ChongHokYuen1986:EAS}. 
 Notably, Eick et al.\cite{Eick2001:CodeDecay} quantified the symptoms of {\em code decay}\textemdash {\em software is harder to change than it should be} by measuring the extent to which each risk factor matters using a rich data set of 5ESS telephone switching system. For example, they measured the number of files changed in each modification request to monitor code decay progress over time. This empirical study has influenced a variety of research projects on mining software repositories.  %The span of changes at the granularity of files increases each year.  Modularity breaks over time.  Fault potential, the likelihood of changes to induce faults increases over time.  Prediction of efforts increases over time. 
 
-\begin{figure}[ht]
- \centering
- \includegraphics[width=0.95\textwidth]{images/ChangeTypesTopics.pdf}
- \caption{Change Types and Related Research Topics} 
- \label{fig:changetypetopic}
-\end{figure}
-
 Now that we accept the fact that software systems go through a {\em continuing life cycle of evolution} after the initial phase of requirement engineering, design, analysis, testing and validation, this chapter focuses an important aspect of software evolution\textemdash software changes. To that end, we first introduce the categorization of software changes into four types in Section~\ref{sec:concepts}. We then discuss the techniques of evolving software from three activity perspectives: (1) change application, (2) change inspection, and (3) change validation. In the following three sections, we provide an organized tour of seminal papers focusing on the above-mentioned three kinds of activity perspectives. 
 
 In Section~\ref{sec:apply}, we first discuss empirical studies to summarize the characteristics of each type of software changes and then overview tool support for applying software changes. For example, for the type of {\em corrective changes}, we present several studies on the nature and extent of bug fixes. We then discuss automated techniques for fixing bugs such as automated repair. Similarly, for the type of {\em preventative changes}, we present empirical studies on refactoring practices and then discuss automated techniques for applying refactorings.  Regardless of change types, various approaches are proposed to reduce the manual effort of updated software through automation, including source-to-source program transformation, Programming by Demonstration (PbD), simultaneous editing, and systematic editing.
