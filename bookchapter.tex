@@ -36,7 +36,7 @@
 \newcommand{\factfont}[1]{\scriptsize {\sf{{#1}}}\normalsize}
 \newcommand{\codefont}[1]{\footnotesize{\texttt{#1}}\normalsize}
 \newcommand{\text}[1]{\footnotesize{\texttt{#1}}\normalsize}
-\newcommand{\newtext}[1]{\textcolor{blue}{#1}}
+\newcommand{\newtext}[1]{{#1}}
 
 \begin{document}
 
@@ -78,7 +78,7 @@
 \section{An Organized Tour of Seminal Papers: I. Applying Changes}
 \label{sec:apply}
 
-We discuss the characteristics of {\em corrective}, {\em adaptive}, {\em perfective}, and {\em preventative} changes using empirical studies and the process and techniques for applying software changes, respectively in Sections~\ref{sec:corrective},~\ref{sec:adaptive},~\ref{sec:perfective}, and~\ref{sec:preventive}. Next, regardless of change types, automation could reduce the manual effort of applying software changes. Therefore, we discuss the topic of automated program transformation and editing techniques for reducing repetitive edits in Section~\ref{sec:automatic}.
+We discuss the characteristics of {\em corrective}, {\em adaptive}, {\em perfective}, and {\em preventative} changes using empirical studies and the process and techniques for updating software, respectively in Sections~\ref{sec:corrective},~\ref{sec:adaptive},~\ref{sec:perfective}, and~\ref{sec:preventive}. Next, regardless of change types, automation could reduce the manual effort of updating software. Therefore, we discuss the topic of automated program transformation and interactive editing techniques for reducing repetitive edits in Section~\ref{sec:automatic}.
 
 \begin{figure}[ht]
  \centering
@@ -111,6 +111,7 @@ We discuss the characteristics of {\em corrective}, {\em adaptive}, {\em perfect
 %\input{evolutionvis} 
 
 \section{An Organized Tour of Seminal Papers: II. Inspecting Changes}
+\label{sec:changeinspect}
 \input{changeinspect} 
 
 \subsection{Program Differencing} 
@@ -124,7 +125,6 @@ We discuss the characteristics of {\em corrective}, {\em adaptive}, {\em perfect
 \section{An Organized Tour of Seminal Papers: III. Change Validation} 
 \label{sec:debugtest}
 \input{validation} 
-
 \input{future}
 
 %\paragraph{Awareness about Software Updates.} 
@@ -135,14 +135,18 @@ We discuss the characteristics of {\em corrective}, {\em adaptive}, {\em perfect
 %leverages in-depth automated code change analysis to abstract program differences at a high-level, to determine which subset of changes are refactorings, to reason about {\em interdependence} and {\em interference} among program deltas in order to investigate, search and monitor code changes by their content and structure.  
 %leverage automated analysis to help developers manage the impact of other developers' modifications. 
 
- 
-%Since systematic editing techniques such as LASE automate bug fix pattern inference and when used together with PAR, it could reduce manual effort of similar bug fixes significantly. 
-\subsubsection*{Acknowledgments.} 
 
-\section{References}\label{references}
+
+%Since systematic editing techniques such as LASE automate bug fix pattern inference and when used together with PAR, it could reduce manual effort of similar bug fixes significantly. 
+
+\section*{Appendix} 
+The following text box shows selected, recommended readings for understanding the area of software evolution. 
+\newpage
+\input{keyreference}
+%\subsubsection*{Acknowledgments.} 
+\newpage
+\label{references}
 %\bibliography{tianyi,mengna,reference,miryung,kim,refs-kim,refs-wong,kimthesis,libsync,libsync2,chime,faultracer,repair,everton,kimrefactor,rase,spa}
 \bibliography{chapter}
 \bibliographystyle{abbrv}
-
-\section*{Appendix} 
 \end{document}
